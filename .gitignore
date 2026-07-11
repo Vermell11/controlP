@@ -6,3 +6,5 @@ dist/
 !.env.example
 *.log
 tsconfig.tsbuildinfo
+.DS_Store
+.DS_Store

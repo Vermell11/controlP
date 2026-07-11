@@ -1,22 +1,8 @@
+import CenterStage from "@/app/components/CenterStage";
 import { getProjects } from "@/lib/controlp";
+import { formatDate, tone } from "@/lib/ui";
 
 export const dynamic = "force-dynamic";
-
-function formatDate(value: string | null) {
-  if (!value) return "sin fecha";
-  return new Intl.DateTimeFormat("es-CO", {
-    month: "short",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-  }).format(new Date(value));
-}
-
-function tone(score: number) {
-  if (score >= 80) return "good";
-  if (score >= 55) return "warn";
-  return "bad";
-}
 
 export default async function Home() {
   const projects = await getProjects();
@@ -85,37 +71,9 @@ export default async function Home() {
         </aside>
 
         <section className="centerStage">
-          <div className="vaultGraph" aria-label="Mapa visual de proyectos">
-            <div className="stars" />
-            <div className="floorGrid" />
-            <div className="graphCore" />
-            {projects.map((project, index) => (
-              <a
-                className={`projectNode ${tone(project.health)}`}
-                href={`#${project.name}`}
-                key={project.name}
-                style={{
-                  "--x": `${24 + ((index * 29) % 54)}%`,
-                  "--y": `${20 + ((index * 41) % 48)}%`,
-                  "--s": `${0.78 + project.health / 260}`,
-                } as React.CSSProperties}
-              >
-                <i />
-                <b>{project.name}</b>
-              </a>
-            ))}
-            {Array.from({ length: 34 }).map((_, index) => (
-              <span
-                className="signalDot"
-                key={index}
-                style={{
-                  "--x": `${12 + ((index * 17) % 78)}%`,
-                  "--y": `${12 + ((index * 23) % 66)}%`,
-                  "--d": `${index * 0.08}s`,
-                } as React.CSSProperties}
-              />
-            ))}
-          </div>
+          <CenterStage
+            nodes={projects.map((project) => ({ health: project.health, name: project.name }))}
+          />
 
           <div className="primaryDirective">
             <small>Primary Directive · Road to connected project OS</small>
