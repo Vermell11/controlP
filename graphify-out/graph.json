@@ -1,7 +1,23 @@
 {
   "directed": false,
   "multigraph": false,
-  "graph": {},
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "vault_core_subsystem",
+        "label": "Vault Core Subsystem",
+        "nodes": [
+          "project_context_3d_particle_core",
+          "project_context_vault_signals",
+          "project_context_vault_dashboard"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "PROJECT_CONTEXT.md"
+      }
+    ]
+  },
   "nodes": [
     {
       "label": "route.ts",
@@ -9,10 +25,10 @@
       "source_file": "/private/tmp/controlp-graph-src/app/api/projects/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "private_tmp_controlp_graph_src_app_api_projects_route_ts",
-      "community": 0,
+      "community": 4,
       "community_name": "Community 0",
-      "norm_label": "route.ts"
+      "norm_label": "route.ts",
+      "id": "private_tmp_controlp_graph_src_app_api_projects_route_ts"
     },
     {
       "label": "GET()",
@@ -20,10 +36,10 @@
       "source_file": "/private/tmp/controlp-graph-src/app/api/projects/route.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "projects_route_get",
-      "community": 0,
+      "community": 4,
       "community_name": "Community 0",
-      "norm_label": "get()"
+      "norm_label": "get()",
+      "id": "projects_route_get"
     },
     {
       "label": "layout.tsx",
@@ -31,10 +47,10 @@
       "source_file": "/private/tmp/controlp-graph-src/app/layout.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "private_tmp_controlp_graph_src_app_layout_tsx",
-      "community": 5,
+      "community": 10,
       "community_name": "Community 5",
-      "norm_label": "layout.tsx"
+      "norm_label": "layout.tsx",
+      "id": "private_tmp_controlp_graph_src_app_layout_tsx"
     },
     {
       "label": "metadata",
@@ -42,10 +58,10 @@
       "source_file": "/private/tmp/controlp-graph-src/app/layout.tsx",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "app_layout_metadata",
-      "community": 5,
+      "community": 10,
       "community_name": "Community 5",
-      "norm_label": "metadata"
+      "norm_label": "metadata",
+      "id": "app_layout_metadata"
     },
     {
       "label": "RootLayout()",
@@ -53,10 +69,10 @@
       "source_file": "/private/tmp/controlp-graph-src/app/layout.tsx",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "app_layout_rootlayout",
-      "community": 5,
+      "community": 10,
       "community_name": "Community 5",
-      "norm_label": "rootlayout()"
+      "norm_label": "rootlayout()",
+      "id": "app_layout_rootlayout"
     },
     {
       "label": "page.tsx",
@@ -64,10 +80,10 @@
       "source_file": "/private/tmp/controlp-graph-src/app/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "private_tmp_controlp_graph_src_app_page_tsx",
-      "community": 0,
+      "community": 4,
       "community_name": "Community 0",
-      "norm_label": "page.tsx"
+      "norm_label": "page.tsx",
+      "id": "private_tmp_controlp_graph_src_app_page_tsx"
     },
     {
       "label": "formatDate()",
@@ -75,10 +91,10 @@
       "source_file": "/private/tmp/controlp-graph-src/app/page.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "app_page_formatdate",
-      "community": 0,
+      "community": 4,
       "community_name": "Community 0",
-      "norm_label": "formatdate()"
+      "norm_label": "formatdate()",
+      "id": "app_page_formatdate"
     },
     {
       "label": "tone()",
@@ -86,10 +102,10 @@
       "source_file": "/private/tmp/controlp-graph-src/app/page.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "app_page_tone",
-      "community": 0,
+      "community": 4,
       "community_name": "Community 0",
-      "norm_label": "tone()"
+      "norm_label": "tone()",
+      "id": "app_page_tone"
     },
     {
       "label": "Home()",
@@ -97,10 +113,10 @@
       "source_file": "/private/tmp/controlp-graph-src/app/page.tsx",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "app_page_home",
-      "community": 0,
+      "community": 4,
       "community_name": "Community 0",
-      "norm_label": "home()"
+      "norm_label": "home()",
+      "id": "app_page_home"
     },
     {
       "label": "PanelTitle()",
@@ -108,10 +124,10 @@
       "source_file": "/private/tmp/controlp-graph-src/app/page.tsx",
       "source_location": "L216",
       "_origin": "ast",
-      "id": "app_page_paneltitle",
-      "community": 0,
+      "community": 4,
       "community_name": "Community 0",
-      "norm_label": "paneltitle()"
+      "norm_label": "paneltitle()",
+      "id": "app_page_paneltitle"
     },
     {
       "label": "Vitals()",
@@ -119,10 +135,10 @@
       "source_file": "/private/tmp/controlp-graph-src/app/page.tsx",
       "source_location": "L225",
       "_origin": "ast",
-      "id": "app_page_vitals",
-      "community": 0,
+      "community": 4,
       "community_name": "Community 0",
-      "norm_label": "vitals()"
+      "norm_label": "vitals()",
+      "id": "app_page_vitals"
     },
     {
       "label": "Fact()",
@@ -130,10 +146,10 @@
       "source_file": "/private/tmp/controlp-graph-src/app/page.tsx",
       "source_location": "L238",
       "_origin": "ast",
-      "id": "app_page_fact",
-      "community": 0,
+      "community": 4,
       "community_name": "Community 0",
-      "norm_label": "fact()"
+      "norm_label": "fact()",
+      "id": "app_page_fact"
     },
     {
       "label": "controlp.ts",
@@ -141,10 +157,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "private_tmp_controlp_graph_src_lib_controlp_ts",
       "community": 1,
       "community_name": "Community 1",
-      "norm_label": "controlp.ts"
+      "norm_label": "controlp.ts",
+      "id": "private_tmp_controlp_graph_src_lib_controlp_ts"
     },
     {
       "label": "execFileAsync",
@@ -152,10 +168,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "lib_controlp_execfileasync",
-      "community": 3,
+      "community": 1,
       "community_name": "Community 3",
-      "norm_label": "execfileasync"
+      "norm_label": "execfileasync",
+      "id": "lib_controlp_execfileasync"
     },
     {
       "label": "config",
@@ -163,10 +179,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "lib_controlp_config",
       "community": 1,
       "community_name": "Community 1",
-      "norm_label": "config"
+      "norm_label": "config",
+      "id": "lib_controlp_config"
     },
     {
       "label": "ProjectCard",
@@ -174,10 +190,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "id": "lib_controlp_projectcard",
       "community": 1,
       "community_name": "Community 1",
-      "norm_label": "projectcard"
+      "norm_label": "projectcard",
+      "id": "lib_controlp_projectcard"
     },
     {
       "label": "projectsDir",
@@ -185,10 +201,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L46",
       "_origin": "ast",
-      "id": "lib_controlp_projectsdir",
       "community": 1,
       "community_name": "Community 1",
-      "norm_label": "projectsdir"
+      "norm_label": "projectsdir",
+      "id": "lib_controlp_projectsdir"
     },
     {
       "label": "getProjects()",
@@ -196,10 +212,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L48",
       "_origin": "ast",
-      "id": "lib_controlp_getprojects",
-      "community": 0,
+      "community": 4,
       "community_name": "Community 0",
-      "norm_label": "getprojects()"
+      "norm_label": "getprojects()",
+      "id": "lib_controlp_getprojects"
     },
     {
       "label": "readProject()",
@@ -207,10 +223,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L58",
       "_origin": "ast",
-      "id": "lib_controlp_readproject",
-      "community": 2,
+      "community": 1,
       "community_name": "Community 2",
-      "norm_label": "readproject()"
+      "norm_label": "readproject()",
+      "id": "lib_controlp_readproject"
     },
     {
       "label": "resolveRepoPath()",
@@ -218,10 +234,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L106",
       "_origin": "ast",
-      "id": "lib_controlp_resolverepopath",
-      "community": 4,
+      "community": 1,
       "community_name": "Community 4",
-      "norm_label": "resolverepopath()"
+      "norm_label": "resolverepopath()",
+      "id": "lib_controlp_resolverepopath"
     },
     {
       "label": "readGit()",
@@ -229,10 +245,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L114",
       "_origin": "ast",
-      "id": "lib_controlp_readgit",
-      "community": 3,
+      "community": 1,
       "community_name": "Community 3",
-      "norm_label": "readgit()"
+      "norm_label": "readgit()",
+      "id": "lib_controlp_readgit"
     },
     {
       "label": "readGraphify()",
@@ -240,10 +256,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L135",
       "_origin": "ast",
-      "id": "lib_controlp_readgraphify",
-      "community": 4,
+      "community": 1,
       "community_name": "Community 4",
-      "norm_label": "readgraphify()"
+      "norm_label": "readgraphify()",
+      "id": "lib_controlp_readgraphify"
     },
     {
       "label": "git()",
@@ -251,10 +267,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L155",
       "_origin": "ast",
-      "id": "lib_controlp_git",
-      "community": 3,
+      "community": 1,
       "community_name": "Community 3",
-      "norm_label": "git()"
+      "norm_label": "git()",
+      "id": "lib_controlp_git"
     },
     {
       "label": "listSessions()",
@@ -262,10 +278,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L164",
       "_origin": "ast",
-      "id": "lib_controlp_listsessions",
-      "community": 2,
+      "community": 1,
       "community_name": "Community 2",
-      "norm_label": "listsessions()"
+      "norm_label": "listsessions()",
+      "id": "lib_controlp_listsessions"
     },
     {
       "label": "readIfExists()",
@@ -273,10 +289,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L173",
       "_origin": "ast",
-      "id": "lib_controlp_readifexists",
-      "community": 2,
+      "community": 1,
       "community_name": "Community 2",
-      "norm_label": "readifexists()"
+      "norm_label": "readifexists()",
+      "id": "lib_controlp_readifexists"
     },
     {
       "label": "exists()",
@@ -284,10 +300,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L181",
       "_origin": "ast",
-      "id": "lib_controlp_exists",
-      "community": 4,
+      "community": 1,
       "community_name": "Community 4",
-      "norm_label": "exists()"
+      "norm_label": "exists()",
+      "id": "lib_controlp_exists"
     },
     {
       "label": "emptyGit()",
@@ -295,10 +311,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L190",
       "_origin": "ast",
-      "id": "lib_controlp_emptygit",
-      "community": 3,
+      "community": 1,
       "community_name": "Community 3",
-      "norm_label": "emptygit()"
+      "norm_label": "emptygit()",
+      "id": "lib_controlp_emptygit"
     },
     {
       "label": "emptyGraphify()",
@@ -306,10 +322,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L201",
       "_origin": "ast",
-      "id": "lib_controlp_emptygraphify",
-      "community": 4,
+      "community": 1,
       "community_name": "Community 4",
-      "norm_label": "emptygraphify()"
+      "norm_label": "emptygraphify()",
+      "id": "lib_controlp_emptygraphify"
     },
     {
       "label": "extractBullet()",
@@ -317,10 +333,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L205",
       "_origin": "ast",
-      "id": "lib_controlp_extractbullet",
-      "community": 6,
+      "community": 1,
       "community_name": "Community 6",
-      "norm_label": "extractbullet()"
+      "norm_label": "extractbullet()",
+      "id": "lib_controlp_extractbullet"
     },
     {
       "label": "extractLatestSession()",
@@ -328,10 +344,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L211",
       "_origin": "ast",
-      "id": "lib_controlp_extractlatestsession",
-      "community": 6,
+      "community": 1,
       "community_name": "Community 6",
-      "norm_label": "extractlatestsession()"
+      "norm_label": "extractlatestsession()",
+      "id": "lib_controlp_extractlatestsession"
     },
     {
       "label": "section()",
@@ -339,10 +355,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L215",
       "_origin": "ast",
-      "id": "lib_controlp_section",
       "community": 1,
       "community_name": "Community 1",
-      "norm_label": "section()"
+      "norm_label": "section()",
+      "id": "lib_controlp_section"
     },
     {
       "label": "firstParagraph()",
@@ -350,10 +366,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L221",
       "_origin": "ast",
-      "id": "lib_controlp_firstparagraph",
-      "community": 2,
+      "community": 1,
       "community_name": "Community 2",
-      "norm_label": "firstparagraph()"
+      "norm_label": "firstparagraph()",
+      "id": "lib_controlp_firstparagraph"
     },
     {
       "label": "normalizeMarkdown()",
@@ -361,10 +377,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L230",
       "_origin": "ast",
-      "id": "lib_controlp_normalizemarkdown",
-      "community": 2,
+      "community": 1,
       "community_name": "Community 2",
-      "norm_label": "normalizemarkdown()"
+      "norm_label": "normalizemarkdown()",
+      "id": "lib_controlp_normalizemarkdown"
     },
     {
       "label": "inferStack()",
@@ -372,10 +388,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L236",
       "_origin": "ast",
-      "id": "lib_controlp_inferstack",
-      "community": 2,
+      "community": 1,
       "community_name": "Community 2",
-      "norm_label": "inferstack()"
+      "norm_label": "inferstack()",
+      "id": "lib_controlp_inferstack"
     },
     {
       "label": "buildAlerts()",
@@ -383,10 +399,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L243",
       "_origin": "ast",
-      "id": "lib_controlp_buildalerts",
       "community": 1,
       "community_name": "Community 1",
-      "norm_label": "buildalerts()"
+      "norm_label": "buildalerts()",
+      "id": "lib_controlp_buildalerts"
     },
     {
       "label": "scoreHealth()",
@@ -394,10 +410,10 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L261",
       "_origin": "ast",
-      "id": "lib_controlp_scorehealth",
-      "community": 2,
+      "community": 1,
       "community_name": "Community 2",
-      "norm_label": "scorehealth()"
+      "norm_label": "scorehealth()",
+      "id": "lib_controlp_scorehealth"
     },
     {
       "label": "clean()",
@@ -405,10 +421,1260 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L281",
       "_origin": "ast",
-      "id": "lib_controlp_clean",
       "community": 1,
       "community_name": "Community 1",
-      "norm_label": "clean()"
+      "norm_label": "clean()",
+      "id": "lib_controlp_clean"
+    },
+    {
+      "label": "CenterStage.tsx",
+      "file_type": "code",
+      "source_file": "app/components/CenterStage.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_components_centerstage",
+      "community": 0,
+      "norm_label": "centerstage.tsx"
+    },
+    {
+      "label": "VaultCore",
+      "file_type": "code",
+      "source_file": "app/components/CenterStage.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "app_components_centerstage_vaultcore",
+      "community": 0,
+      "norm_label": "vaultcore"
+    },
+    {
+      "label": "CenterStage()",
+      "file_type": "code",
+      "source_file": "app/components/CenterStage.tsx",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "app_components_centerstage_centerstage",
+      "community": 4,
+      "norm_label": "centerstage()"
+    },
+    {
+      "label": "ParticleCore.tsx",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/ParticleCore.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_components_vault_core_particlecore",
+      "community": 0,
+      "norm_label": "particlecore.tsx"
+    },
+    {
+      "label": "GOLD",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/ParticleCore.tsx",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "app_components_vault_core_particlecore_gold",
+      "community": 0,
+      "norm_label": "gold"
+    },
+    {
+      "label": "PALE",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/ParticleCore.tsx",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "app_components_vault_core_particlecore_pale",
+      "community": 0,
+      "norm_label": "pale"
+    },
+    {
+      "label": "ParticleCore()",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/ParticleCore.tsx",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "app_components_vault_core_particlecore_particlecore",
+      "community": 0,
+      "norm_label": "particlecore()"
+    },
+    {
+      "label": "ProjectNodes.tsx",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/ProjectNodes.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_components_vault_core_projectnodes",
+      "community": 0,
+      "norm_label": "projectnodes.tsx"
+    },
+    {
+      "label": "TONE_COLORS",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/ProjectNodes.tsx",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "app_components_vault_core_projectnodes_tone_colors",
+      "community": 0,
+      "norm_label": "tone_colors"
+    },
+    {
+      "label": "nodePosition()",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/ProjectNodes.tsx",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "app_components_vault_core_projectnodes_nodeposition",
+      "community": 0,
+      "norm_label": "nodeposition()"
+    },
+    {
+      "label": "goTo()",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/ProjectNodes.tsx",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "app_components_vault_core_projectnodes_goto",
+      "community": 0,
+      "norm_label": "goto()"
+    },
+    {
+      "label": "ProjectNode()",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/ProjectNodes.tsx",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "app_components_vault_core_projectnodes_projectnode",
+      "community": 0,
+      "norm_label": "projectnode()"
+    },
+    {
+      "label": "ProjectNodes()",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/ProjectNodes.tsx",
+      "source_location": "L85",
+      "_origin": "ast",
+      "id": "app_components_vault_core_projectnodes_projectnodes",
+      "community": 0,
+      "norm_label": "projectnodes()"
+    },
+    {
+      "label": "VaultCore.tsx",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/VaultCore.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_components_vault_core_vaultcore",
+      "community": 0,
+      "norm_label": "vaultcore.tsx"
+    },
+    {
+      "label": "VaultCore()",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/VaultCore.tsx",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "app_components_vault_core_vaultcore_vaultcore",
+      "community": 0,
+      "norm_label": "vaultcore()"
+    },
+    {
+      "label": "geometry.ts",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/geometry.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_components_vault_core_geometry",
+      "community": 0,
+      "norm_label": "geometry.ts"
+    },
+    {
+      "label": "ParticleField",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/geometry.ts",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "app_components_vault_core_geometry_particlefield",
+      "community": 0,
+      "norm_label": "particlefield"
+    },
+    {
+      "label": "createRandom()",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/geometry.ts",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "app_components_vault_core_geometry_createrandom",
+      "community": 0,
+      "norm_label": "createrandom()"
+    },
+    {
+      "label": "createParticleField()",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/geometry.ts",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "app_components_vault_core_geometry_createparticlefield",
+      "community": 0,
+      "norm_label": "createparticlefield()"
+    },
+    {
+      "label": "createLinkSegments()",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/geometry.ts",
+      "source_location": "L63",
+      "_origin": "ast",
+      "id": "app_components_vault_core_geometry_createlinksegments",
+      "community": 0,
+      "norm_label": "createlinksegments()"
+    },
+    {
+      "label": "signals.tsx",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/signals.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_components_vault_core_signals",
+      "community": 0,
+      "norm_label": "signals.tsx"
+    },
+    {
+      "label": "vaultSignals",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/signals.tsx",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "app_components_vault_core_signals_vaultsignals",
+      "community": 0,
+      "norm_label": "vaultsignals"
+    },
+    {
+      "label": "useVaultSignals()",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/signals.tsx",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "app_components_vault_core_signals_usevaultsignals",
+      "community": 0,
+      "norm_label": "usevaultsignals()"
+    },
+    {
+      "label": "types.ts",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/types.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_components_vault_core_types",
+      "community": 0,
+      "norm_label": "types.ts"
+    },
+    {
+      "label": "CoreState",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/types.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "app_components_vault_core_types_corestate",
+      "community": 0,
+      "norm_label": "corestate"
+    },
+    {
+      "label": "VaultSignals",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/types.ts",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "app_components_vault_core_types_vaultsignals",
+      "community": 0,
+      "norm_label": "vaultsignals"
+    },
+    {
+      "label": "DEFAULT_SIGNALS",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/types.ts",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "app_components_vault_core_types_default_signals",
+      "community": 0,
+      "norm_label": "default_signals"
+    },
+    {
+      "label": "StageNode",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/types.ts",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "app_components_vault_core_types_stagenode",
+      "community": 0,
+      "norm_label": "stagenode"
+    },
+    {
+      "label": "STATE_PRESETS",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/types.ts",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "app_components_vault_core_types_state_presets",
+      "community": 0,
+      "norm_label": "state_presets"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_page",
+      "community": 4,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "ui.ts",
+      "file_type": "code",
+      "source_file": "lib/ui.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "lib_ui",
+      "community": 4,
+      "norm_label": "ui.ts"
+    },
+    {
+      "label": "tone()",
+      "file_type": "code",
+      "source_file": "lib/ui.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "lib_ui_tone",
+      "community": 4,
+      "norm_label": "tone()"
+    },
+    {
+      "label": "formatDate()",
+      "file_type": "code",
+      "source_file": "lib/ui.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "lib_ui_formatdate",
+      "community": 4,
+      "norm_label": "formatdate()"
+    },
+    {
+      "label": "next-env.d.ts",
+      "file_type": "code",
+      "source_file": "next-env.d.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "next_env_d",
+      "community": 12,
+      "norm_label": "next-env.d.ts"
+    },
+    {
+      "label": "NOTE: This file should not be edited",
+      "file_type": "rationale",
+      "source_file": "next-env.d.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "next_env_d_rationale_5",
+      "community": 12,
+      "norm_label": "note: this file should not be edited"
+    },
+    {
+      "label": "next.config.mjs",
+      "file_type": "code",
+      "source_file": "next.config.mjs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "next_config",
+      "community": 11,
+      "norm_label": "next.config.mjs"
+    },
+    {
+      "label": "nextConfig",
+      "file_type": "code",
+      "source_file": "next.config.mjs",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "next_config_nextconfig",
+      "community": 11,
+      "norm_label": "nextconfig"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "package",
+      "community": 7,
+      "norm_label": "package.json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "package_name",
+      "community": 7,
+      "norm_label": "name"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "package_version",
+      "community": 7,
+      "norm_label": "version"
+    },
+    {
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "package_private",
+      "community": 7,
+      "norm_label": "private"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "package_scripts",
+      "community": 7,
+      "norm_label": "scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "package_scripts_dev",
+      "community": 7,
+      "norm_label": "dev"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "package_scripts_build",
+      "community": 7,
+      "norm_label": "build"
+    },
+    {
+      "label": "lint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "package_scripts_lint",
+      "community": 7,
+      "norm_label": "lint"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "package_dependencies",
+      "community": 5,
+      "norm_label": "dependencies"
+    },
+    {
+      "label": "@react-three/drei",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "package_dependencies_react_three_drei",
+      "community": 5,
+      "norm_label": "@react-three/drei"
+    },
+    {
+      "label": "@react-three/drei",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "react_three_drei",
+      "community": 5,
+      "norm_label": "@react-three/drei"
+    },
+    {
+      "label": "@react-three/fiber",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "package_dependencies_react_three_fiber",
+      "community": 5,
+      "norm_label": "@react-three/fiber"
+    },
+    {
+      "label": "@react-three/fiber",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "react_three_fiber",
+      "community": 5,
+      "norm_label": "@react-three/fiber"
+    },
+    {
+      "label": "@types/three",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "package_dependencies_types_three",
+      "community": 5,
+      "norm_label": "@types/three"
+    },
+    {
+      "label": "@types/three",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "types_three",
+      "community": 5,
+      "norm_label": "@types/three"
+    },
+    {
+      "label": "next",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "package_dependencies_next",
+      "community": 5,
+      "norm_label": "next"
+    },
+    {
+      "label": "next",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "next",
+      "community": 5,
+      "norm_label": "next"
+    },
+    {
+      "label": "react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "package_dependencies_react",
+      "community": 5,
+      "norm_label": "react"
+    },
+    {
+      "label": "react",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "react",
+      "community": 5,
+      "norm_label": "react"
+    },
+    {
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "package_dependencies_react_dom",
+      "community": 5,
+      "norm_label": "react-dom"
+    },
+    {
+      "label": "react-dom",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "react_dom",
+      "community": 5,
+      "norm_label": "react-dom"
+    },
+    {
+      "label": "three",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "package_dependencies_three",
+      "community": 5,
+      "norm_label": "three"
+    },
+    {
+      "label": "three",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "three",
+      "community": 5,
+      "norm_label": "three"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "package_devdependencies",
+      "community": 3,
+      "norm_label": "devdependencies"
+    },
+    {
+      "label": "@tailwindcss/postcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "package_devdependencies_tailwindcss_postcss",
+      "community": 3,
+      "norm_label": "@tailwindcss/postcss"
+    },
+    {
+      "label": "@tailwindcss/postcss",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "tailwindcss_postcss",
+      "community": 3,
+      "norm_label": "@tailwindcss/postcss"
+    },
+    {
+      "label": "@types/node",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "package_devdependencies_types_node",
+      "community": 3,
+      "norm_label": "@types/node"
+    },
+    {
+      "label": "@types/node",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "types_node",
+      "community": 3,
+      "norm_label": "@types/node"
+    },
+    {
+      "label": "@types/react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "package_devdependencies_types_react",
+      "community": 3,
+      "norm_label": "@types/react"
+    },
+    {
+      "label": "@types/react",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "types_react",
+      "community": 3,
+      "norm_label": "@types/react"
+    },
+    {
+      "label": "@types/react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "package_devdependencies_types_react_dom",
+      "community": 3,
+      "norm_label": "@types/react-dom"
+    },
+    {
+      "label": "@types/react-dom",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "types_react_dom",
+      "community": 3,
+      "norm_label": "@types/react-dom"
+    },
+    {
+      "label": "autoprefixer",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "package_devdependencies_autoprefixer",
+      "community": 3,
+      "norm_label": "autoprefixer"
+    },
+    {
+      "label": "autoprefixer",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "autoprefixer",
+      "community": 3,
+      "norm_label": "autoprefixer"
+    },
+    {
+      "label": "postcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "package_devdependencies_postcss",
+      "community": 3,
+      "norm_label": "postcss"
+    },
+    {
+      "label": "postcss",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "postcss",
+      "community": 3,
+      "norm_label": "postcss"
+    },
+    {
+      "label": "tailwindcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "package_devdependencies_tailwindcss",
+      "community": 3,
+      "norm_label": "tailwindcss"
+    },
+    {
+      "label": "tailwindcss",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "tailwindcss",
+      "community": 3,
+      "norm_label": "tailwindcss"
+    },
+    {
+      "label": "typescript",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "package_devdependencies_typescript",
+      "community": 3,
+      "norm_label": "typescript"
+    },
+    {
+      "label": "typescript",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "typescript",
+      "community": 3,
+      "norm_label": "typescript"
+    },
+    {
+      "label": "postcss.config.mjs",
+      "file_type": "code",
+      "source_file": "postcss.config.mjs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "postcss_config",
+      "community": 13,
+      "norm_label": "postcss.config.mjs"
+    },
+    {
+      "label": "config",
+      "file_type": "code",
+      "source_file": "postcss.config.mjs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "postcss_config_config",
+      "community": 13,
+      "norm_label": "config"
+    },
+    {
+      "label": "tailwind.config.ts",
+      "file_type": "code",
+      "source_file": "tailwind.config.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tailwind_config",
+      "community": 14,
+      "norm_label": "tailwind.config.ts"
+    },
+    {
+      "label": "config",
+      "file_type": "code",
+      "source_file": "tailwind.config.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "tailwind_config_config",
+      "community": 14,
+      "norm_label": "config"
+    },
+    {
+      "label": "tsconfig.json",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tsconfig",
+      "community": 6,
+      "norm_label": "tsconfig.json"
+    },
+    {
+      "label": "compilerOptions",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "tsconfig_compileroptions",
+      "community": 2,
+      "norm_label": "compileroptions"
+    },
+    {
+      "label": "target",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "tsconfig_compileroptions_target",
+      "community": 2,
+      "norm_label": "target"
+    },
+    {
+      "label": "lib",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "tsconfig_compileroptions_lib",
+      "community": 2,
+      "norm_label": "lib"
+    },
+    {
+      "label": "dom",
+      "file_type": "concept",
+      "source_file": "tsconfig.json",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "ref_dom",
+      "community": 2,
+      "norm_label": "dom"
+    },
+    {
+      "label": "dom.iterable",
+      "file_type": "concept",
+      "source_file": "tsconfig.json",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "ref_dom_iterable",
+      "community": 2,
+      "norm_label": "dom.iterable"
+    },
+    {
+      "label": "esnext",
+      "file_type": "concept",
+      "source_file": "tsconfig.json",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "ref_esnext",
+      "community": 2,
+      "norm_label": "esnext"
+    },
+    {
+      "label": "allowJs",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "tsconfig_compileroptions_allowjs",
+      "community": 2,
+      "norm_label": "allowjs"
+    },
+    {
+      "label": "skipLibCheck",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "tsconfig_compileroptions_skiplibcheck",
+      "community": 2,
+      "norm_label": "skiplibcheck"
+    },
+    {
+      "label": "strict",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "tsconfig_compileroptions_strict",
+      "community": 2,
+      "norm_label": "strict"
+    },
+    {
+      "label": "noEmit",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "tsconfig_compileroptions_noemit",
+      "community": 2,
+      "norm_label": "noemit"
+    },
+    {
+      "label": "esModuleInterop",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "tsconfig_compileroptions_esmoduleinterop",
+      "community": 2,
+      "norm_label": "esmoduleinterop"
+    },
+    {
+      "label": "module",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "tsconfig_compileroptions_module",
+      "community": 2,
+      "norm_label": "module"
+    },
+    {
+      "label": "moduleResolution",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "tsconfig_compileroptions_moduleresolution",
+      "community": 2,
+      "norm_label": "moduleresolution"
+    },
+    {
+      "label": "baseUrl",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "tsconfig_compileroptions_baseurl",
+      "community": 2,
+      "norm_label": "baseurl"
+    },
+    {
+      "label": "paths",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "tsconfig_compileroptions_paths",
+      "community": 2,
+      "norm_label": "paths"
+    },
+    {
+      "label": "@/*",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "tsconfig_paths",
+      "community": 2,
+      "norm_label": "@/*"
+    },
+    {
+      "label": "./*",
+      "file_type": "concept",
+      "source_file": "tsconfig.json",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "ref",
+      "community": 2,
+      "norm_label": "./*"
+    },
+    {
+      "label": "resolveJsonModule",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "tsconfig_compileroptions_resolvejsonmodule",
+      "community": 2,
+      "norm_label": "resolvejsonmodule"
+    },
+    {
+      "label": "isolatedModules",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "tsconfig_compileroptions_isolatedmodules",
+      "community": 2,
+      "norm_label": "isolatedmodules"
+    },
+    {
+      "label": "jsx",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "tsconfig_compileroptions_jsx",
+      "community": 2,
+      "norm_label": "jsx"
+    },
+    {
+      "label": "incremental",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "tsconfig_compileroptions_incremental",
+      "community": 2,
+      "norm_label": "incremental"
+    },
+    {
+      "label": "plugins",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "tsconfig_compileroptions_plugins",
+      "community": 2,
+      "norm_label": "plugins"
+    },
+    {
+      "label": "include",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "tsconfig_include",
+      "community": 6,
+      "norm_label": "include"
+    },
+    {
+      "label": "next-env.d.ts",
+      "file_type": "concept",
+      "source_file": "tsconfig.json",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "ref_next_env_d_ts",
+      "community": 6,
+      "norm_label": "next-env.d.ts"
+    },
+    {
+      "label": "**/*.ts",
+      "file_type": "concept",
+      "source_file": "tsconfig.json",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "ref_ts",
+      "community": 6,
+      "norm_label": "**/*.ts"
+    },
+    {
+      "label": "**/*.tsx",
+      "file_type": "concept",
+      "source_file": "tsconfig.json",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "ref_tsx",
+      "community": 6,
+      "norm_label": "**/*.tsx"
+    },
+    {
+      "label": ".next/types/**/*.ts",
+      "file_type": "concept",
+      "source_file": "tsconfig.json",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "ref_next_types_ts",
+      "community": 6,
+      "norm_label": ".next/types/**/*.ts"
+    },
+    {
+      "label": ".next/dev/types/**/*.ts",
+      "file_type": "concept",
+      "source_file": "tsconfig.json",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "ref_next_dev_types_ts",
+      "community": 6,
+      "norm_label": ".next/dev/types/**/*.ts"
+    },
+    {
+      "label": "exclude",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "tsconfig_exclude",
+      "community": 6,
+      "norm_label": "exclude"
+    },
+    {
+      "label": "node_modules",
+      "file_type": "concept",
+      "source_file": "tsconfig.json",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "ref_node_modules",
+      "community": 6,
+      "norm_label": "node_modules"
+    },
+    {
+      "label": "ControlP Agent Contract",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "line 1",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "agents_agent_contract",
+      "community": 9,
+      "norm_label": "controlp agent contract"
+    },
+    {
+      "label": "Closing Barrier",
+      "file_type": "rationale",
+      "source_file": "AGENTS.md",
+      "source_location": "## Closing Barrier",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "agents_closing_barrier",
+      "community": 9,
+      "norm_label": "closing barrier"
+    },
+    {
+      "label": "Startup Protocol",
+      "file_type": "concept",
+      "source_file": "AGENTS.md",
+      "source_location": "## Startup",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "agents_startup_protocol",
+      "community": 9,
+      "norm_label": "startup protocol"
+    },
+    {
+      "label": "ControlP",
+      "file_type": "concept",
+      "source_file": "PROJECT_CONTEXT.md",
+      "source_location": "line 1",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_controlp",
+      "community": 8,
+      "norm_label": "controlp"
+    },
+    {
+      "label": "V.A.U.L.T Dashboard",
+      "file_type": "concept",
+      "source_file": "PROJECT_CONTEXT.md",
+      "source_location": "V.A.U.L.T.-style dashboard",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_vault_dashboard",
+      "community": 8,
+      "norm_label": "v.a.u.l.t dashboard"
+    },
+    {
+      "label": "3D Particle Core",
+      "file_type": "concept",
+      "source_file": "PROJECT_CONTEXT.md",
+      "source_location": "3D particle core (Three.js/React Three Fiber)",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_3d_particle_core",
+      "community": 8,
+      "norm_label": "3d particle core"
+    },
+    {
+      "label": "vaultSignals",
+      "file_type": "concept",
+      "source_file": "PROJECT_CONTEXT.md",
+      "source_location": "mutable signals layer (vaultSignals)",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_vault_signals",
+      "community": 8,
+      "norm_label": "vaultsignals"
+    },
+    {
+      "label": "ControlP Local-First OS",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "line 1",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_controlp_project",
+      "community": 8,
+      "norm_label": "controlp local-first os"
+    },
+    {
+      "label": "Read-Only Design Philosophy",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": "V1 is intentionally read-only",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_readonly_philosophy",
+      "community": 8,
+      "norm_label": "read-only design philosophy"
+    },
+    {
+      "label": "Sistema de Trazabilidad",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 1",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claude_trazabilidad_contract",
+      "community": 9,
+      "norm_label": "sistema de trazabilidad"
     }
   ],
   "links": [
@@ -418,9 +1684,9 @@
       "source_file": "/private/tmp/controlp-graph-src/app/api/projects/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_app_api_projects_route_ts",
-      "target": "projects_route_get",
-      "confidence_score": 1.0
+      "target": "projects_route_get"
     },
     {
       "relation": "calls",
@@ -439,9 +1705,9 @@
       "source_file": "/private/tmp/controlp-graph-src/app/layout.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_app_layout_tsx",
-      "target": "app_layout_metadata",
-      "confidence_score": 1.0
+      "target": "app_layout_metadata"
     },
     {
       "relation": "contains",
@@ -449,9 +1715,9 @@
       "source_file": "/private/tmp/controlp-graph-src/app/layout.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_app_layout_tsx",
-      "target": "app_layout_rootlayout",
-      "confidence_score": 1.0
+      "target": "app_layout_rootlayout"
     },
     {
       "relation": "contains",
@@ -459,9 +1725,9 @@
       "source_file": "/private/tmp/controlp-graph-src/app/page.tsx",
       "source_location": "L238",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_app_page_tsx",
-      "target": "app_page_fact",
-      "confidence_score": 1.0
+      "target": "app_page_fact"
     },
     {
       "relation": "contains",
@@ -469,9 +1735,9 @@
       "source_file": "/private/tmp/controlp-graph-src/app/page.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_app_page_tsx",
-      "target": "app_page_formatdate",
-      "confidence_score": 1.0
+      "target": "app_page_formatdate"
     },
     {
       "relation": "contains",
@@ -479,9 +1745,9 @@
       "source_file": "/private/tmp/controlp-graph-src/app/page.tsx",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_app_page_tsx",
-      "target": "app_page_home",
-      "confidence_score": 1.0
+      "target": "app_page_home"
     },
     {
       "relation": "contains",
@@ -489,9 +1755,9 @@
       "source_file": "/private/tmp/controlp-graph-src/app/page.tsx",
       "source_location": "L216",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_app_page_tsx",
-      "target": "app_page_paneltitle",
-      "confidence_score": 1.0
+      "target": "app_page_paneltitle"
     },
     {
       "relation": "contains",
@@ -499,9 +1765,9 @@
       "source_file": "/private/tmp/controlp-graph-src/app/page.tsx",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_app_page_tsx",
-      "target": "app_page_tone",
-      "confidence_score": 1.0
+      "target": "app_page_tone"
     },
     {
       "relation": "contains",
@@ -509,8 +1775,18 @@
       "source_file": "/private/tmp/controlp-graph-src/app/page.tsx",
       "source_location": "L225",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_app_page_tsx",
-      "target": "app_page_vitals",
+      "target": "app_page_vitals"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "app_page",
+      "target": "app_page_home",
       "confidence_score": 1.0
     },
     {
@@ -525,14 +1801,66 @@
       "target": "lib_controlp_getprojects"
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/page.tsx",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "app_page_home",
+      "target": "lib_ui_formatdate"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/page.tsx",
+      "source_location": "L131",
+      "weight": 1.0,
+      "source": "app_page_home",
+      "target": "lib_ui_tone"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L174",
+      "weight": 1.0,
+      "source": "app_page",
+      "target": "app_page_paneltitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L183",
+      "weight": 1.0,
+      "source": "app_page",
+      "target": "app_page_vitals",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L196",
+      "weight": 1.0,
+      "source": "app_page",
+      "target": "app_page_fact",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L243",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_buildalerts",
-      "confidence_score": 1.0
+      "target": "lib_controlp_buildalerts"
     },
     {
       "relation": "contains",
@@ -540,9 +1868,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L281",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_clean",
-      "confidence_score": 1.0
+      "target": "lib_controlp_clean"
     },
     {
       "relation": "contains",
@@ -550,9 +1878,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_config",
-      "confidence_score": 1.0
+      "target": "lib_controlp_config"
     },
     {
       "relation": "contains",
@@ -560,9 +1888,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L190",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_emptygit",
-      "confidence_score": 1.0
+      "target": "lib_controlp_emptygit"
     },
     {
       "relation": "contains",
@@ -570,9 +1898,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L201",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_emptygraphify",
-      "confidence_score": 1.0
+      "target": "lib_controlp_emptygraphify"
     },
     {
       "relation": "contains",
@@ -580,9 +1908,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_execfileasync",
-      "confidence_score": 1.0
+      "target": "lib_controlp_execfileasync"
     },
     {
       "relation": "contains",
@@ -590,9 +1918,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L181",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_exists",
-      "confidence_score": 1.0
+      "target": "lib_controlp_exists"
     },
     {
       "relation": "contains",
@@ -600,9 +1928,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L205",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_extractbullet",
-      "confidence_score": 1.0
+      "target": "lib_controlp_extractbullet"
     },
     {
       "relation": "contains",
@@ -610,9 +1938,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L211",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_extractlatestsession",
-      "confidence_score": 1.0
+      "target": "lib_controlp_extractlatestsession"
     },
     {
       "relation": "contains",
@@ -620,9 +1948,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L221",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_firstparagraph",
-      "confidence_score": 1.0
+      "target": "lib_controlp_firstparagraph"
     },
     {
       "relation": "contains",
@@ -630,9 +1958,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_getprojects",
-      "confidence_score": 1.0
+      "target": "lib_controlp_getprojects"
     },
     {
       "relation": "contains",
@@ -640,9 +1968,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L155",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_git",
-      "confidence_score": 1.0
+      "target": "lib_controlp_git"
     },
     {
       "relation": "contains",
@@ -650,9 +1978,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L236",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_inferstack",
-      "confidence_score": 1.0
+      "target": "lib_controlp_inferstack"
     },
     {
       "relation": "contains",
@@ -660,9 +1988,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L164",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_listsessions",
-      "confidence_score": 1.0
+      "target": "lib_controlp_listsessions"
     },
     {
       "relation": "contains",
@@ -670,9 +1998,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L230",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_normalizemarkdown",
-      "confidence_score": 1.0
+      "target": "lib_controlp_normalizemarkdown"
     },
     {
       "relation": "contains",
@@ -680,9 +2008,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_projectcard",
-      "confidence_score": 1.0
+      "target": "lib_controlp_projectcard"
     },
     {
       "relation": "contains",
@@ -690,9 +2018,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_projectsdir",
-      "confidence_score": 1.0
+      "target": "lib_controlp_projectsdir"
     },
     {
       "relation": "contains",
@@ -700,9 +2028,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L114",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_readgit",
-      "confidence_score": 1.0
+      "target": "lib_controlp_readgit"
     },
     {
       "relation": "contains",
@@ -710,9 +2038,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L135",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_readgraphify",
-      "confidence_score": 1.0
+      "target": "lib_controlp_readgraphify"
     },
     {
       "relation": "contains",
@@ -720,9 +2048,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L173",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_readifexists",
-      "confidence_score": 1.0
+      "target": "lib_controlp_readifexists"
     },
     {
       "relation": "contains",
@@ -730,9 +2058,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_readproject",
-      "confidence_score": 1.0
+      "target": "lib_controlp_readproject"
     },
     {
       "relation": "contains",
@@ -740,9 +2068,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L106",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_resolverepopath",
-      "confidence_score": 1.0
+      "target": "lib_controlp_resolverepopath"
     },
     {
       "relation": "contains",
@@ -750,9 +2078,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L261",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_scorehealth",
-      "confidence_score": 1.0
+      "target": "lib_controlp_scorehealth"
     },
     {
       "relation": "contains",
@@ -760,9 +2088,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L215",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "private_tmp_controlp_graph_src_lib_controlp_ts",
-      "target": "lib_controlp_section",
-      "confidence_score": 1.0
+      "target": "lib_controlp_section"
     },
     {
       "relation": "calls",
@@ -771,9 +2099,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L157",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_git",
-      "target": "lib_controlp_execfileasync",
-      "confidence_score": 1.0
+      "target": "lib_controlp_execfileasync"
     },
     {
       "relation": "calls",
@@ -782,9 +2110,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L84",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readproject",
-      "target": "lib_controlp_buildalerts",
-      "confidence_score": 1.0
+      "target": "lib_controlp_buildalerts"
     },
     {
       "relation": "calls",
@@ -793,9 +2121,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L92",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readproject",
-      "target": "lib_controlp_clean",
-      "confidence_score": 1.0
+      "target": "lib_controlp_clean"
     },
     {
       "relation": "calls",
@@ -804,9 +2132,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L70",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readproject",
-      "target": "lib_controlp_emptygit",
-      "confidence_score": 1.0
+      "target": "lib_controlp_emptygit"
     },
     {
       "relation": "calls",
@@ -815,9 +2143,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readproject",
-      "target": "lib_controlp_emptygraphify",
-      "confidence_score": 1.0
+      "target": "lib_controlp_emptygraphify"
     },
     {
       "relation": "calls",
@@ -826,9 +2154,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readproject",
-      "target": "lib_controlp_extractbullet",
-      "confidence_score": 1.0
+      "target": "lib_controlp_extractbullet"
     },
     {
       "relation": "calls",
@@ -837,9 +2165,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L77",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readproject",
-      "target": "lib_controlp_extractlatestsession",
-      "confidence_score": 1.0
+      "target": "lib_controlp_extractlatestsession"
     },
     {
       "relation": "calls",
@@ -848,9 +2176,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readproject",
-      "target": "lib_controlp_firstparagraph",
-      "confidence_score": 1.0
+      "target": "lib_controlp_firstparagraph"
     },
     {
       "relation": "calls",
@@ -859,9 +2187,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L80",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readproject",
-      "target": "lib_controlp_inferstack",
-      "confidence_score": 1.0
+      "target": "lib_controlp_inferstack"
     },
     {
       "relation": "calls",
@@ -870,9 +2198,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L63",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readproject",
-      "target": "lib_controlp_listsessions",
-      "confidence_score": 1.0
+      "target": "lib_controlp_listsessions"
     },
     {
       "relation": "calls",
@@ -881,9 +2209,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readproject",
-      "target": "lib_controlp_normalizemarkdown",
-      "confidence_score": 1.0
+      "target": "lib_controlp_normalizemarkdown"
     },
     {
       "relation": "calls",
@@ -892,9 +2220,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L70",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readproject",
-      "target": "lib_controlp_readgit",
-      "confidence_score": 1.0
+      "target": "lib_controlp_readgit"
     },
     {
       "relation": "calls",
@@ -903,9 +2231,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readproject",
-      "target": "lib_controlp_readgraphify",
-      "confidence_score": 1.0
+      "target": "lib_controlp_readgraphify"
     },
     {
       "relation": "calls",
@@ -914,9 +2242,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readproject",
-      "target": "lib_controlp_readifexists",
-      "confidence_score": 1.0
+      "target": "lib_controlp_readifexists"
     },
     {
       "relation": "calls",
@@ -925,9 +2253,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readproject",
-      "target": "lib_controlp_resolverepopath",
-      "confidence_score": 1.0
+      "target": "lib_controlp_resolverepopath"
     },
     {
       "relation": "calls",
@@ -936,9 +2264,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L85",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readproject",
-      "target": "lib_controlp_scorehealth",
-      "confidence_score": 1.0
+      "target": "lib_controlp_scorehealth"
     },
     {
       "relation": "calls",
@@ -947,9 +2275,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readproject",
-      "target": "lib_controlp_section",
-      "confidence_score": 1.0
+      "target": "lib_controlp_section"
     },
     {
       "relation": "calls",
@@ -958,9 +2286,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L109",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_resolverepopath",
-      "target": "lib_controlp_exists",
-      "confidence_score": 1.0
+      "target": "lib_controlp_exists"
     },
     {
       "relation": "calls",
@@ -969,9 +2297,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L115",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readgit",
-      "target": "lib_controlp_emptygit",
-      "confidence_score": 1.0
+      "target": "lib_controlp_emptygit"
     },
     {
       "relation": "calls",
@@ -980,9 +2308,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L115",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readgit",
-      "target": "lib_controlp_exists",
-      "confidence_score": 1.0
+      "target": "lib_controlp_exists"
     },
     {
       "relation": "calls",
@@ -991,9 +2319,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L118",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readgit",
-      "target": "lib_controlp_git",
-      "confidence_score": 1.0
+      "target": "lib_controlp_git"
     },
     {
       "relation": "calls",
@@ -1002,9 +2330,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L138",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readgraphify",
-      "target": "lib_controlp_emptygraphify",
-      "confidence_score": 1.0
+      "target": "lib_controlp_emptygraphify"
     },
     {
       "relation": "calls",
@@ -1013,9 +2341,9 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L138",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_readgraphify",
-      "target": "lib_controlp_exists",
-      "confidence_score": 1.0
+      "target": "lib_controlp_exists"
     },
     {
       "relation": "calls",
@@ -1024,10 +2352,1496 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L212",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_controlp_extractlatestsession",
-      "target": "lib_controlp_extractbullet",
+      "target": "lib_controlp_extractbullet"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/CenterStage.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "app_components_centerstage",
+      "target": "app_components_centerstage_centerstage",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/CenterStage.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "app_components_centerstage",
+      "target": "app_components_centerstage_vaultcore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "re_exports",
+      "context": "export",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/CenterStage.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "app_components_centerstage",
+      "target": "app_components_vault_core_types",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/CenterStage.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "app_components_centerstage",
+      "target": "app_components_vault_core_types_stagenode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "app_page",
+      "target": "app_components_centerstage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "app_page",
+      "target": "app_components_centerstage_centerstage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ParticleCore.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "app_components_vault_core_particlecore",
+      "target": "app_components_vault_core_geometry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ParticleCore.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "app_components_vault_core_particlecore",
+      "target": "app_components_vault_core_geometry_createlinksegments",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ParticleCore.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "app_components_vault_core_particlecore",
+      "target": "app_components_vault_core_geometry_createparticlefield",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ParticleCore.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "app_components_vault_core_particlecore",
+      "target": "app_components_vault_core_particlecore_gold",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ParticleCore.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "app_components_vault_core_particlecore",
+      "target": "app_components_vault_core_particlecore_pale",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ParticleCore.tsx",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "app_components_vault_core_particlecore",
+      "target": "app_components_vault_core_particlecore_particlecore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ParticleCore.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "app_components_vault_core_particlecore",
+      "target": "app_components_vault_core_projectnodes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ParticleCore.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "app_components_vault_core_particlecore",
+      "target": "app_components_vault_core_signals",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ParticleCore.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "app_components_vault_core_particlecore",
+      "target": "app_components_vault_core_signals_usevaultsignals",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ParticleCore.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "app_components_vault_core_particlecore",
+      "target": "app_components_vault_core_types",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ParticleCore.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "app_components_vault_core_particlecore",
+      "target": "app_components_vault_core_types_stagenode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ParticleCore.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "app_components_vault_core_particlecore",
+      "target": "app_components_vault_core_types_state_presets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/VaultCore.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_components_vault_core_vaultcore",
+      "target": "app_components_vault_core_particlecore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/components/vault-core/ParticleCore.tsx",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "app_components_vault_core_particlecore_particlecore",
+      "target": "app_components_vault_core_geometry_createlinksegments"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/components/vault-core/ParticleCore.tsx",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "app_components_vault_core_particlecore_particlecore",
+      "target": "app_components_vault_core_geometry_createparticlefield"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/components/vault-core/ParticleCore.tsx",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "app_components_vault_core_particlecore_particlecore",
+      "target": "app_components_vault_core_signals_usevaultsignals"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/VaultCore.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_components_vault_core_vaultcore",
+      "target": "app_components_vault_core_particlecore_particlecore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ProjectNodes.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "app_components_vault_core_projectnodes",
+      "target": "app_components_vault_core_projectnodes_goto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ProjectNodes.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "app_components_vault_core_projectnodes",
+      "target": "app_components_vault_core_projectnodes_nodeposition",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ProjectNodes.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "app_components_vault_core_projectnodes",
+      "target": "app_components_vault_core_projectnodes_projectnode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ProjectNodes.tsx",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "app_components_vault_core_projectnodes",
+      "target": "app_components_vault_core_projectnodes_projectnodes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ProjectNodes.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "app_components_vault_core_projectnodes",
+      "target": "app_components_vault_core_projectnodes_tone_colors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ProjectNodes.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "app_components_vault_core_projectnodes",
+      "target": "app_components_vault_core_signals",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ProjectNodes.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "app_components_vault_core_projectnodes",
+      "target": "app_components_vault_core_signals_vaultsignals",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ProjectNodes.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "app_components_vault_core_projectnodes",
+      "target": "app_components_vault_core_types",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ProjectNodes.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "app_components_vault_core_projectnodes",
+      "target": "app_components_vault_core_types_stagenode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ProjectNodes.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "app_components_vault_core_projectnodes",
+      "target": "lib_ui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ProjectNodes.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "app_components_vault_core_projectnodes",
+      "target": "lib_ui_tone",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ProjectNodes.tsx",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "app_components_vault_core_projectnodes_projectnodes",
+      "target": "app_components_vault_core_projectnodes_nodeposition",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/ProjectNodes.tsx",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "app_components_vault_core_projectnodes_projectnode",
+      "target": "app_components_vault_core_projectnodes_goto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/components/vault-core/ProjectNodes.tsx",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "app_components_vault_core_projectnodes_projectnode",
+      "target": "lib_ui_tone"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/VaultCore.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "app_components_vault_core_vaultcore",
+      "target": "app_components_vault_core_types",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/VaultCore.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "app_components_vault_core_vaultcore",
+      "target": "app_components_vault_core_types_stagenode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/VaultCore.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "app_components_vault_core_vaultcore",
+      "target": "app_components_vault_core_vaultcore_vaultcore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/geometry.ts",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "app_components_vault_core_geometry",
+      "target": "app_components_vault_core_geometry_createlinksegments",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/geometry.ts",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "app_components_vault_core_geometry",
+      "target": "app_components_vault_core_geometry_createparticlefield",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/geometry.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "app_components_vault_core_geometry",
+      "target": "app_components_vault_core_geometry_createrandom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/geometry.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "app_components_vault_core_geometry",
+      "target": "app_components_vault_core_geometry_particlefield",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/geometry.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "app_components_vault_core_geometry_createparticlefield",
+      "target": "app_components_vault_core_geometry_createrandom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/signals.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "app_components_vault_core_signals",
+      "target": "app_components_vault_core_signals_usevaultsignals",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/signals.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "app_components_vault_core_signals",
+      "target": "app_components_vault_core_signals_vaultsignals",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/signals.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_components_vault_core_signals",
+      "target": "app_components_vault_core_types",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/signals.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_components_vault_core_signals",
+      "target": "app_components_vault_core_types_default_signals",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/signals.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_components_vault_core_signals",
+      "target": "app_components_vault_core_types_vaultsignals",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/types.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_components_vault_core_types",
+      "target": "app_components_vault_core_types_corestate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/types.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "app_components_vault_core_types",
+      "target": "app_components_vault_core_types_default_signals",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/types.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "app_components_vault_core_types",
+      "target": "app_components_vault_core_types_stagenode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/types.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "app_components_vault_core_types",
+      "target": "app_components_vault_core_types_state_presets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/types.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "app_components_vault_core_types",
+      "target": "app_components_vault_core_types_vaultsignals",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_page",
+      "target": "lib_ui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_page",
+      "target": "lib_ui_formatdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_page",
+      "target": "lib_ui_tone",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/ui.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "lib_ui",
+      "target": "lib_ui_formatdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/ui.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "lib_ui",
+      "target": "lib_ui_tone",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "next-env.d.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "next_env_d_rationale_5",
+      "target": "next_env_d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next.config.mjs",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "next_config",
+      "target": "next_config_nextconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_dependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_devdependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_private",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_scripts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_version",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_build",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_dev",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_lint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_next",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_three_drei",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_three_fiber",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_three",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_types_three",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_dependencies_react_three_drei",
+      "target": "react_three_drei",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_dependencies_react_three_fiber",
+      "target": "react_three_fiber",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_dependencies_types_three",
+      "target": "types_three",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_dependencies_next",
+      "target": "next",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_dependencies_react",
+      "target": "react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_dependencies_react_dom",
+      "target": "react_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_dependencies_three",
+      "target": "three",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_autoprefixer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_postcss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_tailwindcss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_tailwindcss_postcss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_react_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_typescript",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_devdependencies_tailwindcss_postcss",
+      "target": "tailwindcss_postcss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_devdependencies_types_node",
+      "target": "types_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_devdependencies_types_react",
+      "target": "types_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_devdependencies_types_react_dom",
+      "target": "types_react_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_devdependencies_autoprefixer",
+      "target": "autoprefixer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_devdependencies_postcss",
+      "target": "postcss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_devdependencies_tailwindcss",
+      "target": "tailwindcss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import",
+      "source": "package_devdependencies_typescript",
+      "target": "typescript",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "postcss.config.mjs",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "postcss_config",
+      "target": "postcss_config_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tailwind.config.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "tailwind_config",
+      "target": "tailwind_config_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "tsconfig",
+      "target": "tsconfig_compileroptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "tsconfig",
+      "target": "tsconfig_exclude",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "tsconfig",
+      "target": "tsconfig_include",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_allowjs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_baseurl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_esmoduleinterop",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_incremental",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_isolatedmodules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_lib",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_module",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_moduleresolution",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_noemit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_paths",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_plugins",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_resolvejsonmodule",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_skiplibcheck",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_strict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_target",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import",
+      "source": "tsconfig_compileroptions_lib",
+      "target": "ref_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import",
+      "source": "tsconfig_compileroptions_lib",
+      "target": "ref_dom_iterable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import",
+      "source": "tsconfig_compileroptions_lib",
+      "target": "ref_esnext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions_paths",
+      "target": "tsconfig_paths",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import",
+      "source": "tsconfig_paths",
+      "target": "ref",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import",
+      "source": "tsconfig_include",
+      "target": "ref_next_dev_types_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import",
+      "source": "tsconfig_include",
+      "target": "ref_next_env_d_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import",
+      "source": "tsconfig_include",
+      "target": "ref_next_types_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import",
+      "source": "tsconfig_include",
+      "target": "ref_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import",
+      "source": "tsconfig_include",
+      "target": "ref_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L39",
+      "weight": 1.0,
+      "context": "import",
+      "source": "tsconfig_exclude",
+      "target": "ref_node_modules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AGENTS.md",
+      "source_location": "## Closing Barrier",
+      "weight": 1.0,
+      "source": "agents_agent_contract",
+      "target": "agents_closing_barrier"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AGENTS.md",
+      "source_location": "## Startup",
+      "weight": 1.0,
+      "source": "agents_agent_contract",
+      "target": "agents_startup_protocol"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AGENTS.md",
+      "source_location": "canonical traceability contract",
+      "weight": 1.0,
+      "source": "agents_agent_contract",
+      "target": "claude_trazabilidad_contract"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT_CONTEXT.md",
+      "source_location": "3D particle core",
+      "weight": 1.0,
+      "source": "project_context_controlp",
+      "target": "project_context_3d_particle_core"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT_CONTEXT.md",
+      "source_location": "V.A.U.L.T.-style dashboard",
+      "weight": 1.0,
+      "source": "project_context_controlp",
+      "target": "project_context_vault_dashboard"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "PROJECT_CONTEXT.md",
+      "source_location": null,
+      "weight": 0.95,
+      "source": "project_context_controlp",
+      "target": "readme_controlp_project"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT_CONTEXT.md",
+      "source_location": "mutable signals layer (vaultSignals)",
+      "weight": 1.0,
+      "source": "project_context_3d_particle_core",
+      "target": "project_context_vault_signals"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "V1 is intentionally read-only",
+      "weight": 1.0,
+      "source": "readme_controlp_project",
+      "target": "readme_readonly_philosophy"
     }
   ],
-  "hyperedges": []
+  "hyperedges": [
+    {
+      "id": "vault_core_subsystem",
+      "label": "Vault Core Subsystem",
+      "nodes": [
+        "project_context_3d_particle_core",
+        "project_context_vault_signals",
+        "project_context_vault_dashboard"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "PROJECT_CONTEXT.md"
+    }
+  ],
+  "built_at_commit": "6e44314eb748cfe200f99d1989f8a43fec5af043"
 }

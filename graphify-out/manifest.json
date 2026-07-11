@@ -1,22 +1,117 @@
 {
   "app/api/projects/route.ts": {
-    "mtime": 1783805791.9889195,
+    "mtime": 1783802942.6204188,
     "ast_hash": "70a7fb7227d7bec871ecbe911e77e22a",
     "semantic_hash": "70a7fb7227d7bec871ecbe911e77e22a"
   },
   "app/layout.tsx": {
-    "mtime": 1783805791.9889207,
+    "mtime": 1783802942.7362905,
     "ast_hash": "41c9e369f4733b6cd3aeff1c0735d37f",
     "semantic_hash": "41c9e369f4733b6cd3aeff1c0735d37f"
   },
   "app/page.tsx": {
-    "mtime": 1783805791.805083,
-    "ast_hash": "22cdf06904f3aefd8fff03346d7b14a8",
-    "semantic_hash": "22cdf06904f3aefd8fff03346d7b14a8"
+    "mtime": 1783809106.0040317,
+    "ast_hash": "f0ac9c728b8ce0be68e7fc264caac3b7",
+    "semantic_hash": "f0ac9c728b8ce0be68e7fc264caac3b7"
   },
   "lib/controlp.ts": {
-    "mtime": 1783805793.4346354,
+    "mtime": 1783803300.8451383,
     "ast_hash": "efbe3762db144a7075d2d1de5a700ad1",
     "semantic_hash": "efbe3762db144a7075d2d1de5a700ad1"
+  },
+  ".claude/settings.local.json": {
+    "mtime": 1783812171.2432847,
+    "ast_hash": "88e44acdf0506a483227cddccd403d47",
+    "semantic_hash": "88e44acdf0506a483227cddccd403d47"
+  },
+  "app/components/CenterStage.tsx": {
+    "mtime": 1783810287.6954768,
+    "ast_hash": "de39332246ca2db5aed16781d7e8bc69",
+    "semantic_hash": "de39332246ca2db5aed16781d7e8bc69"
+  },
+  "app/components/vault-core/ParticleCore.tsx": {
+    "mtime": 1783810272.9661674,
+    "ast_hash": "655ecfa0ec47c3ce06b52c450489de94",
+    "semantic_hash": "655ecfa0ec47c3ce06b52c450489de94"
+  },
+  "app/components/vault-core/ProjectNodes.tsx": {
+    "mtime": 1783810850.9857285,
+    "ast_hash": "9117dd66d787c6a7376251c05f4d8214",
+    "semantic_hash": "9117dd66d787c6a7376251c05f4d8214"
+  },
+  "app/components/vault-core/VaultCore.tsx": {
+    "mtime": 1783810855.9666471,
+    "ast_hash": "3f9f22c511e2cca3837bccb6e434e3cf",
+    "semantic_hash": "3f9f22c511e2cca3837bccb6e434e3cf"
+  },
+  "app/components/vault-core/geometry.ts": {
+    "mtime": 1783809042.6994038,
+    "ast_hash": "c82759fcc0d3bd84deadd700d00c056d",
+    "semantic_hash": "c82759fcc0d3bd84deadd700d00c056d"
+  },
+  "app/components/vault-core/signals.tsx": {
+    "mtime": 1783809863.034191,
+    "ast_hash": "7710517180b74eae412679ec300355a7",
+    "semantic_hash": "7710517180b74eae412679ec300355a7"
+  },
+  "app/components/vault-core/types.ts": {
+    "mtime": 1783810252.3951972,
+    "ast_hash": "36674997d1556e84db05dc065629b504",
+    "semantic_hash": "36674997d1556e84db05dc065629b504"
+  },
+  "lib/ui.ts": {
+    "mtime": 1783809079.965685,
+    "ast_hash": "a9266b69366c2ed7c018f320b63e04f4",
+    "semantic_hash": "a9266b69366c2ed7c018f320b63e04f4"
+  },
+  "next-env.d.ts": {
+    "mtime": 1783809701.13492,
+    "ast_hash": "d0f8375ae1199dc7acd3977fc33b78b8",
+    "semantic_hash": "d0f8375ae1199dc7acd3977fc33b78b8"
+  },
+  "next.config.mjs": {
+    "mtime": 1783802941.6640406,
+    "ast_hash": "21958f5752add43cc47ab0ff5172cd46",
+    "semantic_hash": "21958f5752add43cc47ab0ff5172cd46"
+  },
+  "package.json": {
+    "mtime": 1783810222.1558776,
+    "ast_hash": "b9903c61e98ad621d688921fc2f35281",
+    "semantic_hash": "b9903c61e98ad621d688921fc2f35281"
+  },
+  "postcss.config.mjs": {
+    "mtime": 1783803163.7920902,
+    "ast_hash": "a110e491b61548fc540a358981371525",
+    "semantic_hash": "a110e491b61548fc540a358981371525"
+  },
+  "tailwind.config.ts": {
+    "mtime": 1783802941.892266,
+    "ast_hash": "204e5b6b574045b4d2e5bb030e7ddf06",
+    "semantic_hash": "204e5b6b574045b4d2e5bb030e7ddf06"
+  },
+  "tsconfig.json": {
+    "mtime": 1783803172.4867914,
+    "ast_hash": "07ebcb4b0f2a913068d79f45d8cc4d0a",
+    "semantic_hash": "07ebcb4b0f2a913068d79f45d8cc4d0a"
+  },
+  "AGENTS.md": {
+    "mtime": 1783808032.777791,
+    "ast_hash": "d09313b0ffa928ee005e26f29c07cac2",
+    "semantic_hash": "d09313b0ffa928ee005e26f29c07cac2"
+  },
+  "CLAUDE.md": {
+    "mtime": 1783808032.8900058,
+    "ast_hash": "9b2fe3d975790259456f4d9b060d481d",
+    "semantic_hash": "9b2fe3d975790259456f4d9b060d481d"
+  },
+  "PROJECT_CONTEXT.md": {
+    "mtime": 1783811377.070835,
+    "ast_hash": "1a8b51dd4ada91d428a499a621214db4",
+    "semantic_hash": "1a8b51dd4ada91d428a499a621214db4"
+  },
+  "README.md": {
+    "mtime": 1783802943.0818298,
+    "ast_hash": "b04e3cbaaf943182c7187666255ed0a2",
+    "semantic_hash": "b04e3cbaaf943182c7187666255ed0a2"
   }
 }
