@@ -1,0 +1,22 @@
+{
+  "app/api/projects/route.ts": {
+    "mtime": 1783805791.9889195,
+    "ast_hash": "70a7fb7227d7bec871ecbe911e77e22a",
+    "semantic_hash": "70a7fb7227d7bec871ecbe911e77e22a"
+  },
+  "app/layout.tsx": {
+    "mtime": 1783805791.9889207,
+    "ast_hash": "41c9e369f4733b6cd3aeff1c0735d37f",
+    "semantic_hash": "41c9e369f4733b6cd3aeff1c0735d37f"
+  },
+  "app/page.tsx": {
+    "mtime": 1783805791.805083,
+    "ast_hash": "22cdf06904f3aefd8fff03346d7b14a8",
+    "semantic_hash": "22cdf06904f3aefd8fff03346d7b14a8"
+  },
+  "lib/controlp.ts": {
+    "mtime": 1783805793.4346354,
+    "ast_hash": "efbe3762db144a7075d2d1de5a700ad1",
+    "semantic_hash": "efbe3762db144a7075d2d1de5a700ad1"
+  }
+}

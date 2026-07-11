@@ -1,0 +1,753 @@
+@import "tailwindcss";
+
+:root {
+  --black: #030302;
+  --ink: #080704;
+  --panel: rgba(8, 7, 4, 0.72);
+  --panel-strong: rgba(13, 11, 7, 0.9);
+  --paper: #f3ede0;
+  --dim: #756a5d;
+  --line: rgba(219, 184, 135, 0.18);
+  --line-soft: rgba(219, 184, 135, 0.09);
+  --amber: #d7ac64;
+  --hot: #f0cf86;
+  --green: #bcca74;
+  --red: #d97858;
+  --blue: #8ab5c1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--black);
+  color: var(--paper);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Avenir Next Condensed", "DIN Condensed", "Arial Narrow", sans-serif;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(215, 172, 100, 0.22), transparent 30%),
+    radial-gradient(circle at 53% 45%, rgba(240, 207, 134, 0.1), transparent 24%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.95), transparent 24%, transparent 76%, rgba(0, 0, 0, 0.95)),
+    var(--black);
+}
+
+body::before {
+  background-image: radial-gradient(rgba(243, 237, 224, 0.32) 1px, transparent 1px);
+  background-size: 58px 58px;
+  content: "";
+  inset: 0;
+  opacity: 0.08;
+  pointer-events: none;
+  position: fixed;
+}
+
+button,
+a {
+  color: inherit;
+  font: inherit;
+}
+
+button {
+  background: none;
+  border: 0;
+}
+
+.vaultShell {
+  min-height: 100vh;
+  padding: 28px 32px 40px;
+  position: relative;
+}
+
+.vaultTop {
+  align-items: start;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 340px minmax(0, 1fr) 240px;
+  min-height: 86px;
+  position: relative;
+  z-index: 3;
+}
+
+.brand h1 {
+  font-size: clamp(38px, 3vw, 58px);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  line-height: 0.9;
+  margin: 0;
+  text-shadow: 0 0 18px rgba(243, 237, 224, 0.22);
+}
+
+.brand p,
+.timeBlock small,
+.panelTitle span,
+.vital small,
+.recordFact small,
+.primaryDirective small {
+  color: var(--dim);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.brand p {
+  margin: 8px 0 0;
+}
+
+.stateLine {
+  color: var(--amber);
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  padding-top: 9px;
+}
+
+.stateLine span {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.stateLine span::before {
+  content: "•";
+  margin-right: 10px;
+  text-shadow: 0 0 10px var(--hot);
+}
+
+.timeBlock {
+  text-align: right;
+}
+
+.timeBlock strong {
+  display: block;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: clamp(46px, 4vw, 70px);
+  font-weight: 200;
+  letter-spacing: 0;
+  line-height: 0.86;
+}
+
+.osGrid {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 360px minmax(520px, 1fr) 370px;
+  min-height: 760px;
+  position: relative;
+}
+
+.leftPanel,
+.rightPanel {
+  background: linear-gradient(90deg, rgba(3, 3, 2, 0.95), rgba(3, 3, 2, 0.56));
+  padding-top: 22px;
+  position: relative;
+  z-index: 2;
+}
+
+.rightPanel {
+  background: linear-gradient(270deg, rgba(3, 3, 2, 0.95), rgba(3, 3, 2, 0.56));
+}
+
+.panelTitle {
+  align-items: center;
+  border-bottom: 1px solid var(--line-soft);
+  color: var(--amber);
+  display: flex;
+  gap: 12px;
+  margin: 0 0 18px;
+  padding: 0 0 8px;
+}
+
+.panelTitle strong {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+}
+
+.panelTitle span {
+  letter-spacing: 0.18em;
+}
+
+.panelTitle::after {
+  background: var(--line);
+  content: "";
+  flex: 1;
+  height: 1px;
+}
+
+.vital {
+  border-bottom: 1px solid var(--line-soft);
+  margin-bottom: 14px;
+  padding: 0 0 16px;
+  position: relative;
+}
+
+.vital div {
+  align-items: end;
+  display: flex;
+  justify-content: space-between;
+}
+
+.vital small {
+  color: #a4927c;
+  display: block;
+  letter-spacing: 0.22em;
+}
+
+.vital strong {
+  display: block;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 38px;
+  font-weight: 300;
+  line-height: 0.85;
+}
+
+.vital span {
+  color: #b79f80;
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  margin: 10px 0 8px;
+  text-align: right;
+}
+
+.vital i {
+  background:
+    linear-gradient(90deg, var(--amber), var(--hot) 70%, transparent 70%),
+    linear-gradient(90deg, rgba(215, 172, 100, 0.18), rgba(215, 172, 100, 0.18));
+  display: block;
+  height: 2px;
+}
+
+.directives {
+  list-style: none;
+  margin: 0 0 36px;
+  padding: 0;
+}
+
+.directives li {
+  align-items: start;
+  color: #a8a098;
+  display: grid;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 12px;
+  gap: 10px;
+  grid-template-columns: 11px 1fr;
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+.directives span {
+  border: 1px solid var(--dim);
+  height: 9px;
+  margin-top: 3px;
+  width: 9px;
+}
+
+.docTrail {
+  display: grid;
+  gap: 9px;
+}
+
+.docTrail a {
+  align-items: center;
+  color: #9f9790;
+  display: flex;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 12px;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.docTrail small {
+  color: var(--dim);
+}
+
+.centerStage {
+  min-height: 760px;
+  position: relative;
+}
+
+.vaultGraph {
+  height: 100%;
+  min-height: 730px;
+  overflow: hidden;
+  position: relative;
+}
+
+.stars {
+  background-image:
+    radial-gradient(circle, rgba(243, 237, 224, 0.62) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(215, 172, 100, 0.5) 0 1px, transparent 1.4px);
+  background-position: 0 0, 23px 17px;
+  background-size: 71px 71px, 109px 109px;
+  filter: blur(0.2px);
+  inset: 0;
+  opacity: 0.2;
+  position: absolute;
+}
+
+.floorGrid {
+  background:
+    linear-gradient(rgba(215, 172, 100, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(215, 172, 100, 0.15) 1px, transparent 1px);
+  background-size: 38px 38px;
+  bottom: -18%;
+  height: 46%;
+  left: -12%;
+  opacity: 0.35;
+  position: absolute;
+  right: -12%;
+  transform: perspective(680px) rotateX(62deg);
+  transform-origin: center bottom;
+}
+
+.graphCore {
+  animation: breathe 5s ease-in-out infinite;
+  background:
+    radial-gradient(circle, rgba(243, 237, 224, 0.92), rgba(240, 207, 134, 0.58) 15%, transparent 16%),
+    radial-gradient(circle, transparent 0 31%, rgba(215, 172, 100, 0.26) 32%, transparent 33%),
+    repeating-conic-gradient(from 12deg, rgba(215, 172, 100, 0.18) 0deg 8deg, transparent 8deg 18deg);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 70px rgba(215, 172, 100, 0.45));
+  height: min(58vw, 690px);
+  left: 50%;
+  mask-image: radial-gradient(circle, black 0 64%, transparent 72%);
+  opacity: 0.92;
+  position: absolute;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  width: min(58vw, 690px);
+}
+
+.graphCore::before,
+.graphCore::after {
+  border: 1px solid rgba(215, 172, 100, 0.22);
+  border-radius: 50%;
+  content: "";
+  inset: 13%;
+  position: absolute;
+}
+
+.graphCore::after {
+  border-style: dashed;
+  inset: 25%;
+  transform: rotate(18deg);
+}
+
+.projectNode {
+  align-items: center;
+  color: var(--paper);
+  display: flex;
+  gap: 9px;
+  left: var(--x);
+  position: absolute;
+  text-decoration: none;
+  top: var(--y);
+  transform: translate(-50%, -50%) scale(var(--s));
+  z-index: 4;
+}
+
+.projectNode i {
+  background: var(--green);
+  border-radius: 50%;
+  box-shadow: 0 0 18px currentColor;
+  color: var(--green);
+  height: 10px;
+  width: 10px;
+}
+
+.projectNode.warn i {
+  background: var(--amber);
+  color: var(--amber);
+}
+
+.projectNode.bad i {
+  background: var(--red);
+  color: var(--red);
+}
+
+.projectNode b {
+  background: rgba(3, 3, 2, 0.76);
+  border: 1px solid var(--line);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  padding: 5px 8px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.signalDot {
+  animation: flicker 2.4s ease-in-out infinite;
+  animation-delay: var(--d);
+  background: rgba(240, 207, 134, 0.82);
+  border-radius: 50%;
+  box-shadow: 0 0 14px rgba(240, 207, 134, 0.75);
+  height: 4px;
+  left: var(--x);
+  position: absolute;
+  top: var(--y);
+  width: 4px;
+  z-index: 3;
+}
+
+.primaryDirective {
+  bottom: 34px;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%);
+  width: min(620px, 84%);
+  z-index: 5;
+}
+
+.primaryDirective strong {
+  display: block;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: clamp(74px, 9vw, 138px);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 0.82;
+  text-shadow: 0 0 28px rgba(243, 237, 224, 0.2);
+}
+
+.primaryDirective span {
+  border-top: 2px solid var(--amber);
+  color: var(--dim);
+  display: block;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  margin-top: 14px;
+  padding-top: 9px;
+}
+
+.commandDeck {
+  display: grid;
+  gap: 1px 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 30px;
+}
+
+.commandDeck button {
+  border-bottom: 1px solid var(--line-soft);
+  color: #ada095;
+  cursor: default;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  padding: 10px 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.commandDeck button::before {
+  color: var(--amber);
+  content: "•";
+  margin-right: 10px;
+  text-shadow: 0 0 10px var(--hot);
+}
+
+.schedule {
+  color: #8d847e;
+  display: grid;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.schedule div {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 48px 1fr;
+}
+
+.schedule time {
+  color: #8e7660;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 12px;
+}
+
+.schedule p {
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 12px;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.schedule .now p {
+  color: var(--paper);
+  font-weight: 800;
+}
+
+.schedule .now p::after {
+  border: 1px solid var(--line);
+  color: var(--amber);
+  content: "NOW";
+  font-size: 9px;
+  margin-left: 8px;
+  padding: 1px 4px;
+}
+
+.wire {
+  color: #a6a09c;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 12px;
+  line-height: 1.38;
+}
+
+.wire p {
+  margin: 0 0 12px;
+  padding-left: 12px;
+  position: relative;
+}
+
+.wire p::before {
+  color: var(--amber);
+  content: "›";
+  left: 0;
+  position: absolute;
+}
+
+.projectDeck {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 18px;
+  position: relative;
+  z-index: 4;
+}
+
+.projectRecord {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 18px;
+}
+
+.projectRecord header,
+.projectRecord footer {
+  align-items: start;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.projectRecord header small {
+  color: var(--dim);
+  display: block;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.projectRecord h2 {
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 0.9;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.projectRecord header > strong {
+  border: 1px solid currentColor;
+  color: var(--green);
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  min-width: 60px;
+  padding: 7px;
+  text-align: center;
+}
+
+.projectRecord header > strong.warn {
+  color: var(--amber);
+}
+
+.projectRecord header > strong.bad {
+  color: var(--red);
+}
+
+.projectRecord > p {
+  color: #c5bdb5;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 12px;
+  line-height: 1.48;
+  margin: 16px 0;
+  min-height: 54px;
+}
+
+.recordGrid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.recordFact {
+  background: var(--panel-strong);
+  min-width: 0;
+  padding: 10px;
+}
+
+.recordFact small {
+  display: block;
+  letter-spacing: 0.16em;
+}
+
+.recordFact span {
+  display: block;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.recordBody {
+  border-top: 1px solid var(--line-soft);
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 16px;
+  padding-top: 16px;
+}
+
+.recordBody h3 {
+  color: var(--amber);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  margin: 0 0 7px;
+  text-transform: uppercase;
+}
+
+.recordBody p {
+  color: #aca49d;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 11px;
+  line-height: 1.42;
+  margin: 0;
+}
+
+.projectRecord footer {
+  border-top: 1px solid var(--line-soft);
+  margin-top: 16px;
+  padding-top: 12px;
+}
+
+.projectRecord footer span {
+  color: var(--dim);
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 11px;
+}
+
+.projectRecord footer div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: end;
+}
+
+.projectRecord footer b {
+  background: rgba(217, 120, 88, 0.12);
+  color: #e7ad98;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  padding: 4px 6px;
+  text-transform: uppercase;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.78;
+    transform: translate(-50%, -50%) scale(0.985);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.015);
+  }
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.7);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+}
+
+@media (max-width: 1180px) {
+  .vaultTop,
+  .osGrid,
+  .projectDeck {
+    grid-template-columns: 1fr;
+  }
+
+  .timeBlock {
+    text-align: left;
+  }
+
+  .stateLine {
+    justify-content: start;
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .leftPanel,
+  .rightPanel {
+    background: rgba(3, 3, 2, 0.72);
+  }
+
+  .vaultGraph {
+    min-height: 560px;
+  }
+
+  .graphCore {
+    height: min(88vw, 620px);
+    width: min(88vw, 620px);
+  }
+}
+
+@media (max-width: 680px) {
+  .vaultShell {
+    padding: 18px;
+  }
+
+  .brand h1 {
+    font-size: 34px;
+  }
+
+  .commandDeck,
+  .recordGrid,
+  .recordBody {
+    grid-template-columns: 1fr;
+  }
+
+  .projectRecord header,
+  .projectRecord footer {
+    flex-direction: column;
+  }
+
+  .primaryDirective strong {
+    font-size: 68px;
+  }
+}
