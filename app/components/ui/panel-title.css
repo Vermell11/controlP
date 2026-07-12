@@ -1,0 +1,27 @@
+.panelTitle {
+  align-items: center;
+  border-bottom: 1px solid var(--line-soft);
+  color: var(--amber);
+  display: flex;
+  gap: 12px;
+  margin: 0 0 18px;
+  padding: 0 0 8px;
+}
+
+.panelTitle strong {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+}
+
+.panelTitle span {
+  letter-spacing: 0.18em;
+}
+
+.panelTitle::after {
+  background: var(--line);
+  content: "";
+  flex: 1;
+  height: 1px;
+}

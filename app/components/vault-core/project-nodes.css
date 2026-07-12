@@ -1,0 +1,23 @@
+.projectNode3d {
+  background: rgba(3, 3, 2, 0.76);
+  border: 1px solid var(--line);
+  color: var(--paper);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  padding: 5px 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transform: translateY(-100%);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.projectNode3d:hover,
+.projectNode3d.isHover {
+  border-color: var(--amber);
+  box-shadow: 0 0 18px rgba(215, 172, 100, 0.35);
+}
+

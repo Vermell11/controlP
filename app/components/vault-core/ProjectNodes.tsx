@@ -1,5 +1,6 @@
 "use client";
 
+import "./project-nodes.css";
 import { useMemo, useState } from "react";
 import { Html, useCursor } from "@react-three/drei";
 import * as THREE from "three";
@@ -21,8 +22,13 @@ function nodePosition(index: number, total: number): [number, number, number] {
   return [Math.cos(angle) * r * NODE_RADIUS, y * NODE_RADIUS * 0.72, Math.sin(angle) * r * NODE_RADIUS];
 }
 
+/** Ruta de la ficha del proyecto (página secundaria /p/[proyecto]). */
+function projectPath(name: string) {
+  return `/p/${encodeURIComponent(name)}`;
+}
+
 function goTo(name: string) {
-  window.location.hash = name;
+  window.location.assign(projectPath(name));
 }
 
 function ProjectNode({ node, position }: { node: StageNode; position: [number, number, number] }) {
@@ -66,7 +72,7 @@ function ProjectNode({ node, position }: { node: StageNode; position: [number, n
       <Html center distanceFactor={24} position={[0, 0.8 * scale, 0]} zIndexRange={[10, 5]}>
         <a
           className={`projectNode3d${hovered ? " isHover" : ""}`}
-          href={`#${node.name}`}
+          href={projectPath(node.name)}
           onPointerEnter={() => setHover(true)}
           onPointerLeave={() => setHover(false)}
         >

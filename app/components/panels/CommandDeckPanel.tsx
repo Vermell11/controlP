@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import type { PanelProps } from "./types";
 
 const COMMANDS = [
   "Metrics Pull",
@@ -17,7 +18,8 @@ const COMMANDS = [
  * Command Deck operativo: cada botón encola un intent en /api/intents
  * (runtime/intents.jsonl). El contador "queued" refleja la cola real.
  */
-export default function CommandDeck({ activeCount }: { activeCount: number }) {
+export default function CommandDeckPanel({ projects }: PanelProps) {
+  const activeCount = projects.filter((project) => project.openSession).length;
   const [queued, setQueued] = useState<number | null>(null);
   const [sent, setSent] = useState<string | null>(null);
 

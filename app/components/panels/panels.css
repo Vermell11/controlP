@@ -1,0 +1,272 @@
+.vital {
+  border-bottom: 1px solid var(--line-soft);
+  margin-bottom: 14px;
+  padding: 0 0 16px;
+  position: relative;
+}
+
+.vital div {
+  align-items: end;
+  display: flex;
+  justify-content: space-between;
+}
+
+.vital small {
+  color: #a4927c;
+  display: block;
+  letter-spacing: 0.22em;
+}
+
+.vital strong {
+  display: block;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 38px;
+  font-weight: 300;
+  line-height: 0.85;
+}
+
+.vital span {
+  color: #b79f80;
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  margin: 10px 0 8px;
+  text-align: right;
+}
+
+.vital i {
+  background:
+    linear-gradient(90deg, var(--amber), var(--hot) 70%, transparent 70%),
+    linear-gradient(90deg, rgba(215, 172, 100, 0.18), rgba(215, 172, 100, 0.18));
+  display: block;
+  height: 2px;
+}
+
+.directives {
+  list-style: none;
+  margin: 0 0 36px;
+  padding: 0;
+}
+
+.directives li {
+  align-items: start;
+  color: #a8a098;
+  display: grid;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 12px;
+  gap: 10px;
+  grid-template-columns: 11px 1fr;
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+.directives span {
+  border: 1px solid var(--dim);
+  height: 9px;
+  margin-top: 3px;
+  width: 9px;
+}
+
+.docTrail {
+  display: grid;
+  gap: 9px;
+}
+
+.docTrail a {
+  align-items: center;
+  color: #9f9790;
+  display: flex;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 12px;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.docTrail small {
+  color: var(--dim);
+}
+
+.commandDeck {
+  display: grid;
+  gap: 1px 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 30px;
+}
+
+.commandDeck button {
+  border-bottom: 1px solid var(--line-soft);
+  color: #ada095;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  padding: 10px 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.commandDeck button.sent {
+  color: var(--amber);
+}
+
+.commandDeck button.sent::after {
+  border: 1px solid var(--line);
+  content: "QUEUED";
+  font-size: 9px;
+  margin-left: 8px;
+  padding: 1px 4px;
+}
+
+.commandDeck button::before {
+  color: var(--amber);
+  content: "•";
+  margin-right: 10px;
+  text-shadow: 0 0 10px var(--hot);
+}
+
+.schedule {
+  color: #8d847e;
+  display: grid;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.schedule div {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 48px 1fr;
+}
+
+.schedule time {
+  color: #8e7660;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 12px;
+}
+
+.schedule p {
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 12px;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.schedule .now p {
+  color: var(--paper);
+  font-weight: 800;
+}
+
+.schedule .now p::after {
+  border: 1px solid var(--line);
+  color: var(--amber);
+  content: "NOW";
+  font-size: 9px;
+  margin-left: 8px;
+  padding: 1px 4px;
+}
+
+.schedule > div {
+  cursor: pointer;
+}
+
+.schedule > div.done time,
+.schedule > div.done p {
+  color: var(--dim);
+  text-decoration: line-through;
+}
+
+.wire {
+  color: #a6a09c;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 12px;
+  line-height: 1.38;
+}
+
+.wire p {
+  margin: 0 0 12px;
+  padding-left: 12px;
+  position: relative;
+}
+
+.wire p::before {
+  color: var(--amber);
+  content: "›";
+  left: 0;
+  position: absolute;
+}
+
+/* Interactividad de paneles (V2): hover invertido estilo HUD.
+   El negativo de las etiquetas de los nodos: recuadro claro, letras negras. */
+.vital,
+.directives li,
+.docTrail a,
+.commandDeck button,
+.schedule > div,
+.wire p {
+  margin-left: -7px;
+  margin-right: -7px;
+  padding-left: 7px;
+  padding-right: 7px;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.vital:hover,
+.directives li:hover,
+.docTrail a:hover,
+.commandDeck button:hover,
+.schedule > div:hover,
+.wire p:hover {
+  background: var(--paper);
+  box-shadow: 0 0 20px rgba(243, 237, 224, 0.28);
+  color: #050403;
+}
+
+.vital:hover small,
+.vital:hover strong,
+.vital:hover span,
+.docTrail a:hover small,
+.schedule > div:hover time,
+.schedule > div:hover p,
+.schedule > div.done:hover time,
+.schedule > div.done:hover p {
+  color: #050403;
+}
+
+.directives li:hover span {
+  border-color: #050403;
+}
+
+.wire p:hover::before,
+.schedule > div:hover .now p::after {
+  color: #050403;
+}
+
+.commandDeck button:hover::before {
+  text-shadow: none;
+}
+
+.wire p {
+  padding-left: 19px;
+}
+
+.wire p::before {
+  left: 7px;
+}
+
+.schedule .now:hover p::after {
+  border-color: rgba(5, 4, 3, 0.4);
+  color: #050403;
+}
+
+.vital:hover i {
+  background:
+    linear-gradient(90deg, #050403, #6b5232 70%, transparent 70%),
+    linear-gradient(90deg, rgba(5, 4, 3, 0.2), rgba(5, 4, 3, 0.2));
+}
+
+
+@media (max-width: 680px) {
+  .commandDeck {
+    grid-template-columns: 1fr;
+  }
+}

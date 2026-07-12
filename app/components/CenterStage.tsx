@@ -1,26 +1,35 @@
 "use client";
 
+import "./center-stage.css";
 import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 import type { StageNode } from "./vault-core/types";
 
-const VaultCore = dynamic(() => import("./vault-core/VaultCore"), {
-  loading: () => <div className="coreGlow" />,
-  ssr: false,
-});
+const VaultCore = dynamic(() => import("./vault-core/VaultCore"), { ssr: false });
 
 export type { StageNode };
 
 /**
  * Centro del dashboard: núcleo 3D con los nodos de proyecto dentro de la
- * escena (orbitan con la esfera, hover pausa el giro, click navega al
- * registro #proyecto).
+ * escena (orbitan con la esfera, hover pausa el giro, click navega a
+ * /p/[proyecto]).
+ *
+ * El canvas se monta solo tras la hidratación (flag `mounted`): así el HTML
+ * del servidor y el primer render del cliente son idénticos y se evita el
+ * error de hidratación del import dinámico.
  */
 export default function CenterStage({ nodes }: { nodes: StageNode[] }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <div className="vaultGraph" aria-label="Mapa visual de proyectos">
       <div className="stars" />
       <div className="coreGlow" />
-      <VaultCore nodes={nodes} />
+      {mounted ? <VaultCore nodes={nodes} /> : null}
       <div className="floorGrid" />
     </div>
   );

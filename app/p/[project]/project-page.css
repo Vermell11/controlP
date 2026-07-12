@@ -1,0 +1,28 @@
+.recordPage {
+  margin: 0 auto;
+  max-width: 1040px;
+}
+
+.recordPageTop {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.backLink {
+  border: 1px solid var(--line);
+  color: var(--amber);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  padding: 7px 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.backLink:hover {
+  background: var(--paper);
+  color: #050403;
+}
+

@@ -1,0 +1,95 @@
+.vaultGraph {
+  height: 100%;
+  min-height: 730px;
+  overflow: hidden;
+  position: relative;
+}
+
+.stars {
+  background-image:
+    radial-gradient(circle, rgba(243, 237, 224, 0.62) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(215, 172, 100, 0.5) 0 1px, transparent 1.4px);
+  background-position: 0 0, 23px 17px;
+  background-size: 71px 71px, 109px 109px;
+  filter: blur(0.2px);
+  inset: 0;
+  opacity: 0.2;
+  position: absolute;
+}
+
+.floorGrid {
+  background:
+    linear-gradient(rgba(215, 172, 100, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(215, 172, 100, 0.15) 1px, transparent 1px);
+  background-size: 38px 38px;
+  bottom: -18%;
+  height: 46%;
+  left: -12%;
+  opacity: 0.35;
+  position: absolute;
+  right: -12%;
+  transform: perspective(680px) rotateX(62deg);
+  transform-origin: center bottom;
+}
+
+.vaultCanvas {
+  inset: 0;
+  position: absolute;
+  z-index: 2;
+}
+
+.vaultCanvas canvas {
+  display: block;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.coreGlow {
+  animation: breathe 5s ease-in-out infinite;
+  background: radial-gradient(
+    circle,
+    rgba(240, 207, 134, 0.22),
+    rgba(215, 172, 100, 0.1) 42%,
+    transparent 68%
+  );
+  border-radius: 50%;
+  height: min(58vw, 690px);
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  width: min(58vw, 690px);
+  z-index: 1;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.78;
+    transform: translate(-50%, -50%) scale(0.985);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.015);
+  }
+}
+
+@media (max-width: 1180px) {
+  .vaultGraph {
+    min-height: 560px;
+  }
+
+  .coreGlow {
+    height: min(88vw, 620px);
+    width: min(88vw, 620px);
+  }
+}
+
+@media (max-width: 680px) {
+  .vaultGraph {
+    height: min(120vw, 62vh);
+    min-height: 0;
+  }
+}

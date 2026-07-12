@@ -1,0 +1,154 @@
+.projectRecord {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 18px;
+}
+
+.projectRecord header,
+.projectRecord footer {
+  align-items: start;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.projectRecord header small {
+  color: var(--dim);
+  display: block;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.projectRecord h2 {
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 0.9;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.projectRecord header > strong {
+  border: 1px solid currentColor;
+  color: var(--green);
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  min-width: 60px;
+  padding: 7px;
+  text-align: center;
+}
+
+.projectRecord header > strong.warn {
+  color: var(--amber);
+}
+
+.projectRecord header > strong.bad {
+  color: var(--red);
+}
+
+.projectRecord > p {
+  color: #c5bdb5;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 12px;
+  line-height: 1.48;
+  margin: 16px 0;
+  min-height: 54px;
+}
+
+.recordGrid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.recordFact {
+  background: var(--panel-strong);
+  min-width: 0;
+  padding: 10px;
+}
+
+.recordFact small {
+  display: block;
+  letter-spacing: 0.16em;
+}
+
+.recordFact span {
+  display: block;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.recordBody {
+  border-top: 1px solid var(--line-soft);
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 16px;
+  padding-top: 16px;
+}
+
+.recordBody h3 {
+  color: var(--amber);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  margin: 0 0 7px;
+  text-transform: uppercase;
+}
+
+.recordBody p {
+  color: #aca49d;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 11px;
+  line-height: 1.42;
+  margin: 0;
+}
+
+.projectRecord footer {
+  border-top: 1px solid var(--line-soft);
+  margin-top: 16px;
+  padding-top: 12px;
+}
+
+.projectRecord footer span {
+  color: var(--dim);
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 11px;
+}
+
+.projectRecord footer div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: end;
+}
+
+.projectRecord footer b {
+  background: rgba(217, 120, 88, 0.12);
+  color: #e7ad98;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  padding: 4px 6px;
+  text-transform: uppercase;
+}
+
+
+@media (max-width: 680px) {
+  .recordGrid,
+  .recordBody {
+    grid-template-columns: 1fr;
+  }
+
+  .projectRecord header,
+  .projectRecord footer {
+    flex-direction: column;
+  }
+}

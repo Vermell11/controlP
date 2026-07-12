@@ -11,10 +11,14 @@ import type { StageNode } from "./types";
  * y la escena reaccionará sin cambios aquí.
  */
 export default function VaultCore({ nodes }: { nodes: StageNode[] }) {
+  // Solo cliente (ssr: false): en pantallas angostas la cámara arranca más
+  // lejos para que toda la esfera y sus nodos entren en el encuadre.
+  const isNarrow = typeof window !== "undefined" && window.innerWidth < 700;
+
   return (
     <div className="vaultCanvas">
       <Canvas
-        camera={{ fov: 42, position: [0, 0, 24] }}
+        camera={{ fov: 42, position: [0, 0, isNarrow ? 44 : 24] }}
         dpr={[1, 1.75]}
         gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
       >
@@ -24,9 +28,10 @@ export default function VaultCore({ nodes }: { nodes: StageNode[] }) {
           enableDamping
           enablePan={false}
           makeDefault
-          maxDistance={42}
+          maxDistance={52}
           minDistance={13}
           rotateSpeed={0.5}
+          target={isNarrow ? [0, -5.5, 0] : [0, 0, 0]}
           zoomSpeed={0.6}
         />
       </Canvas>
