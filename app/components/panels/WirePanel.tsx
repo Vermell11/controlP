@@ -1,8 +1,7 @@
 import PanelTitle from "@/app/components/ui/PanelTitle";
-import type { PanelProps } from "./types";
 
 /** AI Wire (estático por ahora; evoluciona a System Feed en Sprint 2). */
-export default function WirePanel(_props: PanelProps) {
+export default function WirePanel() {
   return (
     <>
       <PanelTitle title="AI Wire" meta="morning.intel" />

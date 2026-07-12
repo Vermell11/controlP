@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm run lint"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
@@ -22,6 +24,8 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.2.10",
     "postcss": "latest",
     "tailwindcss": "latest",
     "typescript": "^5.9.3"

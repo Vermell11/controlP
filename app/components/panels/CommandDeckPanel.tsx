@@ -34,6 +34,9 @@ export default function CommandDeckPanel({ projects }: PanelProps) {
   }, []);
 
   useEffect(() => {
+    // Patrón deliberado: cargar el contador real de la cola tras montar;
+    // el setState ocurre tras un await, no sincrónicamente en el efecto.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     void refresh();
   }, [refresh]);
 

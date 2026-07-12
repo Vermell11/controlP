@@ -37,8 +37,8 @@ export async function loadRegistry(): Promise<{ entries: RegistryEntry[]; issues
     const raw = await fs.readFile(REGISTRY_FILE, "utf8");
     try {
       const parsed = JSON.parse(raw) as { projects?: RegistryEntry[] };
-      const entries = (parsed.projects ?? []).filter(isValidEntry);
-      const dropped = (parsed.projects?.length ?? 0) - entries.length;
+      const valid = (parsed.projects ?? []).filter(isValidEntry);
+      const dropped = (parsed.projects?.length ?? 0) - valid.length;
       if (dropped > 0) {
         issues.push({
           detail: `${dropped} entradas inválidas ignoradas`,
@@ -47,6 +47,7 @@ export async function loadRegistry(): Promise<{ entries: RegistryEntry[]; issues
           source: "registry",
         });
       }
+      const entries = dedupe(valid, issues);
       if (entries.length > 0) return { entries, issues };
     } catch (error) {
       issues.push({
@@ -62,6 +63,29 @@ export async function loadRegistry(): Promise<{ entries: RegistryEntry[]; issues
 
   const discovered = await discoverFromVault();
   return { entries: discovered, issues };
+}
+
+/**
+ * Unicidad de identidad: id y slug deben ser únicos. Un duplicado rompería la
+ * navegación /p/[slug] en silencio, así que se descarta con issue "broken".
+ */
+function dedupe(entries: RegistryEntry[], issues: DataIssue[]): RegistryEntry[] {
+  const seen = new Set<string>();
+  return entries.filter((entry) => {
+    const duplicated = [`id:${entry.id}`, `slug:${entry.slug}`].filter((key) => seen.has(key));
+    if (duplicated.length > 0) {
+      issues.push({
+        detail: `"${entry.displayName}" duplica ${duplicated.join(" y ")}; entrada descartada`,
+        field: "projects",
+        level: "broken",
+        source: "registry",
+      });
+      return false;
+    }
+    seen.add(`id:${entry.id}`);
+    seen.add(`slug:${entry.slug}`);
+    return true;
+  });
 }
 
 function isValidEntry(entry: unknown): entry is RegistryEntry {

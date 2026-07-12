@@ -22,6 +22,9 @@ export default function CenterStage({ nodes }: { nodes: StageNode[] }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // Patrón deliberado: montar el canvas solo tras la hidratación para que
+    // el HTML del servidor y el primer render del cliente coincidan.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 

@@ -19,6 +19,9 @@ export default function SchedulePanel({ projects }: PanelProps) {
   useEffect(() => {
     try {
       const raw = window.localStorage.getItem(storageKey());
+      // Patrón deliberado: localStorage solo existe en cliente; hidratar
+      // primero vacío y cargar el estado guardado tras montar.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (raw) setDone(JSON.parse(raw) as Record<string, boolean>);
     } catch {
       /* estado limpio si el almacenamiento falla */
