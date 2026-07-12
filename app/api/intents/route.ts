@@ -16,21 +16,39 @@ interface Intent {
   source: "deck" | "voice";
 }
 
-async function readQueue(): Promise<Intent[]> {
+/**
+ * Lectura tolerante por línea: una línea corrupta no invalida la cola,
+ * se cuenta y se reporta en lugar de silenciarse.
+ */
+async function readQueue(): Promise<{ items: Intent[]; corrupted: number }> {
+  let raw: string;
   try {
-    const raw = await fs.readFile(QUEUE_FILE, "utf8");
-    return raw
-      .split("\n")
-      .filter(Boolean)
-      .map((line) => JSON.parse(line) as Intent);
+    raw = await fs.readFile(QUEUE_FILE, "utf8");
   } catch {
-    return [];
+    return { corrupted: 0, items: [] };
   }
+
+  const items: Intent[] = [];
+  let corrupted = 0;
+  for (const line of raw.split("\n")) {
+    if (!line.trim()) continue;
+    try {
+      const parsed = JSON.parse(line) as Intent;
+      if (typeof parsed.command === "string" && typeof parsed.at === "string") {
+        items.push(parsed);
+      } else {
+        corrupted += 1;
+      }
+    } catch {
+      corrupted += 1;
+    }
+  }
+  return { corrupted, items };
 }
 
 export async function GET() {
-  const items = await readQueue();
-  return NextResponse.json({ count: items.length, latest: items.slice(-5) });
+  const { items, corrupted } = await readQueue();
+  return NextResponse.json({ corrupted, count: items.length, latest: items.slice(-5) });
 }
 
 export async function POST(request: Request) {
@@ -51,6 +69,6 @@ export async function POST(request: Request) {
   await fs.mkdir(path.dirname(QUEUE_FILE), { recursive: true });
   await fs.appendFile(QUEUE_FILE, `${JSON.stringify(intent)}\n`, "utf8");
 
-  const items = await readQueue();
-  return NextResponse.json({ count: items.length, queued: intent });
+  const { items, corrupted } = await readQueue();
+  return NextResponse.json({ corrupted, count: items.length, queued: intent });
 }

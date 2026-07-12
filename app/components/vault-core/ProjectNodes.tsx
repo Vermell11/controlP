@@ -22,13 +22,13 @@ function nodePosition(index: number, total: number): [number, number, number] {
   return [Math.cos(angle) * r * NODE_RADIUS, y * NODE_RADIUS * 0.72, Math.sin(angle) * r * NODE_RADIUS];
 }
 
-/** Ruta de la ficha del proyecto (página secundaria /p/[proyecto]). */
-function projectPath(name: string) {
-  return `/p/${encodeURIComponent(name)}`;
+/** Ruta de la ficha del proyecto (página secundaria /p/[slug]). */
+function projectPath(slug: string) {
+  return `/p/${slug}`;
 }
 
-function goTo(name: string) {
-  window.location.assign(projectPath(name));
+function goTo(slug: string) {
+  window.location.assign(projectPath(slug));
 }
 
 function ProjectNode({ node, position }: { node: StageNode; position: [number, number, number] }) {
@@ -51,7 +51,7 @@ function ProjectNode({ node, position }: { node: StageNode; position: [number, n
   return (
     <group position={position}>
       <mesh
-        onClick={() => goTo(node.name)}
+        onClick={() => goTo(node.slug)}
         onPointerOut={(event) => {
           event.stopPropagation();
           setHover(false);
@@ -72,7 +72,7 @@ function ProjectNode({ node, position }: { node: StageNode; position: [number, n
       <Html center distanceFactor={24} position={[0, 0.8 * scale, 0]} zIndexRange={[10, 5]}>
         <a
           className={`projectNode3d${hovered ? " isHover" : ""}`}
-          href={projectPath(node.name)}
+          href={projectPath(node.slug)}
           onPointerEnter={() => setHover(true)}
           onPointerLeave={() => setHover(false)}
         >

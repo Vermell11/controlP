@@ -19,7 +19,7 @@ export default function VitalsPanel({ projects }: PanelProps) {
   const open = projects.filter((project) => project.openSession).length;
   const dirty = projects.filter((project) => project.git.dirty).length;
   const graphified = projects.filter((project) => project.graphify.present).length;
-  const unresolved = projects.filter((project) => !project.repoPath).length;
+  const unresolved = projects.filter((project) => !project.resolved).length;
   const signals = projects.reduce(
     (total, project) => total + (project.graphify.nodes ?? 0) + (project.graphify.edges ?? 0),
     0,

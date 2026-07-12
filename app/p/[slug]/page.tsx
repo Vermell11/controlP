@@ -9,17 +9,16 @@ export const dynamic = "force-dynamic";
 
 /**
  * Ficha de proyecto como página secundaria (módulo fuera del core).
- * Los nodos 3D del dashboard navegan aquí.
+ * Identificada por slug estable del registry, no por el nombre visible.
  */
 export default async function ProjectPage({
   params,
 }: {
-  params: Promise<{ project: string }>;
+  params: Promise<{ slug: string }>;
 }) {
-  const { project: raw } = await params;
-  const name = decodeURIComponent(raw);
+  const { slug } = await params;
   const projects = await getProjects();
-  const project = projects.find((candidate) => candidate.name === name);
+  const project = projects.find((candidate) => candidate.slug === slug);
 
   if (!project) notFound();
 
@@ -29,7 +28,7 @@ export default async function ProjectPage({
         <Link className="backLink" href="/">
           ← V.A.U.L.T.
         </Link>
-        <a className="backLink" href={obsidianUrl(project.name)}>
+        <a className="backLink" href={obsidianUrl(project.obsidianFolder)}>
           Obsidian ↗
         </a>
       </header>

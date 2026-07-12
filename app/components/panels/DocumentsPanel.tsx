@@ -9,8 +9,8 @@ export default function DocumentsPanel({ projects }: PanelProps) {
       <div className="docTrail">
         {projects.map((project) => (
           <a
-            href={obsidianUrl(project.name)}
-            key={project.name}
+            href={obsidianUrl(project.obsidianFolder)}
+            key={project.id}
             title={`Abrir ${project.name} en Obsidian`}
           >
             <span>{project.name}</span>

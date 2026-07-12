@@ -50,7 +50,11 @@ export default async function Home() {
 
         <section className="centerStage">
           <CenterStage
-            nodes={projects.map((project) => ({ health: project.health, name: project.name }))}
+            nodes={projects.map((project) => ({
+              health: project.health,
+              name: project.name,
+              slug: project.slug,
+            }))}
           />
 
           <div className="primaryDirective">

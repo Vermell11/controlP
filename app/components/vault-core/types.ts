@@ -22,6 +22,7 @@ export const DEFAULT_SIGNALS: VaultSignals = { hold: false, level: 0, state: "id
 /** Proyecto tal como lo consume la escena (subset serializable de ProjectCard). */
 export interface StageNode {
   name: string;
+  slug: string;
   health: number;
 }
 

@@ -19,6 +19,15 @@ ControlP follows the canonical traceability contract:
 - Notion is the transactional ledger and must use the central connector only.
 - Never copy or expose secrets.
 - Use Ponytail for code: reuse existing flow, prefer native/stdlib, and make the minimum correct change.
+- ControlP owns its canonical data schema (`lib/schema.ts`). Registry tools are
+  replaceable adapters behind role interfaces (`lib/adapters/`): Obsidian
+  implements memory, Notion implements the ledger. Only Git is permanent
+  infrastructure. Swapping a tool = writing one adapter, never touching the
+  domain or the UI.
+- Local-first with a web-ready boundary: all data access is server-side through
+  adapters; the canonical schema is pure JSON (future API wire format); machine
+  paths live only in `lib/config.ts` and `config/projects.json`, never in the
+  schema or the UI.
 - Core closed to modification, open to extension: the core is the main dashboard
   (`app/(core)/page.tsx`, `app/components/vault-core/`,
   `app/components/CenterStage.tsx`, `app/components/core/`, `vaultSignals`).

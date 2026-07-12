@@ -2,8 +2,8 @@
 
 ControlP is a local-first visual Agentic Project OS for Andres Ortega. It reads the Cerebro Obsidian vault as the project index, resolves local project folders under `/code`, and visualizes Git, Graphify, sessions, health, and next steps in a V.A.U.L.T.-style dashboard.
 
-Current state: V1.2 (Sprint 1 foundations) is committed: core reduced to `app/(core)` with the panel registry as extension point, six panels as self-contained modules with co-located per-component CSS (route-split), project records on `/p/[project]` routes reachable from the 3D nodes, live clock, and a correct mobile experience (minimal header, 3D map first, responsive camera framing). V1.0 and V1.1 are closed, tagged and in Notion.
+Current state: V1.2.1 (Sprint 1.5, truth protocol) is committed over the V1.2 modular foundations: canonical JSON schema with validator (`lib/schema.ts`), explicit project registry with stable ids/slugs and per-provider sources (`config/projects.json`), role adapters for memory/Obsidian, evidence/Git and graph/Graphify (read errors surface as alerts), `/p/[slug]` routes, and a tolerant per-line intent queue. The 8 official premises live in Obsidian `Proyectos/ControlP/Reglas`. V1.0–V1.2 are closed, tagged and in Notion.
 
-Reto actual: register V1.2 close (tag, Notion, push) and start Sprint 2 — operational panels (V1.3): `/queue` view, Schedule write-back, System Feed, record editing. Full roadmap in Obsidian `Proyectos/ControlP/Roadmap`; frontend architecture in `Proyectos/ControlP/Arquitectura/Frontend`.
+Reto actual: register V1.2.1 close (tag, Notion, push) and start Sprint 2 — operational panels (V1.3): `/queue` view, Schedule write-back via adapters, System Feed with visible errors, record editing. Roadmap in `Proyectos/ControlP/Roadmap`; data architecture in `Proyectos/ControlP/Arquitectura/Datos`.
 
-Pointers: `app/(core)/page.tsx`, `app/components/panels/registry.ts`, `app/components/vault-core/`, `app/api/intents/route.ts`, `lib/controlp.ts`, `graphify-out/GRAPH_REPORT.md`.
+Pointers: `app/(core)/page.tsx`, `app/components/panels/registry.ts`, `lib/schema.ts`, `lib/registry.ts`, `lib/adapters/`, `app/api/intents/route.ts`, `graphify-out/GRAPH_REPORT.md`.

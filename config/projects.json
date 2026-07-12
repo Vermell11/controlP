@@ -1,0 +1,50 @@
+{
+  "$comment": "Registro explícito de proyectos de ControlP. id/slug son estables; displayName puede cambiar. sources apunta a cada proveedor (rutas absolutas permitidas SOLO aquí y en lib/config.ts).",
+  "projects": [
+    {
+      "id": "controlp",
+      "slug": "controlp",
+      "displayName": "ControlP",
+      "sources": {
+        "obsidianFolder": "ControlP",
+        "repoPath": "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP"
+      }
+    },
+    {
+      "id": "notion",
+      "slug": "notion",
+      "displayName": "Notion",
+      "sources": {
+        "obsidianFolder": "Notion",
+        "repoPath": "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/Notion"
+      }
+    },
+    {
+      "id": "juma",
+      "slug": "juma",
+      "displayName": "JUMA",
+      "sources": {
+        "obsidianFolder": "JUMA",
+        "repoPath": null
+      }
+    },
+    {
+      "id": "auto-notification",
+      "slug": "auto-notification",
+      "displayName": "auto_Notification",
+      "sources": {
+        "obsidianFolder": "auto_Notification",
+        "repoPath": "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/CE/auto_Notification"
+      }
+    },
+    {
+      "id": "ma-ia",
+      "slug": "ma-ia",
+      "displayName": "MA-IA",
+      "sources": {
+        "obsidianFolder": "MA-IA",
+        "repoPath": "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/CE/MA-IA"
+      }
+    }
+  ]
+}
