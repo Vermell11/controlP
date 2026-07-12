@@ -6,6 +6,11 @@ export function tone(score: number): "good" | "warn" | "bad" {
   return "bad";
 }
 
+/** Deep link a la nota del proyecto en la bóveda Cerebro. */
+export function obsidianUrl(projectName: string): string {
+  return `obsidian://open?vault=Cerebro&file=${encodeURIComponent(`Proyectos/${projectName}/Resumen`)}`;
+}
+
 export function formatDate(value: string | null): string {
   if (!value) return "sin fecha";
   return new Intl.DateTimeFormat("es-CO", {

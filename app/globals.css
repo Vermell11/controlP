@@ -406,13 +406,25 @@ button {
 .commandDeck button {
   border-bottom: 1px solid var(--line-soft);
   color: #ada095;
-  cursor: default;
+  cursor: pointer;
   font-size: 13px;
   font-weight: 900;
   letter-spacing: 0.22em;
   padding: 10px 0;
   text-align: left;
   text-transform: uppercase;
+}
+
+.commandDeck button.sent {
+  color: var(--amber);
+}
+
+.commandDeck button.sent::after {
+  border: 1px solid var(--line);
+  content: "QUEUED";
+  font-size: 9px;
+  margin-left: 8px;
+  padding: 1px 4px;
 }
 
 .commandDeck button::before {
@@ -462,6 +474,16 @@ button {
   padding: 1px 4px;
 }
 
+.schedule > div {
+  cursor: pointer;
+}
+
+.schedule > div.done time,
+.schedule > div.done p {
+  color: var(--dim);
+  text-decoration: line-through;
+}
+
 .wire {
   color: #a6a09c;
   font-family: "SFMono-Regular", "Menlo", monospace;
@@ -480,6 +502,75 @@ button {
   content: "›";
   left: 0;
   position: absolute;
+}
+
+/* Interactividad de paneles (V2): hover invertido estilo HUD.
+   El negativo de las etiquetas de los nodos: recuadro claro, letras negras. */
+.vital,
+.directives li,
+.docTrail a,
+.commandDeck button,
+.schedule > div,
+.wire p {
+  margin-left: -7px;
+  margin-right: -7px;
+  padding-left: 7px;
+  padding-right: 7px;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.vital:hover,
+.directives li:hover,
+.docTrail a:hover,
+.commandDeck button:hover,
+.schedule > div:hover,
+.wire p:hover {
+  background: var(--paper);
+  box-shadow: 0 0 20px rgba(243, 237, 224, 0.28);
+  color: #050403;
+}
+
+.vital:hover small,
+.vital:hover strong,
+.vital:hover span,
+.docTrail a:hover small,
+.schedule > div:hover time,
+.schedule > div:hover p,
+.schedule > div.done:hover time,
+.schedule > div.done:hover p {
+  color: #050403;
+}
+
+.directives li:hover span {
+  border-color: #050403;
+}
+
+.wire p:hover::before,
+.schedule > div:hover .now p::after {
+  color: #050403;
+}
+
+.commandDeck button:hover::before {
+  text-shadow: none;
+}
+
+.wire p {
+  padding-left: 19px;
+}
+
+.wire p::before {
+  left: 7px;
+}
+
+.schedule .now:hover p::after {
+  border-color: rgba(5, 4, 3, 0.4);
+  color: #050403;
+}
+
+.vital:hover i {
+  background:
+    linear-gradient(90deg, #050403, #6b5232 70%, transparent 70%),
+    linear-gradient(90deg, rgba(5, 4, 3, 0.2), rgba(5, 4, 3, 0.2));
 }
 
 .projectDeck {

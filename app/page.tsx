@@ -1,6 +1,8 @@
 import CenterStage from "@/app/components/CenterStage";
+import CommandDeck from "@/app/components/CommandDeck";
+import SchedulePanel from "@/app/components/SchedulePanel";
 import { getProjects } from "@/lib/controlp";
-import { formatDate, tone } from "@/lib/ui";
+import { formatDate, obsidianUrl, tone } from "@/lib/ui";
 
 export const dynamic = "force-dynamic";
 
@@ -62,7 +64,11 @@ export default async function Home() {
           <PanelTitle title="Documents" meta="inbox.trail" />
           <div className="docTrail">
             {projects.map((project) => (
-              <a href={`#${project.name}`} key={project.name}>
+              <a
+                href={obsidianUrl(project.name)}
+                key={project.name}
+                title={`Abrir ${project.name} en Obsidian`}
+              >
                 <span>{project.name}</span>
                 <small>{project.openSession ? "now" : formatDate(project.git.latestCommitDate)}</small>
               </a>
@@ -83,33 +89,15 @@ export default async function Home() {
         </section>
 
         <aside className="rightPanel">
-          <PanelTitle title="Command Deck" meta={`${open} active · 0 queued`} />
-          <div className="commandDeck">
-            {[
-              "Metrics Pull",
-              "Inbox Brief",
-              "Trend Scan",
-              "Plan Today",
-              "WK Review",
-              "AM Report",
-              "GH Trending",
-              "Vault Clean",
-            ].map((command) => (
-              <button key={command} type="button">
-                {command}
-              </button>
-            ))}
-          </div>
+          <CommandDeck activeCount={open} />
 
           <PanelTitle title="Schedule" meta="today" />
-          <div className="schedule">
-            {projects.slice(0, 5).map((project, index) => (
-              <div className={index === 0 ? "now" : ""} key={project.name}>
-                <time>{`${9 + index * 2}:30`}</time>
-                <p>{project.currentChallenge}</p>
-              </div>
-            ))}
-          </div>
+          <SchedulePanel
+            items={projects.slice(0, 5).map((project) => ({
+              challenge: project.currentChallenge,
+              name: project.name,
+            }))}
+          />
 
           <PanelTitle title="AI Wire" meta="morning.intel" />
           <div className="wire">

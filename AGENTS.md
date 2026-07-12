@@ -19,6 +19,12 @@ ControlP follows the canonical traceability contract:
 - Notion is the transactional ledger and must use the central connector only.
 - Never copy or expose secrets.
 - Use Ponytail for code: reuse existing flow, prefer native/stdlib, and make the minimum correct change.
+- Core closed to modification, open to extension: the core is the main dashboard
+  (`app/page.tsx`, `app/components/vault-core/`, `app/components/CenterStage.tsx`,
+  `vaultSignals`). Every new feature is a self-contained module — own route, own
+  components, own API route — consuming shared adapters (`lib/`) and declared
+  extension points (panel registry, intent queue). Do not modify the core except
+  for bugfixes or a justified new extension point.
 
 ## Closing Barrier
 
