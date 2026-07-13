@@ -1,34 +1,57 @@
-.voiceDeck {
-  align-items: center;
-  display: grid;
-  gap: 14px;
-  grid-template-columns: max-content 1fr;
-  margin-bottom: 18px;
-}
-
-.pttButton {
+.voiceSynthDeck {
   background: rgba(3, 3, 2, 0.78);
-  border: 1px solid var(--amber);
-  color: var(--amber);
+  border: 1px solid var(--line);
   cursor: pointer;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.22em;
-  padding: 14px 16px;
-  text-transform: uppercase;
+  display: block;
+  height: 72px;
+  margin-bottom: 10px;
+  padding: 8px 10px 6px;
+  position: relative;
   touch-action: none;
-  transition: background 0.12s ease, box-shadow 0.2s ease, color 0.12s ease;
+  transition: border-color 0.2s ease, box-shadow 0.3s ease;
   user-select: none;
+  width: 100%;
 }
 
-.pttButton:hover {
-  background: rgba(215, 172, 100, 0.12);
+.voiceSynthDeck:hover {
+  border-color: var(--amber);
 }
 
-.pttButton.live {
-  animation: pttPulse 1.2s ease-in-out infinite;
+.voiceSynthDeck.live {
+  border-color: var(--amber);
+  box-shadow: 0 0 24px rgba(240, 207, 134, 0.35);
+}
+
+.voiceSynth {
+  display: block;
+  height: 100%;
+  pointer-events: none;
+  width: 100%;
+}
+
+.synthLabel {
+  background: rgba(3, 3, 2, 0.82);
+  border: 1px solid var(--line);
+  color: var(--amber);
+  font-size: 9px;
+  font-weight: 900;
+  left: 50%;
+  letter-spacing: 0.22em;
+  padding: 2px 8px;
+  pointer-events: none;
+  position: absolute;
+  text-transform: uppercase;
+  top: -1px;
+  transform: translate(-50%, -50%);
+}
+
+.voiceSynthDeck.live .synthLabel {
   background: var(--amber);
   color: #050403;
+}
+
+.voiceStatus {
+  margin-bottom: 16px;
 }
 
 @keyframes pttPulse {
@@ -93,4 +116,23 @@
 
 .voiceLog .voice-hint {
   color: var(--dim);
+}
+
+.providerToggle {
+  color: var(--dim);
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  transition: color 0.12s ease;
+}
+
+.providerToggle:hover {
+  color: var(--amber);
+}
+
+.voiceSynthDeck.thinking {
+  border-color: var(--hot);
+  box-shadow: 0 0 18px rgba(240, 207, 134, 0.25);
 }

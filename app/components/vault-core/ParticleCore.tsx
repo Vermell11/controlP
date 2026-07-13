@@ -33,9 +33,11 @@ const VERTEX_SHADER = /* glsl */ `
   void main() {
     float twinkle = 0.62 + 0.38 * sin(uTime * uPulseSpeed + aPhase);
     float band = uSpectrum[int(aBand)];
-    vGlow = twinkle + band * 1.1;
+    // Ganancias moderadas: con el espectro ya amortiguado en useMicLevel,
+    // valores altos aquí convertían la voz en un parpadeo estroboscópico.
+    vGlow = twinkle + band * 0.8;
     vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-    float size = aSize * twinkle * (1.0 + uIntensity * 0.9 + band * 1.6);
+    float size = aSize * twinkle * (1.0 + uIntensity * 0.9 + band * 1.1);
     gl_PointSize = size * (140.0 / -mvPosition.z);
     gl_Position = projectionMatrix * mvPosition;
   }
@@ -65,6 +67,8 @@ export default function ParticleCore({ nodes }: { nodes: StageNode[] }) {
   const groupRef = useRef<THREE.Group>(null);
   const intensityRef = useRef(STATE_PRESETS.idle.baseIntensity);
   const spinRef = useRef(1);
+  const rotSpeedRef = useRef(STATE_PRESETS.idle.rotationSpeed);
+  const pulseRef = useRef(STATE_PRESETS.idle.pulseSpeed);
   const signals = useVaultSignals();
 
   const { pointsGeometry, linesGeometry } = useMemo(() => {
@@ -134,13 +138,23 @@ export default function ParticleCore({ nodes }: { nodes: StageNode[] }) {
     const target = Math.min(preset.baseIntensity + level, 1.6);
     intensityRef.current = THREE.MathUtils.lerp(intensityRef.current, target, delta * 4);
 
+    // Transición SUAVE entre presets de estado (idle ↔ listening ↔
+    // processing): sin esto, activar el PTT saltaba en seco de velocidad y
+    // pulso y se percibía como un tirón en la rotación.
+    rotSpeedRef.current = THREE.MathUtils.lerp(
+      rotSpeedRef.current,
+      preset.rotationSpeed,
+      delta * 2.5,
+    );
+    pulseRef.current = THREE.MathUtils.lerp(pulseRef.current, preset.pulseSpeed, delta * 2.5);
+
     // Frenado suave con hover o formaciones de lectura (y reanudación suave).
     const stopSpin = hold || formation !== "orbit";
     spinRef.current = THREE.MathUtils.lerp(spinRef.current, stopSpin ? 0 : 1, delta * 6);
 
     pointsMaterial.uniforms.uTime.value = state.clock.elapsedTime;
     pointsMaterial.uniforms.uIntensity.value = intensityRef.current;
-    pointsMaterial.uniforms.uPulseSpeed.value = preset.pulseSpeed;
+    pointsMaterial.uniforms.uPulseSpeed.value = pulseRef.current;
 
     // Ecualizador: copiar el espectro de voz al uniform del shader.
     const uSpectrum = pointsMaterial.uniforms.uSpectrum.value as Float32Array;
@@ -160,7 +174,7 @@ export default function ParticleCore({ nodes }: { nodes: StageNode[] }) {
         if (offset < -Math.PI) offset += twoPi;
         groupRef.current.rotation.y -= offset * Math.min(delta * 3, 1);
       }
-      groupRef.current.rotation.y += delta * preset.rotationSpeed * spinRef.current;
+      groupRef.current.rotation.y += delta * rotSpeedRef.current * spinRef.current;
       // Respiración sutil, amplificada por la intensidad.
       const breathe = 1 + Math.sin(state.clock.elapsedTime * 0.5) * 0.015 * (1 + intensityRef.current);
       groupRef.current.scale.setScalar(breathe);

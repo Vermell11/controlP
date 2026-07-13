@@ -24,16 +24,35 @@ function normalize(text: string): string {
     .trim();
 }
 
+/**
+ * Forma compacta para comparar nombres dictados: solo letras y números.
+ * Whisper deletrea o puntúa distinto ("MA-I-A", "ma ia", "Notion.") y la
+ * comparación literal fallaba; "MA-IA" y "MA-I-A" comparten "maia".
+ */
+function compact(text: string): string {
+  return normalize(text).replace(/[^a-z0-9]+/g, "");
+}
+
 const NOTE_PREFIXES = ["anota", "tarea", "recuerda", "apunta", "pendiente", "comando"];
 
 export function routeCommand(transcript: string, projects: VoiceProject[]): VoiceAction {
   const text = normalize(transcript);
 
+  // Dictado explícito primero: "anota revisar la cola" es una nota, no una
+  // navegación — el prefijo declara la intención y gana sobre toda regla.
+  for (const prefix of NOTE_PREFIXES) {
+    if (text.startsWith(prefix)) {
+      const command = transcript.trim().slice(0, 80);
+      return { command, label: `encolado: "${command}"`, type: "enqueue" };
+    }
+  }
+
   // Formaciones del núcleo 3D.
   if (/(ranking|diagnostico|salud)/.test(text)) {
     return { formation: "health", label: "formación: diagnóstico de salud", type: "formation" };
   }
-  if (/(cuadricula|grid|organiza)/.test(text)) {
+  // "gris"/"grilla": Whisper suele transcribir así el anglicismo "grid".
+  if (/(cuadricula|grid|grilla|organiza|\bgris\b)/.test(text)) {
     return { formation: "grid", label: "formación: grid", type: "formation" };
   }
   if (/(orbita|esfera|normal)/.test(text)) {
@@ -44,23 +63,20 @@ export function routeCommand(transcript: string, projects: VoiceProject[]): Voic
   if (/(cola|queue|intents)/.test(text)) {
     return { href: "/queue", label: "abriendo la cola", type: "navigate" };
   }
-  if (/(abre|abrir|muestra|ficha)/.test(text)) {
+  // "proyecto" también dispara: si Whisper pierde el verbo ("Pre el proyecto
+  // de Notion"), la palabra proyecto + un nombre conocido bastan.
+  if (/(abre|abrir|muestra|ficha|proyecto|entra|ver)/.test(text)) {
+    const heard = compact(text);
     for (const project of projects) {
-      if (text.includes(normalize(project.name)) || text.includes(project.slug)) {
+      const nameKey = compact(project.name);
+      const slugKey = compact(project.slug);
+      if ((nameKey && heard.includes(nameKey)) || (slugKey && heard.includes(slugKey))) {
         return {
           href: `/p/${project.slug}`,
           label: `abriendo ${project.name}`,
           type: "navigate",
         };
       }
-    }
-  }
-
-  // Captura de intención → cola (la agenda operativa V1.4.1 los consumirá).
-  for (const prefix of NOTE_PREFIXES) {
-    if (text.startsWith(prefix)) {
-      const command = transcript.trim().slice(0, 80);
-      return { command, label: `encolado: "${command}"`, type: "enqueue" };
     }
   }
 

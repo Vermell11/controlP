@@ -12,3 +12,5 @@ runtime/
 .claude/
 output/
 tmp/
+stt/.venv/
+stt/__pycache__/

@@ -106,9 +106,12 @@ export function useMicLevel() {
           let acc = 0;
           for (let i = 0; i < binsPerBand; i += 1) acc += freqBuffer[start + i] ?? 0;
           const value = acc / binsPerBand / 255;
-          // Suavizado: sube rápido, baja con inercia (look de ecualizador).
+          // Suavizado en ambos sentidos: la FFT es ruidosa frame a frame y un
+          // ataque instantáneo hacía estroboscopear las partículas del núcleo.
+          // Ataque amortiguado (35% del salto por frame) + caída con inercia.
           const previous = vaultSignals.spectrum[band];
-          vaultSignals.spectrum[band] = value > previous ? value : previous * 0.82;
+          vaultSignals.spectrum[band] =
+            value > previous ? previous + (value - previous) * 0.35 : previous * 0.88;
         }
 
         rafRef.current = requestAnimationFrame(tick);
