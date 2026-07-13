@@ -28,8 +28,12 @@ export function useMicLevel() {
   const streamRef = useRef<MediaStream | null>(null);
   const contextRef = useRef<AudioContext | null>(null);
   const rafRef = useRef<number>(0);
+  // Token de sesión anti-carrera: stop() lo invalida; si getUserMedia
+  // resuelve después de soltar el PTT, el stream se desecha al instante.
+  const sessionRef = useRef(0);
 
   const stop = useCallback(() => {
+    sessionRef.current += 1;
     cancelAnimationFrame(rafRef.current);
     streamRef.current?.getTracks().forEach((track) => track.stop());
     streamRef.current = null;
@@ -52,8 +56,16 @@ export function useMicLevel() {
       return;
     }
 
+    const session = (sessionRef.current += 1);
+
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      // Carrera de permisos lentos: si el PTT se soltó (stop) mientras el
+      // usuario respondía el aviso, desechar el stream y no arrancar nada.
+      if (sessionRef.current !== session) {
+        stream.getTracks().forEach((track) => track.stop());
+        return;
+      }
       streamRef.current = stream;
       const context = new AudioContext();
       contextRef.current = context;
