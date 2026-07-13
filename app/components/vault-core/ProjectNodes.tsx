@@ -13,6 +13,9 @@ import type { StageNode } from "./types";
 /** Colores en sync con las variables CSS (--green, --amber, --red). */
 const TONE_COLORS = { bad: "#d97858", good: "#bcca74", warn: "#d7ac64" } as const;
 
+/** Blanco cálido hacia el que brillan los orbes cuando el núcleo escucha. */
+const WARM_WHITE = new THREE.Color("#fff6e0");
+
 const NODE_RADIUS = 9.6;
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 
@@ -82,6 +85,9 @@ function ProjectNode({
   const modeRef = useRef(vaultSignals.formation);
   const targetRef = useRef(new THREE.Vector3(...orbit));
   const scaleRef = useRef(new THREE.Vector3(1, 1, 1));
+  const smoothPosRef = useRef<THREE.Vector3 | null>(null);
+  const haloRef = useRef<THREE.MeshBasicMaterial>(null);
+  const coreMatRef = useRef<THREE.MeshBasicMaterial>(null);
   const [hovered, setHovered] = useState(false);
   useCursor(hovered);
 
@@ -98,7 +104,7 @@ function ProjectNode({
   }, [health, orbit]);
 
   // Desplazamiento suave hacia la formación activa (leída por frame).
-  useFrame((_, delta) => {
+  useFrame((state, delta) => {
     if (!groupRef.current) return;
     if (labelRef.current && modeRef.current !== vaultSignals.formation) {
       modeRef.current = vaultSignals.formation;
@@ -118,7 +124,26 @@ function ProjectNode({
       ? Math.max(0, 1 - Math.abs(health[1]) / (HEALTH_GAP * 1.4))
       : 0;
     const targetScale = inHealth ? 0.6 + focus * 0.55 : 1;
-    groupRef.current.position.lerp(target, Math.min(delta * 3, 1));
+
+    // Posición suave (sin jitter) + vibración de escucha encima.
+    const smooth = (smoothPosRef.current ??= groupRef.current.position.clone());
+    smooth.lerp(target, Math.min(delta * 3, 1));
+    groupRef.current.position.copy(smooth);
+
+    // Voz: cuando el núcleo escucha (hoy tu voz; mañana la respuesta del
+    // asistente), los nodos BRILLAN con el nivel — sin moverse: el halo se
+    // intensifica y el orbe se aclara hacia blanco cálido.
+    const listening = vaultSignals.state !== "idle" ? vaultSignals.level : 0;
+    if (haloRef.current) {
+      const baseOpacity = hovered ? 0.4 : 0.22;
+      haloRef.current.opacity = Math.min(baseOpacity + listening * 0.5, 0.9);
+    }
+    if (coreMatRef.current) {
+      coreMatRef.current.color
+        .copy(hovered ? hoverColor : baseColor)
+        .lerp(WARM_WHITE, Math.min(listening * 0.7, 0.7));
+    }
+
     scaleRef.current.setScalar(targetScale);
     groupRef.current.scale.lerp(scaleRef.current, Math.min(delta * 6, 1));
   });
@@ -143,11 +168,16 @@ function ProjectNode({
         scale={scale * (hovered ? 1.35 : 1)}
       >
         <sphereGeometry args={[0.28, 16, 16]} />
-        <meshBasicMaterial color={hovered ? hoverColor : baseColor} />
+        <meshBasicMaterial color={hovered ? hoverColor : baseColor} ref={coreMatRef} />
       </mesh>
       <mesh scale={scale * (hovered ? 2.6 : 1.9)}>
         <sphereGeometry args={[0.28, 16, 16]} />
-        <meshBasicMaterial color={baseColor} opacity={hovered ? 0.4 : 0.22} transparent />
+        <meshBasicMaterial
+          color={baseColor}
+          opacity={hovered ? 0.4 : 0.22}
+          ref={haloRef}
+          transparent
+        />
       </mesh>
       <Html center distanceFactor={24} position={[0, 0, 0]} zIndexRange={[10, 5]}>
         <a

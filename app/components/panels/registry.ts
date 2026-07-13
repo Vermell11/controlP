@@ -1,5 +1,6 @@
 import "./panels.css";
 import type { ComponentType } from "react";
+import VoicePanel from "@/app/components/voice/VoicePanel";
 import CommandDeckPanel from "./CommandDeckPanel";
 import DirectivesPanel from "./DirectivesPanel";
 import DocumentsPanel from "./DocumentsPanel";
@@ -24,4 +25,5 @@ export const leftPanels: PanelEntry[] = [
 
 export const rightPanels: PanelEntry[] = [
   { Component: CommandDeckPanel, id: "command-deck" },
+  { Component: VoicePanel, id: "voice" },
 ];

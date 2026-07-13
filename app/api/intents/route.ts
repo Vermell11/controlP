@@ -11,14 +11,18 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
-  const body = (await request.json().catch(() => null)) as { command?: unknown } | null;
+  const body = (await request.json().catch(() => null)) as {
+    command?: unknown;
+    source?: unknown;
+  } | null;
   const command = typeof body?.command === "string" ? body.command.trim() : "";
+  const source = body?.source === "voice" ? "voice" : "deck";
 
   if (!command || command.length > 80) {
     return NextResponse.json({ error: "command inválido" }, { status: 400 });
   }
 
-  const intent = await appendIntent(command, "deck");
+  const intent = await appendIntent(command, source);
   const { items, corrupted } = await readIntentQueue();
   return NextResponse.json({ corrupted, count: items.length, queued: intent });
 }

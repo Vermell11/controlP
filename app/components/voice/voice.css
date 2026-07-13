@@ -1,0 +1,96 @@
+.voiceDeck {
+  align-items: center;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: max-content 1fr;
+  margin-bottom: 18px;
+}
+
+.pttButton {
+  background: rgba(3, 3, 2, 0.78);
+  border: 1px solid var(--amber);
+  color: var(--amber);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  padding: 14px 16px;
+  text-transform: uppercase;
+  touch-action: none;
+  transition: background 0.12s ease, box-shadow 0.2s ease, color 0.12s ease;
+  user-select: none;
+}
+
+.pttButton:hover {
+  background: rgba(215, 172, 100, 0.12);
+}
+
+.pttButton.live {
+  animation: pttPulse 1.2s ease-in-out infinite;
+  background: var(--amber);
+  color: #050403;
+}
+
+@keyframes pttPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgba(240, 207, 134, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(240, 207, 134, 0.9);
+  }
+}
+
+.voiceStatus b {
+  color: var(--paper);
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.voiceStatus small {
+  color: var(--dim);
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 10px;
+}
+
+.voiceInterim {
+  border-left: 2px solid var(--amber);
+  color: var(--hot);
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 12px;
+  margin: 0 0 14px;
+  padding-left: 10px;
+}
+
+.voiceLog {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 28px;
+}
+
+.voiceLog p {
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 11px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.voiceLog .voice-heard {
+  color: var(--paper);
+}
+
+.voiceLog .voice-action {
+  color: var(--green);
+}
+
+.voiceLog .voice-action::before {
+  content: "→ ";
+}
+
+.voiceLog .voice-hint {
+  color: var(--dim);
+}

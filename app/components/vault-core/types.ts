@@ -12,6 +12,9 @@ export type CoreState = "idle" | "listening" | "processing";
 /** Formación de los nodos de proyecto en la escena. */
 export type NodeFormation = "orbit" | "grid" | "health";
 
+/** Bandas del ecualizador de voz (graves → agudos). */
+export const SPECTRUM_BANDS = 16;
+
 export interface VaultSignals {
   state: CoreState;
   /** Energía externa 0..1 (voz en el futuro). 0 = reposo. */
@@ -22,6 +25,12 @@ export interface VaultSignals {
   formation: NodeFormation;
   /** Offset de scroll del diagnóstico health, en unidades de proyecto. */
   healthScroll: number;
+  /**
+   * Espectro de la voz (0..1 por banda, graves→agudos), mutado in-place por
+   * frame. Lo alimenta el micrófono hoy y el TTS del asistente mañana; la
+   * esfera de partículas lo renderiza como ecualizador.
+   */
+  spectrum: number[];
 }
 
 export const DEFAULT_SIGNALS: VaultSignals = {
@@ -29,6 +38,7 @@ export const DEFAULT_SIGNALS: VaultSignals = {
   healthScroll: 0,
   hold: false,
   level: 0,
+  spectrum: new Array<number>(SPECTRUM_BANDS).fill(0),
   state: "idle",
 };
 
