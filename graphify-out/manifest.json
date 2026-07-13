@@ -290,19 +290,19 @@
     "semantic_hash": "71fc47e935cfc7af912d18f82a704887"
   },
   "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/panels/registry.ts": {
-    "mtime": 1783952355.9190972,
-    "ast_hash": "51e56fc24bce87c240cf4bf728e73cd4",
-    "semantic_hash": "51e56fc24bce87c240cf4bf728e73cd4"
+    "mtime": 1783960981.6490388,
+    "ast_hash": "f6df75adaa472073a3d981f1dbd8c628",
+    "semantic_hash": "f6df75adaa472073a3d981f1dbd8c628"
   },
   "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/vault-core/ParticleCore.tsx": {
-    "mtime": 1783955712.876715,
-    "ast_hash": "1b6f75ce57c7fa979ba640dfe2f7c7f5",
-    "semantic_hash": "1b6f75ce57c7fa979ba640dfe2f7c7f5"
+    "mtime": 1783962707.0773745,
+    "ast_hash": "64528efa1a47ab3da28b983c6c5e8b46",
+    "semantic_hash": "64528efa1a47ab3da28b983c6c5e8b46"
   },
   "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/vault-core/ProjectNodes.tsx": {
-    "mtime": 1783957216.8847892,
-    "ast_hash": "af914839178395b1ad5b30dcae84c85f",
-    "semantic_hash": "af914839178395b1ad5b30dcae84c85f"
+    "mtime": 1783962731.4760208,
+    "ast_hash": "e8aa0f08933c810cd48ad869899348ad",
+    "semantic_hash": "e8aa0f08933c810cd48ad869899348ad"
   },
   "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/vault-core/VaultCore.tsx": {
     "mtime": 1783957160.9818168,
@@ -310,9 +310,9 @@
     "semantic_hash": "178139f127bb00e9e07c4e3ca2205a1b"
   },
   "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/vault-core/types.ts": {
-    "mtime": 1783956392.4766424,
-    "ast_hash": "d22a886fe812b24000f4e358edb8bd69",
-    "semantic_hash": "d22a886fe812b24000f4e358edb8bd69"
+    "mtime": 1783962621.732101,
+    "ast_hash": "35d39c5b295570cdabdb044fe4542d1a",
+    "semantic_hash": "35d39c5b295570cdabdb044fe4542d1a"
   },
   "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/lib/adapters/memory-obsidian.ts": {
     "mtime": 1783954628.5942156,
@@ -330,8 +330,218 @@
     "semantic_hash": "482ef24b8deb70e939a289438d3a85a0"
   },
   "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/PROJECT_CONTEXT.md": {
-    "mtime": 1783957494.240673,
-    "ast_hash": "45731370f590225b08f507c12adf1175",
-    "semantic_hash": "45731370f590225b08f507c12adf1175"
+    "mtime": 1783974892.8411787,
+    "ast_hash": "563fa657c2df179585f362a10d90b647",
+    "semantic_hash": "563fa657c2df179585f362a10d90b647"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/api/intents/route.ts": {
+    "mtime": 1783960941.7289264,
+    "ast_hash": "126e535775d579e7e403382a4d7f7d85",
+    "semantic_hash": "126e535775d579e7e403382a4d7f7d85"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/api/metrics/route.ts": {
+    "mtime": 1783913648.1842616,
+    "ast_hash": "d67eb729562ec6f47da1c3c5fd6cd514",
+    "semantic_hash": "d67eb729562ec6f47da1c3c5fd6cd514"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/api/projects/route.ts": {
+    "mtime": 1783802942.6204188,
+    "ast_hash": "70a7fb7227d7bec871ecbe911e77e22a",
+    "semantic_hash": "70a7fb7227d7bec871ecbe911e77e22a"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/api/schedule/route.ts": {
+    "mtime": 1783914570.4248958,
+    "ast_hash": "8c4668e911b148736d6a8fbce4e5fa2f",
+    "semantic_hash": "8c4668e911b148736d6a8fbce4e5fa2f"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/CenterStage.tsx": {
+    "mtime": 1783897312.7725005,
+    "ast_hash": "13e0c686e3c96d284b0527c77be0d3dc",
+    "semantic_hash": "13e0c686e3c96d284b0527c77be0d3dc"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/core/Clock.tsx": {
+    "mtime": 1783874158.2397633,
+    "ast_hash": "6356c406cd88ea91cc8abf23413a38bb",
+    "semantic_hash": "6356c406cd88ea91cc8abf23413a38bb"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/panels/DirectivesPanel.tsx": {
+    "mtime": 1783913464.2674382,
+    "ast_hash": "1bee35840ab9d18f8b793259d2344864",
+    "semantic_hash": "1bee35840ab9d18f8b793259d2344864"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/panels/DocumentsPanel.tsx": {
+    "mtime": 1783894997.500273,
+    "ast_hash": "e29eb58414902d944106f63daa4d6452",
+    "semantic_hash": "e29eb58414902d944106f63daa4d6452"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/panels/types.ts": {
+    "mtime": 1783874110.4498014,
+    "ast_hash": "1c9140962e6f55f0973f047eb7a2e0b6",
+    "semantic_hash": "1c9140962e6f55f0973f047eb7a2e0b6"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/records/EditableText.tsx": {
+    "mtime": 1783899068.7062635,
+    "ast_hash": "49ba60a3d382fd6882f6ef5c8a6af97c",
+    "semantic_hash": "49ba60a3d382fd6882f6ef5c8a6af97c"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/records/ProjectRecord.tsx": {
+    "mtime": 1783899093.2912817,
+    "ast_hash": "c768f50fc1732945c2826188081c91f5",
+    "semantic_hash": "c768f50fc1732945c2826188081c91f5"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/ui/PanelTitle.tsx": {
+    "mtime": 1783878960.4167907,
+    "ast_hash": "17d636b8ca333b699ea1f5d78c6f50b9",
+    "semantic_hash": "17d636b8ca333b699ea1f5d78c6f50b9"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/vault-core/geometry.ts": {
+    "mtime": 1783809042.6994038,
+    "ast_hash": "c82759fcc0d3bd84deadd700d00c056d",
+    "semantic_hash": "c82759fcc0d3bd84deadd700d00c056d"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/vault-core/signals.tsx": {
+    "mtime": 1783809863.034191,
+    "ast_hash": "7710517180b74eae412679ec300355a7",
+    "semantic_hash": "7710517180b74eae412679ec300355a7"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/voice/VoicePanel.tsx": {
+    "mtime": 1783961873.8238618,
+    "ast_hash": "52801273902039b50a388767b12bf054",
+    "semantic_hash": "52801273902039b50a388767b12bf054"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/voice/commands.ts": {
+    "mtime": 1783960929.798092,
+    "ast_hash": "f0af5b24253e33aa7d4962e056c1f226",
+    "semantic_hash": "f0af5b24253e33aa7d4962e056c1f226"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/voice/useMicLevel.ts": {
+    "mtime": 1783962650.3846667,
+    "ast_hash": "cceea6a02e46a98af0f4994790af50a7",
+    "semantic_hash": "cceea6a02e46a98af0f4994790af50a7"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/voice/useSpeech.ts": {
+    "mtime": 1783961640.073059,
+    "ast_hash": "e6445b5c0ff606f666ff0a8343930aba",
+    "semantic_hash": "e6445b5c0ff606f666ff0a8343930aba"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/layout.tsx": {
+    "mtime": 1783877498.3415277,
+    "ast_hash": "88dea6c10d4d0f29a83ae9cfa0523fdc",
+    "semantic_hash": "88dea6c10d4d0f29a83ae9cfa0523fdc"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/p/[slug]/actions.ts": {
+    "mtime": 1783914605.7361414,
+    "ast_hash": "6ce3e51c03812c472087e0d1bf4336ac",
+    "semantic_hash": "6ce3e51c03812c472087e0d1bf4336ac"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/p/[slug]/page.tsx": {
+    "mtime": 1783899100.7311828,
+    "ast_hash": "891a573d056eb038f46fb5eb1673011f",
+    "semantic_hash": "891a573d056eb038f46fb5eb1673011f"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/queue/page.tsx": {
+    "mtime": 1783898853.827986,
+    "ast_hash": "528e1acb48037fc1ccd89b2aac7d2e91",
+    "semantic_hash": "528e1acb48037fc1ccd89b2aac7d2e91"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/config/projects.json": {
+    "mtime": 1783894919.8130336,
+    "ast_hash": "e2e23e7d39b572afd18d373ee99d3752",
+    "semantic_hash": "e2e23e7d39b572afd18d373ee99d3752"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/eslint.config.mjs": {
+    "mtime": 1783897310.3241308,
+    "ast_hash": "fc2b6ea4b27502cfd15e8d8062dbacaa",
+    "semantic_hash": "fc2b6ea4b27502cfd15e8d8062dbacaa"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/lib/adapters/evidence-git.ts": {
+    "mtime": 1783913644.453334,
+    "ast_hash": "2a4b9b772669d861aa7f0ef55700dcad",
+    "semantic_hash": "2a4b9b772669d861aa7f0ef55700dcad"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/lib/adapters/graph-graphify.ts": {
+    "mtime": 1783894959.6911476,
+    "ast_hash": "59cbba424eb8003af681dd4ee143794d",
+    "semantic_hash": "59cbba424eb8003af681dd4ee143794d"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/lib/config.ts": {
+    "mtime": 1783894875.7856927,
+    "ast_hash": "1d8d9ede2fdd8c501f45237301752a9a",
+    "semantic_hash": "1d8d9ede2fdd8c501f45237301752a9a"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/lib/intents.ts": {
+    "mtime": 1783898835.5478334,
+    "ast_hash": "310a129523965e8d6d2ce6e9641f558a",
+    "semantic_hash": "310a129523965e8d6d2ce6e9641f558a"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/lib/registry.ts": {
+    "mtime": 1783897211.8267584,
+    "ast_hash": "f82333027890d2fe4a551557f50abe70",
+    "semantic_hash": "f82333027890d2fe4a551557f50abe70"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/lib/schedule.ts": {
+    "mtime": 1783898959.5517194,
+    "ast_hash": "42ba10f8fa8e8eb890bfe6dd143d5d92",
+    "semantic_hash": "42ba10f8fa8e8eb890bfe6dd143d5d92"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/lib/ui.ts": {
+    "mtime": 1783862086.2920265,
+    "ast_hash": "e2eff733bb879856ad75ccd6f542381f",
+    "semantic_hash": "e2eff733bb879856ad75ccd6f542381f"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/next-env.d.ts": {
+    "mtime": 1783809701.13492,
+    "ast_hash": "d0f8375ae1199dc7acd3977fc33b78b8",
+    "semantic_hash": "d0f8375ae1199dc7acd3977fc33b78b8"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/next.config.mjs": {
+    "mtime": 1783874946.3091645,
+    "ast_hash": "336a71afbfafeb2e90168c66954e7150",
+    "semantic_hash": "336a71afbfafeb2e90168c66954e7150"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/package.json": {
+    "mtime": 1783897781.185711,
+    "ast_hash": "cb1db198027be7cb0329ed26ae78940f",
+    "semantic_hash": "cb1db198027be7cb0329ed26ae78940f"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/postcss.config.mjs": {
+    "mtime": 1783803163.7920902,
+    "ast_hash": "a110e491b61548fc540a358981371525",
+    "semantic_hash": "a110e491b61548fc540a358981371525"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/tailwind.config.ts": {
+    "mtime": 1783802941.892266,
+    "ast_hash": "204e5b6b574045b4d2e5bb030e7ddf06",
+    "semantic_hash": "204e5b6b574045b4d2e5bb030e7ddf06"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/tsconfig.json": {
+    "mtime": 1783803172.4867914,
+    "ast_hash": "07ebcb4b0f2a913068d79f45d8cc4d0a",
+    "semantic_hash": "07ebcb4b0f2a913068d79f45d8cc4d0a"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/AGENTS.md": {
+    "mtime": 1783895066.1812534,
+    "ast_hash": "964cd7ba8fc0cc0572b9cb635d1a86cb",
+    "semantic_hash": "964cd7ba8fc0cc0572b9cb635d1a86cb"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/CLAUDE.md": {
+    "mtime": 1783808032.8900058,
+    "ast_hash": "9b2fe3d975790259456f4d9b060d481d",
+    "semantic_hash": "9b2fe3d975790259456f4d9b060d481d"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/README.md": {
+    "mtime": 1783802943.0818298,
+    "ast_hash": "b04e3cbaaf943182c7187666255ed0a2",
+    "semantic_hash": "b04e3cbaaf943182c7187666255ed0a2"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/output/pdf/carta_para_vale.pdf": {
+    "mtime": 1783965999.9483235,
+    "ast_hash": "1b8bc963b54ab9c4d58ead5144f25fca",
+    "semantic_hash": "1b8bc963b54ab9c4d58ead5144f25fca"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/tmp/pdfs/carta_para_vale_preview.png": {
+    "mtime": 1783966014.23049,
+    "ast_hash": "ce631cb6a8d59b8e78bbe99f9ad0d572",
+    "semantic_hash": "ce631cb6a8d59b8e78bbe99f9ad0d572"
   }
 }
