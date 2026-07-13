@@ -258,5 +258,80 @@
     "mtime": 1783898959.5517194,
     "ast_hash": "42ba10f8fa8e8eb890bfe6dd143d5d92",
     "semantic_hash": "42ba10f8fa8e8eb890bfe6dd143d5d92"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/(core)/page.tsx": {
+    "mtime": 1783956394.3995001,
+    "ast_hash": "834826a74b79e8f9577ca9b6ccc3269a",
+    "semantic_hash": "834826a74b79e8f9577ca9b6ccc3269a"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/panels/CommandDeckPanel.tsx": {
+    "mtime": 1783952355.7569275,
+    "ast_hash": "e47e5772371201dfefa86c50f0d7b8dc",
+    "semantic_hash": "e47e5772371201dfefa86c50f0d7b8dc"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/panels/DeckViews.tsx": {
+    "mtime": 1783955309.7166257,
+    "ast_hash": "ac50f9199ae8950ec902c4d4f1e29181",
+    "semantic_hash": "ac50f9199ae8950ec902c4d4f1e29181"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/panels/SchedulePanel.tsx": {
+    "mtime": 1783952355.202757,
+    "ast_hash": "bf42b4b7ea1935f6611c1f4049ccde6c",
+    "semantic_hash": "bf42b4b7ea1935f6611c1f4049ccde6c"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/panels/VitalsPanel.tsx": {
+    "mtime": 1783955728.0668788,
+    "ast_hash": "56d0bc03355ad1266906eb0f6b806d8d",
+    "semantic_hash": "56d0bc03355ad1266906eb0f6b806d8d"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/panels/WirePanel.tsx": {
+    "mtime": 1783952355.345988,
+    "ast_hash": "71fc47e935cfc7af912d18f82a704887",
+    "semantic_hash": "71fc47e935cfc7af912d18f82a704887"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/panels/registry.ts": {
+    "mtime": 1783952355.9190972,
+    "ast_hash": "51e56fc24bce87c240cf4bf728e73cd4",
+    "semantic_hash": "51e56fc24bce87c240cf4bf728e73cd4"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/vault-core/ParticleCore.tsx": {
+    "mtime": 1783955712.876715,
+    "ast_hash": "1b6f75ce57c7fa979ba640dfe2f7c7f5",
+    "semantic_hash": "1b6f75ce57c7fa979ba640dfe2f7c7f5"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/vault-core/ProjectNodes.tsx": {
+    "mtime": 1783957216.8847892,
+    "ast_hash": "af914839178395b1ad5b30dcae84c85f",
+    "semantic_hash": "af914839178395b1ad5b30dcae84c85f"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/vault-core/VaultCore.tsx": {
+    "mtime": 1783957160.9818168,
+    "ast_hash": "178139f127bb00e9e07c4e3ca2205a1b",
+    "semantic_hash": "178139f127bb00e9e07c4e3ca2205a1b"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/app/components/vault-core/types.ts": {
+    "mtime": 1783956392.4766424,
+    "ast_hash": "d22a886fe812b24000f4e358edb8bd69",
+    "semantic_hash": "d22a886fe812b24000f4e358edb8bd69"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/lib/adapters/memory-obsidian.ts": {
+    "mtime": 1783954628.5942156,
+    "ast_hash": "05015e4d95ef71d0fba02eeddb8f1f95",
+    "semantic_hash": "05015e4d95ef71d0fba02eeddb8f1f95"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/lib/controlp.ts": {
+    "mtime": 1783954634.026265,
+    "ast_hash": "8c881856cd903fc27cd07ef34812e6e4",
+    "semantic_hash": "8c881856cd903fc27cd07ef34812e6e4"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/lib/schema.ts": {
+    "mtime": 1783954616.8178585,
+    "ast_hash": "482ef24b8deb70e939a289438d3a85a0",
+    "semantic_hash": "482ef24b8deb70e939a289438d3a85a0"
+  },
+  "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP/PROJECT_CONTEXT.md": {
+    "mtime": 1783957494.240673,
+    "ast_hash": "45731370f590225b08f507c12adf1175",
+    "semantic_hash": "45731370f590225b08f507c12adf1175"
   }
 }
