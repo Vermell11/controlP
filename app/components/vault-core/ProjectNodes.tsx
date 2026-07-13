@@ -1,6 +1,7 @@
 "use client";
 
 import "./project-nodes.css";
+import type { CSSProperties } from "react";
 import { useMemo, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Html, useCursor } from "@react-three/drei";
@@ -23,14 +24,37 @@ function orbitPosition(index: number, total: number): [number, number, number] {
   return [Math.cos(angle) * r * NODE_RADIUS, y * NODE_RADIUS * 0.72, Math.sin(angle) * r * NODE_RADIUS];
 }
 
+const HEALTH_GAP = 2.6;
+
 /**
- * Formación "health": ranking vertical frente a la esfera, mejor salud arriba.
- * `rank` es la posición en el orden descendente de salud.
+ * Formación "grid": matriz autosize frente a la esfera, ordenada por salud.
+ * Plano más lejano (z=7) y separación amplia para que orbes y etiquetas
+ * compactas no se solapen.
  */
-function healthPosition(rank: number, total: number): [number, number, number] {
-  const span = Math.min((total - 1) * 3.5, 15);
-  const top = span / 2;
-  return [0, top - rank * (total > 1 ? span / (total - 1) : 0), 10.5];
+function gridPosition(rank: number, total: number): [number, number, number] {
+  const columns = Math.max(1, Math.ceil(Math.sqrt(total)));
+  const rows = Math.max(1, Math.ceil(total / columns));
+  const column = rank % columns;
+  const row = Math.floor(rank / columns);
+
+  return [
+    (column - (columns - 1) / 2) * 4.6,
+    ((rows - 1) / 2 - row) * 3.6,
+    7,
+  ];
+}
+
+/**
+ * Formación "health": lista vertical escroleable con efecto lente de pez.
+ * El orbe queda a la izquierda (x=-3) y su panel se abre a la derecha,
+ * alineado con el orbe. Los ítems lejos del centro retroceden en Z (se ven
+ * más pequeños y lejanos, como sobre una esfera).
+ */
+function healthPosition(rank: number, total: number, scroll: number): [number, number, number] {
+  const centerRank = (total - 1) / 2 + scroll;
+  const y = (centerRank - rank) * HEALTH_GAP;
+  const z = 10.5 - Math.abs(y) * 0.55 - (y * y) * 0.05;
+  return [-3, y, z];
 }
 
 /** Ruta de la ficha del proyecto (página secundaria /p/[slug]). */
@@ -45,34 +69,58 @@ function goTo(slug: string) {
 function ProjectNode({
   node,
   orbit,
-  ranking,
+  rank,
+  total,
 }: {
   node: StageNode;
   orbit: [number, number, number];
-  ranking: [number, number, number];
+  rank: number;
+  total: number;
 }) {
   const groupRef = useRef<THREE.Group>(null);
+  const labelRef = useRef<HTMLAnchorElement>(null);
+  const modeRef = useRef(vaultSignals.formation);
+  const targetRef = useRef(new THREE.Vector3(...orbit));
+  const scaleRef = useRef(new THREE.Vector3(1, 1, 1));
   const [hovered, setHovered] = useState(false);
   useCursor(hovered);
 
   const health = tone(node.health);
   const scale = 0.75 + node.health / 200;
 
-  const { baseColor, hoverColor, orbitVec, rankingVec } = useMemo(() => {
+  const { baseColor, hoverColor, orbitVec } = useMemo(() => {
     const base = new THREE.Color(TONE_COLORS[health]);
     return {
       baseColor: base,
       hoverColor: base.clone().lerp(new THREE.Color("#ffffff"), 0.5),
       orbitVec: new THREE.Vector3(...orbit),
-      rankingVec: new THREE.Vector3(...ranking),
     };
-  }, [health, orbit, ranking]);
+  }, [health, orbit]);
 
   // Desplazamiento suave hacia la formación activa (leída por frame).
   useFrame((_, delta) => {
     if (!groupRef.current) return;
-    const target = vaultSignals.formation === "health" ? rankingVec : orbitVec;
+    if (labelRef.current && modeRef.current !== vaultSignals.formation) {
+      modeRef.current = vaultSignals.formation;
+      labelRef.current.dataset.mode = vaultSignals.formation;
+    }
+    const health = healthPosition(rank, total, vaultSignals.healthScroll);
+    const grid = gridPosition(rank, total);
+    const inHealth = vaultSignals.formation === "health";
+    const target = inHealth
+      ? targetRef.current.set(...health)
+      : vaultSignals.formation === "grid"
+        ? targetRef.current.set(...grid)
+        : orbitVec;
+    // Lente de pez: el ítem centrado domina; el resto se encoge con la
+    // distancia al centro (además del retroceso en Z de healthPosition).
+    const focus = inHealth
+      ? Math.max(0, 1 - Math.abs(health[1]) / (HEALTH_GAP * 1.4))
+      : 0;
+    const targetScale = inHealth ? 0.6 + focus * 0.55 : 1;
     groupRef.current.position.lerp(target, Math.min(delta * 3, 1));
+    scaleRef.current.setScalar(targetScale);
+    groupRef.current.scale.lerp(scaleRef.current, Math.min(delta * 6, 1));
   });
 
   const setHover = (value: boolean) => {
@@ -101,14 +149,22 @@ function ProjectNode({
         <sphereGeometry args={[0.28, 16, 16]} />
         <meshBasicMaterial color={baseColor} opacity={hovered ? 0.4 : 0.22} transparent />
       </mesh>
-      <Html center distanceFactor={24} position={[0, 0.8 * scale, 0]} zIndexRange={[10, 5]}>
+      <Html center distanceFactor={24} position={[0, 0, 0]} zIndexRange={[10, 5]}>
         <a
-          className={`projectNode3d${hovered ? " isHover" : ""}`}
+          className={`projectNode3d ${health}${hovered ? " isHover" : ""}`}
+          data-mode={vaultSignals.formation}
           href={projectPath(node.slug)}
           onPointerEnter={() => setHover(true)}
           onPointerLeave={() => setHover(false)}
+          ref={labelRef}
+          style={{ "--health": `${node.health}%` } as CSSProperties}
         >
-          {node.name}
+          <span className="nodeName">{node.name}</span>
+          <span className="nodeMeta">{node.meta}</span>
+          <span className="healthTrack">
+            <i />
+          </span>
+          <b className="healthLabel">{`salud ${node.health}%`}</b>
         </a>
       </Html>
     </group>
@@ -116,26 +172,31 @@ function ProjectNode({
 }
 
 /**
- * Nodos de proyecto dentro de la escena. Dos formaciones (vaultSignals):
- * "orbit" acompaña la esfera; "health" forma el ranking vertical por salud.
+ * Nodos de proyecto dentro de la escena. Formaciones (vaultSignals):
+ * "orbit" acompaña la esfera; "grid" organiza por salud; "health" abre
+ * diagnóstico vertical con barras.
  * Hover ilumina y pausa el giro; click navega a /p/[slug].
  */
 export default function ProjectNodes({ nodes }: { nodes: StageNode[] }) {
-  const { orbits, rankings } = useMemo(() => {
+  const { orbits, ranks } = useMemo(() => {
     const byHealth = [...nodes].sort((a, b) => b.health - a.health);
     const rankBySlug = new Map(byHealth.map((node, rank) => [node.slug, rank]));
     return {
       orbits: nodes.map((_, index) => orbitPosition(index, nodes.length)),
-      rankings: nodes.map((node) =>
-        healthPosition(rankBySlug.get(node.slug) ?? 0, nodes.length),
-      ),
+      ranks: nodes.map((node) => rankBySlug.get(node.slug) ?? 0),
     };
   }, [nodes]);
 
   return (
     <>
       {nodes.map((node, index) => (
-        <ProjectNode key={node.slug} node={node} orbit={orbits[index]} ranking={rankings[index]} />
+        <ProjectNode
+          key={node.slug}
+          node={node}
+          orbit={orbits[index]}
+          rank={ranks[index]}
+          total={nodes.length}
+        />
       ))}
     </>
   );

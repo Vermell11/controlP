@@ -13,7 +13,7 @@ interface FeedEntry {
  * y alertas reales (incluidas fuentes rotas del protocolo de verdad).
  * Aquí caerán también las notificaciones del asistente (Sprint 4).
  */
-export default function WirePanel({ projects }: PanelProps) {
+export function WireBody({ projects }: PanelProps) {
   const entries: FeedEntry[] = [];
 
   for (const project of projects) {
@@ -54,19 +54,25 @@ export default function WirePanel({ projects }: PanelProps) {
     .slice(0, 8);
 
   return (
+    <div className="wire">
+      {feed.length === 0 ? (
+        <p>Sin señales todavía: el sistema está en silencio.</p>
+      ) : (
+        feed.map((entry, index) => (
+          <p className={`feed-${entry.tone}`} key={`${entry.text}-${index}`}>
+            {entry.text}
+          </p>
+        ))
+      )}
+    </div>
+  );
+}
+
+export default function WirePanel({ projects }: PanelProps) {
+  return (
     <>
       <PanelTitle title="System Feed" meta="live.wire" />
-      <div className="wire">
-        {feed.length === 0 ? (
-          <p>Sin señales todavía: el sistema está en silencio.</p>
-        ) : (
-          feed.map((entry, index) => (
-            <p className={`feed-${entry.tone}`} key={`${entry.text}-${index}`}>
-              {entry.text}
-            </p>
-          ))
-        )}
-      </div>
+      <WireBody projects={projects} />
     </>
   );
 }

@@ -10,7 +10,7 @@ export type CoreState = "idle" | "listening" | "processing";
  * micrófono solo tiene que escribir aquí: signals.level = nivelDeVoz.
  */
 /** Formación de los nodos de proyecto en la escena. */
-export type NodeFormation = "orbit" | "health";
+export type NodeFormation = "orbit" | "grid" | "health";
 
 export interface VaultSignals {
   state: CoreState;
@@ -18,12 +18,15 @@ export interface VaultSignals {
   level: number;
   /** true mientras el cursor está sobre un nodo: pausa la rotación. */
   hold: boolean;
-  /** orbit = sobre la esfera; health = ranking vertical por salud. */
+  /** orbit = esfera; grid = autosize por salud; health = diagnóstico vertical. */
   formation: NodeFormation;
+  /** Offset de scroll del diagnóstico health, en unidades de proyecto. */
+  healthScroll: number;
 }
 
 export const DEFAULT_SIGNALS: VaultSignals = {
   formation: "orbit",
+  healthScroll: 0,
   hold: false,
   level: 0,
   state: "idle",
@@ -34,6 +37,8 @@ export interface StageNode {
   name: string;
   slug: string;
   health: number;
+  /** Métrica compacta para el diagnóstico (p. ej. "V1.3 · grafo 300/417"). */
+  meta: string;
 }
 
 /** Parámetros visuales por estado, para mapear estado → animación. */

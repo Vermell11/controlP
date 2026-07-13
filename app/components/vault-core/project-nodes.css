@@ -1,18 +1,142 @@
+/*
+ * Etiqueta 3D del nodo. El anclaje está SIEMPRE en el centro del orbe:
+ * la posición según formación se resuelve con un único `transform`, por lo
+ * que el morph órbita/grid (pill arriba) ↔ health (panel a la derecha)
+ * es una transición CSS continua y suave.
+ */
 .projectNode3d {
-  background: rgba(3, 3, 2, 0.76);
+  background: rgba(3, 3, 2, 0.78);
   border: 1px solid var(--line);
   color: var(--paper);
   cursor: pointer;
-  display: inline-block;
+  display: grid;
   font-size: 11px;
   font-weight: 900;
+  gap: 0;
+  grid-template-areas:
+    "name meta"
+    "track track"
+    "label label";
+  grid-template-columns: max-content 0;
   letter-spacing: 0.18em;
   padding: 5px 8px;
   text-decoration: none;
   text-transform: uppercase;
-  transform: translateY(-100%);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transform: translate(0, calc(-50% - 30px));
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    font-size 0.3s ease,
+    gap 0.3s ease,
+    grid-template-columns 0.42s ease,
+    padding 0.3s ease,
+    transform 0.45s ease;
   white-space: nowrap;
+  width: max-content;
+}
+
+.projectNode3d .nodeName {
+  grid-area: name;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.projectNode3d .nodeMeta {
+  color: var(--amber);
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 10px;
+  font-weight: 400;
+  grid-area: meta;
+  letter-spacing: 0.06em;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  text-align: right;
+  text-transform: none;
+  transition: max-height 0.32s ease, opacity 0.3s ease;
+}
+
+.projectNode3d .healthTrack {
+  background: rgba(215, 172, 100, 0.16);
+  display: block;
+  grid-area: track;
+  height: 0;
+  margin-top: 0;
+  overflow: hidden;
+  transition: height 0.3s ease, margin-top 0.3s ease;
+}
+
+.projectNode3d .healthTrack i {
+  background: var(--green);
+  box-shadow: 0 0 12px currentColor;
+  color: var(--green);
+  display: block;
+  height: 100%;
+  width: var(--health, 0%);
+}
+
+.projectNode3d.warn .healthTrack i {
+  background: var(--amber);
+  color: var(--amber);
+}
+
+.projectNode3d.bad .healthTrack i {
+  background: var(--red);
+  color: var(--red);
+}
+
+.projectNode3d .healthLabel {
+  color: var(--green);
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 10px;
+  font-weight: 400;
+  grid-area: label;
+  letter-spacing: 0.08em;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  text-align: left;
+  text-transform: none;
+  transition: max-height 0.32s ease, opacity 0.3s ease;
+}
+
+.projectNode3d.warn .healthLabel {
+  color: var(--amber);
+}
+
+.projectNode3d.bad .healthLabel {
+  color: var(--red);
+}
+
+/* Grid: etiqueta compacta bajo el mismo anclaje, sin panel. */
+.projectNode3d[data-mode="grid"] {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  padding: 4px 6px;
+}
+
+/* Health: panel de datos a la DERECHA del orbe, alineado verticalmente. */
+.projectNode3d[data-mode="health"] {
+  background: linear-gradient(90deg, rgba(3, 3, 2, 0.94), rgba(3, 3, 2, 0.72));
+  gap: 6px 16px;
+  grid-template-columns: max-content 150px;
+  padding: 9px 12px;
+  transform: translate(calc(50% + 26px), 0);
+}
+
+.projectNode3d[data-mode="health"] .nodeMeta {
+  max-height: 14px;
+  opacity: 1;
+}
+
+.projectNode3d[data-mode="health"] .healthTrack {
+  height: 4px;
+  margin-top: 2px;
+}
+
+.projectNode3d[data-mode="health"] .healthLabel {
+  max-height: 14px;
+  opacity: 1;
 }
 
 .projectNode3d:hover,
@@ -20,4 +144,3 @@
   border-color: var(--amber);
   box-shadow: 0 0 18px rgba(215, 172, 100, 0.35);
 }
-

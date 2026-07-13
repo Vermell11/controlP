@@ -138,6 +138,13 @@
   }
 }
 
+@media (min-width: 1181px) and (max-width: 1380px) {
+  .osGrid {
+    gap: 22px;
+    grid-template-columns: 330px minmax(430px, 1fr) 330px;
+  }
+}
+
 @media (max-width: 680px) {
   .brand h1 {
     font-size: 30px;

@@ -24,6 +24,7 @@ export async function readMemory(obsidianFolder: string): Promise<MemoryReading>
     readIfExists(path.join(base, "Estado actual.md")),
     listSessions(path.join(base, "Sesiones")),
   ]);
+  const sessionStats = await readSessionStats(path.join(base, "Sesiones"), sessions);
 
   if (summary === null) issues.push({ field: "Resumen.md", level: "missing", source: "memory" });
   if (state === null) issues.push({ field: "Estado actual.md", level: "missing", source: "memory" });
@@ -45,8 +46,10 @@ export async function readMemory(obsidianFolder: string): Promise<MemoryReading>
     nextStep: cleanOrNull(section(stateText, "Siguiente paso")),
     openSession,
     purpose: cleanOrNull(section(summaryText, "Propósito") ?? firstParagraph(summaryText)),
+    sessionCount: sessionStats.count,
     stack: cleanOrNull(extractBullet(stateText, "Stack") ?? inferStack(stateText)),
     status: cleanOrNull(extractBullet(stateText, "Estado")),
+    totalSessionMinutes: sessionStats.minutes,
     validation: cleanOrNull(extractBullet(stateText, "Validación")),
   };
 
@@ -164,6 +167,24 @@ async function listSessions(dir: string): Promise<string[]> {
   } catch {
     return [];
   }
+}
+
+async function readSessionStats(dir: string, sessions: string[]): Promise<{ count: number; minutes: number }> {
+  const closed = sessions.filter((entry) => entry.toLowerCase() !== "en curso.md");
+  const contents = await Promise.all(
+    closed.map((entry) => readIfExists(path.join(dir, entry))),
+  );
+  return {
+    count: closed.length,
+    minutes: contents.reduce((total, content) => total + extractMinutes(content ?? ""), 0),
+  };
+}
+
+function extractMinutes(markdown: string): number {
+  const match = markdown.match(/Duración activa:\s*`?(\d+)\s*(minutos?|h|horas?)`?/i);
+  if (!match) return 0;
+  const value = Number(match[1]);
+  return /h|hora/i.test(match[2] ?? "") ? value * 60 : value;
 }
 
 function extractBullet(markdown: string, label: string): string | null {

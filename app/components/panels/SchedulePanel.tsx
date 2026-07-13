@@ -10,7 +10,7 @@ import type { PanelProps } from "./types";
  * El click abre un confirmador que muestra literalmente lo que se escribirá:
  * nada llega a la bóveda sin Confirmar (regla del contrato).
  */
-export default function SchedulePanel({ projects }: PanelProps) {
+export function ScheduleBody({ projects }: PanelProps) {
   const items = projects.slice(0, 5).map((project) => ({
     challenge: project.currentChallenge,
     name: project.name,
@@ -70,7 +70,6 @@ export default function SchedulePanel({ projects }: PanelProps) {
 
   return (
     <>
-      <PanelTitle title="Schedule" meta="today" />
       <div className="schedule">
         {items.map((item, index) => {
           const isDone = done[item.slug];
@@ -130,6 +129,15 @@ export default function SchedulePanel({ projects }: PanelProps) {
         Marcar = registrar avance del día. Solo agrega una línea a la Bitácora del
         proyecto (append-only); nunca toca tus notas.
       </small>
+    </>
+  );
+}
+
+export default function SchedulePanel({ projects }: PanelProps) {
+  return (
+    <>
+      <PanelTitle title="Schedule" meta="today" />
+      <ScheduleBody projects={projects} />
     </>
   );
 }

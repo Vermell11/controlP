@@ -1,27 +1,57 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { tone } from "@/lib/ui";
+import { ScheduleBody } from "./SchedulePanel";
 import type { PanelProps } from "./types";
+import { WireBody } from "./WirePanel";
 
-export type DeckView = "metrics" | "trend" | "inbox" | "plan";
+export type DeckView = "metrics" | "trend" | "inbox" | "plan" | "schedule" | "feed";
 
-/** Metrics Pull: avance por proyecto — barra de salud, versión y grafo. */
+function sessionParts(value: string) {
+  const date = value.match(/\d{4}-\d{2}-\d{2}/)?.[0] ?? "sin fecha";
+  const version = value.match(/V\d+(?:\.\d+)*/i)?.[0] ?? "sin versión";
+  return `${date} · ${version}`;
+}
+
+function daysSince(value: string | null) {
+  if (!value) return "sin ritmo";
+  const days = Math.max(0, Math.floor((Date.now() - new Date(value).getTime()) / 86_400_000));
+  if (days === 0) return "hoy";
+  if (days === 1) return "ayer";
+  return `${days}d sin commit`;
+}
+
+function formatHours(minutes: number) {
+  if (minutes <= 0) return "0h";
+  const hours = minutes / 60;
+  return `${Number.isInteger(hours) ? hours : hours.toFixed(1)}h`;
+}
+
+/** Metrics Pull: operación compacta por proyecto — sesiones, tiempo, versión y ritmo. */
 export function MetricsView({ projects }: PanelProps) {
   return (
-    <div className="deckMetrics">
+    <div className="metricOps">
       {projects.map((project) => (
-        <div className="deckMetric" key={project.id}>
-          <div className="deckMetricHead">
+        <div className="metricOpsRow" key={project.id}>
+          <div className="metricOpsProject">
             <b>{project.name}</b>
-            <span>{`${project.git.latestTag ?? "sin tag"} · grafo ${
-              project.graphify.nodes ?? "–"
-            }/${project.graphify.edges ?? "–"}`}</span>
           </div>
-          <div className="meterTrack">
-            <i className={tone(project.health)} style={{ width: `${project.health}%` }} />
+          <div>
+            <small>sesiones</small>
+            <strong>{project.sessionCount}</strong>
           </div>
-          <small>{`salud ${project.health}%`}</small>
+          <div>
+            <small>horas</small>
+            <strong>{formatHours(project.totalSessionMinutes)}</strong>
+          </div>
+          <div>
+            <small>última</small>
+            <span>{sessionParts(project.latestSession)}</span>
+          </div>
+          <div>
+            <small>tag · ritmo</small>
+            <span>{`${project.git.latestTag ?? "sin tag"} · ${daysSince(project.git.latestCommitDate)}`}</span>
+          </div>
         </div>
       ))}
     </div>
@@ -118,7 +148,7 @@ export function InboxView({ projects }: PanelProps) {
   );
 }
 
-/** Plan Today: el plan del día en modo lectura (se marca en Schedule). */
+/** Plan Today: el plan del día en modo lectura (se marca en la vista Schedule). */
 export function PlanView({ projects }: PanelProps) {
   const [done, setDone] = useState<Record<string, boolean>>({});
 
@@ -146,7 +176,15 @@ export function PlanView({ projects }: PanelProps) {
           </div>
         </div>
       ))}
-      <p className="deckNote">Marca avances desde el panel Schedule.</p>
+      <p className="deckNote">Marca avances desde la vista Schedule.</p>
     </div>
   );
+}
+
+export function ScheduleView({ projects }: PanelProps) {
+  return <ScheduleBody projects={projects} />;
+}
+
+export function FeedView({ projects }: PanelProps) {
+  return <WireBody projects={projects} />;
 }

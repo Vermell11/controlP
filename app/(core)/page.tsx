@@ -52,6 +52,9 @@ export default async function Home() {
           <CenterStage
             nodes={projects.map((project) => ({
               health: project.health,
+              meta: `${project.git.latestTag ?? "sin tag"} · grafo ${
+                project.graphify.nodes ?? "–"
+              }/${project.graphify.edges ?? "–"}`,
               name: project.name,
               slug: project.slug,
             }))}

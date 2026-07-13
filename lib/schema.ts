@@ -10,7 +10,7 @@
  */
 
 /** Versión del contrato de datos. Sube cuando cambie la forma del esquema. */
-export const SCHEMA_VERSION = 1;
+export const SCHEMA_VERSION = 2;
 
 export type IssueSource = "registry" | "memory" | "evidence" | "graph";
 
@@ -34,6 +34,8 @@ export interface ProjectMemory {
   nextStep: string | null;
   latestSession: string | null;
   openSession: boolean;
+  sessionCount: number;
+  totalSessionMinutes: number;
 }
 
 /** Campos que la memoria debe documentar; su ausencia es un issue "missing". */
@@ -92,6 +94,8 @@ export interface ProjectCard {
   validation: string;
   nextStep: string;
   latestSession: string;
+  sessionCount: number;
+  totalSessionMinutes: number;
   openSession: boolean;
   graphify: ProjectGraph;
   git: ProjectEvidence;

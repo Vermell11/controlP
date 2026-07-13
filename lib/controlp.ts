@@ -73,9 +73,11 @@ async function buildCard(entry: RegistryEntry, registryIssues: DataIssue[]): Pro
     openSession: memory.openSession,
     purpose: memory.purpose ?? "Sin propósito documentado.",
     resolved,
+    sessionCount: memory.sessionCount,
     slug: entry.slug,
     stack: memory.stack ?? "No especificado",
     status: memory.status ?? (memory.openSession ? "activo" : "sin estado"),
+    totalSessionMinutes: memory.totalSessionMinutes,
     validation,
   };
 }

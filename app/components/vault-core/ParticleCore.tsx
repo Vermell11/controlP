@@ -115,8 +115,8 @@ export default function ParticleCore({ nodes }: { nodes: StageNode[] }) {
     const target = Math.min(preset.baseIntensity + level, 1.6);
     intensityRef.current = THREE.MathUtils.lerp(intensityRef.current, target, delta * 4);
 
-    // Frenado suave con hover o en formación ranking (y reanudación suave).
-    const stopSpin = hold || formation === "health";
+    // Frenado suave con hover o formaciones de lectura (y reanudación suave).
+    const stopSpin = hold || formation !== "orbit";
     spinRef.current = THREE.MathUtils.lerp(spinRef.current, stopSpin ? 0 : 1, delta * 6);
 
     pointsMaterial.uniforms.uTime.value = state.clock.elapsedTime;
@@ -125,9 +125,9 @@ export default function ParticleCore({ nodes }: { nodes: StageNode[] }) {
     linesMaterial.opacity = 0.1 + intensityRef.current * 0.12;
 
     if (groupRef.current) {
-      // En ranking, el grupo vuelve suavemente a rotación 0 para que la
-      // columna quede de frente a la cámara.
-      if (formation === "health") {
+      // En formaciones de lectura, el grupo vuelve suavemente a rotación 0
+      // para quedar de frente a la cámara.
+      if (formation !== "orbit") {
         const twoPi = Math.PI * 2;
         let offset = groupRef.current.rotation.y % twoPi;
         if (offset > Math.PI) offset -= twoPi;

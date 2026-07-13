@@ -1,7 +1,15 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { InboxView, MetricsView, PlanView, TrendView, type DeckView } from "./DeckViews";
+import {
+  FeedView,
+  InboxView,
+  MetricsView,
+  PlanView,
+  ScheduleView,
+  TrendView,
+  type DeckView,
+} from "./DeckViews";
 import type { PanelProps } from "./types";
 
 /** Comandos-vista: efecto inmediato en el display del deck. */
@@ -10,6 +18,8 @@ const VIEW_COMMANDS: { command: string; view: DeckView }[] = [
   { command: "Trend Scan", view: "trend" },
   { command: "Inbox Brief", view: "inbox" },
   { command: "Plan Today", view: "plan" },
+  { command: "Schedule", view: "schedule" },
+  { command: "System Feed", view: "feed" },
 ];
 
 /** Comandos-intent: encolan para el runner (Sprint 3/4). */
@@ -19,6 +29,8 @@ const VIEW_TITLE: Record<DeckView, string> = {
   inbox: "Inbox Brief",
   metrics: "Metrics Pull",
   plan: "Plan Today",
+  schedule: "Schedule",
+  feed: "System Feed",
   trend: "Trend Scan",
 };
 
@@ -115,6 +127,8 @@ export default function CommandDeckPanel({ projects }: PanelProps) {
           {view === "trend" && <TrendView />}
           {view === "inbox" && <InboxView projects={projects} />}
           {view === "plan" && <PlanView projects={projects} />}
+          {view === "schedule" && <ScheduleView projects={projects} />}
+          {view === "feed" && <FeedView projects={projects} />}
         </div>
       )}
     </>

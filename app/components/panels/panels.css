@@ -37,7 +37,7 @@
 
 .vital i {
   background:
-    linear-gradient(90deg, var(--amber), var(--hot) 70%, transparent 70%),
+    linear-gradient(90deg, var(--amber), var(--hot) var(--fill, 0%), transparent var(--fill, 0%)),
     linear-gradient(90deg, rgba(215, 172, 100, 0.18), rgba(215, 172, 100, 0.18));
   display: block;
   height: 2px;
@@ -103,7 +103,7 @@
 
 .commandDeck {
   display: grid;
-  gap: 1px 18px;
+  gap: 1px 12px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-bottom: 30px;
 }
@@ -112,9 +112,9 @@
   border-bottom: 1px solid var(--line-soft);
   color: #ada095;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 900;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.16em;
   padding: 10px 0;
   text-align: left;
   text-transform: uppercase;
@@ -270,7 +270,7 @@
 
 .vital:hover i {
   background:
-    linear-gradient(90deg, #050403, #6b5232 70%, transparent 70%),
+    linear-gradient(90deg, #050403, #6b5232 var(--fill, 0%), transparent var(--fill, 0%)),
     linear-gradient(90deg, rgba(5, 4, 3, 0.2), rgba(5, 4, 3, 0.2));
 }
 
@@ -463,6 +463,62 @@ a.vital {
 .deckMetrics {
   display: grid;
   gap: 14px;
+}
+
+.metricOps {
+  display: grid;
+  gap: 10px;
+}
+
+.metricOpsRow {
+  border-bottom: 1px solid var(--line-soft);
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding-bottom: 12px;
+}
+
+.metricOpsProject {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+.metricOpsProject b,
+.metricOpsRow strong {
+  color: var(--paper);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.metricOpsProject b {
+  display: block;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.metricOpsProject span,
+.metricOpsRow span,
+.metricOpsRow small {
+  color: var(--dim);
+  display: block;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 10px;
+  line-height: 1.35;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.metricOpsRow small {
+  color: #8e7660;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.metricOpsRow strong {
+  display: block;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  line-height: 1.2;
 }
 
 .deckMetricHead {

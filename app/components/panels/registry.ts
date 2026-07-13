@@ -3,10 +3,8 @@ import type { ComponentType } from "react";
 import CommandDeckPanel from "./CommandDeckPanel";
 import DirectivesPanel from "./DirectivesPanel";
 import DocumentsPanel from "./DocumentsPanel";
-import SchedulePanel from "./SchedulePanel";
 import type { PanelProps } from "./types";
 import VitalsPanel from "./VitalsPanel";
-import WirePanel from "./WirePanel";
 
 export interface PanelEntry {
   id: string;
@@ -26,6 +24,4 @@ export const leftPanels: PanelEntry[] = [
 
 export const rightPanels: PanelEntry[] = [
   { Component: CommandDeckPanel, id: "command-deck" },
-  { Component: SchedulePanel, id: "schedule" },
-  { Component: WirePanel, id: "wire" },
 ];

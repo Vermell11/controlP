@@ -2,10 +2,10 @@
 
 ControlP is a local-first visual Agentic Project OS for Andres Ortega. It reads the Cerebro Obsidian vault as the project index, resolves local project folders under `/code`, and visualizes Git, Graphify, sessions, health, and next steps in a V.A.U.L.T.-style dashboard.
 
-Current state: V1.0–V1.2.2 are closed, tagged, pushed and in Notion. Sprint 2 (V1.3, operational panels) is implemented and uncommitted: `/queue` view, Schedule with server-side day plan and transactional write-back to project Bitácora (Obsidian first, then plan state), System Feed with live commits and broken-source alerts, record editing on `/p/[slug]` via server actions → memory adapter, Command Deck with display views (metrics, trends, inbox, plan) plus honest queue commands, 3D node formations (orbit ↔ health ranking), and `SCHEMA_VERSION` in the data contract.
+Current state: V1.0–V1.3 are closed, tagged, pushed and in Notion; V1.3.1 (interactive 3D formations) is committed: Project Health opens a vertical health diagnostic with fisheye lens (centered item dominates, others shrink and recede), orb left + aligned data panel (name, tag · graph metric, health bar), scrollable; Vault Projects is an auto-sized grid; CameraDirector lerps the camera home and locks controls in reading formations; smooth CSS morph between label modes; vitals with progress bars; Schedule and System Feed consolidated as Command Deck views.
 
 Quality gates (V1.2.2): `npm run check` (typecheck + explicit ESLint) is the official contract; registry enforces id/slug uniqueness.
 
-Reto actual: register V1.3 close (tag, Notion, push, post-close reconciliation). Then the priority story V1.3.1 — Schedule as an operational daily agenda (manual tasks with project, target date, id/status, recorded in project memory on confirm), and afterwards Sprint 3 — Voice I. Roadmap in `Proyectos/ControlP/Roadmap`; data architecture in `Proyectos/ControlP/Arquitectura/Datos`.
+Reto actual: register V1.3.1 close, then V1.3.2 — Schedule as an operational daily agenda (manual tasks with project, target date, id/status, recorded in project memory on confirm). Afterwards Sprint 3 — Voice I (V1.4). Roadmap in `Proyectos/ControlP/Roadmap`; data architecture in `Proyectos/ControlP/Arquitectura/Datos`.
 
 Pointers: `app/(core)/page.tsx`, `app/components/panels/registry.ts`, `lib/schema.ts`, `lib/registry.ts`, `lib/adapters/`, `lib/intents.ts`, `lib/schedule.ts`, `app/queue/`, `graphify-out/GRAPH_REPORT.md`.
