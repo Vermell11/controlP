@@ -54,6 +54,101 @@ export async function readMemory(obsidianFolder: string): Promise<MemoryReading>
   return { issues, latestSessionFile: sessions.at(-1) ?? null, memory };
 }
 
+/**
+ * Escritura de traza: agrega una línea a la Bitácora del proyecto.
+ * Primera escritura del rol memoria — append-only, nunca reescribe historia.
+ */
+export async function appendLogEntry(
+  obsidianFolder: string,
+  line: string,
+): Promise<DataIssue | null> {
+  // Una entrada = una línea: sin saltos ni whitespace raro que rompa el md.
+  const sanitized = line.replace(/\s+/g, " ").trim();
+  const file = path.join(
+    adapterConfig.vaultRoot,
+    "Proyectos",
+    obsidianFolder,
+    "Bitácora.md",
+  );
+  try {
+    try {
+      await fs.access(file);
+    } catch {
+      await fs.writeFile(file, `# Bitácora de ${obsidianFolder}\n\n`, "utf8");
+    }
+    await fs.appendFile(file, `- ${sanitized}\n`, "utf8");
+    return null;
+  } catch (error) {
+    return {
+      detail: (error as Error).message.split("\n")[0],
+      field: "Bitácora.md",
+      level: "broken",
+      source: "memory",
+    };
+  }
+}
+
+/** Campos editables de la cápsula (bullets de Estado actual.md). */
+export type EditableBullet = "Reto" | "Validación" | "Estado";
+
+/**
+ * Actualiza un bullet de Estado actual.md preservando el resto del documento.
+ * Reemplaza la línea del campo y sus continuaciones indentadas; si el campo
+ * no existe, lo agrega al final del bloque inicial de bullets.
+ */
+export async function updateStateBullet(
+  obsidianFolder: string,
+  field: EditableBullet,
+  value: string,
+): Promise<DataIssue | null> {
+  return editStateFile(obsidianFolder, (content) => {
+    const escaped = field.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const bullet = `- ${field}: ${value}`;
+    const pattern = new RegExp(`^-\\s*${escaped}:.*(?:\\n(?![-#\\n]).*)*`, "m");
+    if (pattern.test(content)) return content.replace(pattern, bullet);
+    const sectionStart = content.search(/\n##\s/);
+    if (sectionStart === -1) return `${content.trimEnd()}\n${bullet}\n`;
+    return `${content.slice(0, sectionStart).trimEnd()}\n${bullet}\n${content.slice(sectionStart)}`;
+  });
+}
+
+/** Reemplaza el contenido de la sección "## Siguiente paso". */
+export async function updateNextStep(
+  obsidianFolder: string,
+  value: string,
+): Promise<DataIssue | null> {
+  return editStateFile(obsidianFolder, (content) => {
+    const pattern = /^##\s+Siguiente paso\s*\n[\s\S]*?(?=\n##\s|$)/m;
+    const section = `## Siguiente paso\n\n${value}\n`;
+    if (pattern.test(content)) return content.replace(pattern, section);
+    return `${content.trimEnd()}\n\n${section}`;
+  });
+}
+
+async function editStateFile(
+  obsidianFolder: string,
+  transform: (content: string) => string,
+): Promise<DataIssue | null> {
+  const file = path.join(
+    adapterConfig.vaultRoot,
+    "Proyectos",
+    obsidianFolder,
+    "Estado actual.md",
+  );
+  try {
+    const content = await fs.readFile(file, "utf8");
+    await fs.writeFile(file, transform(content), "utf8");
+    return null;
+  } catch (error) {
+    return {
+      detail: (error as Error).message.split("\n")[0],
+      field: "Estado actual.md",
+      level: "broken",
+      source: "memory",
+    };
+  }
+}
+
 async function readIfExists(file: string): Promise<string | null> {
   try {
     return await fs.readFile(file, "utf8");

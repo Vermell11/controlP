@@ -87,6 +87,20 @@
   color: var(--dim);
 }
 
+.queueLink {
+  color: var(--dim);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.32em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.12s ease;
+}
+
+.queueLink:hover {
+  color: var(--amber);
+}
+
 .commandDeck {
   display: grid;
   gap: 1px 18px;
@@ -132,7 +146,7 @@
   margin-bottom: 32px;
 }
 
-.schedule div {
+.schedule div[role="button"] {
   display: grid;
   gap: 12px;
   grid-template-columns: 48px 1fr;
@@ -165,12 +179,8 @@
   padding: 1px 4px;
 }
 
-.schedule > div {
-  cursor: pointer;
-}
-
-.schedule > div.done time,
-.schedule > div.done p {
+.schedule div[role="button"].done time,
+.schedule div[role="button"].done p {
   color: var(--dim);
   text-decoration: line-through;
 }
@@ -201,7 +211,7 @@
 .directives li,
 .docTrail a,
 .commandDeck button,
-.schedule > div,
+.schedule div[role="button"],
 .wire p {
   margin-left: -7px;
   margin-right: -7px;
@@ -214,7 +224,7 @@
 .directives li:hover,
 .docTrail a:hover,
 .commandDeck button:hover,
-.schedule > div:hover,
+.schedule div[role="button"]:hover,
 .wire p:hover {
   background: var(--paper);
   box-shadow: 0 0 20px rgba(243, 237, 224, 0.28);
@@ -225,10 +235,10 @@
 .vital:hover strong,
 .vital:hover span,
 .docTrail a:hover small,
-.schedule > div:hover time,
-.schedule > div:hover p,
-.schedule > div.done:hover time,
-.schedule > div.done:hover p {
+.schedule div[role="button"]:hover time,
+.schedule div[role="button"]:hover p,
+.schedule div[role="button"].done:hover time,
+.schedule div[role="button"].done:hover p {
   color: #050403;
 }
 
@@ -237,7 +247,7 @@
 }
 
 .wire p:hover::before,
-.schedule > div:hover .now p::after {
+.schedule div[role="button"]:hover .now p::after {
   color: #050403;
 }
 
@@ -269,4 +279,327 @@
   .commandDeck {
     grid-template-columns: 1fr;
   }
+}
+
+.wire p.feed-warn::before {
+  content: "!";
+}
+
+.wire p.feed-warn {
+  color: var(--amber);
+}
+
+.wire p.feed-alert::before {
+  color: var(--red);
+  content: "x";
+}
+
+.wire p.feed-alert {
+  color: var(--red);
+}
+
+
+
+
+.directiveProject {
+  color: var(--amber);
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.directives li:hover .directiveProject {
+  color: #050403;
+}
+
+.scheduleItem > div[role="button"] {
+  cursor: pointer;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 48px 1fr;
+}
+
+.savedBadge {
+  border: 1px solid var(--green);
+  color: var(--green);
+  font-size: 9px;
+  font-style: normal;
+  letter-spacing: 0.18em;
+  margin-left: 8px;
+  padding: 1px 4px;
+  text-transform: uppercase;
+}
+
+.scheduleConfirm {
+  background: rgba(215, 172, 100, 0.07);
+  border: 1px solid var(--amber);
+  display: grid;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 10px;
+}
+
+.scheduleConfirm small {
+  color: var(--paper);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.scheduleConfirm code {
+  color: var(--amber);
+  display: block;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 11px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.scheduleConfirmActions {
+  display: flex;
+  gap: 10px;
+}
+
+.scheduleConfirmActions button {
+  border: 1px solid var(--line);
+  color: var(--amber);
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.scheduleConfirmActions button:hover {
+  background: var(--paper);
+  color: #050403;
+}
+
+.scheduleConfirmActions button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.scheduleLegend {
+  color: var(--dim);
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  margin: -18px 0 32px;
+}
+
+a.vital {
+  display: block;
+  text-decoration: none;
+}
+
+.vitalAction {
+  cursor: pointer;
+}
+
+.vital.active {
+  border-bottom-color: var(--amber);
+}
+
+.vital.active small {
+  color: var(--amber);
+}
+
+.commandDeck button.viewActive {
+  border-bottom-color: var(--amber);
+  color: var(--paper);
+}
+
+.commandDeck button.viewActive::before {
+  content: "◉";
+}
+
+.deckFeedback {
+  color: var(--amber);
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 11px;
+  margin: -18px 0 24px;
+}
+
+.deckFeedback a {
+  color: var(--paper);
+  text-decoration: underline;
+}
+
+.deckDisplay {
+  background: rgba(215, 172, 100, 0.05);
+  border: 1px solid var(--line);
+  margin: -14px 0 30px;
+  padding: 12px;
+}
+
+.deckDisplayHead {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.deckDisplayHead strong {
+  color: var(--amber);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.deckDisplayHead button {
+  color: var(--dim);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.deckDisplayHead button:hover {
+  color: var(--paper);
+}
+
+.deckMetrics {
+  display: grid;
+  gap: 14px;
+}
+
+.deckMetricHead {
+  align-items: baseline;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.deckMetricHead b {
+  color: var(--paper);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.deckMetricHead span,
+.deckMetric small {
+  color: var(--dim);
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 10px;
+}
+
+.meterTrack {
+  background: rgba(219, 184, 135, 0.12);
+  height: 4px;
+  margin: 6px 0 4px;
+}
+
+.meterTrack i {
+  background: var(--green);
+  box-shadow: 0 0 10px currentColor;
+  display: block;
+  height: 100%;
+  transition: width 0.6s ease;
+}
+
+.meterTrack i.warn {
+  background: var(--amber);
+}
+
+.meterTrack i.bad {
+  background: var(--red);
+}
+
+.sparkline {
+  display: block;
+  margin-top: 6px;
+  width: 100%;
+}
+
+.sparkline polyline {
+  stroke: var(--amber);
+}
+
+.sparkline circle {
+  fill: var(--hot);
+}
+
+.deckNote {
+  color: var(--dim);
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 11px;
+  margin: 8px 0 0;
+}
+
+.deckInbox {
+  display: grid;
+  gap: 12px;
+}
+
+.deckInbox b {
+  color: var(--paper);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.deckInbox ul {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+}
+
+.deckInbox li {
+  color: var(--amber);
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.deckInbox li::before {
+  content: "! ";
+}
+
+.deckInbox li.broken {
+  color: var(--red);
+}
+
+.deckInbox li.broken::before {
+  content: "x ";
+}
+
+.deckPlan {
+  display: grid;
+  gap: 10px;
+}
+
+.deckPlan > div {
+  display: grid;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 12px;
+  gap: 10px;
+  grid-template-columns: 14px 1fr;
+  line-height: 1.4;
+}
+
+.deckPlan > div b {
+  color: var(--amber);
+}
+
+.deckPlan > div.done {
+  color: var(--dim);
+  text-decoration: line-through;
+}
+
+.deckPlan > div.done b {
+  color: var(--green);
+}
+
+.scheduleError {
+  border: 1px solid var(--red);
+  color: var(--red);
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 11px;
+  margin: 0;
+  padding: 6px 8px;
 }

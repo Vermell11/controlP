@@ -108,15 +108,16 @@ export default function ParticleCore({ nodes }: { nodes: StageNode[] }) {
   );
 
   useFrame((state, delta) => {
-    const { state: coreState, level, hold } = signals;
+    const { state: coreState, level, hold, formation } = signals;
     const preset = STATE_PRESETS[coreState];
 
     // Intensidad objetivo = base del estado + energía externa (voz futura).
     const target = Math.min(preset.baseIntensity + level, 1.6);
     intensityRef.current = THREE.MathUtils.lerp(intensityRef.current, target, delta * 4);
 
-    // Frenado suave al pasar el cursor por un nodo (y reanudación suave).
-    spinRef.current = THREE.MathUtils.lerp(spinRef.current, hold ? 0 : 1, delta * 6);
+    // Frenado suave con hover o en formación ranking (y reanudación suave).
+    const stopSpin = hold || formation === "health";
+    spinRef.current = THREE.MathUtils.lerp(spinRef.current, stopSpin ? 0 : 1, delta * 6);
 
     pointsMaterial.uniforms.uTime.value = state.clock.elapsedTime;
     pointsMaterial.uniforms.uIntensity.value = intensityRef.current;
@@ -124,6 +125,15 @@ export default function ParticleCore({ nodes }: { nodes: StageNode[] }) {
     linesMaterial.opacity = 0.1 + intensityRef.current * 0.12;
 
     if (groupRef.current) {
+      // En ranking, el grupo vuelve suavemente a rotación 0 para que la
+      // columna quede de frente a la cámara.
+      if (formation === "health") {
+        const twoPi = Math.PI * 2;
+        let offset = groupRef.current.rotation.y % twoPi;
+        if (offset > Math.PI) offset -= twoPi;
+        if (offset < -Math.PI) offset += twoPi;
+        groupRef.current.rotation.y -= offset * Math.min(delta * 3, 1);
+      }
       groupRef.current.rotation.y += delta * preset.rotationSpeed * spinRef.current;
       // Respiración sutil, amplificada por la intensidad.
       const breathe = 1 + Math.sin(state.clock.elapsedTime * 0.5) * 0.015 * (1 + intensityRef.current);

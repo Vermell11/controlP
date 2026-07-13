@@ -1,4 +1,5 @@
 import "./record.css";
+import EditableText from "@/app/components/records/EditableText";
 import type { ProjectCard } from "@/lib/controlp";
 import { formatDate, tone } from "@/lib/ui";
 
@@ -11,8 +12,18 @@ function Fact({ label, value }: { label: string; value: string }) {
   );
 }
 
-/** Ficha completa de un proyecto (usada por las páginas /p/[proyecto]). */
-export default function ProjectRecord({ project }: { project: ProjectCard }) {
+/**
+ * Ficha completa de un proyecto (usada por las páginas /p/[slug]).
+ * Con `editable`, Reto/Validación/Siguiente se editan vía server action →
+ * adaptador de memoria, con confirmación explícita.
+ */
+export default function ProjectRecord({
+  project,
+  editable = false,
+}: {
+  project: ProjectCard;
+  editable?: boolean;
+}) {
   return (
     <article className="projectRecord" id={project.name}>
       <header>
@@ -41,15 +52,27 @@ export default function ProjectRecord({ project }: { project: ProjectCard }) {
       <div className="recordBody">
         <section>
           <h3>Reto</h3>
-          <p>{project.currentChallenge}</p>
+          {editable ? (
+            <EditableText field="reto" initial={project.currentChallenge} slug={project.slug} />
+          ) : (
+            <p>{project.currentChallenge}</p>
+          )}
         </section>
         <section>
           <h3>Validación</h3>
-          <p>{project.validation}</p>
+          {editable ? (
+            <EditableText field="validacion" initial={project.validation} slug={project.slug} />
+          ) : (
+            <p>{project.validation}</p>
+          )}
         </section>
         <section>
           <h3>Siguiente</h3>
-          <p>{project.nextStep}</p>
+          {editable ? (
+            <EditableText field="siguiente" initial={project.nextStep} slug={project.slug} />
+          ) : (
+            <p>{project.nextStep}</p>
+          )}
         </section>
       </div>
       <footer>

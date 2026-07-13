@@ -1,0 +1,67 @@
+"use server";
+
+import { revalidatePath } from "next/cache";
+import {
+  appendLogEntry,
+  updateNextStep,
+  updateStateBullet,
+  type EditableBullet,
+} from "@/lib/adapters/memory-obsidian";
+import { loadRegistry } from "@/lib/registry";
+
+export type EditableField = "reto" | "validacion" | "estado" | "siguiente";
+
+const BULLET_BY_FIELD: Partial<Record<EditableField, EditableBullet>> = {
+  estado: "Estado",
+  reto: "Reto",
+  validacion: "Validación",
+};
+
+export interface UpdateResult {
+  ok: boolean;
+  error?: string;
+}
+
+/**
+ * Server action: edición de la cápsula del proyecto, siempre vía adaptador de
+ * memoria y con traza en la Bitácora. La confirmación ocurre en la UI antes
+ * de llamar aquí (regla del contrato).
+ */
+const VALID_FIELDS: ReadonlyArray<EditableField> = ["reto", "validacion", "estado", "siguiente"];
+
+export async function updateProjectField(
+  slug: string,
+  field: EditableField,
+  value: string,
+): Promise<UpdateResult> {
+  // Frontera de escritura: validar explícitamente, no confiar en la UI.
+  if (!VALID_FIELDS.includes(field)) {
+    return { error: `Campo no editable: ${String(field)}.`, ok: false };
+  }
+
+  const cleaned = value.replace(/\s+/g, " ").trim();
+  if (cleaned.length < 3 || cleaned.length > 600) {
+    return { error: "El texto debe tener entre 3 y 600 caracteres.", ok: false };
+  }
+
+  const { entries } = await loadRegistry();
+  const entry = entries.find((candidate) => candidate.slug === slug);
+  if (!entry) return { error: "Proyecto desconocido.", ok: false };
+
+  const folder = entry.sources.obsidianFolder;
+  const issue =
+    field === "siguiente"
+      ? await updateNextStep(folder, cleaned)
+      : await updateStateBullet(folder, BULLET_BY_FIELD[field] as EditableBullet, cleaned);
+
+  if (issue) {
+    return { error: `No se pudo escribir en la memoria: ${issue.detail ?? issue.field}`, ok: false };
+  }
+
+  const stamp = new Date().toISOString().slice(0, 16).replace("T", " ");
+  await appendLogEntry(folder, `${stamp} — campo "${field}" editado desde ControlP`);
+
+  revalidatePath(`/p/${slug}`);
+  revalidatePath("/");
+  return { ok: true };
+}

@@ -9,15 +9,25 @@ export type CoreState = "idle" | "listening" | "processing";
  * Se leen por frame (sin re-render de React), así que un futuro hook de
  * micrófono solo tiene que escribir aquí: signals.level = nivelDeVoz.
  */
+/** Formación de los nodos de proyecto en la escena. */
+export type NodeFormation = "orbit" | "health";
+
 export interface VaultSignals {
   state: CoreState;
   /** Energía externa 0..1 (voz en el futuro). 0 = reposo. */
   level: number;
   /** true mientras el cursor está sobre un nodo: pausa la rotación. */
   hold: boolean;
+  /** orbit = sobre la esfera; health = ranking vertical por salud. */
+  formation: NodeFormation;
 }
 
-export const DEFAULT_SIGNALS: VaultSignals = { hold: false, level: 0, state: "idle" };
+export const DEFAULT_SIGNALS: VaultSignals = {
+  formation: "orbit",
+  hold: false,
+  level: 0,
+  state: "idle",
+};
 
 /** Proyecto tal como lo consume la escena (subset serializable de ProjectCard). */
 export interface StageNode {

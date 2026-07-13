@@ -32,7 +32,7 @@ export default async function ProjectPage({
           Obsidian ↗
         </a>
       </header>
-      <ProjectRecord project={project} />
+      <ProjectRecord editable project={project} />
     </main>
   );
 }

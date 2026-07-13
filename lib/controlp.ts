@@ -2,7 +2,13 @@ import { readEvidence } from "./adapters/evidence-git";
 import { readGraph } from "./adapters/graph-graphify";
 import { readMemory } from "./adapters/memory-obsidian";
 import { loadRegistry, type RegistryEntry } from "./registry";
-import type { DataIssue, ProjectCard, ProjectEvidence, ProjectGraph } from "./schema";
+import {
+  SCHEMA_VERSION,
+  type DataIssue,
+  type ProjectCard,
+  type ProjectEvidence,
+  type ProjectGraph,
+} from "./schema";
 
 export type { ProjectCard } from "./schema";
 
@@ -54,6 +60,7 @@ async function buildCard(entry: RegistryEntry, registryIssues: DataIssue[]): Pro
   return {
     alerts,
     currentChallenge: memory.currentChallenge ?? "Sin reto activo documentado.",
+    schemaVersion: SCHEMA_VERSION,
     git: evidenceReading.git,
     graphify: graphReading.graphify,
     health,

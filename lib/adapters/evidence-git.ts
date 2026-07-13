@@ -51,6 +51,37 @@ export async function readEvidence(repoPath: string | null): Promise<EvidenceRea
   };
 }
 
+/**
+ * Actividad de commits: conteo por día para los últimos `days` días
+ * (índice 0 = el día más antiguo). null si la lectura falla.
+ */
+export async function readCommitActivity(
+  repoPath: string,
+  days: number,
+): Promise<number[] | null> {
+  try {
+    const { stdout } = await execFileAsync(
+      "git",
+      ["log", `--since=${days} days ago`, "--pretty=%cs"],
+      { cwd: repoPath },
+    );
+    const counts = new Map<string, number>();
+    for (const line of stdout.split("\n")) {
+      const date = line.trim();
+      if (date) counts.set(date, (counts.get(date) ?? 0) + 1);
+    }
+    const series: number[] = [];
+    const now = Date.now();
+    for (let i = days - 1; i >= 0; i -= 1) {
+      const date = new Date(now - i * 86_400_000).toISOString().slice(0, 10);
+      series.push(counts.get(date) ?? 0);
+    }
+    return series;
+  } catch {
+    return null;
+  }
+}
+
 async function git(
   cwd: string,
   args: string[],

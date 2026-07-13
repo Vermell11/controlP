@@ -1,14 +1,71 @@
 import PanelTitle from "@/app/components/ui/PanelTitle";
+import { formatDate } from "@/lib/ui";
+import type { PanelProps } from "./types";
 
-/** AI Wire (estático por ahora; evoluciona a System Feed en Sprint 2). */
-export default function WirePanel() {
+interface FeedEntry {
+  text: string;
+  tone: "info" | "warn" | "alert";
+  sortKey: string;
+}
+
+/**
+ * System Feed: el telégrafo del sistema. Commits recientes, sesiones abiertas
+ * y alertas reales (incluidas fuentes rotas del protocolo de verdad).
+ * Aquí caerán también las notificaciones del asistente (Sprint 4).
+ */
+export default function WirePanel({ projects }: PanelProps) {
+  const entries: FeedEntry[] = [];
+
+  for (const project of projects) {
+    if (project.git.latestCommit && project.git.latestCommitDate) {
+      entries.push({
+        sortKey: project.git.latestCommitDate,
+        text: `${project.name} · ${project.git.latestCommit} · ${formatDate(project.git.latestCommitDate)}`,
+        tone: "info",
+      });
+    }
+    if (project.openSession) {
+      entries.push({
+        sortKey: "9998",
+        text: `${project.name} · sesión abierta (${project.latestSession})`,
+        tone: "warn",
+      });
+    }
+    for (const issue of project.issues) {
+      if (issue.level === "broken") {
+        entries.push({
+          sortKey: "9999",
+          text: `${project.name} · fuente rota: ${issue.source}/${issue.field}`,
+          tone: "alert",
+        });
+      }
+    }
+    if (project.git.dirty) {
+      entries.push({
+        sortKey: "9997",
+        text: `${project.name} · cambios sin commit`,
+        tone: "warn",
+      });
+    }
+  }
+
+  const feed = entries
+    .sort((a, b) => b.sortKey.localeCompare(a.sortKey))
+    .slice(0, 8);
+
   return (
     <>
-      <PanelTitle title="AI Wire" meta="morning.intel" />
+      <PanelTitle title="System Feed" meta="live.wire" />
       <div className="wire">
-        <p>Obsidian is the project index. Git is evidence. Graphify is derived context.</p>
-        <p>OneDrive copies should mirror the latest version only, never own change control.</p>
-        <p>Notion remains the ledger; closing requires explicit human confirmation.</p>
+        {feed.length === 0 ? (
+          <p>Sin señales todavía: el sistema está en silencio.</p>
+        ) : (
+          feed.map((entry, index) => (
+            <p className={`feed-${entry.tone}`} key={`${entry.text}-${index}`}>
+              {entry.text}
+            </p>
+          ))
+        )}
       </div>
     </>
   );

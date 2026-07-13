@@ -1,0 +1,109 @@
+.queuePanel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 18px;
+}
+
+.queueMeta {
+  color: var(--dim);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  padding: 7px 0;
+  text-transform: uppercase;
+}
+
+.queueWarning {
+  border: 1px solid var(--red);
+  color: var(--red);
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 12px;
+  margin: 0 0 14px;
+  padding: 8px 10px;
+}
+
+.queueEmpty {
+  color: var(--dim);
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 12px;
+}
+
+.queueList {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.queueList li {
+  align-items: center;
+  border-bottom: 1px solid var(--line-soft);
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 110px 1fr 60px 78px;
+  padding: 8px 4px;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.queueList li:hover {
+  background: var(--paper);
+}
+
+.queueList li:hover time,
+.queueList li:hover .queueCommand,
+.queueList li:hover .queueSource {
+  color: #050403;
+}
+
+.queueList time,
+.queueSource {
+  color: var(--dim);
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.queueCommand {
+  color: var(--paper);
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.queueStatus {
+  border: 1px solid var(--line);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  padding: 3px 6px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.queueStatus.queued {
+  color: var(--amber);
+}
+
+.queueStatus.running {
+  color: var(--blue);
+}
+
+.queueStatus.done {
+  color: var(--green);
+}
+
+.queueStatus.failed {
+  color: var(--red);
+}
+
+@media (max-width: 680px) {
+  .queueList li {
+    grid-template-columns: 1fr 78px;
+  }
+
+  .queueList time,
+  .queueSource {
+    display: none;
+  }
+}

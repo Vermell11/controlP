@@ -9,6 +9,9 @@
  * - Sin rutas absolutas de máquina: eso pertenece a lib/config.ts.
  */
 
+/** Versión del contrato de datos. Sube cuando cambie la forma del esquema. */
+export const SCHEMA_VERSION = 1;
+
 export type IssueSource = "registry" | "memory" | "evidence" | "graph";
 
 /** "missing" = dato ausente en la fuente; "broken" = la fuente falló al leerse. */
@@ -74,6 +77,7 @@ export interface ProjectGraph {
  * sobre ausencias/errores vive en `issues`.
  */
 export interface ProjectCard {
+  schemaVersion: number;
   id: string;
   slug: string;
   name: string;
