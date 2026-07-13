@@ -1,32 +1,35 @@
 # Graph Report - /Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/ControlP  (2026-07-12)
 
 ## Corpus Check
-- 8 files · ~7,346 words
+- 24 files · ~10,830 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 252 nodes · 346 edges · 27 communities (19 shown, 8 thin omitted)
-- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.71)
+- 300 nodes · 417 edges · 30 communities (20 shown, 10 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 7 edges (avg confidence: 0.69)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
-- Vault Core Geometry
-- Package & Dependencies
-- Panel Modules
-- Evidence/Git Adapter
-- ControlP Orchestrator
+- Metrics API & Project Records
 - TypeScript Config
-- CSS Build Tools
-- Memory/Obsidian Adapter
-- Core Page & Project Routes
-- Registry & Config
-- Next.js Type Declarations
-- Intents API
+- Package & Dependencies
+- Editable Records & Server Actions
+- Vault Core 3D Particles
+- ControlP Orchestrator
+- CSS Build Tools & ESLint
+- Panel Modules
+- Intents API & Queue
+- Command Deck Views
+- Schedule API
+- Project Registry
+- Core Dashboard Page
+- V1.3 Operational Concepts
+- Vault Core Geometry
 - App Layout
 - Architecture Concepts
 - CenterStage
-- Role Adapters Layer
-- Quality Gates
+- ESLint Config
+- Adapter Config
 - Next.js Config
 - Env Declarations
 - PostCSS Config
@@ -38,110 +41,117 @@
 1. `readProject()` - 17 edges
 2. `compilerOptions` - 17 edges
 3. `readMemory()` - 12 edges
-4. `getProjects()` - 10 edges
+4. `getProjects()` - 9 edges
 5. `DataIssue` - 8 edges
-6. `buildCard()` - 7 edges
+6. `updateProjectField()` - 7 edges
 7. `include` - 6 edges
-8. `readEvidence()` - 6 edges
-9. `loadRegistry()` - 6 edges
-10. `scripts` - 6 edges
+8. `scripts` - 6 edges
+9. `readEvidence()` - 6 edges
+10. `buildCard()` - 6 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `Home()` --calls--> `getProjects()`  [INFERRED]
+  /private/tmp/controlp-graph-src/app/page.tsx → /private/tmp/controlp-graph-src/lib/controlp.ts
 - `Home()` --calls--> `getProjects()`  [EXTRACTED]
   app/(core)/page.tsx → /private/tmp/controlp-graph-src/lib/controlp.ts
 - `ProjectPage()` --calls--> `getProjects()`  [EXTRACTED]
   app/p/[slug]/page.tsx → /private/tmp/controlp-graph-src/lib/controlp.ts
-- `getProjects()` --calls--> `buildCard()`  [EXTRACTED]
-  /private/tmp/controlp-graph-src/lib/controlp.ts → lib/controlp.ts
-- `getProjects()` --calls--> `loadRegistry()`  [EXTRACTED]
-  /private/tmp/controlp-graph-src/lib/controlp.ts → lib/registry.ts
-- `GET()` --calls--> `getProjects()`  [INFERRED]
-  /private/tmp/controlp-graph-src/app/api/projects/route.ts → /private/tmp/controlp-graph-src/lib/controlp.ts
+- `GET()` --calls--> `readIntentQueue()`  [EXTRACTED]
+  app/api/intents/route.ts → lib/intents.ts
+- `GET()` --calls--> `readDayPlan()`  [EXTRACTED]
+  app/api/schedule/route.ts → lib/schedule.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (27 total, 8 thin omitted)
+## Hyperedges (group relationships)
+- **V1.3 Operational Layer** — project_context_transactional_writeback, project_context_deck_views, project_context_3d_formations, project_context_schema_version [INFERRED 0.90]
 
-### Community 0 - "Vault Core Geometry"
-Cohesion: 0.14
-Nodes (20): createLinkSegments(), createParticleField(), createRandom(), ParticleField, GOLD, PALE, ParticleCore(), goTo() (+12 more)
+## Communities (30 total, 10 thin omitted)
 
-### Community 1 - "Package & Dependencies"
+### Community 0 - "Metrics API & Project Records"
+Cohesion: 0.10
+Nodes (27): GET(), Home(), ProjectPage(), emptyEvidence(), EvidenceReading, execFileAsync, exists(), git() (+19 more)
+
+### Community 1 - "TypeScript Config"
+Cohesion: 0.06
+Nodes (30): ./*, dom, dom.iterable, esnext, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules (+22 more)
+
+### Community 2 - "Package & Dependencies"
 Cohesion: 0.08
 Nodes (24): next, dependencies, next, react, react-dom, @react-three/drei, @react-three/fiber, three (+16 more)
 
-### Community 2 - "Panel Modules"
-Cohesion: 0.13
-Nodes (13): CommandDeckPanel(), COMMANDS, DirectivesPanel(), DocumentsPanel(), leftPanels, PanelEntry, rightPanels, SchedulePanel() (+5 more)
+### Community 3 - "Editable Records & Server Actions"
+Cohesion: 0.17
+Nodes (20): EditableText(), BULLET_BY_FIELD, EditableField, updateProjectField(), UpdateResult, VALID_FIELDS, cleanOrNull(), EditableBullet (+12 more)
 
-### Community 3 - "Evidence/Git Adapter"
-Cohesion: 0.19
-Nodes (19): emptyEvidence(), EvidenceReading, execFileAsync, exists(), git(), readEvidence(), emptyGraph(), GraphReading (+11 more)
+### Community 4 - "Vault Core 3D Particles"
+Cohesion: 0.14
+Nodes (16): GOLD, PALE, goTo(), healthPosition(), orbitPosition(), ProjectNode(), ProjectNodes(), projectPath() (+8 more)
 
-### Community 4 - "ControlP Orchestrator"
+### Community 5 - "ControlP Orchestrator"
 Cohesion: 0.19
 Nodes (21): clean(), config, emptyGit(), emptyGraphify(), execFileAsync, exists(), extractBullet(), extractLatestSession() (+13 more)
 
-### Community 5 - "TypeScript Config"
-Cohesion: 0.09
-Nodes (22): ./*, dom, dom.iterable, esnext, compilerOptions, allowJs, baseUrl, esModuleInterop (+14 more)
-
-### Community 6 - "CSS Build Tools"
+### Community 6 - "CSS Build Tools & ESLint"
 Cohesion: 0.10
 Nodes (21): autoprefixer, eslint, eslint-config-next, devDependencies, autoprefixer, eslint, eslint-config-next, postcss (+13 more)
 
-### Community 7 - "Memory/Obsidian Adapter"
-Cohesion: 0.24
-Nodes (13): cleanOrNull(), extractBullet(), firstParagraph(), inferStack(), listSessions(), MemoryReading, normalizeMarkdown(), readIfExists() (+5 more)
-
-### Community 8 - "Core Page & Project Routes"
+### Community 7 - "Panel Modules"
 Cohesion: 0.16
-Nodes (5): Home(), ProjectPage(), Home(), getProjects(), GET()
+Nodes (10): DirectivesPanel(), DocumentsPanel(), leftPanels, PanelEntry, rightPanels, SchedulePanel(), PanelProps, VitalsPanel() (+2 more)
 
-### Community 9 - "Registry & Config"
+### Community 8 - "Intents API & Queue"
+Cohesion: 0.22
+Nodes (11): GET(), POST(), QueuePage(), STATUS_LABEL, appendIntent(), Intent, IntentSource, IntentStatus (+3 more)
+
+### Community 9 - "Command Deck Views"
+Cohesion: 0.22
+Nodes (10): CommandDeckPanel(), QUEUE_COMMANDS, VIEW_COMMANDS, VIEW_TITLE, DeckView, InboxView(), MetricsView(), PlanView() (+2 more)
+
+### Community 10 - "Schedule API"
+Cohesion: 0.42
+Nodes (8): GET(), POST(), appendLogEntry(), DayPlan, planFile(), readDayPlan(), setDayItem(), today()
+
+### Community 11 - "Project Registry"
 Cohesion: 0.36
 Nodes (8): dedupe(), discoverFromVault(), isValidEntry(), loadRegistry(), REGISTRY_FILE, RegistryEntry, resolveRepoPath(), slugify()
 
-### Community 10 - "Next.js Type Declarations"
-Cohesion: 0.22
-Nodes (8): .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules, **/*.ts, **/*.tsx, exclude, include
+### Community 13 - "V1.3 Operational Concepts"
+Cohesion: 0.33
+Nodes (6): 3D Node Formations Orbit/Health-Ranking, Command Deck Display Views, SCHEMA_VERSION Data Contract, Sprint 3 — Voice I, Transactional Write-Back (Bitácora-first), V1.3.1 Schedule as Operational Agenda
 
-### Community 11 - "Intents API"
-Cohesion: 0.47
-Nodes (5): GET(), Intent, POST(), QUEUE_FILE, readQueue()
+### Community 14 - "Vault Core Geometry"
+Cohesion: 0.50
+Nodes (3): createParticleField(), createRandom(), ParticleField
 
-### Community 12 - "App Layout"
+### Community 15 - "App Layout"
 Cohesion: 0.50
 Nodes (3): metadata, RootLayout(), viewport
 
-### Community 14 - "Architecture Concepts"
+### Community 17 - "Architecture Concepts"
 Cohesion: 0.67
 Nodes (3): Canonical Data Schema Ownership, Local-First Web-Ready Boundary, Role Adapter Pattern
 
-### Community 17 - "Role Adapters Layer"
-Cohesion: 0.67
-Nodes (3): Post-Close Context Reconciliation, Quality Gates npm run check, Registry id/slug Uniqueness Enforcement
-
 ## Knowledge Gaps
-- **76 isolated node(s):** `config`, `ProjectCard`, `projectsDir`, `GOLD`, `PALE` (+71 more)
+- **92 isolated node(s):** `config`, `ProjectCard`, `projectsDir`, `ParticleField`, `vaultSignals` (+87 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `getProjects()` connect `Core Page & Project Routes` to `Registry & Config`, `Evidence/Git Adapter`, `ControlP Orchestrator`?**
-  _High betweenness centrality (0.036) - this node is a cross-community bridge._
-- **Why does `devDependencies` connect `CSS Build Tools` to `Package & Dependencies`?**
-  _High betweenness centrality (0.022) - this node is a cross-community bridge._
+- **Why does `getProjects()` connect `Metrics API & Project Records` to `Core Dashboard Page`, `ControlP Orchestrator`?**
+  _High betweenness centrality (0.030) - this node is a cross-community bridge._
+- **Why does `devDependencies` connect `CSS Build Tools & ESLint` to `Package & Dependencies`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+- **Why does `Home()` connect `Core Dashboard Page` to `Metrics API & Project Records`?**
+  _High betweenness centrality (0.013) - this node is a cross-community bridge._
 - **Are the 2 inferred relationships involving `getProjects()` (e.g. with `Home()` and `GET()`) actually correct?**
   _`getProjects()` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `config`, `ProjectCard`, `projectsDir` to the rest of the system?**
-  _81 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Vault Core Geometry` be split into smaller, more focused modules?**
-  _Cohesion score 0.14 - nodes in this community are weakly interconnected._
-- **Should `Package & Dependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.08 - nodes in this community are weakly interconnected._
-- **Should `Panel Modules` be split into smaller, more focused modules?**
-  _Cohesion score 0.13438735177865613 - nodes in this community are weakly interconnected._
+  _96 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Metrics API & Project Records` be split into smaller, more focused modules?**
+  _Cohesion score 0.09957325746799431 - nodes in this community are weakly interconnected._
+- **Should `TypeScript Config` be split into smaller, more focused modules?**
+  _Cohesion score 0.06451612903225806 - nodes in this community are weakly interconnected._
