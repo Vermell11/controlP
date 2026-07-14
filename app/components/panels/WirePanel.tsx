@@ -1,4 +1,3 @@
-import PanelTitle from "@/app/components/ui/PanelTitle";
 import { formatDate } from "@/lib/ui";
 import type { PanelProps } from "./types";
 
@@ -65,14 +64,5 @@ export function WireBody({ projects }: PanelProps) {
         ))
       )}
     </div>
-  );
-}
-
-export default function WirePanel({ projects }: PanelProps) {
-  return (
-    <>
-      <PanelTitle title="System Feed" meta="live.wire" />
-      <WireBody projects={projects} />
-    </>
   );
 }

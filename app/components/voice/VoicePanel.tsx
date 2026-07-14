@@ -96,9 +96,11 @@ export default function VoicePanel({ projects }: PanelProps) {
   }, []);
 
   const handleTranscript = useCallback(
-    (transcript: string) => {
+    async (transcript: string) => {
       pushLog(`«${transcript}»`, "heard");
-      void execute(routeCommand(transcript, projects));
+      // await tolera router síncrono (reglas, hoy) o asíncrono (LLM, Sprint
+      // 4): reemplazar el router no requiere tocar este panel.
+      void execute(await routeCommand(transcript, projects));
     },
     [execute, projects],
   );

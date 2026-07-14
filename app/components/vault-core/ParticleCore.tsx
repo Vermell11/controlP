@@ -24,14 +24,18 @@ const VERTEX_SHADER = /* glsl */ `
   attribute float aSize;
   attribute float aPhase;
   attribute float aBand;
-  uniform float uTime;
+  uniform float uPhase;
   uniform float uIntensity;
-  uniform float uPulseSpeed;
   uniform float uSpectrum[${SPECTRUM_BANDS}];
   varying float vGlow;
 
   void main() {
-    float twinkle = 0.62 + 0.38 * sin(uTime * uPulseSpeed + aPhase);
+    // uPhase es fase ACUMULADA en JS (+= delta * pulseSpeed). Nunca calcular
+    // tiempo * velocidad aquí: al cambiar el preset de estado (idle ↔
+    // processing) la fase saltaba uTime × Δpulso radianes y toda la esfera
+    // parpadeaba a decenas de Hz durante la transición (bug del parpadeo al
+    // ejecutar comandos, V1.4.3).
+    float twinkle = 0.62 + 0.38 * sin(uPhase + aPhase);
     float band = uSpectrum[int(aBand)];
     // Ganancias moderadas: con el espectro ya amortiguado en useMicLevel,
     // valores altos aquí convertían la voz en un parpadeo estroboscópico.
@@ -69,6 +73,8 @@ export default function ParticleCore({ nodes }: { nodes: StageNode[] }) {
   const spinRef = useRef(1);
   const rotSpeedRef = useRef(STATE_PRESETS.idle.rotationSpeed);
   const pulseRef = useRef(STATE_PRESETS.idle.pulseSpeed);
+  /** Fase acumulada del twinkle (ver comentario en el vertex shader). */
+  const phaseRef = useRef(0);
   const signals = useVaultSignals();
 
   const { pointsGeometry, linesGeometry } = useMemo(() => {
@@ -109,9 +115,8 @@ export default function ParticleCore({ nodes }: { nodes: StageNode[] }) {
           uColorA: { value: GOLD },
           uColorB: { value: PALE },
           uIntensity: { value: STATE_PRESETS.idle.baseIntensity },
-          uPulseSpeed: { value: STATE_PRESETS.idle.pulseSpeed },
+          uPhase: { value: 0 },
           uSpectrum: { value: new Float32Array(SPECTRUM_BANDS) },
-          uTime: { value: 0 },
         },
         vertexShader: VERTEX_SHADER,
       }),
@@ -147,14 +152,16 @@ export default function ParticleCore({ nodes }: { nodes: StageNode[] }) {
       delta * 2.5,
     );
     pulseRef.current = THREE.MathUtils.lerp(pulseRef.current, preset.pulseSpeed, delta * 2.5);
+    // Fase acumulada: la velocidad del pulso puede variar (lerp de presets)
+    // sin discontinuidad de fase — misma técnica que rotation.y += delta * v.
+    phaseRef.current += delta * pulseRef.current;
 
     // Frenado suave con hover o formaciones de lectura (y reanudación suave).
     const stopSpin = hold || formation !== "orbit";
     spinRef.current = THREE.MathUtils.lerp(spinRef.current, stopSpin ? 0 : 1, delta * 6);
 
-    pointsMaterial.uniforms.uTime.value = state.clock.elapsedTime;
+    pointsMaterial.uniforms.uPhase.value = phaseRef.current;
     pointsMaterial.uniforms.uIntensity.value = intensityRef.current;
-    pointsMaterial.uniforms.uPulseSpeed.value = pulseRef.current;
 
     // Ecualizador: copiar el espectro de voz al uniform del shader.
     const uSpectrum = pointsMaterial.uniforms.uSpectrum.value as Float32Array;

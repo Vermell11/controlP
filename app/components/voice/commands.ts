@@ -3,7 +3,9 @@ import type { NodeFormation } from "@/app/components/vault-core/types";
 /**
  * Router de comandos por reglas simples (Voz I). Sin LLM todavía: eso llega
  * en el Sprint 4, que reemplazará este router por uno inteligente detrás de
- * la misma interfaz.
+ * la misma interfaz. Contrato de reemplazo: routeCommand(transcript,
+ * projects) → VoiceAction | Promise<VoiceAction>; el caller (VoicePanel) ya
+ * hace await, así que el router LLM puede ser async sin tocar el core.
  */
 export type VoiceAction =
   | { type: "formation"; formation: NodeFormation; label: string }

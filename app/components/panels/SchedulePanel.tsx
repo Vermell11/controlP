@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import PanelTitle from "@/app/components/ui/PanelTitle";
 import type { PanelProps } from "./types";
 
 /**
@@ -129,15 +128,6 @@ export function ScheduleBody({ projects }: PanelProps) {
         Marcar = registrar avance del día. Solo agrega una línea a la Bitácora del
         proyecto (append-only); nunca toca tus notas.
       </small>
-    </>
-  );
-}
-
-export default function SchedulePanel({ projects }: PanelProps) {
-  return (
-    <>
-      <PanelTitle title="Schedule" meta="today" />
-      <ScheduleBody projects={projects} />
     </>
   );
 }
