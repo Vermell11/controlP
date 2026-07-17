@@ -3306,7 +3306,7 @@
       "label": "app/api/ \u2014 frontera HTTP",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L41",
+      "source_location": "L45",
       "_origin": "ast",
       "id": "context_map_app_api_frontera_http",
       "community": 6,
@@ -3316,7 +3316,7 @@
       "label": "app/components/vault-core/ \u2014 escena 3D (CORE, no tocar salvo bugfix)",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L54",
+      "source_location": "L61",
       "_origin": "ast",
       "id": "context_map_app_components_vault_core_escena_3d_core_no_tocar_salvo_bugfix",
       "community": 6,
@@ -3326,7 +3326,7 @@
       "label": "app/components/voice/ \u2014 captura y router de voz",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L74",
+      "source_location": "L81",
       "_origin": "ast",
       "id": "context_map_app_components_voice_captura_y_router_de_voz",
       "community": 6,
@@ -3336,7 +3336,7 @@
       "label": "app/components/panels/ \u2014 paneles del dashboard",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L96",
+      "source_location": "L103",
       "_origin": "ast",
       "id": "context_map_app_components_panels_paneles_del_dashboard",
       "community": 6,
@@ -3346,7 +3346,7 @@
       "label": "app/ \u2014 rutas",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L110",
+      "source_location": "L117",
       "_origin": "ast",
       "id": "context_map_app_rutas",
       "community": 6,
@@ -3356,7 +3356,7 @@
       "label": "stt/ \u2014 sidecar Whisper (Python, fuera de Next)",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L120",
+      "source_location": "L128",
       "_origin": "ast",
       "id": "context_map_stt_sidecar_whisper_python_fuera_de_next",
       "community": 6,
@@ -3366,7 +3366,7 @@
       "label": "Para modificar X toca solo Y",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L127",
+      "source_location": "L135",
       "_origin": "ast",
       "id": "context_map_para_modificar_x_toca_solo_y",
       "community": 6,
@@ -4412,9 +4412,9 @@
       "source_file": "app/api/assistant/aliases/route.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "aliases_route",
-      "target": "aliases_route_get",
-      "confidence_score": 1.0
+      "target": "aliases_route_get"
     },
     {
       "relation": "contains",
@@ -4422,9 +4422,9 @@
       "source_file": "app/api/assistant/aliases/route.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "aliases_route",
-      "target": "aliases_route_post",
-      "confidence_score": 1.0
+      "target": "aliases_route_post"
     },
     {
       "relation": "imports_from",
@@ -4433,9 +4433,9 @@
       "source_file": "app/api/assistant/aliases/route.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "aliases_route",
-      "target": "lib_assistant",
-      "confidence_score": 1.0
+      "target": "lib_assistant"
     },
     {
       "relation": "imports",
@@ -4444,9 +4444,9 @@
       "source_file": "app/api/assistant/aliases/route.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "aliases_route",
-      "target": "lib_assistant_compactvoicetext",
-      "confidence_score": 1.0
+      "target": "lib_assistant_compactvoicetext"
     },
     {
       "relation": "imports",
@@ -4455,9 +4455,9 @@
       "source_file": "app/api/assistant/aliases/route.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "aliases_route",
-      "target": "lib_assistant_findproject",
-      "confidence_score": 1.0
+      "target": "lib_assistant_findproject"
     },
     {
       "relation": "imports_from",
@@ -4466,9 +4466,9 @@
       "source_file": "app/api/assistant/aliases/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "aliases_route",
-      "target": "lib_controlp",
-      "confidence_score": 1.0
+      "target": "lib_controlp"
     },
     {
       "relation": "imports",
@@ -4477,9 +4477,9 @@
       "source_file": "app/api/assistant/aliases/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "aliases_route",
-      "target": "lib_controlp_getprojects",
-      "confidence_score": 1.0
+      "target": "lib_controlp_getprojects"
     },
     {
       "relation": "imports_from",
@@ -4488,9 +4488,9 @@
       "source_file": "app/api/assistant/aliases/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "aliases_route",
-      "target": "lib_voice_aliases",
-      "confidence_score": 1.0
+      "target": "lib_voice_aliases"
     },
     {
       "relation": "imports",
@@ -4499,9 +4499,9 @@
       "source_file": "app/api/assistant/aliases/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "aliases_route",
-      "target": "lib_voice_aliases_appendvoicealias",
-      "confidence_score": 1.0
+      "target": "lib_voice_aliases_appendvoicealias"
     },
     {
       "relation": "imports",
@@ -4510,9 +4510,9 @@
       "source_file": "app/api/assistant/aliases/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "aliases_route",
-      "target": "lib_voice_aliases_readvoicealiases",
-      "confidence_score": 1.0
+      "target": "lib_voice_aliases_readvoicealiases"
     },
     {
       "relation": "calls",
@@ -4576,9 +4576,9 @@
       "source_file": "app/api/assistant/query/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "query_route",
-      "target": "adapters_memory_obsidian",
-      "confidence_score": 1.0
+      "target": "adapters_memory_obsidian"
     },
     {
       "relation": "imports",
@@ -4587,9 +4587,9 @@
       "source_file": "app/api/assistant/query/route.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "query_route",
-      "target": "adapters_memory_obsidian_readprojectskills",
-      "confidence_score": 1.0
+      "target": "adapters_memory_obsidian_readprojectskills"
     },
     {
       "relation": "imports_from",
@@ -4598,9 +4598,9 @@
       "source_file": "app/api/assistant/query/route.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "query_route",
-      "target": "lib_assistant",
-      "confidence_score": 1.0
+      "target": "lib_assistant"
     },
     {
       "relation": "imports",
@@ -4609,9 +4609,9 @@
       "source_file": "app/api/assistant/query/route.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "query_route",
-      "target": "lib_assistant_answerknowledgequery",
-      "confidence_score": 1.0
+      "target": "lib_assistant_answerknowledgequery"
     },
     {
       "relation": "imports_from",
@@ -4620,9 +4620,9 @@
       "source_file": "app/api/assistant/query/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "query_route",
-      "target": "lib_controlp",
-      "confidence_score": 1.0
+      "target": "lib_controlp"
     },
     {
       "relation": "imports",
@@ -4631,9 +4631,9 @@
       "source_file": "app/api/assistant/query/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "query_route",
-      "target": "lib_controlp_getprojects",
-      "confidence_score": 1.0
+      "target": "lib_controlp_getprojects"
     },
     {
       "relation": "imports_from",
@@ -4642,9 +4642,9 @@
       "source_file": "app/api/assistant/query/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "query_route",
-      "target": "lib_voice_aliases",
-      "confidence_score": 1.0
+      "target": "lib_voice_aliases"
     },
     {
       "relation": "imports",
@@ -4653,9 +4653,9 @@
       "source_file": "app/api/assistant/query/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "query_route",
-      "target": "lib_voice_aliases_applyvoicealiases",
-      "confidence_score": 1.0
+      "target": "lib_voice_aliases_applyvoicealiases"
     },
     {
       "relation": "imports",
@@ -4664,9 +4664,9 @@
       "source_file": "app/api/assistant/query/route.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "query_route",
-      "target": "lib_voice_aliases_readvoicealiases",
-      "confidence_score": 1.0
+      "target": "lib_voice_aliases_readvoicealiases"
     },
     {
       "relation": "contains",
@@ -4674,9 +4674,9 @@
       "source_file": "app/api/assistant/query/route.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "query_route",
-      "target": "query_route_post",
-      "confidence_score": 1.0
+      "target": "query_route_post"
     },
     {
       "relation": "calls",
@@ -6842,9 +6842,9 @@
       "source_file": "app/components/voice/useTts.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_usetts",
-      "target": "vault_core_signals",
-      "confidence_score": 1.0
+      "target": "vault_core_signals"
     },
     {
       "relation": "imports_from",
@@ -6886,9 +6886,9 @@
       "source_file": "app/components/voice/useTts.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_usetts",
-      "target": "vault_core_signals_vaultsignals",
-      "confidence_score": 1.0
+      "target": "vault_core_signals_vaultsignals"
     },
     {
       "relation": "imports",
@@ -7001,9 +7001,9 @@
       "source_file": "app/components/voice/useTts.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_usetts",
-      "target": "vault_core_types",
-      "confidence_score": 1.0
+      "target": "vault_core_types"
     },
     {
       "relation": "imports_from",
@@ -7056,9 +7056,9 @@
       "source_file": "app/p/[slug]/page.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "slug_page",
-      "target": "voice_voicepanel",
-      "confidence_score": 1.0
+      "target": "voice_voicepanel"
     },
     {
       "relation": "imports_from",
@@ -7067,9 +7067,9 @@
       "source_file": "app/components/voice/VoicePanel.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_voicepanel",
-      "target": "lib_assistant",
-      "confidence_score": 1.0
+      "target": "lib_assistant"
     },
     {
       "relation": "imports",
@@ -7078,9 +7078,9 @@
       "source_file": "app/components/voice/VoicePanel.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_voicepanel",
-      "target": "lib_assistant_assistantresponse",
-      "confidence_score": 1.0
+      "target": "lib_assistant_assistantresponse"
     },
     {
       "relation": "imports_from",
@@ -7122,9 +7122,9 @@
       "source_file": "app/components/voice/VoicePanel.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_voicepanel",
-      "target": "voice_commands_voicealias",
-      "confidence_score": 1.0
+      "target": "voice_commands_voicealias"
     },
     {
       "relation": "imports_from",
@@ -7177,9 +7177,9 @@
       "source_file": "app/components/voice/VoicePanel.tsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_voicepanel",
-      "target": "voice_usetts",
-      "confidence_score": 1.0
+      "target": "voice_usetts"
     },
     {
       "relation": "imports",
@@ -7188,9 +7188,9 @@
       "source_file": "app/components/voice/VoicePanel.tsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_voicepanel",
-      "target": "voice_usetts_usetts",
-      "confidence_score": 1.0
+      "target": "voice_usetts_usetts"
     },
     {
       "relation": "imports_from",
@@ -7327,9 +7327,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_commands",
-      "target": "lib_assistant",
-      "confidence_score": 1.0
+      "target": "lib_assistant"
     },
     {
       "relation": "imports",
@@ -7338,9 +7338,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_commands",
-      "target": "lib_assistant_assistantresponse",
-      "confidence_score": 1.0
+      "target": "lib_assistant_assistantresponse"
     },
     {
       "relation": "imports",
@@ -7349,9 +7349,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_commands",
-      "target": "lib_assistant_compactvoicetext",
-      "confidence_score": 1.0
+      "target": "lib_assistant_compactvoicetext"
     },
     {
       "relation": "imports",
@@ -7360,9 +7360,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_commands",
-      "target": "lib_assistant_ishomenavigation",
-      "confidence_score": 1.0
+      "target": "lib_assistant_ishomenavigation"
     },
     {
       "relation": "imports",
@@ -7371,9 +7371,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_commands",
-      "target": "lib_assistant_normalizevoicetext",
-      "confidence_score": 1.0
+      "target": "lib_assistant_normalizevoicetext"
     },
     {
       "relation": "imports",
@@ -7382,9 +7382,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_commands",
-      "target": "lib_assistant_suggestprojectalias",
-      "confidence_score": 1.0
+      "target": "lib_assistant_suggestprojectalias"
     },
     {
       "relation": "contains",
@@ -7392,9 +7392,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_commands",
-      "target": "voice_commands_applyvoicealiases",
-      "confidence_score": 1.0
+      "target": "voice_commands_applyvoicealiases"
     },
     {
       "relation": "contains",
@@ -7402,9 +7402,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L145",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_commands",
-      "target": "voice_commands_findvoiceproject",
-      "confidence_score": 1.0
+      "target": "voice_commands_findvoiceproject"
     },
     {
       "relation": "contains",
@@ -7412,9 +7412,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L163",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_commands",
-      "target": "voice_commands_isknowledgequery",
-      "confidence_score": 1.0
+      "target": "voice_commands_isknowledgequery"
     },
     {
       "relation": "contains",
@@ -7422,9 +7422,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L169",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_commands",
-      "target": "voice_commands_message",
-      "confidence_score": 1.0
+      "target": "voice_commands_message"
     },
     {
       "relation": "contains",
@@ -7462,9 +7462,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_commands",
-      "target": "voice_commands_voicealias",
-      "confidence_score": 1.0
+      "target": "voice_commands_voicealias"
     },
     {
       "relation": "contains",
@@ -7516,9 +7516,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_commands_routecommand",
-      "target": "voice_commands_applyvoicealiases",
-      "confidence_score": 1.0
+      "target": "voice_commands_applyvoicealiases"
     },
     {
       "relation": "calls",
@@ -7527,9 +7527,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_commands_routecommand",
-      "target": "voice_commands_findvoiceproject",
-      "confidence_score": 1.0
+      "target": "voice_commands_findvoiceproject"
     },
     {
       "relation": "calls",
@@ -7538,9 +7538,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L104",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_commands_routecommand",
-      "target": "voice_commands_isknowledgequery",
-      "confidence_score": 1.0
+      "target": "voice_commands_isknowledgequery"
     },
     {
       "relation": "calls",
@@ -7549,9 +7549,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_commands_routecommand",
-      "target": "voice_commands_message",
-      "confidence_score": 1.0
+      "target": "voice_commands_message"
     },
     {
       "relation": "calls",
@@ -7560,9 +7560,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L146",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_commands_findvoiceproject",
-      "target": "lib_assistant_compactvoicetext",
-      "confidence_score": 1.0
+      "target": "lib_assistant_compactvoicetext"
     },
     {
       "relation": "calls",
@@ -7571,9 +7571,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L155",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_commands_applyvoicealiases",
-      "target": "lib_assistant_normalizevoicetext",
-      "confidence_score": 1.0
+      "target": "lib_assistant_normalizevoicetext"
     },
     {
       "relation": "contains",
@@ -7661,9 +7661,9 @@
       "source_file": "app/components/voice/useTts.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_usetts",
-      "target": "voice_usetts_usetts",
-      "confidence_score": 1.0
+      "target": "voice_usetts_usetts"
     },
     {
       "relation": "contains",
@@ -8493,9 +8493,9 @@
       "source_file": "lib/adapters/memory-obsidian.ts",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_memory_obsidian",
-      "target": "adapters_memory_obsidian_readprojectskills",
-      "confidence_score": 1.0
+      "target": "adapters_memory_obsidian_readprojectskills"
     },
     {
       "relation": "contains",
@@ -8544,9 +8544,9 @@
       "source_file": "lib/adapters/memory-obsidian.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_memory_obsidian",
-      "target": "lib_assistant",
-      "confidence_score": 1.0
+      "target": "lib_assistant"
     },
     {
       "relation": "imports",
@@ -8555,9 +8555,9 @@
       "source_file": "lib/adapters/memory-obsidian.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_memory_obsidian",
-      "target": "lib_assistant_projectskill",
-      "confidence_score": 1.0
+      "target": "lib_assistant_projectskill"
     },
     {
       "relation": "imports_from",
@@ -8797,9 +8797,9 @@
       "source_file": "lib/adapters/memory-obsidian.ts",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_memory_obsidian_readprojectskills",
-      "target": "adapters_memory_obsidian_readifexists",
-      "confidence_score": 1.0
+      "target": "adapters_memory_obsidian_readifexists"
     },
     {
       "relation": "calls",
@@ -8829,9 +8829,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L81",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant",
-      "target": "lib_assistant_answerknowledgequery",
-      "confidence_score": 1.0
+      "target": "lib_assistant_answerknowledgequery"
     },
     {
       "relation": "contains",
@@ -8839,9 +8839,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant",
-      "target": "lib_assistant_assistantevidence",
-      "confidence_score": 1.0
+      "target": "lib_assistant_assistantevidence"
     },
     {
       "relation": "contains",
@@ -8849,9 +8849,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant",
-      "target": "lib_assistant_assistantresponse",
-      "confidence_score": 1.0
+      "target": "lib_assistant_assistantresponse"
     },
     {
       "relation": "contains",
@@ -8859,9 +8859,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant",
-      "target": "lib_assistant_compactvoicetext",
-      "confidence_score": 1.0
+      "target": "lib_assistant_compactvoicetext"
     },
     {
       "relation": "contains",
@@ -8869,9 +8869,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L72",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant",
-      "target": "lib_assistant_findproject",
-      "confidence_score": 1.0
+      "target": "lib_assistant_findproject"
     },
     {
       "relation": "contains",
@@ -8879,9 +8879,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant",
-      "target": "lib_assistant_ishomenavigation",
-      "confidence_score": 1.0
+      "target": "lib_assistant_ishomenavigation"
     },
     {
       "relation": "contains",
@@ -8889,9 +8889,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant",
-      "target": "lib_assistant_normalizevoicetext",
-      "confidence_score": 1.0
+      "target": "lib_assistant_normalizevoicetext"
     },
     {
       "relation": "contains",
@@ -8899,9 +8899,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant",
-      "target": "lib_assistant_note_names",
-      "confidence_score": 1.0
+      "target": "lib_assistant_note_names"
     },
     {
       "relation": "contains",
@@ -8909,9 +8909,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant",
-      "target": "lib_assistant_oneeditapart",
-      "confidence_score": 1.0
+      "target": "lib_assistant_oneeditapart"
     },
     {
       "relation": "contains",
@@ -8919,9 +8919,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant",
-      "target": "lib_assistant_projectskill",
-      "confidence_score": 1.0
+      "target": "lib_assistant_projectskill"
     },
     {
       "relation": "contains",
@@ -8929,9 +8929,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L167",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant",
-      "target": "lib_assistant_response",
-      "confidence_score": 1.0
+      "target": "lib_assistant_response"
     },
     {
       "relation": "contains",
@@ -8939,9 +8939,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant",
-      "target": "lib_assistant_suggestprojectalias",
-      "confidence_score": 1.0
+      "target": "lib_assistant_suggestprojectalias"
     },
     {
       "relation": "imports_from",
@@ -8950,9 +8950,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant",
-      "target": "lib_schema",
-      "confidence_score": 1.0
+      "target": "lib_schema"
     },
     {
       "relation": "imports",
@@ -8961,9 +8961,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant",
-      "target": "lib_schema_projectcard",
-      "confidence_score": 1.0
+      "target": "lib_schema_projectcard"
     },
     {
       "relation": "calls",
@@ -8972,9 +8972,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L86",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant_answerknowledgequery",
-      "target": "lib_assistant_normalizevoicetext",
-      "confidence_score": 1.0
+      "target": "lib_assistant_normalizevoicetext"
     },
     {
       "relation": "calls",
@@ -8983,9 +8983,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant_compactvoicetext",
-      "target": "lib_assistant_normalizevoicetext",
-      "confidence_score": 1.0
+      "target": "lib_assistant_normalizevoicetext"
     },
     {
       "relation": "calls",
@@ -8994,9 +8994,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant_ishomenavigation",
-      "target": "lib_assistant_normalizevoicetext",
-      "confidence_score": 1.0
+      "target": "lib_assistant_normalizevoicetext"
     },
     {
       "relation": "calls",
@@ -9005,9 +9005,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant_suggestprojectalias",
-      "target": "lib_assistant_normalizevoicetext",
-      "confidence_score": 1.0
+      "target": "lib_assistant_normalizevoicetext"
     },
     {
       "relation": "calls",
@@ -9016,9 +9016,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant_findproject",
-      "target": "lib_assistant_compactvoicetext",
-      "confidence_score": 1.0
+      "target": "lib_assistant_compactvoicetext"
     },
     {
       "relation": "calls",
@@ -9027,9 +9027,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L87",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant_answerknowledgequery",
-      "target": "lib_assistant_findproject",
-      "confidence_score": 1.0
+      "target": "lib_assistant_findproject"
     },
     {
       "relation": "calls",
@@ -9038,9 +9038,9 @@
       "source_file": "lib/assistant.ts",
       "source_location": "L91",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_assistant_answerknowledgequery",
-      "target": "lib_assistant_response",
-      "confidence_score": 1.0
+      "target": "lib_assistant_response"
     },
     {
       "relation": "contains",
@@ -9704,9 +9704,9 @@
       "source_file": "lib/voice-aliases.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_voice_aliases",
-      "target": "lib_voice_aliases_aliases_file",
-      "confidence_score": 1.0
+      "target": "lib_voice_aliases_aliases_file"
     },
     {
       "relation": "contains",
@@ -9714,9 +9714,9 @@
       "source_file": "lib/voice-aliases.ts",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_voice_aliases",
-      "target": "lib_voice_aliases_appendvoicealias",
-      "confidence_score": 1.0
+      "target": "lib_voice_aliases_appendvoicealias"
     },
     {
       "relation": "contains",
@@ -9724,9 +9724,9 @@
       "source_file": "lib/voice-aliases.ts",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_voice_aliases",
-      "target": "lib_voice_aliases_applyvoicealiases",
-      "confidence_score": 1.0
+      "target": "lib_voice_aliases_applyvoicealiases"
     },
     {
       "relation": "contains",
@@ -9734,9 +9734,9 @@
       "source_file": "lib/voice-aliases.ts",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_voice_aliases",
-      "target": "lib_voice_aliases_compactvoicetext",
-      "confidence_score": 1.0
+      "target": "lib_voice_aliases_compactvoicetext"
     },
     {
       "relation": "contains",
@@ -9744,9 +9744,9 @@
       "source_file": "lib/voice-aliases.ts",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_voice_aliases",
-      "target": "lib_voice_aliases_isalias",
-      "confidence_score": 1.0
+      "target": "lib_voice_aliases_isalias"
     },
     {
       "relation": "contains",
@@ -9754,9 +9754,9 @@
       "source_file": "lib/voice-aliases.ts",
       "source_location": "L49",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_voice_aliases",
-      "target": "lib_voice_aliases_normalizevoicetext",
-      "confidence_score": 1.0
+      "target": "lib_voice_aliases_normalizevoicetext"
     },
     {
       "relation": "contains",
@@ -9764,9 +9764,9 @@
       "source_file": "lib/voice-aliases.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_voice_aliases",
-      "target": "lib_voice_aliases_readvoicealiases",
-      "confidence_score": 1.0
+      "target": "lib_voice_aliases_readvoicealiases"
     },
     {
       "relation": "contains",
@@ -9774,9 +9774,9 @@
       "source_file": "lib/voice-aliases.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_voice_aliases",
-      "target": "lib_voice_aliases_voicealias",
-      "confidence_score": 1.0
+      "target": "lib_voice_aliases_voicealias"
     },
     {
       "relation": "calls",
@@ -9785,9 +9785,9 @@
       "source_file": "lib/voice-aliases.ts",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_voice_aliases_readvoicealiases",
-      "target": "lib_voice_aliases_compactvoicetext",
-      "confidence_score": 1.0
+      "target": "lib_voice_aliases_compactvoicetext"
     },
     {
       "relation": "calls",
@@ -9796,9 +9796,9 @@
       "source_file": "lib/voice-aliases.ts",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_voice_aliases_readvoicealiases",
-      "target": "lib_voice_aliases_isalias",
-      "confidence_score": 1.0
+      "target": "lib_voice_aliases_isalias"
     },
     {
       "relation": "calls",
@@ -9807,9 +9807,9 @@
       "source_file": "lib/voice-aliases.ts",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_voice_aliases_appendvoicealias",
-      "target": "lib_voice_aliases_normalizevoicetext",
-      "confidence_score": 1.0
+      "target": "lib_voice_aliases_normalizevoicetext"
     },
     {
       "relation": "calls",
@@ -9818,9 +9818,9 @@
       "source_file": "lib/voice-aliases.ts",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_voice_aliases_applyvoicealiases",
-      "target": "lib_voice_aliases_normalizevoicetext",
-      "confidence_score": 1.0
+      "target": "lib_voice_aliases_normalizevoicetext"
     },
     {
       "relation": "calls",
@@ -9829,9 +9829,9 @@
       "source_file": "lib/voice-aliases.ts",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_voice_aliases_compactvoicetext",
-      "target": "lib_voice_aliases_normalizevoicetext",
-      "confidence_score": 1.0
+      "target": "lib_voice_aliases_normalizevoicetext"
     },
     {
       "relation": "contains",
@@ -10210,9 +10210,9 @@
       "source_file": "tests/assistant.test.mjs",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_assistant_test",
-      "target": "tests_assistant_test_assistanturl",
-      "confidence_score": 1.0
+      "target": "tests_assistant_test_assistanturl"
     },
     {
       "relation": "contains",
@@ -10220,9 +10220,9 @@
       "source_file": "tests/assistant.test.mjs",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_assistant_test",
-      "target": "tests_assistant_test_controlp",
-      "confidence_score": 1.0
+      "target": "tests_assistant_test_controlp"
     },
     {
       "relation": "contains",
@@ -10230,9 +10230,9 @@
       "source_file": "tests/assistant.test.mjs",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_assistant_test",
-      "target": "tests_assistant_test_root",
-      "confidence_score": 1.0
+      "target": "tests_assistant_test_root"
     },
     {
       "relation": "contains",
@@ -11216,5 +11216,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "a8b7e8cbef5e376f3ba25fc348a0e83507b6ba50"
+  "built_at_commit": "97fc4dd2eb395a08218a64f57313fd1cde9c5154"
 }
