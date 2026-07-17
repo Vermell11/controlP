@@ -124,9 +124,36 @@
 }
 
 .voiceSynthDeck[data-state="transcribing"],
-.voiceSynthDeck[data-state="processing"] {
+.voiceSynthDeck[data-state="processing"],
+.voiceSynthDeck[data-state="speaking"] {
   border-color: var(--hot);
   box-shadow: 0 0 18px rgba(240, 207, 134, 0.25);
+}
+
+.voiceConfirm {
+  border: 1px solid var(--amber);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 12px;
+  padding: 8px;
+}
+
+.voiceConfirm p {
+  color: var(--paper);
+  flex-basis: 100%;
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 11px;
+  margin: 0;
+}
+
+.voiceConfirm button {
+  border: 1px solid var(--line);
+  color: var(--amber);
+  cursor: pointer;
+  font-size: 10px;
+  padding: 4px 8px;
+  text-transform: uppercase;
 }
 
 .voiceSynthDeck[data-state="success"] {

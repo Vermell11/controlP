@@ -2,6 +2,7 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { adapterConfig } from "../config";
 import { validateMemory, type DataIssue, type ProjectMemory } from "../schema";
+import type { ProjectSkill } from "../assistant";
 
 /**
  * Adaptador del rol MEMORIA sobre Obsidian (reemplazable).
@@ -55,6 +56,29 @@ export async function readMemory(obsidianFolder: string): Promise<MemoryReading>
 
   issues.push(...validateMemory(memory));
   return { issues, latestSessionFile: sessions.at(-1) ?? null, memory };
+}
+
+/** Lectura estructurada y de solo lectura del contrato Skills.md del proyecto. */
+export async function readProjectSkills(obsidianFolder: string): Promise<ProjectSkill[]> {
+  const file = path.join(adapterConfig.vaultRoot, "Proyectos", obsidianFolder, "Skills.md");
+  const markdown = await readIfExists(file);
+  if (!markdown) return [];
+
+  const rows = markdown
+    .split("\n")
+    .filter((line) => /^\|.+\|$/.test(line.trim()))
+    .slice(2)
+    .map((line) => line.split("|").slice(1, -1).map((cell) => cleanOrNull(cell) ?? ""))
+    .filter((cells) => cells.length >= 3 && cells[0]);
+
+  const tableSkills = rows.map(([name, type, usage]) => ({ name, type, usage }));
+  const bulletSkills = markdown
+    .split("\n")
+    .map((line) => line.match(/^- \[\[([^\]]+)\]\]\s+—\s+(.+)$/))
+    .filter((match): match is RegExpMatchArray => Boolean(match))
+    .map((match) => ({ name: match[1], type: "Skill", usage: match[2] }));
+
+  return [...bulletSkills, ...tableSkills];
 }
 
 /**

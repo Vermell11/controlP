@@ -3,6 +3,31 @@
   max-width: 1040px;
 }
 
+.recordVoice {
+  background: rgba(3, 3, 2, 0.94);
+  border: 1px solid var(--line);
+  bottom: 18px;
+  padding: 12px;
+  position: fixed;
+  right: 18px;
+  width: min(320px, calc(100vw - 36px));
+  z-index: 10;
+}
+
+.recordVoice .voiceLog {
+  margin-bottom: 0;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+@media (max-width: 680px) {
+  .recordVoice {
+    bottom: 10px;
+    right: 10px;
+    width: calc(100vw - 20px);
+  }
+}
+
 .recordPageTop {
   display: flex;
   justify-content: space-between;
@@ -25,4 +50,3 @@
   background: var(--paper);
   color: #050403;
 }
-

@@ -4,10 +4,12 @@ import "./voice.css";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { vaultSignals } from "@/app/components/vault-core/signals";
 import type { PanelProps } from "@/app/components/panels/types";
-import { routeCommand, type VoiceAction } from "./commands";
+import { routeCommand, type VoiceAction, type VoiceAlias } from "./commands";
+import type { AssistantResponse } from "@/lib/assistant";
 import { useMicLevel } from "./useMicLevel";
 import { useSpeech } from "./useSpeech";
 import { useWhisper } from "./useWhisper";
+import { useTts } from "./useTts";
 import VoiceVisualizer from "./VoiceVisualizer";
 import type { CoreState } from "@/app/components/vault-core/types";
 
@@ -26,6 +28,7 @@ const STATUS_TEXT: Record<string, string> = {
   nodevice: "sin micrófono detectado — revisa el dispositivo de entrada",
   transcribing: "transcribiendo con Whisper…",
   processing: "procesando comando…",
+  speaking: "respondiendo…",
   success: "comando completado",
   unsupported: "este navegador no soporta captura de audio",
 };
@@ -43,10 +46,13 @@ export default function VoicePanel({ projects }: PanelProps) {
   const [holding, setHolding] = useState(false);
   const [provider, setProvider] = useState<SttProvider>("webspeech");
   const [feedback, setFeedback] = useState<CoreState>("idle");
+  const [aliases, setAliases] = useState<VoiceAlias[]>([]);
+  const [pendingAlias, setPendingAlias] = useState<{ alias: string; target: string } | null>(null);
   const holdingRef = useRef(false);
   const providerRef = useRef<SttProvider>("webspeech");
   const feedbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const mic = useMicLevel();
+  const tts = useTts();
 
   // Proveedor persistido; default whisper si el usuario ya lo eligió antes.
   useEffect(() => {
@@ -63,6 +69,13 @@ export default function VoicePanel({ projects }: PanelProps) {
     }
   }, []);
 
+  useEffect(() => {
+    void fetch("/api/assistant/aliases")
+      .then((response) => (response.ok ? response.json() : Promise.reject()))
+      .then((data: { aliases?: VoiceAlias[] }) => setAliases(data.aliases ?? []))
+      .catch(() => undefined);
+  }, []);
+
   const pushLog = (text: string, kind: "heard" | "action" | "hint") => {
     setLog((previous) => [...previous.slice(-4), { kind, text }]);
   };
@@ -72,6 +85,18 @@ export default function VoicePanel({ projects }: PanelProps) {
     setFeedback(state);
     feedbackTimerRef.current = setTimeout(() => setFeedback("idle"), 900);
   }, []);
+
+  const presentResponse = useCallback(
+    (response: AssistantResponse, navigate = false) => {
+      pushLog(response.displayText, "action");
+      for (const evidence of response.evidence) pushLog(`fuente: ${evidence.label}`, "hint");
+      tts.speak(response.speechText, () => {
+        if (navigate && response.navigation) window.location.assign(response.navigation.href);
+        else setTemporaryFeedback("success");
+      });
+    },
+    [setTemporaryFeedback, tts],
+  );
 
   useEffect(
     () => () => {
@@ -87,12 +112,10 @@ export default function VoicePanel({ projects }: PanelProps) {
       case "formation":
         vaultSignals.formation = action.formation;
         vaultSignals.healthScroll = 0;
-        pushLog(action.label, "action");
-        setTemporaryFeedback("success");
+        presentResponse(action.response);
         break;
       case "navigate":
-        pushLog(action.label, "action");
-        window.location.assign(action.href);
+        presentResponse(action.response, true);
         break;
       case "enqueue":
         try {
@@ -102,27 +125,45 @@ export default function VoicePanel({ projects }: PanelProps) {
             method: "POST",
           });
           if (!response.ok) throw new Error(`intent queue responded ${response.status}`);
-          pushLog(action.label, "action");
-          setTemporaryFeedback("success");
+          presentResponse(action.response);
         } catch {
           pushLog("error al encolar el comando", "hint");
           setTemporaryFeedback("error");
         }
         break;
+      case "query":
+        try {
+          const response = await fetch("/api/assistant/query", {
+            body: JSON.stringify({ query: action.query }),
+            headers: { "Content-Type": "application/json" },
+            method: "POST",
+          });
+          if (!response.ok) throw new Error(`assistant responded ${response.status}`);
+          presentResponse((await response.json()) as AssistantResponse, true);
+        } catch {
+          pushLog("no pude consultar la memoria autorizada", "hint");
+          setTemporaryFeedback("error");
+        }
+        break;
+      case "propose-alias":
+        setPendingAlias({ alias: action.alias, target: action.target });
+        presentResponse(action.response);
+        break;
       default:
-        pushLog(action.hint, "hint");
+        pushLog(action.response.displayText, "hint");
+        tts.speak(action.response.speechText);
         setTemporaryFeedback("error");
     }
-  }, [setTemporaryFeedback]);
+  }, [presentResponse, setTemporaryFeedback, tts]);
 
   const handleTranscript = useCallback(
     async (transcript: string) => {
       pushLog(`«${transcript}»`, "heard");
       // await tolera router síncrono (reglas, hoy) o asíncrono (LLM, Sprint
       // 4): reemplazar el router no requiere tocar este panel.
-      void execute(await routeCommand(transcript, projects));
+      void execute(await routeCommand(transcript, projects, aliases));
     },
-    [execute, projects],
+    [aliases, execute, projects],
   );
 
   const speech = useSpeech(handleTranscript);
@@ -133,11 +174,36 @@ export default function VoicePanel({ projects }: PanelProps) {
   const press = useCallback(() => {
     if (holdingRef.current) return;
     holdingRef.current = true;
+    tts.stop();
     setHolding(true);
     void mic.start();
     if (providerRef.current === "whisper") void whisper.start();
     else speech.start();
-  }, [mic, speech, whisper]);
+  }, [mic, speech, tts, whisper]);
+
+  const confirmAlias = async () => {
+    if (!pendingAlias) return;
+    setFeedback("processing");
+    try {
+      const response = await fetch("/api/assistant/aliases", {
+        body: JSON.stringify({ ...pendingAlias, confirmed: true }),
+        headers: { "Content-Type": "application/json" },
+        method: "POST",
+      });
+      if (!response.ok) throw new Error(`aliases responded ${response.status}`);
+      const { saved } = (await response.json()) as { saved: VoiceAlias };
+      setAliases((current) => [...current.filter((item) => item.alias !== saved.alias), saved]);
+      setPendingAlias(null);
+      presentResponse({
+        displayText: `Alias guardado: “${saved.alias}” → “${saved.target}”.`,
+        evidence: [{ label: "registro auditable de alias", source: "registry" }],
+        speechText: `Alias guardado. ${saved.alias} ahora significa ${saved.target}.`,
+      });
+    } catch {
+      pushLog("no pude guardar el alias", "hint");
+      setTemporaryFeedback("error");
+    }
+  };
 
   const release = useCallback(() => {
     if (!holdingRef.current) return;
@@ -187,6 +253,8 @@ export default function VoicePanel({ projects }: PanelProps) {
     ? STATUS_TEXT.listening
     : whisper.busy
       ? STATUS_TEXT.transcribing
+      : tts.speaking
+        ? STATUS_TEXT.speaking
       : feedback !== "idle"
         ? STATUS_TEXT[feedback]
         : STATUS_TEXT[mic.status] ?? STATUS_TEXT.idle;
@@ -194,6 +262,8 @@ export default function VoicePanel({ projects }: PanelProps) {
     ? "listening"
     : whisper.busy
       ? "transcribing"
+      : tts.speaking
+        ? "speaking"
       : ["busy", "denied", "error", "insecure", "nodevice", "unsupported"].includes(mic.status)
         ? "error"
         : feedback;
@@ -226,7 +296,7 @@ export default function VoicePanel({ projects }: PanelProps) {
         onPointerUp={release}
         type="button"
       >
-        <VoiceVisualizer active={holding} />
+        <VoiceVisualizer active={holding || tts.speaking} />
         <span className="synthLabel">
           {holding ? "● REC" : whisper.busy ? "◌ STT" : "HOLD · PTT"}
         </span>
@@ -237,6 +307,14 @@ export default function VoicePanel({ projects }: PanelProps) {
       </div>
 
       {speech.interim && <p className="voiceInterim">{speech.interim}…</p>}
+
+      {pendingAlias && (
+        <div className="voiceConfirm" role="group" aria-label="Confirmar alias de voz">
+          <p>“{pendingAlias.alias}” → “{pendingAlias.target}”</p>
+          <button onClick={() => void confirmAlias()} type="button">Confirmar</button>
+          <button onClick={() => setPendingAlias(null)} type="button">Cancelar</button>
+        </div>
+      )}
 
       {log.length > 0 && (
         <div className="voiceLog">

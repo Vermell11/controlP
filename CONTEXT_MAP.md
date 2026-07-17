@@ -31,6 +31,10 @@ Propósito: esquema canónico y orquestación de fuentes. Nunca importa React.
   `config/projects.json`). Prohibido meterlas en esquema o UI.
 - `lib/intents.ts` — cola JSONL append-only (`runtime/intents.jsonl`),
   lectura tolerante por línea. Punto de extensión oficial.
+- `lib/assistant.ts` — contrato de respuesta visible/hablada/evidenciada,
+  consultas estructuradas y resolución de nombres/alias fonéticos.
+- `lib/voice-aliases.ts` — registro JSONL append-only de alias confirmados;
+  almacenamiento server-side, nunca accesible directamente desde el cliente.
 - `lib/schedule.ts` — plan del día (`runtime/schedule-YYYY-MM-DD.json`).
 - `lib/ui.ts` — helpers compartidos de presentación (tone, formatDate,
   obsidianUrl).
@@ -48,6 +52,9 @@ es JSON puro (futuro formato de API web); acceso a datos solo server-side.
 - `metrics/route.ts` — commits por día (14d) por proyecto, para Trend Scan.
 - `stt/route.ts` — proxy POST audio → sidecar (`STT_URL`, default
   `127.0.0.1:8787/transcribe`). El navegador solo habla con ControlP.
+- `assistant/query/route.ts` — POST de consultas estructuradas read-only.
+- `assistant/aliases/route.ts` — GET de vocabulario y POST de alias con
+  confirmación explícita y destino validado contra el registry.
 
 Para un endpoint nuevo: carpeta propia en `app/api/`, lógica en `lib/`.
 
@@ -76,14 +83,14 @@ Obsidian: `Arquitectura/Routers y extensión`.)
 - `VoicePanel.tsx` — panel Audio I/O: PTT (pointer + tecla V), selección de
   proveedor persistida (`controlp.stt.provider`), `execute()` despacha
   `VoiceAction` (muta `vaultSignals`, navega o encola) y publica estados
-  accesibles `idle/listening/transcribing/processing/success/error`.
-- `commands.ts` — `routeCommand(transcript, projects)` por reglas. CONTRATO
-  DEL LLM (Sprint 4): puede devolver `VoiceAction | Promise<VoiceAction>`;
+  accesibles `idle/listening/transcribing/processing/speaking/success/error`.
+- `commands.ts` — `routeCommand(transcript, projects, aliases)` aplica alias,
+  reglas deterministas y consultas. CONTRATO DEL LLM (V1.5.2): puede devolver `VoiceAction | Promise<VoiceAction>`;
   el caller ya hace await — reemplazar el router = tocar solo este archivo.
 - `useWhisper.ts` (graba y transcribe al soltar vía `/api/stt`),
   `useSpeech.ts` (Web Speech, interim en vivo), `useMicLevel.ts` (nivel +
-  espectro 16 bandas → `vaultSignals`), `VoiceVisualizer.tsx` (sintetizador
-  canvas del botón PTT).
+  espectro 16 bandas → `vaultSignals`), `useTts.ts` (respuesta Web Speech),
+  `VoiceVisualizer.tsx` (sintetizador canvas del botón PTT).
 
 Accesibilidad de movimiento: `app/components/useReducedMotion.ts` refleja
 `prefers-reduced-motion`; Canvas, cámara, nodos y sintetizador lo consumen.
@@ -113,7 +120,8 @@ hook con contrato `onFinal`/`start`/`stop` + rama en VoicePanel.
   CenterStage. No se toca para agregar features.
 - `components/CenterStage.tsx`, `components/core/Clock.tsx` — core visual.
 - `p/[slug]/` — ficha de proyecto (page + `actions.ts` server actions con
-  confirmación → adaptador memoria) + `components/records/`.
+  confirmación → adaptador memoria) + `components/records/`; reutiliza
+  `VoicePanel` para mantener PTT y navegación de regreso.
 - `queue/` — vista de la cola de intents.
 - `layout.tsx`, `globals.css`, `core.css`.
 

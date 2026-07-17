@@ -4,6 +4,7 @@ export type CoreState =
   | "listening"
   | "transcribing"
   | "processing"
+  | "speaking"
   | "success"
   | "error";
 
@@ -63,6 +64,7 @@ export const STATE_PRESETS: Record<
   listening: { rotationSpeed: 0.12, baseIntensity: 0.7, pulseSpeed: 1.6 },
   transcribing: { rotationSpeed: 0.16, baseIntensity: 0.75, pulseSpeed: 1.2 },
   processing: { rotationSpeed: 0.3, baseIntensity: 1, pulseSpeed: 2.4 },
+  speaking: { rotationSpeed: 0.12, baseIntensity: 0.82, pulseSpeed: 1.5 },
   success: { rotationSpeed: 0.08, baseIntensity: 0.8, pulseSpeed: 0.9 },
   error: { rotationSpeed: 0, baseIntensity: 0.55, pulseSpeed: 0.3 },
 };

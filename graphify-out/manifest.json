@@ -50,8 +50,8 @@
     "semantic_hash": "7710517180b74eae412679ec300355a7"
   },
   "app/components/vault-core/types.ts": {
-    "mtime": 1784318754.284638,
-    "ast_hash": "5498ce4a446e9fc0ed7f8f6f51ef4d61",
+    "mtime": 1784325716.01424,
+    "ast_hash": "22cec82d85674a7ca924c132b799124c",
     "semantic_hash": ""
   },
   "lib/ui.ts": {
@@ -60,7 +60,7 @@
     "semantic_hash": "e2eff733bb879856ad75ccd6f542381f"
   },
   "next-env.d.ts": {
-    "mtime": 1784319364.7157974,
+    "mtime": 1784327066.083967,
     "ast_hash": "d0f8375ae1199dc7acd3977fc33b78b8",
     "semantic_hash": ""
   },
@@ -100,8 +100,8 @@
     "semantic_hash": "9b2fe3d975790259456f4d9b060d481d"
   },
   "PROJECT_CONTEXT.md": {
-    "mtime": 1784319416.425081,
-    "ast_hash": "87dff13b5cbf3a8f1f7f1f6c2e8aecc1",
+    "mtime": 1784325589.6804535,
+    "ast_hash": "b5834069034604d4a106d0018ad5b6a7",
     "semantic_hash": ""
   },
   "README.md": {
@@ -175,9 +175,9 @@
     "semantic_hash": "17d636b8ca333b699ea1f5d78c6f50b9"
   },
   "app/p/[slug]/page.tsx": {
-    "mtime": 1783899100.7311828,
-    "ast_hash": "891a573d056eb038f46fb5eb1673011f",
-    "semantic_hash": "891a573d056eb038f46fb5eb1673011f"
+    "mtime": 1784326682.490547,
+    "ast_hash": "f6f90d4b11a66455b6df063790e71016",
+    "semantic_hash": ""
   },
   "config/projects.json": {
     "mtime": 1783894919.8130336,
@@ -195,9 +195,9 @@
     "semantic_hash": "59cbba424eb8003af681dd4ee143794d"
   },
   "lib/adapters/memory-obsidian.ts": {
-    "mtime": 1783954628.5942156,
-    "ast_hash": "05015e4d95ef71d0fba02eeddb8f1f95",
-    "semantic_hash": "05015e4d95ef71d0fba02eeddb8f1f95"
+    "mtime": 1784325683.981652,
+    "ast_hash": "85189230c969809ba71751e1f61014ee",
+    "semantic_hash": ""
   },
   "lib/config.ts": {
     "mtime": 1783894875.7856927,
@@ -260,14 +260,14 @@
     "semantic_hash": "42ba10f8fa8e8eb890bfe6dd143d5d92"
   },
   "app/components/voice/VoicePanel.tsx": {
-    "mtime": 1784319337.5585494,
-    "ast_hash": "ce191372eb20018423d840e97b501324",
+    "mtime": 1784325831.9132411,
+    "ast_hash": "2d59b0e795686b386bccd9b5420c9b32",
     "semantic_hash": ""
   },
   "app/components/voice/commands.ts": {
-    "mtime": 1783996549.4816358,
-    "ast_hash": "64e1b1204480732acd5e145beb9483c7",
-    "semantic_hash": "64e1b1204480732acd5e145beb9483c7"
+    "mtime": 1784326968.246505,
+    "ast_hash": "caac12a3572b6bfa836e77ce58529e66",
+    "semantic_hash": ""
   },
   "app/components/voice/useMicLevel.ts": {
     "mtime": 1783979820.9322233,
@@ -327,6 +327,36 @@
   "app/components/useReducedMotion.ts": {
     "mtime": 1784318698.056502,
     "ast_hash": "13263736d8e7490a1c21fd6e3bad4dc3",
+    "semantic_hash": ""
+  },
+  "app/api/assistant/aliases/route.ts": {
+    "mtime": 1784325684.3530607,
+    "ast_hash": "b850f4de21566c0efc37e10952eca447",
+    "semantic_hash": ""
+  },
+  "app/api/assistant/query/route.ts": {
+    "mtime": 1784325684.1673672,
+    "ast_hash": "d378b99761b09124800f782e8707ad21",
+    "semantic_hash": ""
+  },
+  "app/components/voice/useTts.ts": {
+    "mtime": 1784325715.9021745,
+    "ast_hash": "957abcc7ad7e76c37d5a1bd0f7659e6e",
+    "semantic_hash": ""
+  },
+  "lib/assistant.ts": {
+    "mtime": 1784326983.1729424,
+    "ast_hash": "f1722075e154ad289d1169ee680037fe",
+    "semantic_hash": ""
+  },
+  "lib/voice-aliases.ts": {
+    "mtime": 1784325802.259057,
+    "ast_hash": "8dc2fb5b0650180755416c1863bf7146",
+    "semantic_hash": ""
+  },
+  "tests/assistant.test.mjs": {
+    "mtime": 1784326968.3729908,
+    "ast_hash": "4ec3a87509c0847aa35669bdba33204a",
     "semantic_hash": ""
   }
 }

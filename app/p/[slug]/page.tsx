@@ -2,6 +2,7 @@ import "./project-page.css";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ProjectRecord from "@/app/components/records/ProjectRecord";
+import VoicePanel from "@/app/components/voice/VoicePanel";
 import { getProjects } from "@/lib/controlp";
 import { obsidianUrl } from "@/lib/ui";
 
@@ -33,6 +34,9 @@ export default async function ProjectPage({
         </a>
       </header>
       <ProjectRecord editable project={project} />
+      <aside className="recordVoice" aria-label="Control de voz">
+        <VoicePanel projects={projects} />
+      </aside>
     </main>
   );
 }
