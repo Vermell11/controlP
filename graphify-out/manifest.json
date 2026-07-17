@@ -25,19 +25,19 @@
     "semantic_hash": "13e0c686e3c96d284b0527c77be0d3dc"
   },
   "app/components/vault-core/ParticleCore.tsx": {
-    "mtime": 1783996092.1970167,
-    "ast_hash": "4a7b279c4034f6c2a503ff320d06852e",
-    "semantic_hash": "4a7b279c4034f6c2a503ff320d06852e"
+    "mtime": 1784318698.6280124,
+    "ast_hash": "20b27ca33467e8012a012d2b3d406187",
+    "semantic_hash": ""
   },
   "app/components/vault-core/ProjectNodes.tsx": {
-    "mtime": 1783962731.4760208,
-    "ast_hash": "e8aa0f08933c810cd48ad869899348ad",
-    "semantic_hash": "e8aa0f08933c810cd48ad869899348ad"
+    "mtime": 1784318698.8389332,
+    "ast_hash": "2ae62201c3888155c28f2e49c913d20b",
+    "semantic_hash": ""
   },
   "app/components/vault-core/VaultCore.tsx": {
-    "mtime": 1784307676.7654288,
-    "ast_hash": "397ea27997f2d912d07b90f5c63be201",
-    "semantic_hash": "397ea27997f2d912d07b90f5c63be201"
+    "mtime": 1784319337.4285316,
+    "ast_hash": "bc0c8164c98b074b02f7d2f38af5f6de",
+    "semantic_hash": ""
   },
   "app/components/vault-core/geometry.ts": {
     "mtime": 1783809042.6994038,
@@ -50,9 +50,9 @@
     "semantic_hash": "7710517180b74eae412679ec300355a7"
   },
   "app/components/vault-core/types.ts": {
-    "mtime": 1783962621.732101,
-    "ast_hash": "35d39c5b295570cdabdb044fe4542d1a",
-    "semantic_hash": "35d39c5b295570cdabdb044fe4542d1a"
+    "mtime": 1784318754.284638,
+    "ast_hash": "5498ce4a446e9fc0ed7f8f6f51ef4d61",
+    "semantic_hash": ""
   },
   "lib/ui.ts": {
     "mtime": 1783862086.2920265,
@@ -60,9 +60,9 @@
     "semantic_hash": "e2eff733bb879856ad75ccd6f542381f"
   },
   "next-env.d.ts": {
-    "mtime": 1784307715.479758,
-    "ast_hash": "2a74d3909800ca5467fa83b0ab4a4890",
-    "semantic_hash": "2a74d3909800ca5467fa83b0ab4a4890"
+    "mtime": 1784319364.7157974,
+    "ast_hash": "d0f8375ae1199dc7acd3977fc33b78b8",
+    "semantic_hash": ""
   },
   "next.config.mjs": {
     "mtime": 1783874946.3091645,
@@ -100,9 +100,9 @@
     "semantic_hash": "9b2fe3d975790259456f4d9b060d481d"
   },
   "PROJECT_CONTEXT.md": {
-    "mtime": 1783999534.2509964,
-    "ast_hash": "25993222d3b9e2039684c28beabc5d99",
-    "semantic_hash": "25993222d3b9e2039684c28beabc5d99"
+    "mtime": 1784319416.425081,
+    "ast_hash": "87dff13b5cbf3a8f1f7f1f6c2e8aecc1",
+    "semantic_hash": ""
   },
   "README.md": {
     "mtime": 1783802943.0818298,
@@ -260,9 +260,9 @@
     "semantic_hash": "42ba10f8fa8e8eb890bfe6dd143d5d92"
   },
   "app/components/voice/VoicePanel.tsx": {
-    "mtime": 1783996545.5147703,
-    "ast_hash": "862b599c3aa286dd8370b861a0def822",
-    "semantic_hash": "862b599c3aa286dd8370b861a0def822"
+    "mtime": 1784319337.5585494,
+    "ast_hash": "ce191372eb20018423d840e97b501324",
+    "semantic_hash": ""
   },
   "app/components/voice/commands.ts": {
     "mtime": 1783996549.4816358,
@@ -285,9 +285,9 @@
     "semantic_hash": "59f3276699fc30472597ad5271f8dbd3"
   },
   "app/components/voice/VoiceVisualizer.tsx": {
-    "mtime": 1783978146.606672,
-    "ast_hash": "cf2473f9ce091d8ad6f4d5e349ab9e94",
-    "semantic_hash": "cf2473f9ce091d8ad6f4d5e349ab9e94"
+    "mtime": 1784318698.9825494,
+    "ast_hash": "f812b1cb5c2d49ff34ed751b6ed860b8",
+    "semantic_hash": ""
   },
   "app/components/voice/useWhisper.ts": {
     "mtime": 1783978641.463919,
@@ -310,9 +310,9 @@
     "semantic_hash": "14be21b8098d66d9213682c80a031933"
   },
   "CONTEXT_MAP.md": {
-    "mtime": 1783998002.2753968,
-    "ast_hash": "64abf9d39af6c4635b5ea0548363a531",
-    "semantic_hash": "64abf9d39af6c4635b5ea0548363a531"
+    "mtime": 1784319416.5757413,
+    "ast_hash": "856a147bd38afa71f987b8782bac19a8",
+    "semantic_hash": ""
   },
   "docs/manual.md": {
     "mtime": 1783996711.699013,
@@ -323,5 +323,10 @@
     "mtime": 1784307677.622957,
     "ast_hash": "4be157b4de9b571bd6ac99eb8fcd4148",
     "semantic_hash": "4be157b4de9b571bd6ac99eb8fcd4148"
+  },
+  "app/components/useReducedMotion.ts": {
+    "mtime": 1784318698.056502,
+    "ast_hash": "13263736d8e7490a1c21fd6e3bad4dc3",
+    "semantic_hash": ""
   }
 }
