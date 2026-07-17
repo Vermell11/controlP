@@ -9,8 +9,9 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d94018d7`
-- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Corpus snapshot commit: `9853ed5f` (`V1.4.4`).
+- A later reconciliation-only commit may differ from this value without changing the
+  indexed corpus; use `graphify check-update .` as the freshness check.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
