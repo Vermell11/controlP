@@ -9,6 +9,7 @@ import { useMicLevel } from "./useMicLevel";
 import { useSpeech } from "./useSpeech";
 import { useWhisper } from "./useWhisper";
 import VoiceVisualizer from "./VoiceVisualizer";
+import type { CoreState } from "@/app/components/vault-core/types";
 
 type SttProvider = "whisper" | "webspeech";
 
@@ -24,6 +25,8 @@ const STATUS_TEXT: Record<string, string> = {
   listening: "escuchando…",
   nodevice: "sin micrófono detectado — revisa el dispositivo de entrada",
   transcribing: "transcribiendo con Whisper…",
+  processing: "procesando comando…",
+  success: "comando completado",
   unsupported: "este navegador no soporta captura de audio",
 };
 
@@ -39,8 +42,10 @@ export default function VoicePanel({ projects }: PanelProps) {
   const [log, setLog] = useState<{ text: string; kind: "heard" | "action" | "hint" }[]>([]);
   const [holding, setHolding] = useState(false);
   const [provider, setProvider] = useState<SttProvider>("webspeech");
+  const [feedback, setFeedback] = useState<CoreState>("idle");
   const holdingRef = useRef(false);
   const providerRef = useRef<SttProvider>("webspeech");
+  const feedbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const mic = useMicLevel();
 
   // Proveedor persistido; default whisper si el usuario ya lo eligió antes.
@@ -62,17 +67,28 @@ export default function VoicePanel({ projects }: PanelProps) {
     setLog((previous) => [...previous.slice(-4), { kind, text }]);
   };
 
+  const setTemporaryFeedback = useCallback((state: "success" | "error") => {
+    if (feedbackTimerRef.current) clearTimeout(feedbackTimerRef.current);
+    setFeedback(state);
+    feedbackTimerRef.current = setTimeout(() => setFeedback("idle"), 900);
+  }, []);
+
+  useEffect(
+    () => () => {
+      if (feedbackTimerRef.current) clearTimeout(feedbackTimerRef.current);
+    },
+    [],
+  );
+
   const execute = useCallback(async (action: VoiceAction) => {
-    vaultSignals.state = "processing";
-    setTimeout(() => {
-      vaultSignals.state = holdingRef.current ? "listening" : "idle";
-    }, 700);
+    setFeedback("processing");
 
     switch (action.type) {
       case "formation":
         vaultSignals.formation = action.formation;
         vaultSignals.healthScroll = 0;
         pushLog(action.label, "action");
+        setTemporaryFeedback("success");
         break;
       case "navigate":
         pushLog(action.label, "action");
@@ -80,20 +96,24 @@ export default function VoicePanel({ projects }: PanelProps) {
         break;
       case "enqueue":
         try {
-          await fetch("/api/intents", {
+          const response = await fetch("/api/intents", {
             body: JSON.stringify({ command: action.command, source: "voice" }),
             headers: { "Content-Type": "application/json" },
             method: "POST",
           });
+          if (!response.ok) throw new Error(`intent queue responded ${response.status}`);
           pushLog(action.label, "action");
+          setTemporaryFeedback("success");
         } catch {
           pushLog("error al encolar el comando", "hint");
+          setTemporaryFeedback("error");
         }
         break;
       default:
         pushLog(action.hint, "hint");
+        setTemporaryFeedback("error");
     }
-  }, []);
+  }, [setTemporaryFeedback]);
 
   const handleTranscript = useCallback(
     async (transcript: string) => {
@@ -167,7 +187,20 @@ export default function VoicePanel({ projects }: PanelProps) {
     ? STATUS_TEXT.listening
     : whisper.busy
       ? STATUS_TEXT.transcribing
-      : STATUS_TEXT[mic.status] ?? STATUS_TEXT.idle;
+      : feedback !== "idle"
+        ? STATUS_TEXT[feedback]
+        : STATUS_TEXT[mic.status] ?? STATUS_TEXT.idle;
+  const voiceState: CoreState = holding
+    ? "listening"
+    : whisper.busy
+      ? "transcribing"
+      : ["busy", "denied", "error", "insecure", "nodevice", "unsupported"].includes(mic.status)
+        ? "error"
+        : feedback;
+
+  useEffect(() => {
+    vaultSignals.state = voiceState;
+  }, [voiceState]);
 
   return (
     <>
@@ -184,7 +217,8 @@ export default function VoicePanel({ projects }: PanelProps) {
       </div>
 
       <button
-        className={`voiceSynthDeck${holding ? " live" : ""}${whisper.busy ? " thinking" : ""}`}
+        className="voiceSynthDeck"
+        data-state={voiceState}
         onContextMenu={(event) => event.preventDefault()}
         onPointerCancel={release}
         onPointerDown={press}
@@ -197,7 +231,7 @@ export default function VoicePanel({ projects }: PanelProps) {
           {holding ? "● REC" : whisper.busy ? "◌ STT" : "HOLD · PTT"}
         </span>
       </button>
-      <div className="voiceStatus">
+      <div aria-live="polite" className="voiceStatus" role="status">
         <b>{statusText}</b>
         <small>mantén presionado el sintetizador — o la tecla V</small>
       </div>

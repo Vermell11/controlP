@@ -59,7 +59,7 @@ Para un endpoint nuevo: carpeta propia en `app/api/`, lógica en `lib/`.
   Escribir aquí es la forma de animar la escena desde fuera.
 - `ParticleCore.tsx` — esfera ecualizador (shader con fase acumulada
   `uPhase`: nunca calcular `tiempo × velocidad` en el shader), lerps de
-  presets, rotación.
+  presets, rotación y liberación de recursos GPU al desmontar.
 - `ProjectNodes.tsx` — orbes por proyecto; funciones de posición por
   formación (`orbitPosition`, `gridPosition`, `healthPosition`) + lerp al
   target; brillo por voz (`vaultSignals.level`).
@@ -75,7 +75,8 @@ Obsidian: `Arquitectura/Routers y extensión`.)
 
 - `VoicePanel.tsx` — panel Audio I/O: PTT (pointer + tecla V), selección de
   proveedor persistida (`controlp.stt.provider`), `execute()` despacha
-  `VoiceAction` (muta `vaultSignals`, navega o encola).
+  `VoiceAction` (muta `vaultSignals`, navega o encola) y publica estados
+  accesibles `idle/listening/transcribing/processing/success/error`.
 - `commands.ts` — `routeCommand(transcript, projects)` por reglas. CONTRATO
   DEL LLM (Sprint 4): puede devolver `VoiceAction | Promise<VoiceAction>`;
   el caller ya hace await — reemplazar el router = tocar solo este archivo.
@@ -83,6 +84,10 @@ Obsidian: `Arquitectura/Routers y extensión`.)
   `useSpeech.ts` (Web Speech, interim en vivo), `useMicLevel.ts` (nivel +
   espectro 16 bandas → `vaultSignals`), `VoiceVisualizer.tsx` (sintetizador
   canvas del botón PTT).
+
+Accesibilidad de movimiento: `app/components/useReducedMotion.ts` refleja
+`prefers-reduced-motion`; Canvas, cámara, nodos y sintetizador lo consumen.
+Los tokens CSS de motion y el fallback global viven en `app/globals.css`.
 
 Invariantes: reglas tolerantes a Whisper (normalizar, `compact()`, variantes
 fonéticas); prefijos de dictado ganan sobre toda regla; proveedor STT nuevo =

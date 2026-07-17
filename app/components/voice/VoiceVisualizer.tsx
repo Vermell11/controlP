@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { vaultSignals } from "@/app/components/vault-core/signals";
 import { SPECTRUM_BANDS } from "@/app/components/vault-core/types";
+import { useReducedMotion } from "@/app/components/useReducedMotion";
 
 /**
  * Sintetizador visual del Audio I/O: barras de espectro (graves→agudos) que
@@ -13,6 +14,7 @@ import { SPECTRUM_BANDS } from "@/app/components/vault-core/types";
 export default function VoiceVisualizer({ active }: { active: boolean }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const activeRef = useRef(active);
+  const reducedMotion = useReducedMotion();
 
   useEffect(() => {
     activeRef.current = active;
@@ -44,7 +46,7 @@ export default function VoiceVisualizer({ active }: { active: boolean }) {
 
       for (let i = 0; i < SPECTRUM_BANDS; i += 1) {
         // En reposo: respiración tenue; hablando: espectro real con caída suave.
-        const idle = 0.05 + 0.03 * Math.sin(time / 900 + i * 0.7);
+        const idle = reducedMotion ? 0.05 : 0.05 + 0.03 * Math.sin(time / 900 + i * 0.7);
         const target = activeRef.current
           ? Math.max(vaultSignals.spectrum[i] ?? 0, idle)
           : idle;
@@ -73,7 +75,7 @@ export default function VoiceVisualizer({ active }: { active: boolean }) {
 
     raf = requestAnimationFrame(draw);
     return () => cancelAnimationFrame(raf);
-  }, []);
+  }, [reducedMotion]);
 
   return <canvas className="voiceSynth" ref={canvasRef} />;
 }

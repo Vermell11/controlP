@@ -5,6 +5,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 import ParticleCore from "./ParticleCore";
+import { useReducedMotion } from "@/app/components/useReducedMotion";
 import { vaultSignals } from "./signals";
 import type { StageNode } from "./types";
 
@@ -26,8 +27,10 @@ interface ManagedControls {
  */
 function CameraDirector({
   homeTarget,
+  reducedMotion,
 }: {
   homeTarget: [number, number, number];
+  reducedMotion: boolean;
 }) {
   const camera = useThree((state) => state.camera);
   const controls = useThree((state) => (state as { controls?: ManagedControls }).controls);
@@ -58,7 +61,7 @@ function CameraDirector({
       controls.enableZoom = !managed;
     }
     if (managed) {
-      const step = Math.min(delta * 2.5, 1);
+      const step = reducedMotion ? 1 : Math.min(delta * 2.5, 1);
       camera.position.lerp(homeVec, step);
       controls?.target?.lerp(targetVec, step);
     }
@@ -73,6 +76,7 @@ function CameraDirector({
  */
 export default function VaultCore({ nodes }: { nodes: StageNode[] }) {
   const canvasRef = useRef<HTMLDivElement>(null);
+  const reducedMotion = useReducedMotion();
   const maxHealthScroll = Math.max((nodes.length - 1) / 2, 0);
 
   useEffect(() => {
@@ -99,8 +103,8 @@ export default function VaultCore({ nodes }: { nodes: StageNode[] }) {
         dpr={[1, 1.75]}
         gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
       >
-        <CameraDirector homeTarget={CAMERA_TARGET} />
-        <ParticleCore nodes={nodes} />
+        <CameraDirector homeTarget={CAMERA_TARGET} reducedMotion={reducedMotion} />
+        <ParticleCore nodes={nodes} reducedMotion={reducedMotion} />
         <OrbitControls
           dampingFactor={0.08}
           enableDamping

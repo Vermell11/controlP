@@ -14,6 +14,11 @@
   --green: #bcca74;
   --red: #d97858;
   --blue: #8ab5c1;
+  --motion-fast: 120ms;
+  --motion-standard: 300ms;
+  --motion-slow: 500ms;
+  --motion-ambient: 5s;
+  --motion-ease: cubic-bezier(0.2, 0, 0, 1);
 }
 
 * {
@@ -97,5 +102,19 @@ button {
 @media (max-width: 680px) {
   .vaultShell {
     padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

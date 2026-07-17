@@ -24,13 +24,13 @@
   text-transform: uppercase;
   transform: translate(0, calc(-50% - 30px));
   transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    font-size 0.3s ease,
-    gap 0.3s ease,
-    grid-template-columns 0.42s ease,
-    padding 0.3s ease,
-    transform 0.45s ease;
+    border-color var(--motion-standard) var(--motion-ease),
+    box-shadow var(--motion-standard) var(--motion-ease),
+    font-size var(--motion-standard) var(--motion-ease),
+    gap var(--motion-standard) var(--motion-ease),
+    grid-template-columns var(--motion-slow) var(--motion-ease),
+    padding var(--motion-standard) var(--motion-ease),
+    transform var(--motion-slow) var(--motion-ease);
   white-space: nowrap;
   width: max-content;
 }
@@ -53,7 +53,9 @@
   overflow: hidden;
   text-align: right;
   text-transform: none;
-  transition: max-height 0.32s ease, opacity 0.3s ease;
+  transition:
+    max-height var(--motion-standard) var(--motion-ease),
+    opacity var(--motion-standard) var(--motion-ease);
 }
 
 .projectNode3d .healthTrack {
@@ -63,7 +65,9 @@
   height: 0;
   margin-top: 0;
   overflow: hidden;
-  transition: height 0.3s ease, margin-top 0.3s ease;
+  transition:
+    height var(--motion-standard) var(--motion-ease),
+    margin-top var(--motion-standard) var(--motion-ease);
 }
 
 .projectNode3d .healthTrack i {
@@ -97,7 +101,9 @@
   overflow: hidden;
   text-align: left;
   text-transform: none;
-  transition: max-height 0.32s ease, opacity 0.3s ease;
+  transition:
+    max-height var(--motion-standard) var(--motion-ease),
+    opacity var(--motion-standard) var(--motion-ease);
 }
 
 .projectNode3d.warn .healthLabel {

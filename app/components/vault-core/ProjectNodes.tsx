@@ -74,11 +74,13 @@ function ProjectNode({
   orbit,
   rank,
   total,
+  reducedMotion,
 }: {
   node: StageNode;
   orbit: [number, number, number];
   rank: number;
   total: number;
+  reducedMotion: boolean;
 }) {
   const groupRef = useRef<THREE.Group>(null);
   const labelRef = useRef<HTMLAnchorElement>(null);
@@ -127,7 +129,7 @@ function ProjectNode({
 
     // Posición suave (sin jitter) + vibración de escucha encima.
     const smooth = (smoothPosRef.current ??= groupRef.current.position.clone());
-    smooth.lerp(target, Math.min(delta * 3, 1));
+    smooth.lerp(target, reducedMotion ? 1 : Math.min(delta * 3, 1));
     groupRef.current.position.copy(smooth);
 
     // Voz: cuando el núcleo escucha (hoy tu voz; mañana la respuesta del
@@ -145,7 +147,7 @@ function ProjectNode({
     }
 
     scaleRef.current.setScalar(targetScale);
-    groupRef.current.scale.lerp(scaleRef.current, Math.min(delta * 6, 1));
+    groupRef.current.scale.lerp(scaleRef.current, reducedMotion ? 1 : Math.min(delta * 6, 1));
   });
 
   const setHover = (value: boolean) => {
@@ -207,7 +209,13 @@ function ProjectNode({
  * diagnóstico vertical con barras.
  * Hover ilumina y pausa el giro; click navega a /p/[slug].
  */
-export default function ProjectNodes({ nodes }: { nodes: StageNode[] }) {
+export default function ProjectNodes({
+  nodes,
+  reducedMotion,
+}: {
+  nodes: StageNode[];
+  reducedMotion: boolean;
+}) {
   const { orbits, ranks } = useMemo(() => {
     const byHealth = [...nodes].sort((a, b) => b.health - a.health);
     const rankBySlug = new Map(byHealth.map((node, rank) => [node.slug, rank]));
@@ -226,6 +234,7 @@ export default function ProjectNodes({ nodes }: { nodes: StageNode[] }) {
           orbit={orbits[index]}
           rank={ranks[index]}
           total={nodes.length}
+          reducedMotion={reducedMotion}
         />
       ))}
     </>

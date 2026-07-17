@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { createLinkSegments, createParticleField } from "./geometry";
@@ -67,7 +67,13 @@ const FRAGMENT_SHADER = /* glsl */ `
  * Todo rota como un solo grupo; la intensidad y velocidad reaccionan a
  * VaultSignals (voz en el futuro) y el hover sobre un nodo pausa el giro.
  */
-export default function ParticleCore({ nodes }: { nodes: StageNode[] }) {
+export default function ParticleCore({
+  nodes,
+  reducedMotion,
+}: {
+  nodes: StageNode[];
+  reducedMotion: boolean;
+}) {
   const groupRef = useRef<THREE.Group>(null);
   const intensityRef = useRef(STATE_PRESETS.idle.baseIntensity);
   const spinRef = useRef(1);
@@ -135,6 +141,16 @@ export default function ParticleCore({ nodes }: { nodes: StageNode[] }) {
     [],
   );
 
+  useEffect(
+    () => () => {
+      pointsGeometry.dispose();
+      linesGeometry.dispose();
+      pointsMaterial.dispose();
+      linesMaterial.dispose();
+    },
+    [linesGeometry, linesMaterial, pointsGeometry, pointsMaterial],
+  );
+
   useFrame((state, delta) => {
     const { state: coreState, level, hold, formation } = signals;
     const preset = STATE_PRESETS[coreState];
@@ -154,7 +170,7 @@ export default function ParticleCore({ nodes }: { nodes: StageNode[] }) {
     pulseRef.current = THREE.MathUtils.lerp(pulseRef.current, preset.pulseSpeed, delta * 2.5);
     // Fase acumulada: la velocidad del pulso puede variar (lerp de presets)
     // sin discontinuidad de fase — misma técnica que rotation.y += delta * v.
-    phaseRef.current += delta * pulseRef.current;
+    if (!reducedMotion) phaseRef.current += delta * pulseRef.current;
 
     // Frenado suave con hover o formaciones de lectura (y reanudación suave).
     const stopSpin = hold || formation !== "orbit";
@@ -181,9 +197,13 @@ export default function ParticleCore({ nodes }: { nodes: StageNode[] }) {
         if (offset < -Math.PI) offset += twoPi;
         groupRef.current.rotation.y -= offset * Math.min(delta * 3, 1);
       }
-      groupRef.current.rotation.y += delta * rotSpeedRef.current * spinRef.current;
+      if (!reducedMotion) {
+        groupRef.current.rotation.y += delta * rotSpeedRef.current * spinRef.current;
+      }
       // Respiración sutil, amplificada por la intensidad.
-      const breathe = 1 + Math.sin(state.clock.elapsedTime * 0.5) * 0.015 * (1 + intensityRef.current);
+      const breathe = reducedMotion
+        ? 1
+        : 1 + Math.sin(state.clock.elapsedTime * 0.5) * 0.015 * (1 + intensityRef.current);
       groupRef.current.scale.setScalar(breathe);
     }
   });
@@ -192,7 +212,7 @@ export default function ParticleCore({ nodes }: { nodes: StageNode[] }) {
     <group ref={groupRef}>
       <points geometry={pointsGeometry} material={pointsMaterial} />
       <lineSegments geometry={linesGeometry} material={linesMaterial} />
-      <ProjectNodes nodes={nodes} />
+      <ProjectNodes nodes={nodes} reducedMotion={reducedMotion} />
     </group>
   );
 }

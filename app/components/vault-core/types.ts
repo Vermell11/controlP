@@ -1,8 +1,11 @@
-/**
- * Estados del núcleo. Hoy solo se usa "idle"; "listening" y "processing"
- * quedan definidos para la fase de voz (micrófono → intents).
- */
-export type CoreState = "idle" | "listening" | "processing";
+/** Estados observables del flujo de voz que alimentan el núcleo visual. */
+export type CoreState =
+  | "idle"
+  | "listening"
+  | "transcribing"
+  | "processing"
+  | "success"
+  | "error";
 
 /**
  * Señales mutables que alimentan la animación del núcleo.
@@ -58,5 +61,8 @@ export const STATE_PRESETS: Record<
 > = {
   idle: { rotationSpeed: 0.05, baseIntensity: 0.35, pulseSpeed: 0.6 },
   listening: { rotationSpeed: 0.12, baseIntensity: 0.7, pulseSpeed: 1.6 },
+  transcribing: { rotationSpeed: 0.16, baseIntensity: 0.75, pulseSpeed: 1.2 },
   processing: { rotationSpeed: 0.3, baseIntensity: 1, pulseSpeed: 2.4 },
+  success: { rotationSpeed: 0.08, baseIntensity: 0.8, pulseSpeed: 0.9 },
+  error: { rotationSpeed: 0, baseIntensity: 0.55, pulseSpeed: 0.3 },
 };
