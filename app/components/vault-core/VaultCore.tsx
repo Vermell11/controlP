@@ -8,6 +8,10 @@ import ParticleCore from "./ParticleCore";
 import { vaultSignals } from "./signals";
 import type { StageNode } from "./types";
 
+const CAMERA_FOV = 42;
+const FRAME_RADIUS = 10.5;
+const CAMERA_TARGET: [number, number, number] = [0, -1.25, 0];
+
 interface ManagedControls {
   enableZoom?: boolean;
   enableRotate?: boolean;
@@ -21,19 +25,34 @@ interface ManagedControls {
  * lista. En órbita, control libre.
  */
 function CameraDirector({
-  home,
   homeTarget,
 }: {
-  home: [number, number, number];
   homeTarget: [number, number, number];
 }) {
   const camera = useThree((state) => state.camera);
   const controls = useThree((state) => (state as { controls?: ManagedControls }).controls);
-  const homeVec = useMemo(() => new THREE.Vector3(...home), [home]);
+  const size = useThree((state) => state.size);
+  const initialized = useRef(false);
+  const lastSize = useRef({ height: 0, width: 0 });
+  const aspect = size.width / Math.max(size.height, 1);
+  const distance =
+    (FRAME_RADIUS * 1.08) /
+    (Math.tan(THREE.MathUtils.degToRad(CAMERA_FOV / 2)) * Math.min(aspect, 1));
+  const homeVec = useMemo(() => new THREE.Vector3(0, 0, distance), [distance]);
   const targetVec = useMemo(() => new THREE.Vector3(...homeTarget), [homeTarget]);
 
   useFrame((_, delta) => {
     const managed = vaultSignals.formation !== "orbit";
+    const resized = lastSize.current.width !== size.width || lastSize.current.height !== size.height;
+    if (resized && (managed || !initialized.current)) {
+      camera.position.copy(homeVec);
+      controls?.target?.copy(targetVec);
+      initialized.current = true;
+    }
+    if (resized) {
+      lastSize.current = size;
+    }
+
     if (controls) {
       controls.enableRotate = !managed;
       controls.enableZoom = !managed;
@@ -54,9 +73,6 @@ function CameraDirector({
  */
 export default function VaultCore({ nodes }: { nodes: StageNode[] }) {
   const canvasRef = useRef<HTMLDivElement>(null);
-  // Solo cliente (ssr: false): en pantallas angostas la cámara arranca más
-  // lejos para que toda la esfera y sus nodos entren en el encuadre.
-  const isNarrow = typeof window !== "undefined" && window.innerWidth < 700;
   const maxHealthScroll = Math.max((nodes.length - 1) / 2, 0);
 
   useEffect(() => {
@@ -79,24 +95,21 @@ export default function VaultCore({ nodes }: { nodes: StageNode[] }) {
   return (
     <div className="vaultCanvas" ref={canvasRef}>
       <Canvas
-        camera={{ fov: 42, position: [0, 0, isNarrow ? 44 : 24] }}
+        camera={{ fov: CAMERA_FOV, position: [0, 0, 32] }}
         dpr={[1, 1.75]}
         gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
       >
-        <CameraDirector
-          home={[0, 0, isNarrow ? 44 : 24]}
-          homeTarget={isNarrow ? [0, -5.5, 0] : [0, 0, 0]}
-        />
+        <CameraDirector homeTarget={CAMERA_TARGET} />
         <ParticleCore nodes={nodes} />
         <OrbitControls
           dampingFactor={0.08}
           enableDamping
           enablePan={false}
           makeDefault
-          maxDistance={52}
+          maxDistance={68}
           minDistance={13}
           rotateSpeed={0.5}
-          target={isNarrow ? [0, -5.5, 0] : [0, 0, 0]}
+          target={CAMERA_TARGET}
           zoomSpeed={0.6}
         />
       </Canvas>

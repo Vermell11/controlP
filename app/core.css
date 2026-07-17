@@ -2,14 +2,15 @@
   align-items: start;
   display: grid;
   gap: 24px;
-  grid-template-columns: 340px minmax(0, 1fr) 240px;
+  grid-template-columns: 360px minmax(520px, 1fr) 370px;
   min-height: 86px;
   position: relative;
   z-index: 3;
 }
 
 .brand h1 {
-  font-size: clamp(38px, 3vw, 58px);
+  /* Fluido por ancho Y altura: en ventanas bajas (laptop) también encoge. */
+  font-size: clamp(30px, min(3vw, 5.2vh), 58px);
   font-weight: 900;
   letter-spacing: 0.18em;
   line-height: 0.9;
@@ -49,7 +50,7 @@
 .timeBlock strong {
   display: block;
   font-family: "Helvetica Neue", sans-serif;
-  font-size: clamp(46px, 4vw, 70px);
+  font-size: clamp(34px, min(4vw, 6vh), 70px);
   font-weight: 200;
   letter-spacing: 0;
   line-height: 0.86;
@@ -75,12 +76,20 @@
   background: linear-gradient(270deg, rgba(3, 3, 2, 0.95), rgba(3, 3, 2, 0.56));
 }
 
+.leftPanel {
+  direction: rtl;
+}
+
+.leftPanel > * {
+  direction: ltr;
+}
+
 .centerStage {
   min-height: 760px;
   position: relative;
 }
 .primaryDirective {
-  bottom: 34px;
+  bottom: clamp(12px, 3.4vh, 34px);
   left: 50%;
   position: absolute;
   text-align: center;
@@ -92,7 +101,7 @@
 .primaryDirective strong {
   display: block;
   font-family: "Helvetica Neue", sans-serif;
-  font-size: clamp(74px, 9vw, 138px);
+  font-size: clamp(54px, min(9vw, 12vh), 138px);
   font-weight: 300;
   letter-spacing: -0.03em;
   line-height: 0.82;
@@ -139,9 +148,68 @@
 }
 
 @media (min-width: 1181px) and (max-width: 1380px) {
+  .vaultTop,
   .osGrid {
     gap: 22px;
     grid-template-columns: 330px minmax(430px, 1fr) 330px;
+  }
+}
+
+/*
+ * Cockpit sin scroll (V1.4.4, ver .vaultShell en globals.css): el grid llena
+ * la altura restante de la ventana; el centro manda y las columnas laterales
+ * scrollean por dentro (scrollbar fina ámbar, patrón HUD) si no caben.
+ */
+@media (min-width: 1181px) {
+  .osGrid {
+    flex: 1;
+    grid-template-rows: minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .centerStage {
+    min-height: 0;
+  }
+
+  .leftPanel,
+  .rightPanel {
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-color: rgba(215, 172, 100, 0.28) transparent;
+    scrollbar-width: thin;
+  }
+
+  .leftPanel::-webkit-scrollbar,
+  .rightPanel::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .leftPanel::-webkit-scrollbar-thumb,
+  .rightPanel::-webkit-scrollbar-thumb {
+    background: rgba(215, 172, 100, 0.28);
+  }
+
+  .leftPanel::-webkit-scrollbar-track,
+  .rightPanel::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+/* Ventanas bajas (laptop 13"): espaciados compactos además del tipo fluido. */
+@media (min-width: 1181px) and (max-height: 900px) {
+  .osGrid {
+    gap: 18px;
+  }
+
+  .vaultTop {
+    gap: 16px;
+    min-height: 0;
+  }
+
+  .leftPanel,
+  .rightPanel {
+    padding-top: 12px;
   }
 }
 

@@ -1,69 +1,7 @@
 {
   "directed": false,
   "multigraph": false,
-  "graph": {
-    "hyperedges": [
-      {
-        "id": "voice_stt_pipeline",
-        "label": "Voice STT Pipeline: PTT \u2192 Whisper/WebSpeech \u2192 routeCommand \u2192 VoiceAction",
-        "nodes": [
-          "controlp_voice_panel",
-          "controlp_voice_usewhisper",
-          "controlp_voice_usespeech",
-          "controlp_voice_commands",
-          "controlp_api_stt",
-          "controlp_stt_server"
-        ],
-        "relation": "implement",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": "docs/manual.md"
-      },
-      {
-        "id": "data_adapter_triad",
-        "label": "Data Adapter Triad: Memory + Evidence + Graph feeding Orchestrator",
-        "nodes": [
-          "controlp_lib_controlp",
-          "controlp_lib_adapter_memory",
-          "controlp_lib_adapter_evidence",
-          "controlp_lib_adapter_graph"
-        ],
-        "relation": "participate_in",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": "CONTEXT_MAP.md"
-      },
-      {
-        "id": "extension_seams",
-        "label": "Extension Seams: panels/registry + voice/commands + lib/adapters",
-        "nodes": [
-          "controlp_panels_registry",
-          "controlp_voice_commands",
-          "controlp_lib_adapter_memory",
-          "controlp_lib_adapter_evidence",
-          "controlp_lib_adapter_graph"
-        ],
-        "relation": "form",
-        "confidence": "INFERRED",
-        "confidence_score": 0.85,
-        "source_file": "PROJECT_CONTEXT.md"
-      },
-      {
-        "id": "stt_sidecar_runtime_stack",
-        "label": "STT Sidecar Runtime Stack (FastAPI + Uvicorn + faster-whisper + python-multipart)",
-        "nodes": [
-          "stt_requirements_fastapi",
-          "stt_requirements_uvicorn",
-          "stt_requirements_faster_whisper",
-          "stt_requirements_python_multipart"
-        ],
-        "relation": "form",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": "stt/requirements.txt"
-      }
-    ]
-  },
+  "graph": {},
   "nodes": [
     {
       "label": "route.ts",
@@ -71,8 +9,8 @@
       "source_file": "/private/tmp/controlp-graph-src/app/api/projects/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 13,
-      "community_name": "Core Dashboard Page",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "route.ts",
       "id": "private_tmp_controlp_graph_src_app_api_projects_route_ts"
     },
@@ -82,8 +20,8 @@
       "source_file": "/private/tmp/controlp-graph-src/app/api/projects/route.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 13,
-      "community_name": "Core Dashboard Page",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "get()",
       "id": "projects_route_get"
     },
@@ -93,8 +31,8 @@
       "source_file": "/private/tmp/controlp-graph-src/app/layout.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 17,
-      "community_name": "App Layout",
+      "community": 15,
+      "community_name": "Web Speech Provider",
       "norm_label": "layout.tsx",
       "id": "private_tmp_controlp_graph_src_app_layout_tsx"
     },
@@ -104,8 +42,8 @@
       "source_file": "/private/tmp/controlp-graph-src/app/layout.tsx",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 17,
-      "community_name": "App Layout",
+      "community": 15,
+      "community_name": "Web Speech Provider",
       "norm_label": "metadata",
       "id": "app_layout_metadata"
     },
@@ -115,8 +53,8 @@
       "source_file": "/private/tmp/controlp-graph-src/app/layout.tsx",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 17,
-      "community_name": "App Layout",
+      "community": 15,
+      "community_name": "Web Speech Provider",
       "norm_label": "rootlayout()",
       "id": "app_layout_rootlayout"
     },
@@ -126,8 +64,8 @@
       "source_file": "/private/tmp/controlp-graph-src/app/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 13,
-      "community_name": "Core Dashboard Page",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "page.tsx",
       "id": "private_tmp_controlp_graph_src_app_page_tsx"
     },
@@ -137,8 +75,8 @@
       "source_file": "/private/tmp/controlp-graph-src/app/page.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 13,
-      "community_name": "Core Dashboard Page",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "formatdate()",
       "id": "app_page_formatdate"
     },
@@ -148,8 +86,8 @@
       "source_file": "/private/tmp/controlp-graph-src/app/page.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 13,
-      "community_name": "Core Dashboard Page",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "tone()",
       "id": "app_page_tone"
     },
@@ -159,8 +97,8 @@
       "source_file": "/private/tmp/controlp-graph-src/app/page.tsx",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 13,
-      "community_name": "Core Dashboard Page",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "home()",
       "id": "app_page_home"
     },
@@ -170,8 +108,8 @@
       "source_file": "/private/tmp/controlp-graph-src/app/page.tsx",
       "source_location": "L216",
       "_origin": "ast",
-      "community": 13,
-      "community_name": "Core Dashboard Page",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "paneltitle()",
       "id": "app_page_paneltitle"
     },
@@ -181,8 +119,8 @@
       "source_file": "/private/tmp/controlp-graph-src/app/page.tsx",
       "source_location": "L225",
       "_origin": "ast",
-      "community": 13,
-      "community_name": "Core Dashboard Page",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "vitals()",
       "id": "app_page_vitals"
     },
@@ -192,8 +130,8 @@
       "source_file": "/private/tmp/controlp-graph-src/app/page.tsx",
       "source_location": "L238",
       "_origin": "ast",
-      "community": 13,
-      "community_name": "Core Dashboard Page",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "fact()",
       "id": "app_page_fact"
     },
@@ -203,8 +141,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "controlp.ts",
       "id": "private_tmp_controlp_graph_src_lib_controlp_ts"
     },
@@ -214,8 +152,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "execfileasync",
       "id": "lib_controlp_execfileasync"
     },
@@ -225,8 +163,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "config",
       "id": "lib_controlp_config"
     },
@@ -236,8 +174,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "projectcard",
       "id": "lib_controlp_projectcard"
     },
@@ -247,8 +185,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L46",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "projectsdir",
       "id": "lib_controlp_projectsdir"
     },
@@ -258,8 +196,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L48",
       "_origin": "ast",
-      "community": 13,
-      "community_name": "Core Dashboard Page",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "getprojects()",
       "id": "lib_controlp_getprojects"
     },
@@ -269,8 +207,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L58",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "readproject()",
       "id": "lib_controlp_readproject"
     },
@@ -280,8 +218,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L106",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "resolverepopath()",
       "id": "lib_controlp_resolverepopath"
     },
@@ -291,8 +229,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L114",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "readgit()",
       "id": "lib_controlp_readgit"
     },
@@ -302,8 +240,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L135",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "readgraphify()",
       "id": "lib_controlp_readgraphify"
     },
@@ -313,8 +251,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L155",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "git()",
       "id": "lib_controlp_git"
     },
@@ -324,8 +262,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L164",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "listsessions()",
       "id": "lib_controlp_listsessions"
     },
@@ -335,8 +273,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L173",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "readifexists()",
       "id": "lib_controlp_readifexists"
     },
@@ -346,8 +284,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L181",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "exists()",
       "id": "lib_controlp_exists"
     },
@@ -357,8 +295,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L190",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "emptygit()",
       "id": "lib_controlp_emptygit"
     },
@@ -368,8 +306,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L201",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "emptygraphify()",
       "id": "lib_controlp_emptygraphify"
     },
@@ -379,8 +317,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L205",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "extractbullet()",
       "id": "lib_controlp_extractbullet"
     },
@@ -390,8 +328,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L211",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "extractlatestsession()",
       "id": "lib_controlp_extractlatestsession"
     },
@@ -401,8 +339,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L215",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "section()",
       "id": "lib_controlp_section"
     },
@@ -412,8 +350,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L221",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "firstparagraph()",
       "id": "lib_controlp_firstparagraph"
     },
@@ -423,8 +361,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L230",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "normalizemarkdown()",
       "id": "lib_controlp_normalizemarkdown"
     },
@@ -434,8 +372,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L236",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "inferstack()",
       "id": "lib_controlp_inferstack"
     },
@@ -445,8 +383,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L243",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "buildalerts()",
       "id": "lib_controlp_buildalerts"
     },
@@ -456,8 +394,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L261",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "ControlP Orchestrator",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "scorehealth()",
       "id": "lib_controlp_scorehealth"
     },
@@ -467,8 +405,8 @@
       "source_file": "/private/tmp/controlp-graph-src/lib/controlp.ts",
       "source_location": "L281",
       "_origin": "ast",
-      "community": 9,
-      "community_name": "ControlP Orchestrator",
+      "community": 8,
+      "community_name": "Evidence & Git Adapter",
       "norm_label": "clean()",
       "id": "lib_controlp_clean"
     },
@@ -525,7 +463,7 @@
       "contributor": null,
       "community": 19,
       "norm_label": "canonical data schema ownership",
-      "community_name": "Architecture Concepts",
+      "community_name": "Architecture Rules",
       "id": "agents_canonical_schema_rule"
     },
     {
@@ -539,7 +477,7 @@
       "contributor": null,
       "community": 19,
       "norm_label": "role adapter pattern",
-      "community_name": "Architecture Concepts",
+      "community_name": "Architecture Rules",
       "id": "agents_role_adapters_rule"
     },
     {
@@ -553,30 +491,8 @@
       "contributor": null,
       "community": 19,
       "norm_label": "local-first web-ready boundary",
-      "community_name": "Architecture Concepts",
+      "community_name": "Architecture Rules",
       "id": "agents_local_first_boundary"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/(core)/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "Core Dashboard Page",
-      "norm_label": "page.tsx",
-      "id": "app_core_page"
-    },
-    {
-      "label": "Home()",
-      "file_type": "code",
-      "source_file": "app/(core)/page.tsx",
-      "source_location": "L15",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "Core Dashboard Page",
-      "norm_label": "home()",
-      "id": "app_core_page_home"
     },
     {
       "label": "route.ts",
@@ -584,8 +500,8 @@
       "source_file": "app/api/intents/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 12,
-      "community_name": "Intents API & Queue",
+      "community": 11,
+      "community_name": "Intents, STT & LLM Extension Points",
       "norm_label": "route.ts",
       "id": "app_api_intents_route"
     },
@@ -595,8 +511,8 @@
       "source_file": "app/api/intents/route.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 12,
-      "community_name": "Intents API & Queue",
+      "community": 11,
+      "community_name": "Intents, STT & LLM Extension Points",
       "norm_label": "get()",
       "id": "app_api_intents_route_get"
     },
@@ -606,8 +522,8 @@
       "source_file": "app/api/intents/route.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 12,
-      "community_name": "Intents API & Queue",
+      "community": 11,
+      "community_name": "Intents, STT & LLM Extension Points",
       "norm_label": "post()",
       "id": "app_api_intents_route_post"
     },
@@ -617,8 +533,8 @@
       "source_file": "app/api/metrics/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "route.ts",
       "id": "app_api_metrics_route"
     },
@@ -628,8 +544,8 @@
       "source_file": "app/api/metrics/route.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "get()",
       "id": "app_api_metrics_route_get"
     },
@@ -639,8 +555,8 @@
       "source_file": "app/api/projects/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 13,
-      "community_name": "Core Dashboard Page",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "route.ts",
       "id": "app_api_projects_route"
     },
@@ -650,8 +566,8 @@
       "source_file": "app/api/projects/route.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 13,
-      "community_name": "Core Dashboard Page",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "get()",
       "id": "app_api_projects_route_get"
     },
@@ -661,8 +577,8 @@
       "source_file": "app/api/schedule/route.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "route.ts",
       "id": "app_api_schedule_route"
     },
@@ -672,8 +588,8 @@
       "source_file": "app/api/schedule/route.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "get()",
       "id": "app_api_schedule_route_get"
     },
@@ -683,8 +599,8 @@
       "source_file": "app/api/schedule/route.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "post()",
       "id": "app_api_schedule_route_post"
     },
@@ -694,8 +610,8 @@
       "source_file": "app/components/CenterStage.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Core Dashboard Page",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "centerstage.tsx",
       "id": "app_components_centerstage"
     },
@@ -705,8 +621,8 @@
       "source_file": "app/components/CenterStage.tsx",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Core Dashboard Page",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "vaultcore",
       "id": "app_components_centerstage_vaultcore"
     },
@@ -716,8 +632,8 @@
       "source_file": "app/components/CenterStage.tsx",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Core Dashboard Page",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "centerstage()",
       "id": "app_components_centerstage_centerstage"
     },
@@ -727,8 +643,8 @@
       "source_file": "app/components/core/Clock.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Core Dashboard Page",
+      "community": 23,
+      "community_name": "Whisper Hook",
       "norm_label": "clock.tsx",
       "id": "app_components_core_clock"
     },
@@ -738,8 +654,8 @@
       "source_file": "app/components/core/Clock.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Core Dashboard Page",
+      "community": 23,
+      "community_name": "Whisper Hook",
       "norm_label": "clock()",
       "id": "app_components_core_clock_clock"
     },
@@ -947,8 +863,8 @@
       "source_file": "app/components/panels/DirectivesPanel.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "directivespanel.tsx",
       "id": "app_components_panels_directivespanel"
     },
@@ -958,8 +874,8 @@
       "source_file": "app/components/panels/DirectivesPanel.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "directivespanel()",
       "id": "app_components_panels_directivespanel_directivespanel"
     },
@@ -969,8 +885,8 @@
       "source_file": "app/components/panels/DocumentsPanel.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "documentspanel.tsx",
       "id": "app_components_panels_documentspanel"
     },
@@ -980,8 +896,8 @@
       "source_file": "app/components/panels/DocumentsPanel.tsx",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "documentspanel()",
       "id": "app_components_panels_documentspanel_documentspanel"
     },
@@ -991,8 +907,8 @@
       "source_file": "app/components/panels/VitalsPanel.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "vitalspanel.tsx",
       "id": "app_components_panels_vitalspanel"
     },
@@ -1002,8 +918,8 @@
       "source_file": "app/components/panels/VitalsPanel.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "fillstyle()",
       "id": "app_components_panels_vitalspanel_fillstyle"
     },
@@ -1013,8 +929,8 @@
       "source_file": "app/components/panels/VitalsPanel.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "vital()",
       "id": "app_components_panels_vitalspanel_vital"
     },
@@ -1024,8 +940,8 @@
       "source_file": "app/components/panels/VitalsPanel.tsx",
       "source_location": "L71",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "vitalspanel()",
       "id": "app_components_panels_vitalspanel_vitalspanel"
     },
@@ -1035,8 +951,8 @@
       "source_file": "app/components/panels/registry.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "registry.ts",
       "id": "app_components_panels_registry"
     },
@@ -1046,8 +962,8 @@
       "source_file": "app/components/panels/registry.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "panelentry",
       "id": "app_components_panels_registry_panelentry"
     },
@@ -1057,8 +973,8 @@
       "source_file": "app/components/panels/registry.ts",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Core Dashboard Page",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "leftpanels",
       "id": "app_components_panels_registry_leftpanels"
     },
@@ -1068,8 +984,8 @@
       "source_file": "app/components/panels/registry.ts",
       "source_location": "L26",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Core Dashboard Page",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "rightpanels",
       "id": "app_components_panels_registry_rightpanels"
     },
@@ -1079,8 +995,8 @@
       "source_file": "app/components/panels/types.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "types.ts",
       "id": "app_components_panels_types"
     },
@@ -1090,8 +1006,8 @@
       "source_file": "app/components/panels/types.ts",
       "source_location": "L8",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "panelprops",
       "id": "app_components_panels_types_panelprops"
     },
@@ -1123,8 +1039,8 @@
       "source_file": "app/components/records/ProjectRecord.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "projectrecord.tsx",
       "id": "app_components_records_projectrecord"
     },
@@ -1134,8 +1050,8 @@
       "source_file": "app/components/records/ProjectRecord.tsx",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "fact()",
       "id": "app_components_records_projectrecord_fact"
     },
@@ -1145,8 +1061,8 @@
       "source_file": "app/components/records/ProjectRecord.tsx",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "projectrecord()",
       "id": "app_components_records_projectrecord_projectrecord"
     },
@@ -1156,8 +1072,8 @@
       "source_file": "app/components/ui/PanelTitle.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "paneltitle.tsx",
       "id": "app_components_ui_paneltitle"
     },
@@ -1167,8 +1083,8 @@
       "source_file": "app/components/ui/PanelTitle.tsx",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "paneltitle()",
       "id": "app_components_ui_paneltitle_paneltitle"
     },
@@ -1178,8 +1094,8 @@
       "source_file": "app/components/vault-core/ProjectNodes.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Vault Core Project Nodes",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "projectnodes.tsx",
       "id": "app_components_vault_core_projectnodes"
     },
@@ -1189,8 +1105,8 @@
       "source_file": "app/components/vault-core/ProjectNodes.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Vault Core Project Nodes",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "tone_colors",
       "id": "app_components_vault_core_projectnodes_tone_colors"
     },
@@ -1200,8 +1116,8 @@
       "source_file": "app/components/vault-core/ProjectNodes.tsx",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Vault Core Project Nodes",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "warm_white",
       "id": "app_components_vault_core_projectnodes_warm_white"
     },
@@ -1211,8 +1127,8 @@
       "source_file": "app/components/vault-core/ProjectNodes.tsx",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Vault Core Project Nodes",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "orbitposition()",
       "id": "app_components_vault_core_projectnodes_orbitposition"
     },
@@ -1222,8 +1138,8 @@
       "source_file": "app/components/vault-core/ProjectNodes.tsx",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Vault Core Project Nodes",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "gridposition()",
       "id": "app_components_vault_core_projectnodes_gridposition"
     },
@@ -1233,8 +1149,8 @@
       "source_file": "app/components/vault-core/ProjectNodes.tsx",
       "source_location": "L56",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Vault Core Project Nodes",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "healthposition()",
       "id": "app_components_vault_core_projectnodes_healthposition"
     },
@@ -1244,8 +1160,8 @@
       "source_file": "app/components/vault-core/ProjectNodes.tsx",
       "source_location": "L64",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Vault Core Project Nodes",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "projectpath()",
       "id": "app_components_vault_core_projectnodes_projectpath"
     },
@@ -1255,8 +1171,8 @@
       "source_file": "app/components/vault-core/ProjectNodes.tsx",
       "source_location": "L68",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Vault Core Project Nodes",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "goto()",
       "id": "app_components_vault_core_projectnodes_goto"
     },
@@ -1266,8 +1182,8 @@
       "source_file": "app/components/vault-core/ProjectNodes.tsx",
       "source_location": "L72",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Vault Core Project Nodes",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "projectnode()",
       "id": "app_components_vault_core_projectnodes_projectnode"
     },
@@ -1277,54 +1193,10 @@
       "source_file": "app/components/vault-core/ProjectNodes.tsx",
       "source_location": "L210",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Vault Core Project Nodes",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "projectnodes()",
       "id": "app_components_vault_core_projectnodes_projectnodes"
-    },
-    {
-      "label": "VaultCore.tsx",
-      "file_type": "code",
-      "source_file": "app/components/vault-core/VaultCore.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Voice & Vault Core Visual Layer",
-      "norm_label": "vaultcore.tsx",
-      "id": "app_components_vault_core_vaultcore"
-    },
-    {
-      "label": "ManagedControls",
-      "file_type": "code",
-      "source_file": "app/components/vault-core/VaultCore.tsx",
-      "source_location": "L11",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Voice & Vault Core Visual Layer",
-      "norm_label": "managedcontrols",
-      "id": "app_components_vault_core_vaultcore_managedcontrols"
-    },
-    {
-      "label": "CameraDirector()",
-      "file_type": "code",
-      "source_file": "app/components/vault-core/VaultCore.tsx",
-      "source_location": "L23",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Voice & Vault Core Visual Layer",
-      "norm_label": "cameradirector()",
-      "id": "app_components_vault_core_vaultcore_cameradirector"
-    },
-    {
-      "label": "VaultCore()",
-      "file_type": "code",
-      "source_file": "app/components/vault-core/VaultCore.tsx",
-      "source_location": "L55",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Voice & Vault Core Visual Layer",
-      "norm_label": "vaultcore()",
-      "id": "app_components_vault_core_vaultcore_vaultcore"
     },
     {
       "label": "geometry.ts",
@@ -1332,8 +1204,8 @@
       "source_file": "app/components/vault-core/geometry.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 16,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 14,
+      "community_name": "Voice Command Router",
       "norm_label": "geometry.ts",
       "id": "app_components_vault_core_geometry"
     },
@@ -1343,8 +1215,8 @@
       "source_file": "app/components/vault-core/geometry.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 16,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 14,
+      "community_name": "Voice Command Router",
       "norm_label": "particlefield",
       "id": "app_components_vault_core_geometry_particlefield"
     },
@@ -1354,8 +1226,8 @@
       "source_file": "app/components/vault-core/geometry.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 16,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 14,
+      "community_name": "Voice Command Router",
       "norm_label": "createrandom()",
       "id": "app_components_vault_core_geometry_createrandom"
     },
@@ -1365,8 +1237,8 @@
       "source_file": "app/components/vault-core/geometry.ts",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 16,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 14,
+      "community_name": "Voice Command Router",
       "norm_label": "createparticlefield()",
       "id": "app_components_vault_core_geometry_createparticlefield"
     },
@@ -1376,8 +1248,8 @@
       "source_file": "app/components/vault-core/geometry.ts",
       "source_location": "L63",
       "_origin": "ast",
-      "community": 16,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 14,
+      "community_name": "Voice Command Router",
       "norm_label": "createlinksegments()",
       "id": "app_components_vault_core_geometry_createlinksegments"
     },
@@ -1387,8 +1259,8 @@
       "source_file": "app/components/vault-core/signals.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "signals.tsx",
       "id": "app_components_vault_core_signals"
     },
@@ -1398,8 +1270,8 @@
       "source_file": "app/components/vault-core/signals.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "vaultsignals",
       "id": "app_components_vault_core_signals_vaultsignals"
     },
@@ -1409,8 +1281,8 @@
       "source_file": "app/components/vault-core/signals.tsx",
       "source_location": "L17",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "usevaultsignals()",
       "id": "app_components_vault_core_signals_usevaultsignals"
     },
@@ -1420,8 +1292,8 @@
       "source_file": "app/components/vault-core/types.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "types.ts",
       "id": "app_components_vault_core_types"
     },
@@ -1431,8 +1303,8 @@
       "source_file": "app/components/vault-core/types.ts",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "corestate",
       "id": "app_components_vault_core_types_corestate"
     },
@@ -1442,8 +1314,8 @@
       "source_file": "app/components/vault-core/types.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "nodeformation",
       "id": "app_components_vault_core_types_nodeformation"
     },
@@ -1453,8 +1325,8 @@
       "source_file": "app/components/vault-core/types.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "vaultsignals",
       "id": "app_components_vault_core_types_vaultsignals"
     },
@@ -1464,8 +1336,8 @@
       "source_file": "app/components/vault-core/types.ts",
       "source_location": "L36",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "default_signals",
       "id": "app_components_vault_core_types_default_signals"
     },
@@ -1475,8 +1347,8 @@
       "source_file": "app/components/vault-core/types.ts",
       "source_location": "L46",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "stagenode",
       "id": "app_components_vault_core_types_stagenode"
     },
@@ -1486,8 +1358,8 @@
       "source_file": "app/components/vault-core/types.ts",
       "source_location": "L55",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 6,
+      "community_name": "ControlP Architecture Concepts",
       "norm_label": "state_presets",
       "id": "app_components_vault_core_types_state_presets"
     },
@@ -1497,8 +1369,8 @@
       "source_file": "app/components/voice/useSpeech.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 13,
+      "community_name": "Core Page & Projects API",
       "norm_label": "usespeech.ts",
       "id": "app_components_voice_usespeech"
     },
@@ -1508,8 +1380,8 @@
       "source_file": "app/components/voice/useSpeech.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 13,
+      "community_name": "Core Page & Projects API",
       "norm_label": "speechrecognitionresultlike",
       "id": "app_components_voice_usespeech_speechrecognitionresultlike"
     },
@@ -1519,8 +1391,8 @@
       "source_file": "app/components/voice/useSpeech.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 13,
+      "community_name": "Core Page & Projects API",
       "norm_label": "speechrecognitioneventlike",
       "id": "app_components_voice_usespeech_speechrecognitioneventlike"
     },
@@ -1530,8 +1402,8 @@
       "source_file": "app/components/voice/useSpeech.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 13,
+      "community_name": "Core Page & Projects API",
       "norm_label": "speechrecognitionlike",
       "id": "app_components_voice_usespeech_speechrecognitionlike"
     },
@@ -1541,8 +1413,8 @@
       "source_file": "app/components/voice/useSpeech.ts",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 13,
+      "community_name": "Core Page & Projects API",
       "norm_label": "recognitionconstructor",
       "id": "app_components_voice_usespeech_recognitionconstructor"
     },
@@ -1552,8 +1424,8 @@
       "source_file": "app/components/voice/useSpeech.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 13,
+      "community_name": "Core Page & Projects API",
       "norm_label": "getrecognition()",
       "id": "app_components_voice_usespeech_getrecognition"
     },
@@ -1563,8 +1435,8 @@
       "source_file": "app/components/voice/useSpeech.ts",
       "source_location": "L40",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "Voice & Vault Core Visual Layer",
+      "community": 13,
+      "community_name": "Core Page & Projects API",
       "norm_label": "usespeech()",
       "id": "app_components_voice_usespeech_usespeech"
     },
@@ -1574,8 +1446,8 @@
       "source_file": "app/layout.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 17,
-      "community_name": "App Layout",
+      "community": 15,
+      "community_name": "Web Speech Provider",
       "norm_label": "layout.tsx",
       "id": "app_layout"
     },
@@ -1585,8 +1457,8 @@
       "source_file": "app/layout.tsx",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 17,
-      "community_name": "App Layout",
+      "community": 15,
+      "community_name": "Web Speech Provider",
       "norm_label": "viewport",
       "id": "app_layout_viewport"
     },
@@ -1662,8 +1534,8 @@
       "source_file": "app/p/[slug]/page.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "page.tsx",
       "id": "app_p_slug_page"
     },
@@ -1673,43 +1545,10 @@
       "source_file": "app/p/[slug]/page.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "projectpage()",
       "id": "app_p_slug_page_projectpage"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "app/queue/page.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "Intents API & Queue",
-      "norm_label": "page.tsx",
-      "id": "app_queue_page"
-    },
-    {
-      "label": "STATUS_LABEL",
-      "file_type": "code",
-      "source_file": "app/queue/page.tsx",
-      "source_location": "L7",
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "Intents API & Queue",
-      "norm_label": "status_label",
-      "id": "app_queue_page_status_label"
-    },
-    {
-      "label": "QueuePage()",
-      "file_type": "code",
-      "source_file": "app/queue/page.tsx",
-      "source_location": "L18",
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "Intents API & Queue",
-      "norm_label": "queuepage()",
-      "id": "app_queue_page_queuepage"
     },
     {
       "label": "eslint.config.mjs",
@@ -1717,8 +1556,8 @@
       "source_file": "eslint.config.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 26,
-      "community_name": "ESLint Config",
+      "community": 27,
+      "community_name": "Next.js Config",
       "norm_label": "eslint.config.mjs",
       "id": "eslint_config"
     },
@@ -1728,8 +1567,8 @@
       "source_file": "eslint.config.mjs",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 26,
-      "community_name": "ESLint Config",
+      "community": 27,
+      "community_name": "Next.js Config",
       "norm_label": "eslintconfig",
       "id": "eslint_config_eslintconfig"
     },
@@ -1739,8 +1578,8 @@
       "source_file": "lib/adapters/evidence-git.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "evidence-git.ts",
       "id": "lib_adapters_evidence_git"
     },
@@ -1750,8 +1589,8 @@
       "source_file": "lib/adapters/evidence-git.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "execfileasync",
       "id": "lib_adapters_evidence_git_execfileasync"
     },
@@ -1761,8 +1600,8 @@
       "source_file": "lib/adapters/evidence-git.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "evidencereading",
       "id": "lib_adapters_evidence_git_evidencereading"
     },
@@ -1772,8 +1611,8 @@
       "source_file": "lib/adapters/evidence-git.ts",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "readevidence()",
       "id": "lib_adapters_evidence_git_readevidence"
     },
@@ -1783,8 +1622,8 @@
       "source_file": "lib/adapters/evidence-git.ts",
       "source_location": "L58",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "readcommitactivity()",
       "id": "lib_adapters_evidence_git_readcommitactivity"
     },
@@ -1794,8 +1633,8 @@
       "source_file": "lib/adapters/evidence-git.ts",
       "source_location": "L85",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "git()",
       "id": "lib_adapters_evidence_git_git"
     },
@@ -1805,8 +1644,8 @@
       "source_file": "lib/adapters/evidence-git.ts",
       "source_location": "L105",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "exists()",
       "id": "lib_adapters_evidence_git_exists"
     },
@@ -1816,8 +1655,8 @@
       "source_file": "lib/adapters/evidence-git.ts",
       "source_location": "L114",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "emptyevidence()",
       "id": "lib_adapters_evidence_git_emptyevidence"
     },
@@ -1827,8 +1666,8 @@
       "source_file": "lib/adapters/graph-graphify.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "graph-graphify.ts",
       "id": "lib_adapters_graph_graphify"
     },
@@ -1838,8 +1677,8 @@
       "source_file": "lib/adapters/graph-graphify.ts",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "graphreading",
       "id": "lib_adapters_graph_graphify_graphreading"
     },
@@ -1849,8 +1688,8 @@
       "source_file": "lib/adapters/graph-graphify.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "readgraph()",
       "id": "lib_adapters_graph_graphify_readgraph"
     },
@@ -1860,8 +1699,8 @@
       "source_file": "lib/adapters/graph-graphify.ts",
       "source_location": "L52",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "emptygraph()",
       "id": "lib_adapters_graph_graphify_emptygraph"
     },
@@ -1882,8 +1721,8 @@
       "source_file": "lib/adapters/memory-obsidian.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 3,
-      "community_name": "Memory Adapter & Editable Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "memoryreading",
       "id": "lib_adapters_memory_obsidian_memoryreading"
     },
@@ -1904,8 +1743,8 @@
       "source_file": "lib/adapters/memory-obsidian.ts",
       "source_location": "L64",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "appendlogentry()",
       "id": "lib_adapters_memory_obsidian_appendlogentry"
     },
@@ -2069,8 +1908,8 @@
       "source_file": "lib/config.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "config.ts",
       "id": "lib_config"
     },
@@ -2080,8 +1919,8 @@
       "source_file": "lib/config.ts",
       "source_location": "L6",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "adapterconfig",
       "id": "lib_config_adapterconfig"
     },
@@ -2091,8 +1930,8 @@
       "source_file": "lib/controlp.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "controlp.ts",
       "id": "lib_controlp"
     },
@@ -2102,8 +1941,8 @@
       "source_file": "lib/controlp.ts",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "buildcard()",
       "id": "lib_controlp_buildcard"
     },
@@ -2113,8 +1952,8 @@
       "source_file": "lib/intents.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 12,
-      "community_name": "Intents API & Queue",
+      "community": 11,
+      "community_name": "Intents, STT & LLM Extension Points",
       "norm_label": "intents.ts",
       "id": "lib_intents"
     },
@@ -2124,8 +1963,8 @@
       "source_file": "lib/intents.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 12,
-      "community_name": "Intents API & Queue",
+      "community": 11,
+      "community_name": "Intents, STT & LLM Extension Points",
       "norm_label": "intentsource",
       "id": "lib_intents_intentsource"
     },
@@ -2135,8 +1974,8 @@
       "source_file": "lib/intents.ts",
       "source_location": "L12",
       "_origin": "ast",
-      "community": 12,
-      "community_name": "Intents API & Queue",
+      "community": 11,
+      "community_name": "Intents, STT & LLM Extension Points",
       "norm_label": "intentstatus",
       "id": "lib_intents_intentstatus"
     },
@@ -2146,8 +1985,8 @@
       "source_file": "lib/intents.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 12,
-      "community_name": "Intents API & Queue",
+      "community": 11,
+      "community_name": "Intents, STT & LLM Extension Points",
       "norm_label": "intent",
       "id": "lib_intents_intent"
     },
@@ -2157,8 +1996,8 @@
       "source_file": "lib/intents.ts",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 12,
-      "community_name": "Intents API & Queue",
+      "community": 11,
+      "community_name": "Intents, STT & LLM Extension Points",
       "norm_label": "queue_file",
       "id": "lib_intents_queue_file"
     },
@@ -2168,8 +2007,8 @@
       "source_file": "lib/intents.ts",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 12,
-      "community_name": "Intents API & Queue",
+      "community": 11,
+      "community_name": "Intents, STT & LLM Extension Points",
       "norm_label": "queuereading",
       "id": "lib_intents_queuereading"
     },
@@ -2179,8 +2018,8 @@
       "source_file": "lib/intents.ts",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 12,
-      "community_name": "Intents API & Queue",
+      "community": 11,
+      "community_name": "Intents, STT & LLM Extension Points",
       "norm_label": "readintentqueue()",
       "id": "lib_intents_readintentqueue"
     },
@@ -2190,8 +2029,8 @@
       "source_file": "lib/intents.ts",
       "source_location": "L55",
       "_origin": "ast",
-      "community": 12,
-      "community_name": "Intents API & Queue",
+      "community": 11,
+      "community_name": "Intents, STT & LLM Extension Points",
       "norm_label": "appendintent()",
       "id": "lib_intents_appendintent"
     },
@@ -2201,8 +2040,8 @@
       "source_file": "lib/registry.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "registry.ts",
       "id": "lib_registry"
     },
@@ -2212,8 +2051,8 @@
       "source_file": "lib/registry.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "registryentry",
       "id": "lib_registry_registryentry"
     },
@@ -2223,8 +2062,8 @@
       "source_file": "lib/registry.ts",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "registry_file",
       "id": "lib_registry_registry_file"
     },
@@ -2234,8 +2073,8 @@
       "source_file": "lib/registry.ts",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "slugify()",
       "id": "lib_registry_slugify"
     },
@@ -2245,8 +2084,8 @@
       "source_file": "lib/registry.ts",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "loadregistry()",
       "id": "lib_registry_loadregistry"
     },
@@ -2256,8 +2095,8 @@
       "source_file": "lib/registry.ts",
       "source_location": "L72",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "dedupe()",
       "id": "lib_registry_dedupe"
     },
@@ -2267,8 +2106,8 @@
       "source_file": "lib/registry.ts",
       "source_location": "L91",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "isvalidentry()",
       "id": "lib_registry_isvalidentry"
     },
@@ -2278,8 +2117,8 @@
       "source_file": "lib/registry.ts",
       "source_location": "L104",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "discoverfromvault()",
       "id": "lib_registry_discoverfromvault"
     },
@@ -2289,8 +2128,8 @@
       "source_file": "lib/registry.ts",
       "source_location": "L124",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "resolverepopath()",
       "id": "lib_registry_resolverepopath"
     },
@@ -2300,8 +2139,8 @@
       "source_file": "lib/schedule.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "schedule.ts",
       "id": "lib_schedule"
     },
@@ -2311,8 +2150,8 @@
       "source_file": "lib/schedule.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "dayplan",
       "id": "lib_schedule_dayplan"
     },
@@ -2322,8 +2161,8 @@
       "source_file": "lib/schedule.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "today()",
       "id": "lib_schedule_today"
     },
@@ -2333,8 +2172,8 @@
       "source_file": "lib/schedule.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "planfile()",
       "id": "lib_schedule_planfile"
     },
@@ -2344,8 +2183,8 @@
       "source_file": "lib/schedule.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "readdayplan()",
       "id": "lib_schedule_readdayplan"
     },
@@ -2355,8 +2194,8 @@
       "source_file": "lib/schedule.ts",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "Project Registry & Schedule API",
+      "community": 9,
+      "community_name": "ControlP Orchestrator",
       "norm_label": "setdayitem()",
       "id": "lib_schedule_setdayitem"
     },
@@ -2366,8 +2205,8 @@
       "source_file": "lib/schema.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "schema.ts",
       "id": "lib_schema"
     },
@@ -2377,8 +2216,8 @@
       "source_file": "lib/schema.ts",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "issuesource",
       "id": "lib_schema_issuesource"
     },
@@ -2388,8 +2227,8 @@
       "source_file": "lib/schema.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "issuelevel",
       "id": "lib_schema_issuelevel"
     },
@@ -2399,8 +2238,8 @@
       "source_file": "lib/schema.ts",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "dataissue",
       "id": "lib_schema_dataissue"
     },
@@ -2410,8 +2249,8 @@
       "source_file": "lib/schema.ts",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 3,
-      "community_name": "Memory Adapter & Editable Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "projectmemory",
       "id": "lib_schema_projectmemory"
     },
@@ -2421,8 +2260,8 @@
       "source_file": "lib/schema.ts",
       "source_location": "L42",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "required_memory_fields",
       "id": "lib_schema_required_memory_fields"
     },
@@ -2443,8 +2282,8 @@
       "source_file": "lib/schema.ts",
       "source_location": "L59",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "projectevidence",
       "id": "lib_schema_projectevidence"
     },
@@ -2454,8 +2293,8 @@
       "source_file": "lib/schema.ts",
       "source_location": "L69",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "Metrics API & Project Records",
+      "community": 0,
+      "community_name": "Vault Core Visual Layer",
       "norm_label": "projectgraph",
       "id": "lib_schema_projectgraph"
     },
@@ -2465,8 +2304,8 @@
       "source_file": "lib/schema.ts",
       "source_location": "L81",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Metrics API & Project Records",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "projectcard",
       "id": "lib_schema_projectcard"
     },
@@ -2476,8 +2315,8 @@
       "source_file": "lib/ui.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "ui.ts",
       "id": "lib_ui"
     },
@@ -2487,8 +2326,8 @@
       "source_file": "lib/ui.ts",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "tone()",
       "id": "lib_ui_tone"
     },
@@ -2498,8 +2337,8 @@
       "source_file": "lib/ui.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "obsidianurl()",
       "id": "lib_ui_obsidianurl"
     },
@@ -2509,32 +2348,10 @@
       "source_file": "lib/ui.ts",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "Panel Modules & Command Deck",
+      "community": 4,
+      "community_name": "Package & Dependencies",
       "norm_label": "formatdate()",
       "id": "lib_ui_formatdate"
-    },
-    {
-      "label": "next-env.d.ts",
-      "file_type": "code",
-      "source_file": "next-env.d.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "Env Declarations",
-      "norm_label": "next-env.d.ts",
-      "id": "next_env_d"
-    },
-    {
-      "label": "NOTE: This file should not be edited",
-      "file_type": "rationale",
-      "source_file": "next-env.d.ts",
-      "source_location": "L5",
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "Env Declarations",
-      "norm_label": "note: this file should not be edited",
-      "id": "next_env_d_rationale_5"
     },
     {
       "label": "next.config.mjs",
@@ -2542,8 +2359,8 @@
       "source_file": "next.config.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 27,
-      "community_name": "Next.js Config",
+      "community": 28,
+      "community_name": "Env Declarations",
       "norm_label": "next.config.mjs",
       "id": "next_config"
     },
@@ -2553,516 +2370,10 @@
       "source_file": "next.config.mjs",
       "source_location": "L2",
       "_origin": "ast",
-      "community": 27,
-      "community_name": "Next.js Config",
+      "community": 28,
+      "community_name": "Env Declarations",
       "norm_label": "nextconfig",
       "id": "next_config_nextconfig"
-    },
-    {
-      "label": "package.json",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "package.json",
-      "id": "package"
-    },
-    {
-      "label": "name",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L2",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "name",
-      "id": "package_name"
-    },
-    {
-      "label": "version",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "version",
-      "id": "package_version"
-    },
-    {
-      "label": "private",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L4",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "private",
-      "id": "package_private"
-    },
-    {
-      "label": "scripts",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L5",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "scripts",
-      "id": "package_scripts"
-    },
-    {
-      "label": "dev",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "dev",
-      "id": "package_scripts_dev"
-    },
-    {
-      "label": "build",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L7",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "build",
-      "id": "package_scripts_build"
-    },
-    {
-      "label": "lint",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "lint",
-      "id": "package_scripts_lint"
-    },
-    {
-      "label": "typecheck",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "typecheck",
-      "id": "package_scripts_typecheck"
-    },
-    {
-      "label": "check",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L10",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "check",
-      "id": "package_scripts_check"
-    },
-    {
-      "label": "dependencies",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L12",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "dependencies",
-      "id": "package_dependencies"
-    },
-    {
-      "label": "@react-three/drei",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L13",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "@react-three/drei",
-      "id": "package_dependencies_react_three_drei"
-    },
-    {
-      "label": "@react-three/drei",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L13",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "@react-three/drei",
-      "id": "react_three_drei"
-    },
-    {
-      "label": "@react-three/fiber",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L14",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "@react-three/fiber",
-      "id": "package_dependencies_react_three_fiber"
-    },
-    {
-      "label": "@react-three/fiber",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L14",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "@react-three/fiber",
-      "id": "react_three_fiber"
-    },
-    {
-      "label": "@types/three",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L15",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "@types/three",
-      "id": "package_dependencies_types_three"
-    },
-    {
-      "label": "@types/three",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L15",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "@types/three",
-      "id": "types_three"
-    },
-    {
-      "label": "next",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L16",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "next",
-      "id": "package_dependencies_next"
-    },
-    {
-      "label": "next",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L16",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "next",
-      "id": "next"
-    },
-    {
-      "label": "react",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L17",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "react",
-      "id": "package_dependencies_react"
-    },
-    {
-      "label": "react",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L17",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "react",
-      "id": "react"
-    },
-    {
-      "label": "react-dom",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L18",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "react-dom",
-      "id": "package_dependencies_react_dom"
-    },
-    {
-      "label": "react-dom",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L18",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "react-dom",
-      "id": "react_dom"
-    },
-    {
-      "label": "three",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L19",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "three",
-      "id": "package_dependencies_three"
-    },
-    {
-      "label": "three",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L19",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "Package & Dependencies",
-      "norm_label": "three",
-      "id": "three"
-    },
-    {
-      "label": "devDependencies",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L21",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "devdependencies",
-      "id": "package_devdependencies"
-    },
-    {
-      "label": "@tailwindcss/postcss",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L22",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "@tailwindcss/postcss",
-      "id": "package_devdependencies_tailwindcss_postcss"
-    },
-    {
-      "label": "@tailwindcss/postcss",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L22",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "@tailwindcss/postcss",
-      "id": "tailwindcss_postcss"
-    },
-    {
-      "label": "@types/node",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L23",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "@types/node",
-      "id": "package_devdependencies_types_node"
-    },
-    {
-      "label": "@types/node",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L23",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "@types/node",
-      "id": "types_node"
-    },
-    {
-      "label": "@types/react",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L24",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "@types/react",
-      "id": "package_devdependencies_types_react"
-    },
-    {
-      "label": "@types/react",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L24",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "@types/react",
-      "id": "types_react"
-    },
-    {
-      "label": "@types/react-dom",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L25",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "@types/react-dom",
-      "id": "package_devdependencies_types_react_dom"
-    },
-    {
-      "label": "@types/react-dom",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L25",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "@types/react-dom",
-      "id": "types_react_dom"
-    },
-    {
-      "label": "autoprefixer",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L26",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "autoprefixer",
-      "id": "package_devdependencies_autoprefixer"
-    },
-    {
-      "label": "autoprefixer",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L26",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "autoprefixer",
-      "id": "autoprefixer"
-    },
-    {
-      "label": "eslint",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L27",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "eslint",
-      "id": "package_devdependencies_eslint"
-    },
-    {
-      "label": "eslint",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L27",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "eslint",
-      "id": "eslint"
-    },
-    {
-      "label": "eslint-config-next",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L28",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "eslint-config-next",
-      "id": "package_devdependencies_eslint_config_next"
-    },
-    {
-      "label": "eslint-config-next",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L28",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "eslint-config-next",
-      "id": "eslint_config_next"
-    },
-    {
-      "label": "postcss",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L29",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "postcss",
-      "id": "package_devdependencies_postcss"
-    },
-    {
-      "label": "postcss",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L29",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "postcss",
-      "id": "postcss"
-    },
-    {
-      "label": "tailwindcss",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L30",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "tailwindcss",
-      "id": "package_devdependencies_tailwindcss"
-    },
-    {
-      "label": "tailwindcss",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L30",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "tailwindcss",
-      "id": "tailwindcss"
-    },
-    {
-      "label": "typescript",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L31",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "typescript",
-      "id": "package_devdependencies_typescript"
-    },
-    {
-      "label": "typescript",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L31",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Dev Dependencies",
-      "norm_label": "typescript",
-      "id": "typescript"
     },
     {
       "label": "postcss.config.mjs",
@@ -3457,6 +2768,7 @@
       "_origin": "ast",
       "community": 22,
       "norm_label": "route.ts",
+      "community_name": "STT Proxy Route",
       "id": "app_api_stt_route"
     },
     {
@@ -3467,6 +2779,7 @@
       "_origin": "ast",
       "community": 22,
       "norm_label": "post()",
+      "community_name": "STT Proxy Route",
       "id": "app_api_stt_route_post"
     },
     {
@@ -3475,8 +2788,9 @@
       "source_file": "app/components/voice/VoiceVisualizer.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 24,
+      "community": 25,
       "norm_label": "voicevisualizer.tsx",
+      "community_name": "Command Deck Views",
       "id": "app_components_voice_voicevisualizer"
     },
     {
@@ -3485,8 +2799,9 @@
       "source_file": "app/components/voice/VoiceVisualizer.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 24,
+      "community": 25,
       "norm_label": "voicevisualizer()",
+      "community_name": "Command Deck Views",
       "id": "app_components_voice_voicevisualizer_voicevisualizer"
     },
     {
@@ -3497,6 +2812,7 @@
       "_origin": "ast",
       "community": 20,
       "norm_label": "usemiclevel.ts",
+      "community_name": "Mic Level Hook",
       "id": "app_components_voice_usemiclevel"
     },
     {
@@ -3507,6 +2823,7 @@
       "_origin": "ast",
       "community": 20,
       "norm_label": "micstatus",
+      "community_name": "Mic Level Hook",
       "id": "app_components_voice_usemiclevel_micstatus"
     },
     {
@@ -3517,6 +2834,7 @@
       "_origin": "ast",
       "community": 20,
       "norm_label": "usemiclevel()",
+      "community_name": "Mic Level Hook",
       "id": "app_components_voice_usemiclevel_usemiclevel"
     },
     {
@@ -3525,8 +2843,9 @@
       "source_file": "app/components/voice/useWhisper.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 23,
+      "community": 24,
       "norm_label": "usewhisper.ts",
+      "community_name": "Voice Visualizer",
       "id": "app_components_voice_usewhisper"
     },
     {
@@ -3535,8 +2854,9 @@
       "source_file": "app/components/voice/useWhisper.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 23,
+      "community": 24,
       "norm_label": "usewhisper()",
+      "community_name": "Voice Visualizer",
       "id": "app_components_voice_usewhisper_usewhisper"
     },
     {
@@ -3551,6 +2871,7 @@
       "_origin": "ast",
       "community": 31,
       "norm_label": "run.sh",
+      "community_name": "STT Run Script",
       "id": "stt_run"
     },
     {
@@ -3565,6 +2886,7 @@
       "_origin": "ast",
       "community": 31,
       "norm_label": "run.sh script",
+      "community_name": "STT Run Script",
       "id": "stt_run_sh__entry"
     },
     {
@@ -3573,8 +2895,9 @@
       "source_file": "stt/server.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 18,
+      "community": 16,
       "norm_label": "server.py",
+      "community_name": "3D Geometry Layer",
       "id": "stt_server"
     },
     {
@@ -3583,8 +2906,9 @@
       "source_file": "stt/server.py",
       "source_location": "L37",
       "_origin": "ast",
-      "community": 18,
+      "community": 16,
       "norm_label": "health()",
+      "community_name": "3D Geometry Layer",
       "id": "stt_server_health"
     },
     {
@@ -3593,8 +2917,9 @@
       "source_file": "stt/server.py",
       "source_location": "L42",
       "_origin": "ast",
-      "community": 18,
+      "community": 16,
       "norm_label": "transcribe()",
+      "community_name": "3D Geometry Layer",
       "id": "stt_server_transcribe"
     },
     {
@@ -3603,8 +2928,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 18,
+      "community": 16,
       "norm_label": "uploadfile",
+      "community_name": "3D Geometry Layer",
       "id": "uploadfile"
     },
     {
@@ -3613,8 +2939,9 @@
       "source_file": "stt/server.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 18,
+      "community": 16,
       "norm_label": "sidecar stt local de controlp \u2014 faster-whisper (v1.4.2).  transcripcion en espan",
+      "community_name": "3D Geometry Layer",
       "id": "stt_server_rationale_1"
     },
     {
@@ -3628,6 +2955,7 @@
       "contributor": null,
       "community": 21,
       "norm_label": "fastapi",
+      "community_name": "STT Sidecar Dependencies",
       "id": "stt_requirements_fastapi"
     },
     {
@@ -3641,6 +2969,7 @@
       "contributor": null,
       "community": 21,
       "norm_label": "uvicorn",
+      "community_name": "STT Sidecar Dependencies",
       "id": "stt_requirements_uvicorn"
     },
     {
@@ -3652,8 +2981,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 39,
+      "community": 40,
       "norm_label": "faster-whisper",
+      "community_name": "Community 40",
       "id": "stt_requirements_faster_whisper"
     },
     {
@@ -3667,6 +2997,7 @@
       "contributor": null,
       "community": 21,
       "norm_label": "python-multipart",
+      "community_name": "STT Sidecar Dependencies",
       "id": "stt_requirements_python_multipart"
     },
     {
@@ -3675,9 +3006,10 @@
       "source_file": "app/components/panels/SchedulePanel.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_components_panels_schedulepanel",
       "community": 7,
-      "norm_label": "schedulepanel.tsx"
+      "norm_label": "schedulepanel.tsx",
+      "community_name": "Panel Modules & Command Deck",
+      "id": "app_components_panels_schedulepanel"
     },
     {
       "label": "ScheduleBody()",
@@ -3685,9 +3017,10 @@
       "source_file": "app/components/panels/SchedulePanel.tsx",
       "source_location": "L12",
       "_origin": "ast",
-      "id": "app_components_panels_schedulepanel_schedulebody",
       "community": 7,
-      "norm_label": "schedulebody()"
+      "norm_label": "schedulebody()",
+      "community_name": "Panel Modules & Command Deck",
+      "id": "app_components_panels_schedulepanel_schedulebody"
     },
     {
       "label": "WirePanel.tsx",
@@ -3695,9 +3028,10 @@
       "source_file": "app/components/panels/WirePanel.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_components_panels_wirepanel",
       "community": 7,
-      "norm_label": "wirepanel.tsx"
+      "norm_label": "wirepanel.tsx",
+      "community_name": "Panel Modules & Command Deck",
+      "id": "app_components_panels_wirepanel"
     },
     {
       "label": "FeedEntry",
@@ -3705,9 +3039,10 @@
       "source_file": "app/components/panels/WirePanel.tsx",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "app_components_panels_wirepanel_feedentry",
       "community": 7,
-      "norm_label": "feedentry"
+      "norm_label": "feedentry",
+      "community_name": "Panel Modules & Command Deck",
+      "id": "app_components_panels_wirepanel_feedentry"
     },
     {
       "label": "WireBody()",
@@ -3715,9 +3050,10 @@
       "source_file": "app/components/panels/WirePanel.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "app_components_panels_wirepanel_wirebody",
       "community": 7,
-      "norm_label": "wirebody()"
+      "norm_label": "wirebody()",
+      "community_name": "Panel Modules & Command Deck",
+      "id": "app_components_panels_wirepanel_wirebody"
     },
     {
       "label": "ParticleCore.tsx",
@@ -3725,9 +3061,10 @@
       "source_file": "app/components/vault-core/ParticleCore.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_components_vault_core_particlecore",
-      "community": 0,
-      "norm_label": "particlecore.tsx"
+      "community": 18,
+      "norm_label": "particlecore.tsx",
+      "community_name": "STT Sidecar Server",
+      "id": "app_components_vault_core_particlecore"
     },
     {
       "label": "GOLD",
@@ -3735,9 +3072,10 @@
       "source_file": "app/components/vault-core/ParticleCore.tsx",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "app_components_vault_core_particlecore_gold",
-      "community": 0,
-      "norm_label": "gold"
+      "community": 18,
+      "norm_label": "gold",
+      "community_name": "STT Sidecar Server",
+      "id": "app_components_vault_core_particlecore_gold"
     },
     {
       "label": "PALE",
@@ -3745,9 +3083,10 @@
       "source_file": "app/components/vault-core/ParticleCore.tsx",
       "source_location": "L16",
       "_origin": "ast",
-      "id": "app_components_vault_core_particlecore_pale",
-      "community": 0,
-      "norm_label": "pale"
+      "community": 18,
+      "norm_label": "pale",
+      "community_name": "STT Sidecar Server",
+      "id": "app_components_vault_core_particlecore_pale"
     },
     {
       "label": "ParticleCore()",
@@ -3755,9 +3094,10 @@
       "source_file": "app/components/vault-core/ParticleCore.tsx",
       "source_location": "L70",
       "_origin": "ast",
-      "id": "app_components_vault_core_particlecore_particlecore",
-      "community": 0,
-      "norm_label": "particlecore()"
+      "community": 18,
+      "norm_label": "particlecore()",
+      "community_name": "STT Sidecar Server",
+      "id": "app_components_vault_core_particlecore_particlecore"
     },
     {
       "label": "VoicePanel.tsx",
@@ -3765,9 +3105,10 @@
       "source_file": "app/components/voice/VoicePanel.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_components_voice_voicepanel",
-      "community": 14,
-      "norm_label": "voicepanel.tsx"
+      "community": 12,
+      "norm_label": "voicepanel.tsx",
+      "community_name": "Intents API & Queue",
+      "id": "app_components_voice_voicepanel"
     },
     {
       "label": "SttProvider",
@@ -3775,9 +3116,10 @@
       "source_file": "app/components/voice/VoicePanel.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "app_components_voice_voicepanel_sttprovider",
-      "community": 14,
-      "norm_label": "sttprovider"
+      "community": 12,
+      "norm_label": "sttprovider",
+      "community_name": "Intents API & Queue",
+      "id": "app_components_voice_voicepanel_sttprovider"
     },
     {
       "label": "STATUS_TEXT",
@@ -3785,9 +3127,10 @@
       "source_file": "app/components/voice/VoicePanel.tsx",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "app_components_voice_voicepanel_status_text",
-      "community": 14,
-      "norm_label": "status_text"
+      "community": 12,
+      "norm_label": "status_text",
+      "community_name": "Intents API & Queue",
+      "id": "app_components_voice_voicepanel_status_text"
     },
     {
       "label": "VoicePanel()",
@@ -3795,9 +3138,10 @@
       "source_file": "app/components/voice/VoicePanel.tsx",
       "source_location": "L38",
       "_origin": "ast",
-      "id": "app_components_voice_voicepanel_voicepanel",
-      "community": 14,
-      "norm_label": "voicepanel()"
+      "community": 12,
+      "norm_label": "voicepanel()",
+      "community_name": "Intents API & Queue",
+      "id": "app_components_voice_voicepanel_voicepanel"
     },
     {
       "label": "commands.ts",
@@ -3805,9 +3149,10 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "app_components_voice_commands",
-      "community": 14,
-      "norm_label": "commands.ts"
+      "community": 12,
+      "norm_label": "commands.ts",
+      "community_name": "Intents API & Queue",
+      "id": "app_components_voice_commands"
     },
     {
       "label": "VoiceAction",
@@ -3815,9 +3160,10 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "app_components_voice_commands_voiceaction",
-      "community": 14,
-      "norm_label": "voiceaction"
+      "community": 12,
+      "norm_label": "voiceaction",
+      "community_name": "Intents API & Queue",
+      "id": "app_components_voice_commands_voiceaction"
     },
     {
       "label": "VoiceProject",
@@ -3825,9 +3171,10 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L16",
       "_origin": "ast",
-      "id": "app_components_voice_commands_voiceproject",
-      "community": 14,
-      "norm_label": "voiceproject"
+      "community": 12,
+      "norm_label": "voiceproject",
+      "community_name": "Intents API & Queue",
+      "id": "app_components_voice_commands_voiceproject"
     },
     {
       "label": "normalize()",
@@ -3835,9 +3182,10 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "app_components_voice_commands_normalize",
-      "community": 14,
-      "norm_label": "normalize()"
+      "community": 12,
+      "norm_label": "normalize()",
+      "community_name": "Intents API & Queue",
+      "id": "app_components_voice_commands_normalize"
     },
     {
       "label": "compact()",
@@ -3845,9 +3193,10 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L34",
       "_origin": "ast",
-      "id": "app_components_voice_commands_compact",
-      "community": 14,
-      "norm_label": "compact()"
+      "community": 12,
+      "norm_label": "compact()",
+      "community_name": "Intents API & Queue",
+      "id": "app_components_voice_commands_compact"
     },
     {
       "label": "NOTE_PREFIXES",
@@ -3855,9 +3204,10 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L38",
       "_origin": "ast",
-      "id": "app_components_voice_commands_note_prefixes",
-      "community": 14,
-      "norm_label": "note_prefixes"
+      "community": 12,
+      "norm_label": "note_prefixes",
+      "community_name": "Intents API & Queue",
+      "id": "app_components_voice_commands_note_prefixes"
     },
     {
       "label": "routeCommand()",
@@ -3865,9 +3215,10 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L40",
       "_origin": "ast",
-      "id": "app_components_voice_commands_routecommand",
-      "community": 14,
-      "norm_label": "routecommand()"
+      "community": 12,
+      "norm_label": "routecommand()",
+      "community_name": "Intents API & Queue",
+      "id": "app_components_voice_commands_routecommand"
     },
     {
       "label": "CONTEXT_MAP \u2014 Repo Module Map",
@@ -3878,9 +3229,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_context_map",
-      "community": 6,
-      "norm_label": "context_map \u2014 repo module map"
+      "community": 5,
+      "norm_label": "context_map \u2014 repo module map",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_context_map"
     },
     {
       "label": "PROJECT_CONTEXT \u2014 ControlP Agentic Project OS",
@@ -3891,9 +3243,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_project_context",
-      "community": 6,
-      "norm_label": "project_context \u2014 controlp agentic project os"
+      "community": 5,
+      "norm_label": "project_context \u2014 controlp agentic project os",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_project_context"
     },
     {
       "label": "Manual Esquem\u00e1tico \u2014 ControlP Architecture",
@@ -3904,9 +3257,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "docs_manual",
-      "community": 6,
-      "norm_label": "manual esquematico \u2014 controlp architecture"
+      "community": 5,
+      "norm_label": "manual esquematico \u2014 controlp architecture",
+      "community_name": "Metrics & Schedule API",
+      "id": "docs_manual"
     },
     {
       "label": "lib/schema.ts \u2014 Canonical Schema",
@@ -3917,9 +3271,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_lib_schema",
-      "community": 6,
-      "norm_label": "lib/schema.ts \u2014 canonical schema"
+      "community": 5,
+      "norm_label": "lib/schema.ts \u2014 canonical schema",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_lib_schema"
     },
     {
       "label": "lib/controlp.ts \u2014 Orchestrator getProjects()",
@@ -3930,9 +3285,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_lib_controlp",
-      "community": 6,
-      "norm_label": "lib/controlp.ts \u2014 orchestrator getprojects()"
+      "community": 5,
+      "norm_label": "lib/controlp.ts \u2014 orchestrator getprojects()",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_lib_controlp"
     },
     {
       "label": "lib/registry.ts \u2014 Stable Identity Registry",
@@ -3943,9 +3299,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_lib_registry",
-      "community": 6,
-      "norm_label": "lib/registry.ts \u2014 stable identity registry"
+      "community": 5,
+      "norm_label": "lib/registry.ts \u2014 stable identity registry",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_lib_registry"
     },
     {
       "label": "lib/adapters/memory-obsidian.ts \u2014 Memory Adapter",
@@ -3956,9 +3313,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_lib_adapter_memory",
-      "community": 6,
-      "norm_label": "lib/adapters/memory-obsidian.ts \u2014 memory adapter"
+      "community": 5,
+      "norm_label": "lib/adapters/memory-obsidian.ts \u2014 memory adapter",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_lib_adapter_memory"
     },
     {
       "label": "lib/adapters/evidence-git.ts \u2014 Git Evidence Adapter",
@@ -3969,9 +3327,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_lib_adapter_evidence",
-      "community": 6,
-      "norm_label": "lib/adapters/evidence-git.ts \u2014 git evidence adapter"
+      "community": 5,
+      "norm_label": "lib/adapters/evidence-git.ts \u2014 git evidence adapter",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_lib_adapter_evidence"
     },
     {
       "label": "lib/adapters/graph-graphify.ts \u2014 Graphify Graph Adapter",
@@ -3982,9 +3341,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_lib_adapter_graph",
-      "community": 6,
-      "norm_label": "lib/adapters/graph-graphify.ts \u2014 graphify graph adapter"
+      "community": 5,
+      "norm_label": "lib/adapters/graph-graphify.ts \u2014 graphify graph adapter",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_lib_adapter_graph"
     },
     {
       "label": "lib/config.ts \u2014 Machine Paths Config",
@@ -3995,9 +3355,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_lib_config",
-      "community": 6,
-      "norm_label": "lib/config.ts \u2014 machine paths config"
+      "community": 5,
+      "norm_label": "lib/config.ts \u2014 machine paths config",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_lib_config"
     },
     {
       "label": "lib/intents.ts \u2014 Intent Queue JSONL",
@@ -4008,9 +3369,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_lib_intents",
-      "community": 11,
-      "norm_label": "lib/intents.ts \u2014 intent queue jsonl"
+      "community": 10,
+      "norm_label": "lib/intents.ts \u2014 intent queue jsonl",
+      "community_name": "Dev Dependencies",
+      "id": "controlp_lib_intents"
     },
     {
       "label": "lib/schedule.ts \u2014 Daily Plan",
@@ -4021,9 +3383,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_lib_schedule",
       "community": 35,
-      "norm_label": "lib/schedule.ts \u2014 daily plan"
+      "norm_label": "lib/schedule.ts \u2014 daily plan",
+      "community_name": "Schedule Lib Concept",
+      "id": "controlp_lib_schedule"
     },
     {
       "label": "lib/ui.ts \u2014 Presentation Helpers",
@@ -4034,9 +3397,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_lib_ui",
       "community": 36,
-      "norm_label": "lib/ui.ts \u2014 presentation helpers"
+      "norm_label": "lib/ui.ts \u2014 presentation helpers",
+      "community_name": "UI Lib Concept",
+      "id": "controlp_lib_ui"
     },
     {
       "label": "app/api/projects/route.ts \u2014 Canonical Snapshot Endpoint",
@@ -4047,9 +3411,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_api_projects",
-      "community": 6,
-      "norm_label": "app/api/projects/route.ts \u2014 canonical snapshot endpoint"
+      "community": 5,
+      "norm_label": "app/api/projects/route.ts \u2014 canonical snapshot endpoint",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_api_projects"
     },
     {
       "label": "app/api/intents/route.ts \u2014 Intent Queue Endpoint",
@@ -4060,9 +3425,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_api_intents",
-      "community": 11,
-      "norm_label": "app/api/intents/route.ts \u2014 intent queue endpoint"
+      "community": 10,
+      "norm_label": "app/api/intents/route.ts \u2014 intent queue endpoint",
+      "community_name": "Dev Dependencies",
+      "id": "controlp_api_intents"
     },
     {
       "label": "app/api/schedule/route.ts \u2014 Schedule Endpoint",
@@ -4073,9 +3439,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_api_schedule",
-      "community": 6,
-      "norm_label": "app/api/schedule/route.ts \u2014 schedule endpoint"
+      "community": 5,
+      "norm_label": "app/api/schedule/route.ts \u2014 schedule endpoint",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_api_schedule"
     },
     {
       "label": "app/api/metrics/route.ts \u2014 Commit Metrics Endpoint",
@@ -4086,9 +3453,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_api_metrics",
       "community": 34,
-      "norm_label": "app/api/metrics/route.ts \u2014 commit metrics endpoint"
+      "norm_label": "app/api/metrics/route.ts \u2014 commit metrics endpoint",
+      "community_name": "Metrics API Concept",
+      "id": "controlp_api_metrics"
     },
     {
       "label": "app/api/stt/route.ts \u2014 STT Proxy Endpoint",
@@ -4099,9 +3467,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_api_stt",
-      "community": 11,
-      "norm_label": "app/api/stt/route.ts \u2014 stt proxy endpoint"
+      "community": 10,
+      "norm_label": "app/api/stt/route.ts \u2014 stt proxy endpoint",
+      "community_name": "Dev Dependencies",
+      "id": "controlp_api_stt"
     },
     {
       "label": "vault-core/types.ts \u2014 VaultSignals CoreState NodeFormation",
@@ -4112,9 +3481,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_vault_core_types",
-      "community": 11,
-      "norm_label": "vault-core/types.ts \u2014 vaultsignals corestate nodeformation"
+      "community": 10,
+      "norm_label": "vault-core/types.ts \u2014 vaultsignals corestate nodeformation",
+      "community_name": "Dev Dependencies",
+      "id": "controlp_vault_core_types"
     },
     {
       "label": "vault-core/signals.tsx \u2014 vaultSignals Mutable State",
@@ -4125,9 +3495,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_vault_core_signals",
-      "community": 11,
-      "norm_label": "vault-core/signals.tsx \u2014 vaultsignals mutable state"
+      "community": 10,
+      "norm_label": "vault-core/signals.tsx \u2014 vaultsignals mutable state",
+      "community_name": "Dev Dependencies",
+      "id": "controlp_vault_core_signals"
     },
     {
       "label": "vault-core/ParticleCore.tsx \u2014 Equalizer Sphere Shader",
@@ -4138,9 +3509,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_vault_core_particle",
-      "community": 11,
-      "norm_label": "vault-core/particlecore.tsx \u2014 equalizer sphere shader"
+      "community": 10,
+      "norm_label": "vault-core/particlecore.tsx \u2014 equalizer sphere shader",
+      "community_name": "Dev Dependencies",
+      "id": "controlp_vault_core_particle"
     },
     {
       "label": "vault-core/ProjectNodes.tsx \u2014 Project Orbs 3D",
@@ -4151,9 +3523,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_vault_core_nodes",
-      "community": 11,
-      "norm_label": "vault-core/projectnodes.tsx \u2014 project orbs 3d"
+      "community": 10,
+      "norm_label": "vault-core/projectnodes.tsx \u2014 project orbs 3d",
+      "community_name": "Dev Dependencies",
+      "id": "controlp_vault_core_nodes"
     },
     {
       "label": "vault-core/VaultCore.tsx \u2014 Canvas CameraDirector",
@@ -4164,9 +3537,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_vault_core_vaultcore",
-      "community": 11,
-      "norm_label": "vault-core/vaultcore.tsx \u2014 canvas cameradirector"
+      "community": 10,
+      "norm_label": "vault-core/vaultcore.tsx \u2014 canvas cameradirector",
+      "community_name": "Dev Dependencies",
+      "id": "controlp_vault_core_vaultcore"
     },
     {
       "label": "vault-core/geometry.ts \u2014 Pure Deterministic Functions",
@@ -4177,9 +3551,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_vault_core_geometry",
       "community": 37,
-      "norm_label": "vault-core/geometry.ts \u2014 pure deterministic functions"
+      "norm_label": "vault-core/geometry.ts \u2014 pure deterministic functions",
+      "community_name": "Vault Core Geometry Concept",
+      "id": "controlp_vault_core_geometry"
     },
     {
       "label": "voice/VoicePanel.tsx \u2014 PTT Audio I/O Panel",
@@ -4190,9 +3565,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_voice_panel",
-      "community": 11,
-      "norm_label": "voice/voicepanel.tsx \u2014 ptt audio i/o panel"
+      "community": 10,
+      "norm_label": "voice/voicepanel.tsx \u2014 ptt audio i/o panel",
+      "community_name": "Dev Dependencies",
+      "id": "controlp_voice_panel"
     },
     {
       "label": "voice/commands.ts \u2014 routeCommand() LLM Contract",
@@ -4203,9 +3579,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_voice_commands",
-      "community": 11,
-      "norm_label": "voice/commands.ts \u2014 routecommand() llm contract"
+      "community": 10,
+      "norm_label": "voice/commands.ts \u2014 routecommand() llm contract",
+      "community_name": "Dev Dependencies",
+      "id": "controlp_voice_commands"
     },
     {
       "label": "voice/useWhisper.ts \u2014 Whisper STT Hook",
@@ -4216,9 +3593,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_voice_usewhisper",
-      "community": 11,
-      "norm_label": "voice/usewhisper.ts \u2014 whisper stt hook"
+      "community": 10,
+      "norm_label": "voice/usewhisper.ts \u2014 whisper stt hook",
+      "community_name": "Dev Dependencies",
+      "id": "controlp_voice_usewhisper"
     },
     {
       "label": "voice/useSpeech.ts \u2014 Web Speech Hook",
@@ -4229,9 +3607,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_voice_usespeech",
-      "community": 11,
-      "norm_label": "voice/usespeech.ts \u2014 web speech hook"
+      "community": 10,
+      "norm_label": "voice/usespeech.ts \u2014 web speech hook",
+      "community_name": "Dev Dependencies",
+      "id": "controlp_voice_usespeech"
     },
     {
       "label": "voice/useMicLevel.ts \u2014 Mic Level 16-band Spectrum",
@@ -4242,9 +3621,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_voice_usemiclevel",
-      "community": 11,
-      "norm_label": "voice/usemiclevel.ts \u2014 mic level 16-band spectrum"
+      "community": 10,
+      "norm_label": "voice/usemiclevel.ts \u2014 mic level 16-band spectrum",
+      "community_name": "Dev Dependencies",
+      "id": "controlp_voice_usemiclevel"
     },
     {
       "label": "voice/VoiceVisualizer.tsx \u2014 PTT Button Canvas Synth",
@@ -4255,9 +3635,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_voice_visualizer",
       "community": 38,
-      "norm_label": "voice/voicevisualizer.tsx \u2014 ptt button canvas synth"
+      "norm_label": "voice/voicevisualizer.tsx \u2014 ptt button canvas synth",
+      "community_name": "Voice Visualizer Concept",
+      "id": "controlp_voice_visualizer"
     },
     {
       "label": "panels/registry.ts \u2014 Panel Extension Point",
@@ -4268,9 +3649,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_panels_registry",
-      "community": 6,
-      "norm_label": "panels/registry.ts \u2014 panel extension point"
+      "community": 5,
+      "norm_label": "panels/registry.ts \u2014 panel extension point",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_panels_registry"
     },
     {
       "label": "panels/CommandDeckPanel.tsx \u2014 Multi-view Deck",
@@ -4281,9 +3663,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_panels_commanddeck",
-      "community": 25,
-      "norm_label": "panels/commanddeckpanel.tsx \u2014 multi-view deck"
+      "community": 26,
+      "norm_label": "panels/commanddeckpanel.tsx \u2014 multi-view deck",
+      "community_name": "ESLint Config",
+      "id": "controlp_panels_commanddeck"
     },
     {
       "label": "panels/DeckViews.tsx \u2014 Deck View Variants",
@@ -4294,9 +3677,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_panels_deckviews",
-      "community": 25,
-      "norm_label": "panels/deckviews.tsx \u2014 deck view variants"
+      "community": 26,
+      "norm_label": "panels/deckviews.tsx \u2014 deck view variants",
+      "community_name": "ESLint Config",
+      "id": "controlp_panels_deckviews"
     },
     {
       "label": "app/(core)/page.tsx \u2014 Dashboard Core (closed)",
@@ -4307,9 +3691,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_page_core",
-      "community": 6,
-      "norm_label": "app/(core)/page.tsx \u2014 dashboard core (closed)"
+      "community": 5,
+      "norm_label": "app/(core)/page.tsx \u2014 dashboard core (closed)",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_page_core"
     },
     {
       "label": "app/components/CenterStage.tsx \u2014 Core Visual",
@@ -4320,9 +3705,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_centerstage",
-      "community": 6,
-      "norm_label": "app/components/centerstage.tsx \u2014 core visual"
+      "community": 5,
+      "norm_label": "app/components/centerstage.tsx \u2014 core visual",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_centerstage"
     },
     {
       "label": "stt/server.py \u2014 FastAPI Whisper Sidecar",
@@ -4333,9 +3719,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_stt_server",
-      "community": 11,
-      "norm_label": "stt/server.py \u2014 fastapi whisper sidecar"
+      "community": 10,
+      "norm_label": "stt/server.py \u2014 fastapi whisper sidecar",
+      "community_name": "Dev Dependencies",
+      "id": "controlp_stt_server"
     },
     {
       "label": "config/projects.json \u2014 Project Registry Config",
@@ -4346,9 +3733,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_config_projects_json",
-      "community": 6,
-      "norm_label": "config/projects.json \u2014 project registry config"
+      "community": 5,
+      "norm_label": "config/projects.json \u2014 project registry config",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_config_projects_json"
     },
     {
       "label": "runtime/intents.jsonl \u2014 Append-only Intent Log",
@@ -4359,9 +3747,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_runtime_intents",
-      "community": 11,
-      "norm_label": "runtime/intents.jsonl \u2014 append-only intent log"
+      "community": 10,
+      "norm_label": "runtime/intents.jsonl \u2014 append-only intent log",
+      "community_name": "Dev Dependencies",
+      "id": "controlp_runtime_intents"
     },
     {
       "label": "vaultSignals \u2014 Frame-read Mutable Animation State",
@@ -4372,9 +3761,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_vault_signals_concept",
-      "community": 11,
-      "norm_label": "vaultsignals \u2014 frame-read mutable animation state"
+      "community": 10,
+      "norm_label": "vaultsignals \u2014 frame-read mutable animation state",
+      "community_name": "Dev Dependencies",
+      "id": "controlp_vault_signals_concept"
     },
     {
       "label": "ProjectCard \u2014 Canonical Data Contract",
@@ -4385,9 +3775,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_project_card",
-      "community": 6,
-      "norm_label": "projectcard \u2014 canonical data contract"
+      "community": 5,
+      "norm_label": "projectcard \u2014 canonical data contract",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_project_card"
     },
     {
       "label": "Core Closed / Open to Extension Principle",
@@ -4398,9 +3789,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_closed_open_principle",
-      "community": 6,
-      "norm_label": "core closed / open to extension principle"
+      "community": 5,
+      "norm_label": "core closed / open to extension principle",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_closed_open_principle"
     },
     {
       "label": "Adapter Pattern \u2014 Replace Tool Without Touching Domain/UI",
@@ -4411,9 +3803,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_adapter_pattern",
-      "community": 6,
-      "norm_label": "adapter pattern \u2014 replace tool without touching domain/ui"
+      "community": 5,
+      "norm_label": "adapter pattern \u2014 replace tool without touching domain/ui",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_adapter_pattern"
     },
     {
       "label": "Sprint 4 \u2014 LLM Router replacing routeCommand()",
@@ -4424,9 +3817,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_llm_router_sprint4",
-      "community": 11,
-      "norm_label": "sprint 4 \u2014 llm router replacing routecommand()"
+      "community": 10,
+      "norm_label": "sprint 4 \u2014 llm router replacing routecommand()",
+      "community_name": "Dev Dependencies",
+      "id": "controlp_llm_router_sprint4"
     },
     {
       "label": "SCHEMA_VERSION 2 \u2014 Data Contract Version",
@@ -4437,9 +3831,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_schema_version_2",
-      "community": 6,
-      "norm_label": "schema_version 2 \u2014 data contract version"
+      "community": 5,
+      "norm_label": "schema_version 2 \u2014 data contract version",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_schema_version_2"
     },
     {
       "label": "Cerebro Obsidian Vault \u2014 Memory Source",
@@ -4450,9 +3845,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_obsidian_vault",
-      "community": 6,
-      "norm_label": "cerebro obsidian vault \u2014 memory source"
+      "community": 5,
+      "norm_label": "cerebro obsidian vault \u2014 memory source",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_obsidian_vault"
     },
     {
       "label": "Notion Ledger \u2014 Session Close Connector",
@@ -4463,9 +3859,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_notion_ledger",
-      "community": 6,
-      "norm_label": "notion ledger \u2014 session close connector"
+      "community": 5,
+      "norm_label": "notion ledger \u2014 session close connector",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_notion_ledger"
     },
     {
       "label": "graphify-out/ \u2014 Derived Technical Graph",
@@ -4476,9 +3873,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_graphify_out",
-      "community": 6,
-      "norm_label": "graphify-out/ \u2014 derived technical graph"
+      "community": 5,
+      "norm_label": "graphify-out/ \u2014 derived technical graph",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_graphify_out"
     },
     {
       "label": "PTT Voice Capture Flow",
@@ -4489,9 +3887,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_ptt_voice_flow",
-      "community": 11,
-      "norm_label": "ptt voice capture flow"
+      "community": 10,
+      "norm_label": "ptt voice capture flow",
+      "community_name": "Dev Dependencies",
+      "id": "controlp_ptt_voice_flow"
     },
     {
       "label": "Tool Migration Plan \u2014 Adapter Substitution Protocol",
@@ -4502,9 +3901,472 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "controlp_migration_plan",
-      "community": 6,
-      "norm_label": "tool migration plan \u2014 adapter substitution protocol"
+      "community": 5,
+      "norm_label": "tool migration plan \u2014 adapter substitution protocol",
+      "community_name": "Metrics & Schedule API",
+      "id": "controlp_migration_plan"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/(core)/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "page.tsx",
+      "community_name": "Vault Core Visual Layer",
+      "id": "core_page"
+    },
+    {
+      "label": "Home()",
+      "file_type": "code",
+      "source_file": "app/(core)/page.tsx",
+      "source_location": "L15",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "home()",
+      "community_name": "Vault Core Visual Layer",
+      "id": "core_page_home"
+    },
+    {
+      "label": "VaultCore.tsx",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/VaultCore.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 17,
+      "norm_label": "vaultcore.tsx",
+      "community_name": "App Layout",
+      "id": "vault_core_vaultcore"
+    },
+    {
+      "label": "CAMERA_TARGET",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/VaultCore.tsx",
+      "source_location": "L13",
+      "_origin": "ast",
+      "community": 17,
+      "norm_label": "camera_target",
+      "community_name": "App Layout",
+      "id": "vault_core_vaultcore_camera_target"
+    },
+    {
+      "label": "ManagedControls",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/VaultCore.tsx",
+      "source_location": "L15",
+      "_origin": "ast",
+      "community": 17,
+      "norm_label": "managedcontrols",
+      "community_name": "App Layout",
+      "id": "vault_core_vaultcore_managedcontrols"
+    },
+    {
+      "label": "CameraDirector()",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/VaultCore.tsx",
+      "source_location": "L27",
+      "_origin": "ast",
+      "community": 17,
+      "norm_label": "cameradirector()",
+      "community_name": "App Layout",
+      "id": "vault_core_vaultcore_cameradirector"
+    },
+    {
+      "label": "VaultCore()",
+      "file_type": "code",
+      "source_file": "app/components/vault-core/VaultCore.tsx",
+      "source_location": "L74",
+      "_origin": "ast",
+      "community": 17,
+      "norm_label": "vaultcore()",
+      "community_name": "App Layout",
+      "id": "vault_core_vaultcore_vaultcore"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app/queue/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 11,
+      "norm_label": "page.tsx",
+      "community_name": "Intents, STT & LLM Extension Points",
+      "id": "queue_page"
+    },
+    {
+      "label": "STATUS_LABEL",
+      "file_type": "code",
+      "source_file": "app/queue/page.tsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 11,
+      "norm_label": "status_label",
+      "community_name": "Intents, STT & LLM Extension Points",
+      "id": "queue_page_status_label"
+    },
+    {
+      "label": "QueuePage()",
+      "file_type": "code",
+      "source_file": "app/queue/page.tsx",
+      "source_location": "L20",
+      "_origin": "ast",
+      "community": 11,
+      "norm_label": "queuepage()",
+      "community_name": "Intents, STT & LLM Extension Points",
+      "id": "queue_page_queuepage"
+    },
+    {
+      "label": "next-env.d.ts",
+      "file_type": "code",
+      "source_file": "next-env.d.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 39,
+      "norm_label": "next-env.d.ts",
+      "community_name": "faster-whisper Dependency",
+      "id": "next_env_d"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "package.json",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "name",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_name"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "version",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_version"
+    },
+    {
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "private",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_private"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "scripts",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "dev",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_scripts_dev"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "build",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_scripts_build"
+    },
+    {
+      "label": "lint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "lint",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_scripts_lint"
+    },
+    {
+      "label": "typecheck",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "typecheck",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_scripts_typecheck"
+    },
+    {
+      "label": "check",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "check",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_scripts_check"
+    },
+    {
+      "label": "test",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "test",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_scripts_test"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "dependencies",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_dependencies"
+    },
+    {
+      "label": "@react-three/drei",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "@react-three/drei",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_dependencies_react_three_drei"
+    },
+    {
+      "label": "@react-three/fiber",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "@react-three/fiber",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_dependencies_react_three_fiber"
+    },
+    {
+      "label": "@types/three",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "@types/three",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_dependencies_types_three"
+    },
+    {
+      "label": "next",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "next",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_dependencies_next"
+    },
+    {
+      "label": "react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "react",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_dependencies_react"
+    },
+    {
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "react-dom",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_dependencies_react_dom"
+    },
+    {
+      "label": "three",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "three",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_dependencies_three"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "devdependencies",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_devdependencies"
+    },
+    {
+      "label": "@tailwindcss/postcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "@tailwindcss/postcss",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_devdependencies_tailwindcss_postcss"
+    },
+    {
+      "label": "@types/node",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "@types/node",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_devdependencies_types_node"
+    },
+    {
+      "label": "@types/react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "@types/react",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_devdependencies_types_react"
+    },
+    {
+      "label": "@types/react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "@types/react-dom",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_devdependencies_types_react_dom"
+    },
+    {
+      "label": "autoprefixer",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "autoprefixer",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_devdependencies_autoprefixer"
+    },
+    {
+      "label": "eslint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "eslint",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_devdependencies_eslint"
+    },
+    {
+      "label": "eslint-config-next",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "eslint-config-next",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_devdependencies_eslint_config_next"
+    },
+    {
+      "label": "postcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "postcss",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_devdependencies_postcss"
+    },
+    {
+      "label": "tailwindcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L31",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "tailwindcss",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_devdependencies_tailwindcss"
+    },
+    {
+      "label": "typescript",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "typescript",
+      "community_name": "Core Dashboard & Panel Registry",
+      "id": "package_devdependencies_typescript"
+    },
+    {
+      "label": "intents.test.mjs",
+      "file_type": "code",
+      "source_file": "tests/intents.test.mjs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 41,
+      "norm_label": "intents.test.mjs",
+      "community_name": "Community 41",
+      "id": "tests_intents_test"
     }
   ],
   "links": [
@@ -4917,28 +4779,6 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/(core)/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_core_page",
-      "target": "lib_controlp_getprojects"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/(core)/page.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "source": "app_core_page_home",
-      "target": "lib_controlp_getprojects"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/p/[slug]/page.tsx",
       "source_location": "L5",
       "weight": 1.0,
@@ -4955,6 +4795,17 @@
       "source_location": "L20",
       "weight": 1.0,
       "source": "app_p_slug_page_projectpage",
+      "target": "lib_controlp_getprojects"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(core)/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_page",
       "target": "lib_controlp_getprojects"
     },
     {
@@ -5313,104 +5164,6 @@
       "weight": 1.0,
       "source": "agents_local_first_boundary",
       "target": "agents_canonical_schema_rule"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(core)/page.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_core_page",
-      "target": "app_components_centerstage"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(core)/page.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_core_page",
-      "target": "app_components_centerstage_centerstage"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(core)/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_core_page",
-      "target": "app_components_core_clock"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(core)/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_core_page",
-      "target": "app_components_core_clock_clock"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(core)/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_core_page",
-      "target": "app_components_panels_registry"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(core)/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_core_page",
-      "target": "app_components_panels_registry_leftpanels"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(core)/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_core_page",
-      "target": "app_components_panels_registry_rightpanels"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(core)/page.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_core_page",
-      "target": "app_core_page_home"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(core)/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_core_page",
-      "target": "lib_controlp"
     },
     {
       "relation": "contains",
@@ -7049,102 +6802,6 @@
       "target": "lib_ui_tone"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/components/vault-core/VaultCore.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_components_vault_core_vaultcore",
-      "target": "app_components_vault_core_particlecore"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/components/vault-core/VaultCore.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_components_vault_core_vaultcore",
-      "target": "app_components_vault_core_particlecore_particlecore"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/components/vault-core/VaultCore.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_components_vault_core_vaultcore",
-      "target": "app_components_vault_core_signals"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/components/vault-core/VaultCore.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_components_vault_core_vaultcore",
-      "target": "app_components_vault_core_signals_vaultsignals"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/components/vault-core/VaultCore.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_components_vault_core_vaultcore",
-      "target": "app_components_vault_core_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/components/vault-core/VaultCore.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_components_vault_core_vaultcore",
-      "target": "app_components_vault_core_types_stagenode"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/components/vault-core/VaultCore.tsx",
-      "source_location": "L23",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_components_vault_core_vaultcore",
-      "target": "app_components_vault_core_vaultcore_cameradirector"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/components/vault-core/VaultCore.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_components_vault_core_vaultcore",
-      "target": "app_components_vault_core_vaultcore_managedcontrols"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/components/vault-core/VaultCore.tsx",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_components_vault_core_vaultcore",
-      "target": "app_components_vault_core_vaultcore_vaultcore"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/components/vault-core/geometry.ts",
@@ -7624,59 +7281,6 @@
       "weight": 1.0,
       "source": "app_p_slug_page_projectpage",
       "target": "lib_ui_obsidianurl"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/queue/page.tsx",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_queue_page",
-      "target": "app_queue_page_queuepage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/queue/page.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_queue_page",
-      "target": "app_queue_page_status_label"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/queue/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_queue_page",
-      "target": "lib_intents"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/queue/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_queue_page",
-      "target": "lib_intents_readintentqueue"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/queue/page.tsx",
-      "source_location": "L19",
-      "weight": 1.0,
-      "source": "app_queue_page_queuepage",
-      "target": "lib_intents_readintentqueue"
     },
     {
       "relation": "contains",
@@ -8698,6 +8302,17 @@
       "target": "lib_intents_readintentqueue"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/queue/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queue_page",
+      "target": "lib_intents_readintentqueue"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/registry.ts",
@@ -9080,16 +8695,6 @@
       "target": "lib_ui_tone"
     },
     {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "next-env.d.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "next_env_d_rationale_5",
-      "target": "next_env_d"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "next.config.mjs",
@@ -9098,473 +8703,6 @@
       "confidence_score": 1.0,
       "source": "next_config",
       "target": "next_config_nextconfig"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_dependencies"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_devdependencies"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_name"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_private"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_scripts"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package",
-      "target": "package_version"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_scripts",
-      "target": "package_scripts_build"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_scripts",
-      "target": "package_scripts_check"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_scripts",
-      "target": "package_scripts_dev"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_scripts",
-      "target": "package_scripts_lint"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_scripts",
-      "target": "package_scripts_typecheck"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_next"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_react"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_react_dom"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_react_three_drei"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_react_three_fiber"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_three"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_types_three"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L13",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "package_dependencies_react_three_drei",
-      "target": "react_three_drei"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L14",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "package_dependencies_react_three_fiber",
-      "target": "react_three_fiber"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L15",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "package_dependencies_types_three",
-      "target": "types_three"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L16",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "package_dependencies_next",
-      "target": "next"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L17",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "package_dependencies_react",
-      "target": "react"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L18",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "package_dependencies_react_dom",
-      "target": "react_dom"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L19",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "package_dependencies_three",
-      "target": "three"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_autoprefixer"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L27",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_eslint"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L28",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_eslint_config_next"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_postcss"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L30",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_tailwindcss"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_tailwindcss_postcss"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L23",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_types_node"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_types_react"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_types_react_dom"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L31",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_typescript"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L22",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "package_devdependencies_tailwindcss_postcss",
-      "target": "tailwindcss_postcss"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L23",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "package_devdependencies_types_node",
-      "target": "types_node"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L24",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "package_devdependencies_types_react",
-      "target": "types_react"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L25",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "package_devdependencies_types_react_dom",
-      "target": "types_react_dom"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L26",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "package_devdependencies_autoprefixer",
-      "target": "autoprefixer"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L27",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "package_devdependencies_eslint",
-      "target": "eslint"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L28",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "package_devdependencies_eslint_config_next",
-      "target": "eslint_config_next"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L29",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "package_devdependencies_postcss",
-      "target": "postcss"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L30",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "package_devdependencies_tailwindcss",
-      "target": "tailwindcss"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L31",
-      "weight": 1.0,
-      "context": "import",
-      "confidence_score": 1.0,
-      "source": "package_devdependencies_typescript",
-      "target": "typescript"
     },
     {
       "relation": "contains",
@@ -10023,9 +9161,9 @@
       "source_file": "app/components/panels/SchedulePanel.tsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_panels_schedulepanel",
-      "target": "app_components_panels_schedulepanel_schedulebody",
-      "confidence_score": 1.0
+      "target": "app_components_panels_schedulepanel_schedulebody"
     },
     {
       "relation": "contains",
@@ -10033,9 +9171,9 @@
       "source_file": "app/components/panels/WirePanel.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_panels_wirepanel",
-      "target": "app_components_panels_wirepanel_feedentry",
-      "confidence_score": 1.0
+      "target": "app_components_panels_wirepanel_feedentry"
     },
     {
       "relation": "contains",
@@ -10043,9 +9181,9 @@
       "source_file": "app/components/panels/WirePanel.tsx",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_panels_wirepanel",
-      "target": "app_components_panels_wirepanel_wirebody",
-      "confidence_score": 1.0
+      "target": "app_components_panels_wirepanel_wirebody"
     },
     {
       "relation": "contains",
@@ -10053,9 +9191,9 @@
       "source_file": "app/components/vault-core/ParticleCore.tsx",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_vault_core_particlecore",
-      "target": "app_components_vault_core_particlecore_gold",
-      "confidence_score": 1.0
+      "target": "app_components_vault_core_particlecore_gold"
     },
     {
       "relation": "contains",
@@ -10063,9 +9201,9 @@
       "source_file": "app/components/vault-core/ParticleCore.tsx",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_vault_core_particlecore",
-      "target": "app_components_vault_core_particlecore_pale",
-      "confidence_score": 1.0
+      "target": "app_components_vault_core_particlecore_pale"
     },
     {
       "relation": "contains",
@@ -10073,9 +9211,9 @@
       "source_file": "app/components/vault-core/ParticleCore.tsx",
       "source_location": "L70",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_vault_core_particlecore",
-      "target": "app_components_vault_core_particlecore_particlecore",
-      "confidence_score": 1.0
+      "target": "app_components_vault_core_particlecore_particlecore"
     },
     {
       "relation": "imports_from",
@@ -10084,9 +9222,9 @@
       "source_file": "app/components/voice/VoicePanel.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_voice_voicepanel",
-      "target": "app_components_voice_commands",
-      "confidence_score": 1.0
+      "target": "app_components_voice_commands"
     },
     {
       "relation": "imports",
@@ -10095,9 +9233,9 @@
       "source_file": "app/components/voice/VoicePanel.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_voice_voicepanel",
-      "target": "app_components_voice_commands_routecommand",
-      "confidence_score": 1.0
+      "target": "app_components_voice_commands_routecommand"
     },
     {
       "relation": "imports",
@@ -10106,9 +9244,9 @@
       "source_file": "app/components/voice/VoicePanel.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_voice_voicepanel",
-      "target": "app_components_voice_commands_voiceaction",
-      "confidence_score": 1.0
+      "target": "app_components_voice_commands_voiceaction"
     },
     {
       "relation": "contains",
@@ -10116,9 +9254,9 @@
       "source_file": "app/components/voice/VoicePanel.tsx",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_voice_voicepanel",
-      "target": "app_components_voice_voicepanel_status_text",
-      "confidence_score": 1.0
+      "target": "app_components_voice_voicepanel_status_text"
     },
     {
       "relation": "contains",
@@ -10126,9 +9264,9 @@
       "source_file": "app/components/voice/VoicePanel.tsx",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_voice_voicepanel",
-      "target": "app_components_voice_voicepanel_sttprovider",
-      "confidence_score": 1.0
+      "target": "app_components_voice_voicepanel_sttprovider"
     },
     {
       "relation": "contains",
@@ -10136,9 +9274,9 @@
       "source_file": "app/components/voice/VoicePanel.tsx",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_voice_voicepanel",
-      "target": "app_components_voice_voicepanel_voicepanel",
-      "confidence_score": 1.0
+      "target": "app_components_voice_voicepanel_voicepanel"
     },
     {
       "relation": "calls",
@@ -10157,9 +9295,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_voice_commands",
-      "target": "app_components_voice_commands_compact",
-      "confidence_score": 1.0
+      "target": "app_components_voice_commands_compact"
     },
     {
       "relation": "contains",
@@ -10167,9 +9305,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_voice_commands",
-      "target": "app_components_voice_commands_normalize",
-      "confidence_score": 1.0
+      "target": "app_components_voice_commands_normalize"
     },
     {
       "relation": "contains",
@@ -10177,9 +9315,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_voice_commands",
-      "target": "app_components_voice_commands_note_prefixes",
-      "confidence_score": 1.0
+      "target": "app_components_voice_commands_note_prefixes"
     },
     {
       "relation": "contains",
@@ -10187,9 +9325,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_voice_commands",
-      "target": "app_components_voice_commands_routecommand",
-      "confidence_score": 1.0
+      "target": "app_components_voice_commands_routecommand"
     },
     {
       "relation": "contains",
@@ -10197,9 +9335,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_voice_commands",
-      "target": "app_components_voice_commands_voiceaction",
-      "confidence_score": 1.0
+      "target": "app_components_voice_commands_voiceaction"
     },
     {
       "relation": "contains",
@@ -10207,9 +9345,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_voice_commands",
-      "target": "app_components_voice_commands_voiceproject",
-      "confidence_score": 1.0
+      "target": "app_components_voice_commands_voiceproject"
     },
     {
       "relation": "calls",
@@ -10218,9 +9356,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_voice_commands_compact",
-      "target": "app_components_voice_commands_normalize",
-      "confidence_score": 1.0
+      "target": "app_components_voice_commands_normalize"
     },
     {
       "relation": "calls",
@@ -10229,9 +9367,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_voice_commands_routecommand",
-      "target": "app_components_voice_commands_normalize",
-      "confidence_score": 1.0
+      "target": "app_components_voice_commands_normalize"
     },
     {
       "relation": "calls",
@@ -10240,9 +9378,9 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_components_voice_commands_routecommand",
-      "target": "app_components_voice_commands_compact",
-      "confidence_score": 1.0
+      "target": "app_components_voice_commands_compact"
     },
     {
       "relation": "references",
@@ -10753,68 +9891,368 @@
       "weight": 1.0,
       "source": "controlp_migration_plan",
       "target": "controlp_graphify_out"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(core)/page.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_page",
+      "target": "core_page_home"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/VaultCore.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "vault_core_vaultcore",
+      "target": "vault_core_vaultcore_camera_target"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/VaultCore.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "vault_core_vaultcore",
+      "target": "vault_core_vaultcore_cameradirector"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/VaultCore.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "vault_core_vaultcore",
+      "target": "vault_core_vaultcore_managedcontrols"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/vault-core/VaultCore.tsx",
+      "source_location": "L74",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "vault_core_vaultcore",
+      "target": "vault_core_vaultcore_vaultcore"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/queue/page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queue_page",
+      "target": "queue_page_queuepage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/queue/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "queue_page",
+      "target": "queue_page_status_label"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_dependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_devdependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_name"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_private"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_scripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_version"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_build"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_check"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_dev"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_lint"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_test"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_typecheck"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_next"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_three_drei"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_three_fiber"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_three"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_types_three"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_autoprefixer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint_config_next"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_postcss"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_tailwindcss"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_tailwindcss_postcss"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_node"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_react_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_typescript"
     }
   ],
-  "hyperedges": [
-    {
-      "id": "voice_stt_pipeline",
-      "label": "Voice STT Pipeline: PTT \u2192 Whisper/WebSpeech \u2192 routeCommand \u2192 VoiceAction",
-      "nodes": [
-        "controlp_voice_panel",
-        "controlp_voice_usewhisper",
-        "controlp_voice_usespeech",
-        "controlp_voice_commands",
-        "controlp_api_stt",
-        "controlp_stt_server"
-      ],
-      "relation": "implement",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/manual.md"
-    },
-    {
-      "id": "data_adapter_triad",
-      "label": "Data Adapter Triad: Memory + Evidence + Graph feeding Orchestrator",
-      "nodes": [
-        "controlp_lib_controlp",
-        "controlp_lib_adapter_memory",
-        "controlp_lib_adapter_evidence",
-        "controlp_lib_adapter_graph"
-      ],
-      "relation": "participate_in",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CONTEXT_MAP.md"
-    },
-    {
-      "id": "extension_seams",
-      "label": "Extension Seams: panels/registry + voice/commands + lib/adapters",
-      "nodes": [
-        "controlp_panels_registry",
-        "controlp_voice_commands",
-        "controlp_lib_adapter_memory",
-        "controlp_lib_adapter_evidence",
-        "controlp_lib_adapter_graph"
-      ],
-      "relation": "form",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "PROJECT_CONTEXT.md"
-    },
-    {
-      "id": "stt_sidecar_runtime_stack",
-      "label": "STT Sidecar Runtime Stack (FastAPI + Uvicorn + faster-whisper + python-multipart)",
-      "nodes": [
-        "stt_requirements_fastapi",
-        "stt_requirements_uvicorn",
-        "stt_requirements_faster_whisper",
-        "stt_requirements_python_multipart"
-      ],
-      "relation": "form",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "stt/requirements.txt"
-    }
-  ],
-  "built_at_commit": "2541d6b7a2922c018b594b2556b7cd050b4f6048"
+  "hyperedges": [],
+  "built_at_commit": "d94018d70f38acd59d6bbdec0f98d6f4e63182da"
 }

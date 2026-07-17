@@ -65,6 +65,22 @@ button {
   position: relative;
 }
 
+/*
+ * Cockpit sin scroll (V1.4.4): en desktop el terminal mide EXACTAMENTE la
+ * ventana — la página nunca hace scroll; el grid flexiona y las columnas
+ * laterales scrollean por dentro si su contenido no cabe. En ≤1180px
+ * (tablet/móvil apilado) se conserva el flujo con scroll de página.
+ */
+@media (min-width: 1181px) {
+  .coreShell {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    overflow: hidden;
+    padding: clamp(12px, 2.4vh, 28px) 32px clamp(12px, 2.6vh, 40px);
+  }
+}
+
 .brand p,
 .timeBlock small,
 .panelTitle span,

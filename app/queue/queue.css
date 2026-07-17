@@ -28,6 +28,14 @@
   font-size: 12px;
 }
 
+.queueLimit {
+  color: var(--dim);
+  font-family: "SFMono-Regular", "Menlo", monospace;
+  font-size: 11px;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+
 .queueList {
   display: grid;
   gap: 10px;

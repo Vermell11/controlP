@@ -1,7 +1,7 @@
 .vital {
   border-bottom: 1px solid var(--line-soft);
-  margin-bottom: 14px;
-  padding: 0 0 16px;
+  margin-bottom: clamp(8px, 1.4vh, 14px);
+  padding: 0 0 clamp(8px, 1.6vh, 16px);
   position: relative;
 }
 
@@ -20,7 +20,8 @@
 .vital strong {
   display: block;
   font-family: "Helvetica Neue", sans-serif;
-  font-size: 38px;
+  /* Fluido por altura: los 5 vitals caben en ventanas bajas (laptop 13"). */
+  font-size: clamp(26px, 3.8vh, 38px);
   font-weight: 300;
   line-height: 0.85;
 }
@@ -45,7 +46,7 @@
 
 .directives {
   list-style: none;
-  margin: 0 0 36px;
+  margin: 0 0 clamp(18px, 3.2vh, 36px);
   padding: 0;
 }
 

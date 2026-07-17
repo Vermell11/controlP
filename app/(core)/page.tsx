@@ -21,7 +21,7 @@ export default async function Home() {
   const primary = projects[0];
 
   return (
-    <main className="vaultShell">
+    <main className="vaultShell coreShell">
       <header className="vaultTop">
         <div className="brand">
           <h1>V.A.U.L.T.</h1>
