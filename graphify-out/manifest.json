@@ -60,7 +60,7 @@
     "semantic_hash": "e2eff733bb879856ad75ccd6f542381f"
   },
   "next-env.d.ts": {
-    "mtime": 1784342563.0577333,
+    "mtime": 1784416345.3035936,
     "ast_hash": "d0f8375ae1199dc7acd3977fc33b78b8",
     "semantic_hash": ""
   },
@@ -100,8 +100,8 @@
     "semantic_hash": "9b2fe3d975790259456f4d9b060d481d"
   },
   "PROJECT_CONTEXT.md": {
-    "mtime": 1784342956.9974997,
-    "ast_hash": "3586912c8469434d6bdbaa8870a46f95",
+    "mtime": 1784416345.4276161,
+    "ast_hash": "ae7887f06bda01855d9bbff39104ebd8",
     "semantic_hash": ""
   },
   "README.md": {
@@ -125,8 +125,8 @@
     "semantic_hash": "6356c406cd88ea91cc8abf23413a38bb"
   },
   "app/components/panels/CommandDeckPanel.tsx": {
-    "mtime": 1784342095.6444712,
-    "ast_hash": "943c2c8eed39b1861b617449af20f849",
+    "mtime": 1784415641.136589,
+    "ast_hash": "2c0d231b7aa20bd98dc3196540047ac3",
     "semantic_hash": ""
   },
   "app/components/panels/DirectivesPanel.tsx": {
@@ -260,13 +260,13 @@
     "semantic_hash": "42ba10f8fa8e8eb890bfe6dd143d5d92"
   },
   "app/components/voice/VoicePanel.tsx": {
-    "mtime": 1784342095.4788542,
-    "ast_hash": "3d1f23fb8d33866c4cffce71ae00338e",
+    "mtime": 1784416153.42741,
+    "ast_hash": "cd51b879673e38a55bb2ba5ce5f7668c",
     "semantic_hash": ""
   },
   "app/components/voice/commands.ts": {
-    "mtime": 1784342478.0845602,
-    "ast_hash": "2ae7eacb1418009d966b4a8a58613f18",
+    "mtime": 1784416136.969452,
+    "ast_hash": "585aa8e8ab584e4673e83cee412b423d",
     "semantic_hash": ""
   },
   "app/components/voice/useMicLevel.ts": {
@@ -275,8 +275,8 @@
     "semantic_hash": "83f523a78674c8434a268be5df04c23e"
   },
   "app/components/voice/useSpeech.ts": {
-    "mtime": 1784341335.171105,
-    "ast_hash": "81648baaab3d51b9bf9d3ec475216a7f",
+    "mtime": 1784415640.8390567,
+    "ast_hash": "9a768fc40cece03420f0cea409eb1ca3",
     "semantic_hash": ""
   },
   "app/api/stt/route.ts": {
@@ -310,8 +310,8 @@
     "semantic_hash": "14be21b8098d66d9213682c80a031933"
   },
   "CONTEXT_MAP.md": {
-    "mtime": 1784342957.1556604,
-    "ast_hash": "34ceb32d849fe2463af9619bb8a6d640",
+    "mtime": 1784416345.5462244,
+    "ast_hash": "62a8f8135fc0952022293b91876a64db",
     "semantic_hash": ""
   },
   "docs/manual.md": {
@@ -340,13 +340,13 @@
     "semantic_hash": ""
   },
   "app/components/voice/useTts.ts": {
-    "mtime": 1784325715.9021745,
-    "ast_hash": "957abcc7ad7e76c37d5a1bd0f7659e6e",
+    "mtime": 1784414996.1194577,
+    "ast_hash": "70f7af439996068e08782541f3bfd308",
     "semantic_hash": ""
   },
   "lib/assistant.ts": {
-    "mtime": 1784342477.9630568,
-    "ast_hash": "46f14c94def979ab29fc2f24eef4ef94",
+    "mtime": 1784416136.8468525,
+    "ast_hash": "b6c378915150cfbdfcf699984e45a993",
     "semantic_hash": ""
   },
   "lib/voice-aliases.ts": {
@@ -355,8 +355,8 @@
     "semantic_hash": ""
   },
   "tests/assistant.test.mjs": {
-    "mtime": 1784342478.2206,
-    "ast_hash": "247e4900cce6dd2276282f72c846d031",
+    "mtime": 1784416137.267391,
+    "ast_hash": "887b315f4b0af9b1352372e804b76754",
     "semantic_hash": ""
   },
   "lib/adapters/llm-ollama.ts": {
@@ -377,6 +377,11 @@
   "lib/assistant-semantic.ts": {
     "mtime": 1784342265.1313262,
     "ast_hash": "f1eb370e7778924b70bfc48f25c3c61c",
+    "semantic_hash": ""
+  },
+  "app/api/stt/service/route.ts": {
+    "mtime": 1784415135.3495972,
+    "ast_hash": "76ba5b33d31db391827f60d08ef674fd",
     "semantic_hash": ""
   }
 }
