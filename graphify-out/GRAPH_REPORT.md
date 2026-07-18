@@ -1,16 +1,16 @@
 # Graph Report - ControlP  (2026-07-17)
 
 ## Corpus Check
-- 70 files · ~19,581 words
+- 74 files · ~23,046 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 404 nodes · 660 edges · 39 communities (21 shown, 18 thin omitted)
+- 437 nodes · 758 edges · 39 communities (21 shown, 18 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 8 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `97fc4dd2`
+- Built from commit: `ca8f82f7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -54,15 +54,15 @@
 
 ## God Nodes (most connected - your core abstractions)
 1. `compilerOptions` - 17 edges
-2. `readMemory()` - 13 edges
-3. `getProjects()` - 13 edges
-4. `PanelProps` - 12 edges
-5. `loadRegistry()` - 12 edges
-6. `routeCommand()` - 9 edges
-7. `DataIssue` - 9 edges
-8. `vaultSignals` - 8 edges
-9. `normalizeVoiceText()` - 8 edges
-10. `Módulos` - 8 edges
+2. `normalizeVoiceText()` - 15 edges
+3. `loadRegistry()` - 14 edges
+4. `routeCommand()` - 13 edges
+5. `readMemory()` - 13 edges
+6. `getProjects()` - 13 edges
+7. `PanelProps` - 12 edges
+8. `POST()` - 9 edges
+9. `DataIssue` - 9 edges
+10. `vaultSignals` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `GET()` --calls--> `getProjects()`  [INFERRED]
@@ -82,8 +82,8 @@
 ## Communities (39 total, 18 thin omitted)
 
 ### Community 0 - "Vault Core Visual Layer"
-Cohesion: 0.11
-Nodes (31): emptyEvidence(), EvidenceReading, execFileAsync, exists(), git(), readCommitActivity(), readEvidence(), emptyGraph() (+23 more)
+Cohesion: 0.10
+Nodes (38): emptyEvidence(), EvidenceReading, execFileAsync, exists(), git(), readCommitActivity(), readEvidence(), emptyGraph() (+30 more)
 
 ### Community 1 - "TypeScript Config"
 Cohesion: 0.10
@@ -94,12 +94,12 @@ Cohesion: 0.07
 Nodes (29): dependencies, next, react, react-dom, @react-three/drei, @react-three/fiber, three, @types/three (+21 more)
 
 ### Community 3 - "Memory Adapter & Editable Records"
-Cohesion: 0.10
-Nodes (31): appendLogEntry(), cleanOrNull(), EditableBullet, editStateFile(), extractBullet(), firstParagraph(), inferStack(), listSessions() (+23 more)
+Cohesion: 0.12
+Nodes (26): appendLogEntry(), EditableBullet, editStateFile(), updateNextStep(), updateStateBullet(), dedupe(), discoverFromVault(), isValidEntry() (+18 more)
 
 ### Community 4 - "Package & Dependencies"
-Cohesion: 0.10
-Nodes (21): ProjectCard, QUEUE_COMMANDS, VIEW_COMMANDS, VIEW_TITLE, DeckView, FeedView(), InboxView(), MetricsView() (+13 more)
+Cohesion: 0.09
+Nodes (23): Clock(), ProjectCard, QUEUE_COMMANDS, VIEW_COMMANDS, VIEW_TITLE, DeckView, FeedView(), InboxView() (+15 more)
 
 ### Community 5 - "Metrics & Schedule API"
 Cohesion: 0.08
@@ -110,16 +110,16 @@ Cohesion: 0.18
 Nodes (10): app/api/ — frontera HTTP, app/components/panels/ — paneles del dashboard, app/components/vault-core/ — escena 3D (CORE, no tocar salvo bugfix), app/components/voice/ — captura y router de voz, app/ — rutas, CONTEXT_MAP — mapa del repo para sesiones de IA, lib/ — dominio y adaptadores (server-side), Módulos (+2 more)
 
 ### Community 7 - "Panel Modules & Command Deck"
-Cohesion: 0.17
-Nodes (10): formatDate(), obsidianUrl(), tone(), ProjectRecord(), ProjectPage(), goTo(), ProjectNode(), projectPath() (+2 more)
+Cohesion: 0.12
+Nodes (16): Home(), getProjects(), formatDate(), obsidianUrl(), tone(), FeedEntry, WireBody(), GET() (+8 more)
 
 ### Community 8 - "Evidence & Git Adapter"
 Cohesion: 0.40
 Nodes (4): Closing Barrier, ControlP Agent Contract, Rules, Startup
 
 ### Community 9 - "ControlP Orchestrator"
-Cohesion: 0.13
-Nodes (28): GET(), POST(), answerKnowledgeQuery(), AssistantEvidence, AssistantResponse, compactVoiceText(), findProject(), isHomeNavigation() (+20 more)
+Cohesion: 0.12
+Nodes (36): GET(), POST(), answerKnowledgeQuery(), AssistantEvidence, AssistantResponse, compactVoiceText(), continueProjectQuery(), deckViewCommand (+28 more)
 
 ### Community 10 - "Dev Dependencies"
 Cohesion: 0.14
@@ -134,43 +134,43 @@ Cohesion: 0.40
 Nodes (3): Sidecar STT local de ControlP — faster-whisper (V1.4.2).  Transcripción en españ, transcribe(), UploadFile
 
 ### Community 17 - "App Layout"
-Cohesion: 0.08
-Nodes (34): useReducedMotion(), createLinkSegments(), createParticleField(), createRandom(), ParticleField, GOLD, PALE, ParticleCore() (+26 more)
+Cohesion: 0.07
+Nodes (36): CenterStage(), VaultCore, useReducedMotion(), createLinkSegments(), createParticleField(), createRandom(), ParticleField, GOLD (+28 more)
 
 ### Community 19 - "Architecture Rules"
 Cohesion: 0.67
 Nodes (3): Canonical Data Schema Ownership, Local-First Web-Ready Boundary, Role Adapter Pattern
 
 ### Community 20 - "Community 20"
-Cohesion: 0.23
-Nodes (8): CenterStage(), VaultCore, Clock(), Home(), getProjects(), leftPanels, rightPanels, GET()
+Cohesion: 0.20
+Nodes (14): askOllama(), buildSemanticPrompt(), buildSemanticRepairPrompt(), compact(), expandTerms(), KnowledgeChunk, requireSkillConfirmation(), retrieveKnowledge() (+6 more)
 
 ### Community 21 - "STT Sidecar Dependencies"
 Cohesion: 0.67
 Nodes (3): FastAPI, python-multipart, Uvicorn
 
 ### Community 22 - "Community 22"
-Cohesion: 0.50
-Nodes (3): assistantUrl, controlp, root
+Cohesion: 0.33
+Nodes (5): assistantUrl, controlp, healthyNotion, ragUrl, root
 
 ## Knowledge Gaps
-- **136 isolated node(s):** `VaultCore`, `VIEW_COMMANDS`, `QUEUE_COMMANDS`, `VIEW_TITLE`, `TrendData` (+131 more)
+- **138 isolated node(s):** `VaultCore`, `VIEW_COMMANDS`, `QUEUE_COMMANDS`, `VIEW_TITLE`, `TrendData` (+133 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **18 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `loadRegistry()` connect `Vault Core Visual Layer` to `Memory Adapter & Editable Records`, `Community 20`?**
+- **Why does `PanelProps` connect `Package & Dependencies` to `App Layout`, `Panel Modules & Command Deck`?**
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
+- **Why does `loadRegistry()` connect `Memory Adapter & Editable Records` to `Vault Core Visual Layer`, `Panel Modules & Command Deck`?**
   _High betweenness centrality (0.016) - this node is a cross-community bridge._
-- **Why does `PanelProps` connect `Package & Dependencies` to `App Layout`?**
+- **Why does `ProjectCard` connect `Package & Dependencies` to `Vault Core Visual Layer`, `ControlP Orchestrator`, `Panel Modules & Command Deck`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
-- **Why does `getProjects()` connect `Community 20` to `Vault Core Visual Layer`, `ControlP Orchestrator`, `Panel Modules & Command Deck`?**
-  _High betweenness centrality (0.013) - this node is a cross-community bridge._
 - **What connects `VaultCore`, `VIEW_COMMANDS`, `QUEUE_COMMANDS` to the rest of the system?**
-  _140 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _142 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Vault Core Visual Layer` be split into smaller, more focused modules?**
-  _Cohesion score 0.10953058321479374 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09595959595959595 - nodes in this community are weakly interconnected._
 - **Should `TypeScript Config` be split into smaller, more focused modules?**
   _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
 - **Should `Core Dashboard & Panel Registry` be split into smaller, more focused modules?**

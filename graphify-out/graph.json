@@ -10,7 +10,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_page",
-      "community": 20,
+      "community": 4,
       "norm_label": "page.tsx"
     },
     {
@@ -20,7 +20,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "core_page_home",
-      "community": 20,
+      "community": 7,
       "norm_label": "home()"
     },
     {
@@ -67,7 +67,7 @@
       "label": "POST()",
       "file_type": "code",
       "source_file": "app/api/assistant/query/route.ts",
-      "source_location": "L7",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "query_route_post",
       "community": 9,
@@ -110,7 +110,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "metrics_route",
-      "community": 0,
+      "community": 3,
       "norm_label": "route.ts"
     },
     {
@@ -120,7 +120,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "metrics_route_get",
-      "community": 0,
+      "community": 3,
       "norm_label": "get()"
     },
     {
@@ -130,7 +130,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "projects_route",
-      "community": 20,
+      "community": 7,
       "norm_label": "route.ts"
     },
     {
@@ -140,7 +140,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "projects_route_get",
-      "community": 20,
+      "community": 7,
       "norm_label": "get()"
     },
     {
@@ -200,7 +200,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_centerstage",
-      "community": 20,
+      "community": 17,
       "norm_label": "centerstage.tsx"
     },
     {
@@ -210,7 +210,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "components_centerstage_vaultcore",
-      "community": 20,
+      "community": 17,
       "norm_label": "vaultcore"
     },
     {
@@ -220,7 +220,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "components_centerstage_centerstage",
-      "community": 20,
+      "community": 17,
       "norm_label": "centerstage()"
     },
     {
@@ -230,7 +230,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_clock",
-      "community": 20,
+      "community": 4,
       "norm_label": "clock.tsx"
     },
     {
@@ -240,7 +240,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "core_clock_clock",
-      "community": 20,
+      "community": 4,
       "norm_label": "clock()"
     },
     {
@@ -530,7 +530,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "panels_wirepanel",
-      "community": 4,
+      "community": 7,
       "norm_label": "wirepanel.tsx"
     },
     {
@@ -540,7 +540,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "panels_wirepanel_feedentry",
-      "community": 4,
+      "community": 7,
       "norm_label": "feedentry"
     },
     {
@@ -550,7 +550,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "panels_wirepanel_wirebody",
-      "community": 4,
+      "community": 7,
       "norm_label": "wirebody()"
     },
     {
@@ -580,7 +580,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "panels_registry_leftpanels",
-      "community": 20,
+      "community": 4,
       "norm_label": "leftpanels"
     },
     {
@@ -590,7 +590,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "panels_registry_rightpanels",
-      "community": 20,
+      "community": 4,
       "norm_label": "rightpanels"
     },
     {
@@ -630,7 +630,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "records_editabletext_editabletext",
-      "community": 3,
+      "community": 7,
       "norm_label": "editabletext()"
     },
     {
@@ -1000,7 +1000,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "vault_core_types_nodeformation",
-      "community": 17,
+      "community": 4,
       "norm_label": "nodeformation"
     },
     {
@@ -1117,7 +1117,7 @@
       "label": "VoiceAlias",
       "file_type": "code",
       "source_file": "app/components/voice/commands.ts",
-      "source_location": "L10",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "voice_commands_voicealias",
       "community": 17,
@@ -1127,7 +1127,7 @@
       "label": "VoiceAction",
       "file_type": "code",
       "source_file": "app/components/voice/commands.ts",
-      "source_location": "L16",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "voice_commands_voiceaction",
       "community": 17,
@@ -1137,17 +1137,17 @@
       "label": "VoiceProject",
       "file_type": "code",
       "source_file": "app/components/voice/commands.ts",
-      "source_location": "L24",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "voice_commands_voiceproject",
-      "community": 9,
+      "community": 17,
       "norm_label": "voiceproject"
     },
     {
       "label": "NOTE_PREFIXES",
       "file_type": "code",
       "source_file": "app/components/voice/commands.ts",
-      "source_location": "L29",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "voice_commands_note_prefixes",
       "community": 9,
@@ -1157,7 +1157,7 @@
       "label": "routeCommand()",
       "file_type": "code",
       "source_file": "app/components/voice/commands.ts",
-      "source_location": "L31",
+      "source_location": "L39",
       "_origin": "ast",
       "id": "voice_commands_routecommand",
       "community": 9,
@@ -1167,7 +1167,7 @@
       "label": "findVoiceProject()",
       "file_type": "code",
       "source_file": "app/components/voice/commands.ts",
-      "source_location": "L145",
+      "source_location": "L172",
       "_origin": "ast",
       "id": "voice_commands_findvoiceproject",
       "community": 9,
@@ -1177,7 +1177,7 @@
       "label": "applyVoiceAliases()",
       "file_type": "code",
       "source_file": "app/components/voice/commands.ts",
-      "source_location": "L154",
+      "source_location": "L181",
       "_origin": "ast",
       "id": "voice_commands_applyvoicealiases",
       "community": 9,
@@ -1187,7 +1187,7 @@
       "label": "isKnowledgeQuery()",
       "file_type": "code",
       "source_file": "app/components/voice/commands.ts",
-      "source_location": "L163",
+      "source_location": "L190",
       "_origin": "ast",
       "id": "voice_commands_isknowledgequery",
       "community": 9,
@@ -1197,7 +1197,7 @@
       "label": "message()",
       "file_type": "code",
       "source_file": "app/components/voice/commands.ts",
-      "source_location": "L169",
+      "source_location": "L196",
       "_origin": "ast",
       "id": "voice_commands_message",
       "community": 9,
@@ -1247,7 +1247,7 @@
       "label": "SpeechRecognitionResultLike",
       "file_type": "code",
       "source_file": "app/components/voice/useSpeech.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "_origin": "ast",
       "id": "voice_usespeech_speechrecognitionresultlike",
       "community": 17,
@@ -1257,7 +1257,7 @@
       "label": "SpeechRecognitionEventLike",
       "file_type": "code",
       "source_file": "app/components/voice/useSpeech.ts",
-      "source_location": "L10",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "voice_usespeech_speechrecognitioneventlike",
       "community": 17,
@@ -1267,7 +1267,7 @@
       "label": "SpeechRecognitionLike",
       "file_type": "code",
       "source_file": "app/components/voice/useSpeech.ts",
-      "source_location": "L14",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "voice_usespeech_speechrecognitionlike",
       "community": 17,
@@ -1277,7 +1277,7 @@
       "label": "RecognitionConstructor",
       "file_type": "code",
       "source_file": "app/components/voice/useSpeech.ts",
-      "source_location": "L25",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "voice_usespeech_recognitionconstructor",
       "community": 17,
@@ -1287,7 +1287,7 @@
       "label": "getRecognition()",
       "file_type": "code",
       "source_file": "app/components/voice/useSpeech.ts",
-      "source_location": "L27",
+      "source_location": "L28",
       "_origin": "ast",
       "id": "voice_usespeech_getrecognition",
       "community": 17,
@@ -1297,7 +1297,7 @@
       "label": "useSpeech()",
       "file_type": "code",
       "source_file": "app/components/voice/useSpeech.ts",
-      "source_location": "L40",
+      "source_location": "L41",
       "_origin": "ast",
       "id": "voice_usespeech_usespeech",
       "community": 17,
@@ -1624,14 +1624,54 @@
       "norm_label": "readgraph()"
     },
     {
+      "label": "readGraphContext()",
+      "file_type": "code",
+      "source_file": "lib/adapters/graph-graphify.ts",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "adapters_graph_graphify_readgraphcontext",
+      "community": 0,
+      "norm_label": "readgraphcontext()"
+    },
+    {
+      "label": "readTechnicalDocument()",
+      "file_type": "code",
+      "source_file": "lib/adapters/graph-graphify.ts",
+      "source_location": "L62",
+      "_origin": "ast",
+      "id": "adapters_graph_graphify_readtechnicaldocument",
+      "community": 0,
+      "norm_label": "readtechnicaldocument()"
+    },
+    {
       "label": "emptyGraph()",
       "file_type": "code",
       "source_file": "lib/adapters/graph-graphify.ts",
-      "source_location": "L52",
+      "source_location": "L83",
       "_origin": "ast",
       "id": "adapters_graph_graphify_emptygraph",
       "community": 0,
       "norm_label": "emptygraph()"
+    },
+    {
+      "label": "llm-ollama.ts",
+      "file_type": "code",
+      "source_file": "lib/adapters/llm-ollama.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "adapters_llm_ollama",
+      "community": 20,
+      "norm_label": "llm-ollama.ts"
+    },
+    {
+      "label": "askOllama()",
+      "file_type": "code",
+      "source_file": "lib/adapters/llm-ollama.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "adapters_llm_ollama_askollama",
+      "community": 20,
+      "norm_label": "askollama()"
     },
     {
       "label": "memory-obsidian.ts",
@@ -1640,7 +1680,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "adapters_memory_obsidian",
-      "community": 3,
+      "community": 0,
       "norm_label": "memory-obsidian.ts"
     },
     {
@@ -1660,7 +1700,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_readmemory",
-      "community": 3,
+      "community": 0,
       "norm_label": "readmemory()"
     },
     {
@@ -1670,14 +1710,24 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_readprojectskills",
-      "community": 3,
+      "community": 0,
       "norm_label": "readprojectskills()"
+    },
+    {
+      "label": "readSkillBankKnowledge()",
+      "file_type": "code",
+      "source_file": "lib/adapters/memory-obsidian.ts",
+      "source_location": "L89",
+      "_origin": "ast",
+      "id": "adapters_memory_obsidian_readskillbankknowledge",
+      "community": 0,
+      "norm_label": "readskillbankknowledge()"
     },
     {
       "label": "appendLogEntry()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L88",
+      "source_location": "L102",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_appendlogentry",
       "community": 3,
@@ -1687,7 +1737,7 @@
       "label": "EditableBullet",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L119",
+      "source_location": "L133",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_editablebullet",
       "community": 3,
@@ -1697,7 +1747,7 @@
       "label": "updateStateBullet()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L126",
+      "source_location": "L140",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_updatestatebullet",
       "community": 3,
@@ -1707,7 +1757,7 @@
       "label": "updateNextStep()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L143",
+      "source_location": "L157",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_updatenextstep",
       "community": 3,
@@ -1717,7 +1767,7 @@
       "label": "editStateFile()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L155",
+      "source_location": "L169",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_editstatefile",
       "community": 3,
@@ -1727,101 +1777,281 @@
       "label": "readIfExists()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L179",
+      "source_location": "L193",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_readifexists",
-      "community": 3,
+      "community": 0,
       "norm_label": "readifexists()"
     },
     {
       "label": "listSessions()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L187",
+      "source_location": "L201",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_listsessions",
-      "community": 3,
+      "community": 0,
       "norm_label": "listsessions()"
     },
     {
       "label": "readSessionStats()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L196",
+      "source_location": "L210",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_readsessionstats",
-      "community": 3,
+      "community": 0,
       "norm_label": "readsessionstats()"
     },
     {
       "label": "extractMinutes()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L207",
+      "source_location": "L221",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_extractminutes",
-      "community": 3,
+      "community": 0,
       "norm_label": "extractminutes()"
     },
     {
       "label": "extractBullet()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L214",
+      "source_location": "L228",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_extractbullet",
-      "community": 3,
+      "community": 0,
       "norm_label": "extractbullet()"
     },
     {
       "label": "section()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L220",
+      "source_location": "L234",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_section",
-      "community": 3,
+      "community": 0,
       "norm_label": "section()"
     },
     {
       "label": "firstParagraph()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L228",
+      "source_location": "L242",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_firstparagraph",
-      "community": 3,
+      "community": 0,
       "norm_label": "firstparagraph()"
     },
     {
       "label": "normalizeMarkdown()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L237",
+      "source_location": "L251",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_normalizemarkdown",
-      "community": 3,
+      "community": 0,
       "norm_label": "normalizemarkdown()"
     },
     {
       "label": "inferStack()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L243",
+      "source_location": "L257",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_inferstack",
-      "community": 3,
+      "community": 0,
       "norm_label": "inferstack()"
     },
     {
       "label": "cleanOrNull()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L250",
+      "source_location": "L264",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_cleanornull",
-      "community": 3,
+      "community": 0,
       "norm_label": "cleanornull()"
+    },
+    {
+      "label": "assistant-knowledge.ts",
+      "file_type": "code",
+      "source_file": "lib/assistant-knowledge.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "lib_assistant_knowledge",
+      "community": 0,
+      "norm_label": "assistant-knowledge.ts"
+    },
+    {
+      "label": "buildKnowledgeCorpus()",
+      "file_type": "code",
+      "source_file": "lib/assistant-knowledge.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "lib_assistant_knowledge_buildknowledgecorpus",
+      "community": 0,
+      "norm_label": "buildknowledgecorpus()"
+    },
+    {
+      "label": "assistant-rag.ts",
+      "file_type": "code",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "lib_assistant_rag",
+      "community": 20,
+      "norm_label": "assistant-rag.ts"
+    },
+    {
+      "label": "KnowledgeChunk",
+      "file_type": "code",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "lib_assistant_rag_knowledgechunk",
+      "community": 20,
+      "norm_label": "knowledgechunk"
+    },
+    {
+      "label": "SemanticDraft",
+      "file_type": "code",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "lib_assistant_rag_semanticdraft",
+      "community": 20,
+      "norm_label": "semanticdraft"
+    },
+    {
+      "label": "STOP_WORDS",
+      "file_type": "code",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "lib_assistant_rag_stop_words",
+      "community": 20,
+      "norm_label": "stop_words"
+    },
+    {
+      "label": "retrieveKnowledge()",
+      "file_type": "code",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "lib_assistant_rag_retrieveknowledge",
+      "community": 20,
+      "norm_label": "retrieveknowledge()"
+    },
+    {
+      "label": "expandTerms()",
+      "file_type": "code",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "lib_assistant_rag_expandterms",
+      "community": 20,
+      "norm_label": "expandterms()"
+    },
+    {
+      "label": "excerpt()",
+      "file_type": "code",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L63",
+      "_origin": "ast",
+      "id": "lib_assistant_rag_excerpt",
+      "community": 20,
+      "norm_label": "excerpt()"
+    },
+    {
+      "label": "compact()",
+      "file_type": "code",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L72",
+      "_origin": "ast",
+      "id": "lib_assistant_rag_compact",
+      "community": 20,
+      "norm_label": "compact()"
+    },
+    {
+      "label": "buildSemanticPrompt()",
+      "file_type": "code",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L76",
+      "_origin": "ast",
+      "id": "lib_assistant_rag_buildsemanticprompt",
+      "community": 20,
+      "norm_label": "buildsemanticprompt()"
+    },
+    {
+      "label": "validateSemanticDraft()",
+      "file_type": "code",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L100",
+      "_origin": "ast",
+      "id": "lib_assistant_rag_validatesemanticdraft",
+      "community": 20,
+      "norm_label": "validatesemanticdraft()"
+    },
+    {
+      "label": "buildSemanticRepairPrompt()",
+      "file_type": "code",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L115",
+      "_origin": "ast",
+      "id": "lib_assistant_rag_buildsemanticrepairprompt",
+      "community": 20,
+      "norm_label": "buildsemanticrepairprompt()"
+    },
+    {
+      "label": "requireSkillConfirmation()",
+      "file_type": "code",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L119",
+      "_origin": "ast",
+      "id": "lib_assistant_rag_requireskillconfirmation",
+      "community": 20,
+      "norm_label": "requireskillconfirmation()"
+    },
+    {
+      "label": "tokens()",
+      "file_type": "code",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L125",
+      "_origin": "ast",
+      "id": "lib_assistant_rag_tokens",
+      "community": 20,
+      "norm_label": "tokens()"
+    },
+    {
+      "label": "assistant-semantic.ts",
+      "file_type": "code",
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "lib_assistant_semantic",
+      "community": 20,
+      "norm_label": "assistant-semantic.ts"
+    },
+    {
+      "label": "answerSemanticQuery()",
+      "file_type": "code",
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "lib_assistant_semantic_answersemanticquery",
+      "community": 20,
+      "norm_label": "answersemanticquery()"
+    },
+    {
+      "label": "semanticUnavailable()",
+      "file_type": "code",
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "lib_assistant_semantic_semanticunavailable",
+      "community": 9,
+      "norm_label": "semanticunavailable()"
     },
     {
       "label": "assistant.ts",
@@ -1847,7 +2077,7 @@
       "label": "AssistantResponse",
       "file_type": "code",
       "source_file": "lib/assistant.ts",
-      "source_location": "L8",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "lib_assistant_assistantresponse",
       "community": 9,
@@ -1857,17 +2087,27 @@
       "label": "ProjectSkill",
       "file_type": "code",
       "source_file": "lib/assistant.ts",
-      "source_location": "L15",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "lib_assistant_projectskill",
-      "community": 3,
+      "community": 0,
       "norm_label": "projectskill"
+    },
+    {
+      "label": "deckViewCommand",
+      "file_type": "code",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "lib_assistant_deckviewcommand",
+      "community": 9,
+      "norm_label": "deckviewcommand"
     },
     {
       "label": "NOTE_NAMES",
       "file_type": "code",
       "source_file": "lib/assistant.ts",
-      "source_location": "L21",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "lib_assistant_note_names",
       "community": 9,
@@ -1877,7 +2117,7 @@
       "label": "normalizeVoiceText()",
       "file_type": "code",
       "source_file": "lib/assistant.ts",
-      "source_location": "L29",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "lib_assistant_normalizevoicetext",
       "community": 9,
@@ -1887,27 +2127,97 @@
       "label": "compactVoiceText()",
       "file_type": "code",
       "source_file": "lib/assistant.ts",
-      "source_location": "L37",
+      "source_location": "L40",
       "_origin": "ast",
       "id": "lib_assistant_compactvoicetext",
       "community": 9,
       "norm_label": "compactvoicetext()"
     },
     {
+      "label": "continueProjectQuery()",
+      "file_type": "code",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L44",
+      "_origin": "ast",
+      "id": "lib_assistant_continueprojectquery",
+      "community": 9,
+      "norm_label": "continueprojectquery()"
+    },
+    {
+      "label": "extractWakeCommand()",
+      "file_type": "code",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L48",
+      "_origin": "ast",
+      "id": "lib_assistant_extractwakecommand",
+      "community": 9,
+      "norm_label": "extractwakecommand()"
+    },
+    {
+      "label": "isSocialQuery()",
+      "file_type": "code",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L64",
+      "_origin": "ast",
+      "id": "lib_assistant_issocialquery",
+      "community": 9,
+      "norm_label": "issocialquery()"
+    },
+    {
+      "label": "isGlobalProjectQuery()",
+      "file_type": "code",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L70",
+      "_origin": "ast",
+      "id": "lib_assistant_isglobalprojectquery",
+      "community": 9,
+      "norm_label": "isglobalprojectquery()"
+    },
+    {
+      "label": "isVoiceArchitectureQuery()",
+      "file_type": "code",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L76",
+      "_origin": "ast",
+      "id": "lib_assistant_isvoicearchitecturequery",
+      "community": 9,
+      "norm_label": "isvoicearchitecturequery()"
+    },
+    {
       "label": "isHomeNavigation()",
       "file_type": "code",
       "source_file": "lib/assistant.ts",
-      "source_location": "L41",
+      "source_location": "L82",
       "_origin": "ast",
       "id": "lib_assistant_ishomenavigation",
       "community": 9,
       "norm_label": "ishomenavigation()"
     },
     {
+      "label": "isHealthFormationCommand()",
+      "file_type": "code",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L89",
+      "_origin": "ast",
+      "id": "lib_assistant_ishealthformationcommand",
+      "community": 9,
+      "norm_label": "ishealthformationcommand()"
+    },
+    {
+      "label": "isStructuredKnowledgeQuery()",
+      "file_type": "code",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L95",
+      "_origin": "ast",
+      "id": "lib_assistant_isstructuredknowledgequery",
+      "community": 9,
+      "norm_label": "isstructuredknowledgequery()"
+    },
+    {
       "label": "suggestProjectAlias()",
       "file_type": "code",
       "source_file": "lib/assistant.ts",
-      "source_location": "L48",
+      "source_location": "L104",
       "_origin": "ast",
       "id": "lib_assistant_suggestprojectalias",
       "community": 9,
@@ -1917,7 +2227,7 @@
       "label": "oneEditApart()",
       "file_type": "code",
       "source_file": "lib/assistant.ts",
-      "source_location": "L59",
+      "source_location": "L115",
       "_origin": "ast",
       "id": "lib_assistant_oneeditapart",
       "community": 9,
@@ -1927,7 +2237,7 @@
       "label": "findProject()",
       "file_type": "code",
       "source_file": "lib/assistant.ts",
-      "source_location": "L72",
+      "source_location": "L128",
       "_origin": "ast",
       "id": "lib_assistant_findproject",
       "community": 9,
@@ -1937,7 +2247,7 @@
       "label": "answerKnowledgeQuery()",
       "file_type": "code",
       "source_file": "lib/assistant.ts",
-      "source_location": "L81",
+      "source_location": "L137",
       "_origin": "ast",
       "id": "lib_assistant_answerknowledgequery",
       "community": 9,
@@ -1947,7 +2257,7 @@
       "label": "response()",
       "file_type": "code",
       "source_file": "lib/assistant.ts",
-      "source_location": "L167",
+      "source_location": "L266",
       "_origin": "ast",
       "id": "lib_assistant_response",
       "community": 9,
@@ -1960,7 +2270,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_config",
-      "community": 0,
+      "community": 20,
       "norm_label": "config.ts"
     },
     {
@@ -1970,7 +2280,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "lib_config_adapterconfig",
-      "community": 0,
+      "community": 20,
       "norm_label": "adapterconfig"
     },
     {
@@ -1990,7 +2300,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "lib_controlp_getprojects",
-      "community": 20,
+      "community": 7,
       "norm_label": "getprojects()"
     },
     {
@@ -2004,24 +2314,24 @@
       "norm_label": "buildcard()"
     },
     {
+      "label": "calculateHealth()",
+      "file_type": "code",
+      "source_file": "lib/controlp.ts",
+      "source_location": "L86",
+      "_origin": "ast",
+      "id": "lib_controlp_calculatehealth",
+      "community": 0,
+      "norm_label": "calculatehealth()"
+    },
+    {
       "label": "buildAlerts()",
       "file_type": "code",
       "source_file": "lib/controlp.ts",
-      "source_location": "L85",
+      "source_location": "L112",
       "_origin": "ast",
       "id": "lib_controlp_buildalerts",
       "community": 0,
       "norm_label": "buildalerts()"
-    },
-    {
-      "label": "scoreHealth()",
-      "file_type": "code",
-      "source_file": "lib/controlp.ts",
-      "source_location": "L109",
-      "_origin": "ast",
-      "id": "lib_controlp_scorehealth",
-      "community": 0,
-      "norm_label": "scorehealth()"
     },
     {
       "label": "intents.ts",
@@ -2110,7 +2420,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_registry",
-      "community": 0,
+      "community": 3,
       "norm_label": "registry.ts"
     },
     {
@@ -2120,7 +2430,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "lib_registry_registryentry",
-      "community": 0,
+      "community": 3,
       "norm_label": "registryentry"
     },
     {
@@ -2130,7 +2440,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "lib_registry_registry_file",
-      "community": 0,
+      "community": 3,
       "norm_label": "registry_file"
     },
     {
@@ -2140,7 +2450,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "lib_registry_slugify",
-      "community": 0,
+      "community": 3,
       "norm_label": "slugify()"
     },
     {
@@ -2150,7 +2460,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "lib_registry_loadregistry",
-      "community": 0,
+      "community": 3,
       "norm_label": "loadregistry()"
     },
     {
@@ -2160,7 +2470,7 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "lib_registry_dedupe",
-      "community": 0,
+      "community": 3,
       "norm_label": "dedupe()"
     },
     {
@@ -2170,7 +2480,7 @@
       "source_location": "L91",
       "_origin": "ast",
       "id": "lib_registry_isvalidentry",
-      "community": 0,
+      "community": 3,
       "norm_label": "isvalidentry()"
     },
     {
@@ -2180,7 +2490,7 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "lib_registry_discoverfromvault",
-      "community": 0,
+      "community": 3,
       "norm_label": "discoverfromvault()"
     },
     {
@@ -2190,7 +2500,7 @@
       "source_location": "L124",
       "_origin": "ast",
       "id": "lib_registry_resolverepopath",
-      "community": 0,
+      "community": 3,
       "norm_label": "resolverepopath()"
     },
     {
@@ -2320,7 +2630,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "lib_schema_validatememory",
-      "community": 3,
+      "community": 0,
       "norm_label": "validatememory()"
     },
     {
@@ -2963,14 +3273,34 @@
       "norm_label": "assistanturl"
     },
     {
+      "label": "ragUrl",
+      "file_type": "code",
+      "source_file": "tests/assistant.test.mjs",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "tests_assistant_test_ragurl",
+      "community": 22,
+      "norm_label": "ragurl"
+    },
+    {
       "label": "controlp",
       "file_type": "code",
       "source_file": "tests/assistant.test.mjs",
-      "source_location": "L12",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "tests_assistant_test_controlp",
       "community": 22,
       "norm_label": "controlp"
+    },
+    {
+      "label": "healthyNotion",
+      "file_type": "code",
+      "source_file": "tests/assistant.test.mjs",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "tests_assistant_test_healthynotion",
+      "community": 22,
+      "norm_label": "healthynotion"
     },
     {
       "label": "intents.test.mjs",
@@ -3306,7 +3636,7 @@
       "label": "app/api/ \u2014 frontera HTTP",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L45",
+      "source_location": "L51",
       "_origin": "ast",
       "id": "context_map_app_api_frontera_http",
       "community": 6,
@@ -3316,7 +3646,7 @@
       "label": "app/components/vault-core/ \u2014 escena 3D (CORE, no tocar salvo bugfix)",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L61",
+      "source_location": "L68",
       "_origin": "ast",
       "id": "context_map_app_components_vault_core_escena_3d_core_no_tocar_salvo_bugfix",
       "community": 6,
@@ -3326,7 +3656,7 @@
       "label": "app/components/voice/ \u2014 captura y router de voz",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L81",
+      "source_location": "L88",
       "_origin": "ast",
       "id": "context_map_app_components_voice_captura_y_router_de_voz",
       "community": 6,
@@ -3336,7 +3666,7 @@
       "label": "app/components/panels/ \u2014 paneles del dashboard",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L103",
+      "source_location": "L111",
       "_origin": "ast",
       "id": "context_map_app_components_panels_paneles_del_dashboard",
       "community": 6,
@@ -3346,7 +3676,7 @@
       "label": "app/ \u2014 rutas",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L117",
+      "source_location": "L126",
       "_origin": "ast",
       "id": "context_map_app_rutas",
       "community": 6,
@@ -3356,7 +3686,7 @@
       "label": "stt/ \u2014 sidecar Whisper (Python, fuera de Next)",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L128",
+      "source_location": "L137",
       "_origin": "ast",
       "id": "context_map_stt_sidecar_whisper_python_fuera_de_next",
       "community": 6,
@@ -3366,7 +3696,7 @@
       "label": "Para modificar X toca solo Y",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L135",
+      "source_location": "L144",
       "_origin": "ast",
       "id": "context_map_para_modificar_x_toca_solo_y",
       "community": 6,
@@ -4614,6 +4944,72 @@
       "target": "lib_assistant_answerknowledgequery"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/assistant/query/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "query_route",
+      "target": "lib_assistant_isstructuredknowledgequery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/assistant/query/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "query_route",
+      "target": "lib_assistant_knowledge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/assistant/query/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "query_route",
+      "target": "lib_assistant_knowledge_buildknowledgecorpus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/assistant/query/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "query_route",
+      "target": "lib_assistant_semantic",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/assistant/query/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "query_route",
+      "target": "lib_assistant_semantic_answersemanticquery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/assistant/query/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "query_route",
+      "target": "lib_assistant_semantic_semanticunavailable",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -4688,6 +5084,50 @@
       "weight": 1.0,
       "source": "query_route_post",
       "target": "lib_assistant_answerknowledgequery"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/api/assistant/query/route.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "query_route_post",
+      "target": "lib_assistant_isstructuredknowledgequery"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/api/assistant/query/route.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "query_route_post",
+      "target": "lib_assistant_knowledge_buildknowledgecorpus"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/api/assistant/query/route.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "query_route_post",
+      "target": "lib_assistant_semantic_answersemanticquery"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/api/assistant/query/route.ts",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "query_route_post",
+      "target": "lib_assistant_semantic_semanticunavailable"
     },
     {
       "relation": "calls",
@@ -7127,6 +7567,17 @@
       "target": "voice_commands_voicealias"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/voice/VoicePanel.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "voice_voicepanel",
+      "target": "voice_commands_voiceproject",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -7360,9 +7811,75 @@
       "source_file": "app/components/voice/commands.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "source": "voice_commands",
+      "target": "lib_assistant_continueprojectquery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/voice/commands.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "voice_commands",
+      "target": "lib_assistant_deckviewcommand",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/voice/commands.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "voice_commands",
+      "target": "lib_assistant_isglobalprojectquery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/voice/commands.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "voice_commands",
+      "target": "lib_assistant_ishealthformationcommand",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/voice/commands.ts",
+      "source_location": "L2",
+      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "voice_commands",
       "target": "lib_assistant_ishomenavigation"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/voice/commands.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "voice_commands",
+      "target": "lib_assistant_issocialquery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/voice/commands.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "voice_commands",
+      "target": "lib_assistant_isvoicearchitecturequery",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -7482,10 +7999,54 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/components/voice/commands.ts",
+      "source_location": "L150",
+      "weight": 1.0,
+      "source": "voice_commands_routecommand",
+      "target": "lib_assistant_continueprojectquery"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/components/voice/commands.ts",
+      "source_location": "L131",
+      "weight": 1.0,
+      "source": "voice_commands_routecommand",
+      "target": "lib_assistant_isglobalprojectquery"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/components/voice/commands.ts",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "voice_commands_routecommand",
+      "target": "lib_assistant_ishealthformationcommand"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/components/voice/commands.ts",
       "source_location": "L97",
       "weight": 1.0,
       "source": "voice_commands_routecommand",
       "target": "lib_assistant_ishomenavigation"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/components/voice/commands.ts",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "voice_commands_routecommand",
+      "target": "lib_assistant_issocialquery"
     },
     {
       "relation": "calls",
@@ -7576,6 +8137,17 @@
       "target": "lib_assistant_normalizevoicetext"
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/voice/commands.ts",
+      "source_location": "L191",
+      "weight": 1.0,
+      "source": "voice_commands_isknowledgequery",
+      "target": "lib_assistant_isvoicearchitecturequery",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/components/voice/useMicLevel.ts",
@@ -7594,6 +8166,28 @@
       "confidence_score": 1.0,
       "source": "voice_usemiclevel",
       "target": "voice_usemiclevel_usemiclevel"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/voice/useSpeech.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "voice_usespeech",
+      "target": "lib_assistant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/voice/useSpeech.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "voice_usespeech",
+      "target": "lib_assistant_extractwakecommand",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -8259,6 +8853,26 @@
       "target": "adapters_graph_graphify_readgraph"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/adapters/graph-graphify.ts",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "adapters_graph_graphify",
+      "target": "adapters_graph_graphify_readgraphcontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/adapters/graph-graphify.ts",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "adapters_graph_graphify",
+      "target": "adapters_graph_graphify_readtechnicaldocument",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -8290,6 +8904,17 @@
       "confidence_score": 1.0,
       "source": "adapters_graph_graphify",
       "target": "lib_schema_projectgraph"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-knowledge.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "lib_assistant_knowledge",
+      "target": "adapters_graph_graphify",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -8356,6 +8981,82 @@
       "confidence_score": 1.0,
       "source": "lib_controlp_buildcard",
       "target": "adapters_graph_graphify_readgraph"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/adapters/graph-graphify.ts",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "adapters_graph_graphify_readgraphcontext",
+      "target": "adapters_graph_graphify_readtechnicaldocument",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-knowledge.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "lib_assistant_knowledge",
+      "target": "adapters_graph_graphify_readgraphcontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/adapters/llm-ollama.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "adapters_llm_ollama",
+      "target": "adapters_llm_ollama_askollama",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/adapters/llm-ollama.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "adapters_llm_ollama",
+      "target": "lib_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/adapters/llm-ollama.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "adapters_llm_ollama",
+      "target": "lib_config_adapterconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "lib_assistant_semantic",
+      "target": "adapters_llm_ollama",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "lib_assistant_semantic",
+      "target": "adapters_llm_ollama_askollama",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -8511,6 +9212,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/adapters/memory-obsidian.ts",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "adapters_memory_obsidian",
+      "target": "adapters_memory_obsidian_readskillbankknowledge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/adapters/memory-obsidian.ts",
       "source_location": "L196",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -8624,6 +9335,17 @@
       "confidence_score": 1.0,
       "source": "adapters_memory_obsidian",
       "target": "lib_schema_validatememory"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-knowledge.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "lib_assistant_knowledge",
+      "target": "adapters_memory_obsidian",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -8802,6 +9524,39 @@
       "target": "adapters_memory_obsidian_readifexists"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-knowledge.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "lib_assistant_knowledge",
+      "target": "adapters_memory_obsidian_readprojectskills",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-knowledge.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "lib_assistant_knowledge",
+      "target": "adapters_memory_obsidian_readskillbankknowledge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/assistant-knowledge.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "lib_assistant_knowledge_buildknowledgecorpus",
+      "target": "adapters_memory_obsidian_readskillbankknowledge"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -8822,6 +9577,431 @@
       "confidence_score": 1.0,
       "source": "adapters_memory_obsidian_updatenextstep",
       "target": "adapters_memory_obsidian_editstatefile"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-knowledge.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "lib_assistant_knowledge",
+      "target": "lib_assistant_knowledge_buildknowledgecorpus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-knowledge.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "lib_assistant_knowledge",
+      "target": "lib_assistant_rag",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-knowledge.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "lib_assistant_knowledge",
+      "target": "lib_assistant_rag_knowledgechunk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-knowledge.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "lib_assistant_knowledge",
+      "target": "lib_registry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-knowledge.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "lib_assistant_knowledge",
+      "target": "lib_registry_loadregistry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-knowledge.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "lib_assistant_knowledge",
+      "target": "lib_schema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-knowledge.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "lib_assistant_knowledge",
+      "target": "lib_schema_projectcard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/assistant-knowledge.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "lib_assistant_knowledge_buildknowledgecorpus",
+      "target": "lib_registry_loadregistry"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "lib_assistant_rag",
+      "target": "lib_assistant_rag_buildsemanticprompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "lib_assistant_rag",
+      "target": "lib_assistant_rag_buildsemanticrepairprompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "lib_assistant_rag",
+      "target": "lib_assistant_rag_compact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "lib_assistant_rag",
+      "target": "lib_assistant_rag_excerpt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "lib_assistant_rag",
+      "target": "lib_assistant_rag_expandterms",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "lib_assistant_rag",
+      "target": "lib_assistant_rag_knowledgechunk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L119",
+      "weight": 1.0,
+      "source": "lib_assistant_rag",
+      "target": "lib_assistant_rag_requireskillconfirmation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "lib_assistant_rag",
+      "target": "lib_assistant_rag_retrieveknowledge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "lib_assistant_rag",
+      "target": "lib_assistant_rag_semanticdraft",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "lib_assistant_rag",
+      "target": "lib_assistant_rag_stop_words",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L125",
+      "weight": 1.0,
+      "source": "lib_assistant_rag",
+      "target": "lib_assistant_rag_tokens",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "lib_assistant_rag",
+      "target": "lib_assistant_rag_validatesemanticdraft",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "lib_assistant_semantic",
+      "target": "lib_assistant_rag",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "lib_assistant_semantic",
+      "target": "lib_assistant_rag_knowledgechunk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "lib_assistant_semantic",
+      "target": "lib_assistant_rag_semanticdraft",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "lib_assistant_rag_retrieveknowledge",
+      "target": "lib_assistant_rag_compact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "lib_assistant_rag_retrieveknowledge",
+      "target": "lib_assistant_rag_expandterms",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-rag.ts",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "lib_assistant_rag_retrieveknowledge",
+      "target": "lib_assistant_rag_tokens",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "lib_assistant_semantic",
+      "target": "lib_assistant_rag_retrieveknowledge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "lib_assistant_semantic_answersemanticquery",
+      "target": "lib_assistant_rag_retrieveknowledge"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "lib_assistant_semantic",
+      "target": "lib_assistant_rag_buildsemanticprompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "lib_assistant_semantic_answersemanticquery",
+      "target": "lib_assistant_rag_buildsemanticprompt"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "lib_assistant_semantic",
+      "target": "lib_assistant_rag_validatesemanticdraft",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "lib_assistant_semantic_answersemanticquery",
+      "target": "lib_assistant_rag_validatesemanticdraft"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "lib_assistant_semantic",
+      "target": "lib_assistant_rag_buildsemanticrepairprompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "lib_assistant_semantic_answersemanticquery",
+      "target": "lib_assistant_rag_buildsemanticrepairprompt"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "lib_assistant_semantic",
+      "target": "lib_assistant_rag_requireskillconfirmation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "lib_assistant_semantic_answersemanticquery",
+      "target": "lib_assistant_rag_requireskillconfirmation"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "lib_assistant_semantic",
+      "target": "lib_assistant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "lib_assistant_semantic",
+      "target": "lib_assistant_assistantresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "lib_assistant_semantic",
+      "target": "lib_assistant_semantic_answersemanticquery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant-semantic.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "lib_assistant_semantic",
+      "target": "lib_assistant_semantic_semanticunavailable",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -8867,6 +10047,36 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/assistant.ts",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "lib_assistant",
+      "target": "lib_assistant_continueprojectquery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "lib_assistant",
+      "target": "lib_assistant_deckviewcommand",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "lib_assistant",
+      "target": "lib_assistant_extractwakecommand",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant.ts",
       "source_location": "L72",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -8877,11 +10087,61 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/assistant.ts",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "lib_assistant",
+      "target": "lib_assistant_isglobalprojectquery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "lib_assistant",
+      "target": "lib_assistant_ishealthformationcommand",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant.ts",
       "source_location": "L41",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "lib_assistant",
       "target": "lib_assistant_ishomenavigation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "lib_assistant",
+      "target": "lib_assistant_issocialquery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "lib_assistant",
+      "target": "lib_assistant_isstructuredknowledgequery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "lib_assistant",
+      "target": "lib_assistant_isvoicearchitecturequery",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -8970,6 +10230,17 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "lib/assistant.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "lib_assistant_deckviewcommand",
+      "target": "lib_assistant_normalizevoicetext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant.ts",
       "source_location": "L86",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -8992,11 +10263,77 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "lib/assistant.ts",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "lib_assistant_extractwakecommand",
+      "target": "lib_assistant_normalizevoicetext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "lib_assistant_isglobalprojectquery",
+      "target": "lib_assistant_normalizevoicetext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "lib_assistant_ishealthformationcommand",
+      "target": "lib_assistant_normalizevoicetext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant.ts",
       "source_location": "L42",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "lib_assistant_ishomenavigation",
       "target": "lib_assistant_normalizevoicetext"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "lib_assistant_issocialquery",
+      "target": "lib_assistant_normalizevoicetext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "lib_assistant_isstructuredknowledgequery",
+      "target": "lib_assistant_normalizevoicetext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "lib_assistant_isvoicearchitecturequery",
+      "target": "lib_assistant_normalizevoicetext",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -9019,6 +10356,28 @@
       "confidence_score": 1.0,
       "source": "lib_assistant_findproject",
       "target": "lib_assistant_compactvoicetext"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L162",
+      "weight": 1.0,
+      "source": "lib_assistant_answerknowledgequery",
+      "target": "lib_assistant_isvoicearchitecturequery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/assistant.ts",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "lib_assistant_isstructuredknowledgequery",
+      "target": "lib_assistant_isvoicearchitecturequery",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -9098,21 +10457,21 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/controlp.ts",
-      "source_location": "L20",
+      "source_location": "L86",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "lib_controlp",
-      "target": "lib_controlp_getprojects"
+      "target": "lib_controlp_calculatehealth",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/controlp.ts",
-      "source_location": "L109",
+      "source_location": "L20",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "lib_controlp",
-      "target": "lib_controlp_scorehealth"
+      "target": "lib_controlp_getprojects"
     },
     {
       "relation": "imports_from",
@@ -9242,9 +10601,9 @@
       "source_file": "lib/controlp.ts",
       "source_location": "L51",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "lib_controlp_buildcard",
-      "target": "lib_controlp_scorehealth"
+      "target": "lib_controlp_calculatehealth",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10223,6 +11582,26 @@
       "confidence_score": 1.0,
       "source": "tests_assistant_test",
       "target": "tests_assistant_test_controlp"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/assistant.test.mjs",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "tests_assistant_test",
+      "target": "tests_assistant_test_healthynotion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/assistant.test.mjs",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "tests_assistant_test",
+      "target": "tests_assistant_test_ragurl",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -11216,5 +12595,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "97fc4dd2eb395a08218a64f57313fd1cde9c5154"
+  "built_at_commit": "ca8f82f7e333a601f16e828702933ed740fa9531"
 }
