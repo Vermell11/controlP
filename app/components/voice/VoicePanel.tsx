@@ -14,6 +14,7 @@ import VoiceVisualizer from "./VoiceVisualizer";
 import type { CoreState } from "@/app/components/vault-core/types";
 
 type SttProvider = "whisper" | "webspeech";
+type SttServiceStatus = "unknown" | "stopped" | "starting" | "running" | "error";
 
 const PROVIDER_KEY = "controlp.stt.provider";
 
@@ -45,6 +46,7 @@ export default function VoicePanel({ projects }: PanelProps) {
   const [log, setLog] = useState<{ text: string; kind: "heard" | "action" | "hint" }[]>([]);
   const [holding, setHolding] = useState(false);
   const [provider, setProvider] = useState<SttProvider>("webspeech");
+  const [sttService, setSttService] = useState<SttServiceStatus>("unknown");
   const [feedback, setFeedback] = useState<CoreState>("idle");
   const [aliases, setAliases] = useState<VoiceAlias[]>([]);
   const [pendingAlias, setPendingAlias] = useState<{ alias: string; target: string } | null>(null);
@@ -84,9 +86,25 @@ export default function VoicePanel({ projects }: PanelProps) {
       .catch(() => undefined);
   }, []);
 
-  const pushLog = (text: string, kind: "heard" | "action" | "hint") => {
+  const pushLog = useCallback((text: string, kind: "heard" | "action" | "hint") => {
     setLog((previous) => [...previous, { kind, text }]);
-  };
+  }, []);
+
+  const selectProvider = useCallback((next: SttProvider) => {
+    setProvider(next);
+    providerRef.current = next;
+    try {
+      window.localStorage.setItem(PROVIDER_KEY, next);
+    } catch {
+      /* sin persistencia */
+    }
+    pushLog(
+      next === "whisper"
+        ? "proveedor: Whisper local (requiere stt/run.sh corriendo)"
+        : "proveedor: Web Speech (nube de Google)",
+      "hint",
+    );
+  }, [pushLog]);
 
   useEffect(() => {
     logRef.current?.scrollTo({ behavior: "smooth", top: logRef.current.scrollHeight });
@@ -109,7 +127,7 @@ export default function VoicePanel({ projects }: PanelProps) {
         else setTemporaryFeedback("success");
       });
     },
-    [setTemporaryFeedback, tts],
+    [pushLog, setTemporaryFeedback, tts],
   );
 
   useEffect(
@@ -138,6 +156,14 @@ export default function VoicePanel({ projects }: PanelProps) {
         } else {
           presentResponse(action.response);
         }
+        break;
+      case "deck-close":
+        window.dispatchEvent(new CustomEvent("controlp:deck-close", { cancelable: true }));
+        presentResponse(action.response);
+        break;
+      case "provider":
+        selectProvider(action.provider);
+        presentResponse(action.response);
         break;
       case "respond":
         presentResponse(action.response);
@@ -183,7 +209,7 @@ export default function VoicePanel({ projects }: PanelProps) {
         tts.speak(action.response.speechText);
         setTemporaryFeedback("error");
     }
-  }, [presentResponse, setTemporaryFeedback, tts]);
+  }, [presentResponse, pushLog, selectProvider, setTemporaryFeedback, tts]);
 
   const handleTranscript = useCallback(
     async (transcript: string) => {
@@ -198,27 +224,38 @@ export default function VoicePanel({ projects }: PanelProps) {
       // 4): reemplazar el router no requiere tocar este panel.
       void execute(await routeCommand(transcript, projects, aliases, lastProjectRef.current));
     },
-    [aliases, execute, mic, projects],
+    [aliases, execute, mic, projects, pushLog],
   );
 
-  const speech = useSpeech(handleTranscript, () => {
+  const whisper = useWhisper(handleTranscript, (message) => {
+    wakeCaptureRef.current = false;
+    if (wakeTimerRef.current) clearTimeout(wakeTimerRef.current);
+    setHolding(false);
+    mic.stop();
+    wakeControlRef.current.resume();
+    pushLog(`${message} — usando Web Speech esta vez`, "hint");
+  });
+  const speech = useSpeech(handleTranscript, (hasInlineCommand) => {
     wakeCaptureRef.current = true;
     setHolding(true);
     void mic.start();
     pushLog("palabra de activación detectada · te escucho", "hint");
+    const useLocalCapture = providerRef.current === "whisper" && !hasInlineCommand;
+    if (useLocalCapture) {
+      wakeControlRef.current.pause();
+      void whisper.start();
+    }
     if (wakeTimerRef.current) clearTimeout(wakeTimerRef.current);
     wakeTimerRef.current = setTimeout(() => {
-      wakeCaptureRef.current = false;
       setHolding(false);
       mic.stop();
-    }, 8_000);
+      if (useLocalCapture) whisper.stop();
+      else wakeCaptureRef.current = false;
+    }, useLocalCapture ? 5_000 : 8_000);
   });
   useEffect(() => {
     wakeControlRef.current = { pause: speech.pauseWake, resume: speech.resumeWake };
   }, [speech.pauseWake, speech.resumeWake]);
-  const whisper = useWhisper(handleTranscript, (message) => {
-    pushLog(`${message} — usando Web Speech esta vez`, "hint");
-  });
 
   const press = useCallback(() => {
     if (holdingRef.current) return;
@@ -226,7 +263,10 @@ export default function VoicePanel({ projects }: PanelProps) {
     tts.stop();
     setHolding(true);
     void mic.start();
-    if (providerRef.current === "whisper") void whisper.start();
+    if (providerRef.current === "whisper") {
+      speech.pauseWake();
+      void whisper.start();
+    }
     else speech.start();
   }, [mic, speech, tts, whisper]);
 
@@ -259,25 +299,16 @@ export default function VoicePanel({ projects }: PanelProps) {
     holdingRef.current = false;
     setHolding(false);
     mic.stop();
-    if (providerRef.current === "whisper") whisper.stop();
+    if (providerRef.current === "whisper") {
+      whisper.stop();
+      speech.resumeWake();
+    }
     else speech.stop();
   }, [mic, speech, whisper]);
 
   const toggleProvider = () => {
     const next: SttProvider = provider === "whisper" ? "webspeech" : "whisper";
-    setProvider(next);
-    providerRef.current = next;
-    try {
-      window.localStorage.setItem(PROVIDER_KEY, next);
-    } catch {
-      /* sin persistencia */
-    }
-    pushLog(
-      next === "whisper"
-        ? "proveedor: Whisper local (requiere stt/run.sh corriendo)"
-        : "proveedor: Web Speech (nube de Google)",
-      "hint",
-    );
+    selectProvider(next);
   };
 
   // Tecla V como push-to-talk global (fuera de inputs).
@@ -297,6 +328,52 @@ export default function VoicePanel({ projects }: PanelProps) {
       window.removeEventListener("keyup", up);
     };
   }, [press, release]);
+
+  useEffect(() => {
+    const releaseOnInterruption = () => release();
+    const releaseWhenHidden = () => {
+      if (document.hidden) release();
+    };
+    window.addEventListener("blur", releaseOnInterruption);
+    document.addEventListener("visibilitychange", releaseWhenHidden);
+    return () => {
+      window.removeEventListener("blur", releaseOnInterruption);
+      document.removeEventListener("visibilitychange", releaseWhenHidden);
+    };
+  }, [release]);
+
+  const refreshSttService = useCallback(async () => {
+    try {
+      const response = await fetch("/api/stt/service", { cache: "no-store" });
+      const data = (await response.json()) as { status?: SttServiceStatus };
+      setSttService(response.ok ? (data.status ?? "stopped") : "error");
+    } catch {
+      setSttService("error");
+    }
+  }, []);
+
+  useEffect(() => {
+    if (provider !== "whisper") return;
+    const initial = window.setTimeout(() => void refreshSttService(), 0);
+    const timer = window.setInterval(() => void refreshSttService(), 2_000);
+    return () => {
+      window.clearTimeout(initial);
+      window.clearInterval(timer);
+    };
+  }, [provider, refreshSttService]);
+
+  const controlSttService = async (method: "POST" | "DELETE") => {
+    setSttService(method === "POST" ? "starting" : "stopped");
+    try {
+      const response = await fetch("/api/stt/service", { method });
+      const data = (await response.json()) as { status?: SttServiceStatus };
+      setSttService(
+        response.ok ? (method === "DELETE" ? "stopped" : (data.status ?? "starting")) : "error",
+      );
+    } catch {
+      setSttService("error");
+    }
+  };
 
   const statusText = holding
     ? STATUS_TEXT.listening
@@ -334,6 +411,23 @@ export default function VoicePanel({ projects }: PanelProps) {
           {provider === "whisper" ? "whisper.local" : "web.speech"}
         </button>
       </div>
+
+      {provider === "whisper" && (
+        <div className="sttService" role="group" aria-label="Servicio Whisper local">
+          <span>STT · {sttService}</span>
+          {sttService === "running" ? (
+            <button onClick={() => void controlSttService("DELETE")} type="button">Detener</button>
+          ) : (
+            <button
+              disabled={sttService === "starting"}
+              onClick={() => void controlSttService("POST")}
+              type="button"
+            >
+              {sttService === "starting" ? "Iniciando…" : "Iniciar Whisper"}
+            </button>
+          )}
+        </div>
+      )}
 
       <button
         className="voiceSynthDeck"

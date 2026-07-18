@@ -7,6 +7,7 @@ import { SPECTRUM_BANDS } from "@/app/components/vault-core/types";
 export function useTts() {
   const [speaking, setSpeaking] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const onEndRef = useRef<(() => void) | null>(null);
 
   const stop = useCallback(() => {
     window.speechSynthesis?.cancel();
@@ -15,6 +16,9 @@ export function useTts() {
     vaultSignals.level = 0;
     vaultSignals.spectrum.fill(0);
     setSpeaking(false);
+    const onEnd = onEndRef.current;
+    onEndRef.current = null;
+    onEnd?.();
   }, []);
 
   const speak = useCallback(
@@ -25,15 +29,14 @@ export function useTts() {
         return;
       }
       const utterance = new SpeechSynthesisUtterance(text);
+      onEndRef.current = onEnd ?? null;
       utterance.lang = "es-CO";
       utterance.rate = 1;
       utterance.onend = () => {
         stop();
-        onEnd?.();
       };
       utterance.onerror = () => {
         stop();
-        onEnd?.();
       };
       setSpeaking(true);
       let phase = 0;
@@ -51,6 +54,12 @@ export function useTts() {
     [stop],
   );
 
-  useEffect(() => stop, [stop]);
+  useEffect(
+    () => () => {
+      onEndRef.current = null;
+      stop();
+    },
+    [stop],
+  );
   return { speak, speaking, stop };
 }

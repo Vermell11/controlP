@@ -3,12 +3,14 @@ import {
   compactVoiceText,
   continueProjectQuery,
   deckViewCommand,
+  isDeckCloseCommand,
   isHealthFormationCommand,
   isHomeNavigation,
   isGlobalProjectQuery,
   isSocialQuery,
   isVoiceArchitectureQuery,
   normalizeVoiceText,
+  sttProviderCommand,
   suggestProjectAlias,
 } from "@/lib/assistant";
 import type { NodeFormation } from "@/app/components/vault-core/types";
@@ -24,6 +26,8 @@ export type VoiceAction =
   | { type: "navigate"; response: AssistantResponse }
   | { type: "enqueue"; command: string; response: AssistantResponse }
   | { type: "deck-view"; view: import("@/lib/assistant").DeckViewCommand; response: AssistantResponse }
+  | { type: "deck-close"; response: AssistantResponse }
+  | { type: "provider"; provider: "whisper" | "webspeech"; response: AssistantResponse }
   | { type: "respond"; response: AssistantResponse }
   | { type: "query"; query: string; project?: VoiceProject }
   | { type: "propose-alias"; alias: string; target: string; response: AssistantResponse }
@@ -78,6 +82,26 @@ export function routeCommand(
     return {
       response: message("Estoy operativo. ¿Qué quieres revisar?", "Estoy bien y operativo. ¿Qué quieres revisar?"),
       type: "respond",
+    };
+  }
+
+  const provider = sttProviderCommand(text);
+  if (provider) {
+    const label = provider === "whisper" ? "Whisper local" : "Web Speech";
+    return {
+      provider,
+      response: message(
+        `Proveedor de voz · ${label}.`,
+        `${label} seleccionado.${provider === "whisper" ? " Inícialo con el botón de servicio." : ""}`,
+      ),
+      type: "provider",
+    };
+  }
+
+  if (isDeckCloseCommand(text)) {
+    return {
+      response: message("Command Deck · vista cerrada.", "Cerrando la vista de Command Deck."),
+      type: "deck-close",
     };
   }
 

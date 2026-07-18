@@ -47,18 +47,36 @@ export function continueProjectQuery(text: string, projectName?: string): string
 
 export function extractWakeCommand(text: string): string | undefined {
   const normalized = normalizeVoiceText(text);
-  const match = normalized.match(/(?:^|\s)oye\s+(?:baul|vault|vau)\b[,:;.!?\s-]*(.*)$/);
+  const match = normalized.match(/(?:^|\s)(?:(?:oye|oe|hey)\s+)?(?:baul|vault|vau|paul)\b[,:;.!?\s-]*(.*)$/);
   return match?.[1].trim();
+}
+
+export function stripWakePrefix(text: string): string {
+  return normalizeVoiceText(text).replace(/^(?:baul|vault|vau|paul)\b[,:;.!?\s-]*/, "");
 }
 
 export function deckViewCommand(text: string): DeckViewCommand | undefined {
   const normalized = normalizeVoiceText(text);
   if (/\b(metricas?|metrics)\b/.test(normalized)) return "metrics";
   if (/\b(inbox|bandeja de entrada)\b/.test(normalized)) return "inbox";
-  if (/\b(tendencias?|trend)\b/.test(normalized)) return "trend";
-  if (/\b(plan de hoy|plan today)\b/.test(normalized)) return "plan";
+  if (/\b(tendencias?|trend|tren scan|trend scan|scan)\b/.test(normalized)) return "trend";
+  if (/\b(plan de hoy|plan today|plan)\b/.test(normalized)) return "plan";
   if (/\b(agenda|schedule)\b/.test(normalized)) return "schedule";
   if (/\b(system feed|actividad del sistema)\b/.test(normalized)) return "feed";
+}
+
+export function sttProviderCommand(text: string): "whisper" | "webspeech" | undefined {
+  const normalized = normalizeVoiceText(text);
+  if (!/\b(activa|activar|usa|usar|cambia|cambiar|selecciona|seleccionar)\b/.test(normalized)) return;
+  if (/\b(whisper(?: local)?|local whisper)\b/.test(normalized)) return "whisper";
+  if (/\b(web speech|webspeech|speech web)\b/.test(normalized)) return "webspeech";
+}
+
+export function isDeckCloseCommand(text: string): boolean {
+  const normalized = normalizeVoiceText(text);
+  return /\b(cierra|cerrar|oculta|quita)\b.*\b(command deck|metricas?|metrics|inbox|bandeja de entrada|tendencias?|trend|plan|agenda|schedule|system feed|actividad del sistema)\b/.test(
+    normalized,
+  );
 }
 
 export function isSocialQuery(text: string): boolean {
@@ -87,7 +105,7 @@ export function isHomeNavigation(text: string): boolean {
 }
 
 export function isHealthFormationCommand(text: string): boolean {
-  return /^(?:(?:muestra|abre|activa|ver|pon)\s+)?(?:el\s+)?(?:ranking|diagnostico(?: de salud)?|project health|salud de proyectos)$/.test(
+  return /^(?:(?:muestra(?:me)?|abre|activa|ver|pon)\s+)?(?:(?:el|la)\s+)?(?:ranking|diagnostico(?: de salud)?|project health|salud de (?:los )?proyectos)$/.test(
     normalizeVoiceText(text),
   );
 }

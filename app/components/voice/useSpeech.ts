@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { extractWakeCommand } from "@/lib/assistant";
+import { extractWakeCommand, stripWakePrefix } from "@/lib/assistant";
 
 /** Tipos mínimos de Web Speech API (no vienen en lib.dom). */
 interface SpeechRecognitionResultLike {
@@ -38,7 +38,7 @@ function getRecognition(): RecognitionConstructor | null {
  * Transcripción en vivo (Web Speech API, es-CO) para push-to-talk.
  * `interim` muestra lo que va oyendo; `onFinal` entrega cada frase terminada.
  */
-export function useSpeech(onFinal: (transcript: string) => void, onWake: () => void) {
+export function useSpeech(onFinal: (transcript: string) => void, onWake: (hasInlineCommand: boolean) => void) {
   const [interim, setInterim] = useState("");
   // false en servidor Y en el primer render del cliente (hidratación
   // idéntica); la detección real ocurre tras montar.
@@ -86,12 +86,12 @@ export function useSpeech(onFinal: (transcript: string) => void, onWake: () => v
           if (modeRef.current === "armed") {
             if (armedTimerRef.current) clearTimeout(armedTimerRef.current);
             modeRef.current = "wake";
-            onFinalRef.current(finalText);
+            onFinalRef.current(stripWakePrefix(finalText));
             continue;
           }
           const command = extractWakeCommand(finalText);
           if (command === undefined) continue;
-          onWakeRef.current();
+          onWakeRef.current(Boolean(command));
           if (command) onFinalRef.current(command);
           else {
             modeRef.current = "armed";
@@ -108,12 +108,18 @@ export function useSpeech(onFinal: (transcript: string) => void, onWake: () => v
     };
     recognition.onerror = ({ error }) => {
       if (error === "not-allowed" || error === "service-not-allowed") wakeEnabledRef.current = false;
-      setInterim("");
-    };
-    recognition.onend = () => {
-      recognitionRef.current = null;
+      if (recognitionRef.current === recognition) recognitionRef.current = null;
       setInterim("");
       if (wakeEnabledRef.current && modeRef.current !== "manual") {
+        if (restartTimerRef.current) clearTimeout(restartTimerRef.current);
+        restartTimerRef.current = setTimeout(() => startRecognitionRef.current(), 300);
+      }
+    };
+    recognition.onend = () => {
+      if (recognitionRef.current === recognition) recognitionRef.current = null;
+      setInterim("");
+      if (wakeEnabledRef.current && modeRef.current !== "manual") {
+        if (restartTimerRef.current) clearTimeout(restartTimerRef.current);
         restartTimerRef.current = setTimeout(() => startRecognitionRef.current(), 300);
       }
     };
@@ -153,7 +159,12 @@ export function useSpeech(onFinal: (transcript: string) => void, onWake: () => v
 
   const stop = useCallback(() => {
     modeRef.current = "wake";
-    recognitionRef.current?.stop();
+    wakeEnabledRef.current = true;
+    const current = recognitionRef.current;
+    recognitionRef.current = null;
+    current?.stop();
+    if (restartTimerRef.current) clearTimeout(restartTimerRef.current);
+    restartTimerRef.current = setTimeout(() => startRecognitionRef.current(), 150);
     setInterim("");
   }, []);
 
@@ -166,8 +177,11 @@ export function useSpeech(onFinal: (transcript: string) => void, onWake: () => v
   const resumeWake = useCallback(() => {
     modeRef.current = "wake";
     wakeEnabledRef.current = true;
-    if (recognitionRef.current) recognitionRef.current.stop();
-    else startRecognitionRef.current();
+    const current = recognitionRef.current;
+    recognitionRef.current = null;
+    current?.stop();
+    if (restartTimerRef.current) clearTimeout(restartTimerRef.current);
+    restartTimerRef.current = setTimeout(() => startRecognitionRef.current(), 150);
   }, []);
 
   return { interim, pauseWake, resumeWake, start, stop, supported };

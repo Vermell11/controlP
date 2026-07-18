@@ -76,8 +76,16 @@ export default function CommandDeckPanel({ projects }: PanelProps) {
       setQueueFeedback(null);
       setView(next);
     };
+    const closeVoiceView = (event: Event) => {
+      event.preventDefault();
+      setView(null);
+    };
     window.addEventListener("controlp:deck-view", showVoiceView);
-    return () => window.removeEventListener("controlp:deck-view", showVoiceView);
+    window.addEventListener("controlp:deck-close", closeVoiceView);
+    return () => {
+      window.removeEventListener("controlp:deck-view", showVoiceView);
+      window.removeEventListener("controlp:deck-close", closeVoiceView);
+    };
   }, []);
 
   const enqueue = async (command: string) => {

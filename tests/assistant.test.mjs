@@ -7,7 +7,7 @@ import { pathToFileURL } from "node:url";
 
 const root = process.cwd();
 const assistantUrl = pathToFileURL(path.join(root, "lib/assistant.ts"));
-const { answerKnowledgeQuery, continueProjectQuery, deckViewCommand, extractWakeCommand, isGlobalProjectQuery, isHealthFormationCommand, isHomeNavigation, isSocialQuery, isStructuredKnowledgeQuery, isVoiceArchitectureQuery, suggestProjectAlias } = await import(assistantUrl.href);
+const { answerKnowledgeQuery, continueProjectQuery, deckViewCommand, extractWakeCommand, isDeckCloseCommand, isGlobalProjectQuery, isHealthFormationCommand, isHomeNavigation, isSocialQuery, isStructuredKnowledgeQuery, isVoiceArchitectureQuery, stripWakePrefix, sttProviderCommand, suggestProjectAlias } = await import(assistantUrl.href);
 const ragUrl = pathToFileURL(path.join(root, "lib/assistant-rag.ts"));
 const { buildSemanticPrompt, buildSemanticRepairPrompt, requireSkillConfirmation, retrieveKnowledge, validateSemanticDraft } = await import(ragUrl.href);
 
@@ -53,6 +53,9 @@ test("wake phrases arm voice without reaching the command router", () => {
   assert.equal(extractWakeCommand("oye baúl"), "");
   assert.equal(extractWakeCommand("Oye Vault, dime el estado de ControlP"), "dime el estado de controlp");
   assert.equal(extractWakeCommand("oye vau abre Maya"), "abre maya");
+  assert.equal(extractWakeCommand("Oye, Paúl, muestrame las métricas"), "muestrame las metricas");
+  assert.equal(extractWakeCommand("baúl muéstrame la salud de los proyectos"), "muestrame la salud de los proyectos");
+  assert.equal(stripWakePrefix("baúl Muéstrame la salud de los proyectos"), "muestrame la salud de los proyectos");
   assert.equal(extractWakeCommand("estado de ControlP"), undefined);
 });
 
@@ -60,6 +63,13 @@ test("social phrases and Command Deck views do not require RAG evidence", () => 
   assert.equal(isSocialQuery("¿Cómo estás hoy?"), true);
   assert.equal(deckViewCommand("Muéstrame las métricas de mis proyectos"), "metrics");
   assert.equal(deckViewCommand("puedes utilizar command deck y abrir el inbox"), "inbox");
+  assert.equal(deckViewCommand("abre el scan"), "trend");
+  assert.equal(deckViewCommand("muéstrame el tren scan"), "trend");
+  assert.equal(deckViewCommand("muéstrame el plan"), "plan");
+  assert.equal(isDeckCloseCommand("cierra schedule"), true);
+  assert.equal(isDeckCloseCommand("abre schedule"), false);
+  assert.equal(sttProviderCommand("activa el local whisper"), "whisper");
+  assert.equal(sttProviderCommand("cambia a web speech"), "webspeech");
 });
 
 test("ControlP voice architecture is precise and deterministic", async () => {
@@ -95,6 +105,7 @@ test("global skills use the classification read from Obsidian", async () => {
 test("health questions explain the canonical score instead of changing formation", async () => {
   assert.equal(isHealthFormationCommand("por qué la salud de Notion está en 85%"), false);
   assert.equal(isHealthFormationCommand("abre el diagnóstico de salud"), true);
+  assert.equal(isHealthFormationCommand("muéstrame la salud de los proyectos"), true);
   const answer = await answerKnowledgeQuery("por qué la salud de Notion está en 85%", [healthyNotion], async () => []);
   assert.match(answer.displayText, /85%/);
   assert.match(answer.displayText, /cambios sin commit: -15/);

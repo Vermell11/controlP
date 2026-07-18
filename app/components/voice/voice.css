@@ -129,6 +129,28 @@
   color: var(--amber);
 }
 
+.sttService {
+  align-items: center;
+  display: flex;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  justify-content: space-between;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.45rem;
+  text-transform: uppercase;
+}
+
+.sttService button {
+  border: 1px solid color-mix(in srgb, var(--amber) 45%, transparent);
+  color: var(--amber);
+  font: inherit;
+  padding: 0.2rem 0.42rem;
+}
+
+.sttService button:disabled {
+  opacity: 0.5;
+}
+
 .voiceSynthDeck[data-state="transcribing"],
 .voiceSynthDeck[data-state="processing"],
 .voiceSynthDeck[data-state="speaking"] {

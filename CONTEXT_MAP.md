@@ -58,6 +58,8 @@ es JSON puro (futuro formato de API web); acceso a datos solo server-side.
 - `metrics/route.ts` — commits por día (14d) por proyecto, para Trend Scan.
 - `stt/route.ts` — proxy POST audio → sidecar (`STT_URL`, default
   `127.0.0.1:8787/transcribe`). El navegador solo habla con ControlP.
+- `stt/service/route.ts` — GET estado y POST/DELETE localhost-only para iniciar
+  o detener `stt/run.sh`; evita procesos duplicados y no expone shell arbitrario.
 - `assistant/query/route.ts` — POST de consultas read-only: reglas estructuradas
   primero y router semántico/RAG como fallback acotado.
 - `assistant/aliases/route.ts` — GET de vocabulario y POST de alias con
@@ -88,15 +90,16 @@ Obsidian: `Arquitectura/Routers y extensión`.)
 ### app/components/voice/ — captura y router de voz
 
 - `VoicePanel.tsx` — panel Audio I/O: PTT (pointer + tecla V), wake phrase Web Speech,
-  historial completo con scroll, contexto conversacional y selección de
+  captura Whisper acotada tras wake, control de lifecycle del sidecar, historial con
+  scroll, contexto conversacional y selección persistente —también por voz— de
   proveedor persistida (`controlp.stt.provider`), `execute()` despacha
   `VoiceAction` (muta `vaultSignals`, navega o encola) y publica estados
   accesibles `idle/listening/transcribing/processing/speaking/success/error`.
 - `commands.ts` — `routeCommand(transcript, projects, aliases, context)` aplica alias,
-  reglas deterministas, navegación/Command Deck y consultas; sólo lo desconocido usa
+  reglas deterministas, apertura/cierre de Command Deck, proveedor STT y consultas; sólo lo desconocido usa
   `/api/assistant/query`. Puede devolver `VoiceAction | Promise<VoiceAction>`.
 - `useWhisper.ts` (graba y transcribe al soltar vía `/api/stt`),
-  `useSpeech.ts` (Web Speech, interim y escucha continua de palabra de activación), `useMicLevel.ts` (nivel +
+  `useSpeech.ts` (Web Speech, interim, wake continuo y recuperación tras error/TTS), `useMicLevel.ts` (nivel +
   espectro 16 bandas → `vaultSignals`), `useTts.ts` (respuesta Web Speech),
   `VoiceVisualizer.tsx` (sintetizador canvas del botón PTT).
 
@@ -115,7 +118,7 @@ hook con contrato `onFinal`/`start`/`stop` + rama en VoicePanel.
   (`types.ts`: `{ projects: ProjectCard[] }`) y registrarlo. El core no se
   edita.
 - `CommandDeckPanel.tsx` + `DeckViews.tsx` — deck con vistas (metrics,
-  trend, inbox, plan, schedule, feed) y escucha el evento de navegación por voz;
+  trend, inbox, plan, schedule, feed) y escucha eventos de abrir/cerrar por voz;
   vista nueva = export en DeckViews +
   tipo `DeckView`.
 - `SchedulePanel.tsx` / `WirePanel.tsx` — solo exportan `ScheduleBody` /
