@@ -100,6 +100,8 @@ export interface ProjectCard {
   graphify: ProjectGraph;
   git: ProjectEvidence;
   health: number;
+  /** Factores exactos aplicados al puntaje; ausente en lectores antiguos. */
+  healthReasons?: string[];
   alerts: string[];
   issues: DataIssue[];
 }

@@ -48,7 +48,7 @@ async function buildCard(entry: RegistryEntry, registryIssues: DataIssue[]): Pro
     resolved,
     validation,
   });
-  const health = scoreHealth({
+  const health = calculateHealth({
     git: evidenceReading.git,
     graphify: graphReading.graphify,
     nextStep,
@@ -63,7 +63,8 @@ async function buildCard(entry: RegistryEntry, registryIssues: DataIssue[]): Pro
     schemaVersion: SCHEMA_VERSION,
     git: evidenceReading.git,
     graphify: graphReading.graphify,
-    health,
+    health: health.score,
+    healthReasons: health.reasons,
     id: entry.id,
     issues,
     latestSession: memory.latestSession ?? "Sin sesiones",
@@ -79,6 +80,32 @@ async function buildCard(entry: RegistryEntry, registryIssues: DataIssue[]): Pro
     status: memory.status ?? (memory.openSession ? "activo" : "sin estado"),
     totalSessionMinutes: memory.totalSessionMinutes,
     validation,
+  };
+}
+
+function calculateHealth(input: {
+  resolved: boolean;
+  git: ProjectEvidence;
+  graphify: ProjectGraph;
+  openSession: boolean;
+  validation: string;
+  nextStep: string;
+}): { reasons: string[]; score: number } {
+  const factors: Array<[boolean, number, string]> = [
+    [!input.resolved, -20, "ruta local no resuelta"],
+    [input.resolved && !input.git.present, -15, "Git local no detectado"],
+    [input.git.dirty, -15, "cambios sin commit"],
+    [input.git.present && !input.git.latestTag, -10, "sin tag o versión"],
+    [!input.graphify.present, -15, "Graphify no detectado"],
+    [/sin validación|no existe suite/i.test(input.validation), -10, "validación débil"],
+    [/sin siguiente paso/i.test(input.nextStep), -10, "siguiente paso no documentado"],
+    [input.openSession, 5, "sesión abierta"],
+  ];
+  const applied = factors.filter(([condition]) => condition);
+  const score = applied.reduce((total, [, points]) => total + points, 100);
+  return {
+    reasons: applied.map(([, points, label]) => `${label}: ${points > 0 ? "+" : ""}${points}`),
+    score: Math.max(0, Math.min(100, score)),
   };
 }
 
@@ -104,24 +131,4 @@ function buildAlerts(input: {
     if (issue.level === "broken") alerts.push(`Fuente rota: ${issue.source}/${issue.field}`);
   }
   return alerts;
-}
-
-function scoreHealth(input: {
-  resolved: boolean;
-  git: ProjectEvidence;
-  graphify: ProjectGraph;
-  openSession: boolean;
-  validation: string;
-  nextStep: string;
-}): number {
-  let score = 100;
-  if (!input.resolved) score -= 20;
-  if (input.resolved && !input.git.present) score -= 15;
-  if (input.git.dirty) score -= 15;
-  if (input.git.present && !input.git.latestTag) score -= 10;
-  if (!input.graphify.present) score -= 15;
-  if (/sin validación|no existe suite/i.test(input.validation)) score -= 10;
-  if (/sin siguiente paso/i.test(input.nextStep)) score -= 10;
-  if (input.openSession) score += 5;
-  return Math.max(0, Math.min(100, score));
 }

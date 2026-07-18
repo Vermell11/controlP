@@ -32,7 +32,13 @@ Propósito: esquema canónico y orquestación de fuentes. Nunca importa React.
 - `lib/intents.ts` — cola JSONL append-only (`runtime/intents.jsonl`),
   lectura tolerante por línea. Punto de extensión oficial.
 - `lib/assistant.ts` — contrato de respuesta visible/hablada/evidenciada,
-  consultas estructuradas y resolución de nombres/alias fonéticos.
+  consultas estructuradas, contexto conversacional corto y resolución de nombres.
+- `lib/assistant-knowledge.ts` — clasifica y recorta evidencia read-only autorizada.
+- `lib/assistant-rag.ts` — construye el contexto RAG canónico/derivado y sus citas.
+- `lib/assistant-semantic.ts` — contrato JSON del router semántico, reparación única
+  y cierre seguro si el modelo no entrega una respuesta válida.
+- `lib/adapters/llm-ollama.ts` — adaptador reemplazable de Ollama; el modelo recibe
+  contexto ya acotado y nunca acceso directo al filesystem o credenciales.
 - `lib/voice-aliases.ts` — registro JSONL append-only de alias confirmados;
   almacenamiento server-side, nunca accesible directamente desde el cliente.
 - `lib/schedule.ts` — plan del día (`runtime/schedule-YYYY-MM-DD.json`).
@@ -52,7 +58,8 @@ es JSON puro (futuro formato de API web); acceso a datos solo server-side.
 - `metrics/route.ts` — commits por día (14d) por proyecto, para Trend Scan.
 - `stt/route.ts` — proxy POST audio → sidecar (`STT_URL`, default
   `127.0.0.1:8787/transcribe`). El navegador solo habla con ControlP.
-- `assistant/query/route.ts` — POST de consultas estructuradas read-only.
+- `assistant/query/route.ts` — POST de consultas read-only: reglas estructuradas
+  primero y router semántico/RAG como fallback acotado.
 - `assistant/aliases/route.ts` — GET de vocabulario y POST de alias con
   confirmación explícita y destino validado contra el registry.
 
@@ -80,15 +87,16 @@ Obsidian: `Arquitectura/Routers y extensión`.)
 
 ### app/components/voice/ — captura y router de voz
 
-- `VoicePanel.tsx` — panel Audio I/O: PTT (pointer + tecla V), selección de
+- `VoicePanel.tsx` — panel Audio I/O: PTT (pointer + tecla V), wake phrase Web Speech,
+  historial completo con scroll, contexto conversacional y selección de
   proveedor persistida (`controlp.stt.provider`), `execute()` despacha
   `VoiceAction` (muta `vaultSignals`, navega o encola) y publica estados
   accesibles `idle/listening/transcribing/processing/speaking/success/error`.
-- `commands.ts` — `routeCommand(transcript, projects, aliases)` aplica alias,
-  reglas deterministas y consultas. CONTRATO DEL LLM (V1.5.2): puede devolver `VoiceAction | Promise<VoiceAction>`;
-  el caller ya hace await — reemplazar el router = tocar solo este archivo.
+- `commands.ts` — `routeCommand(transcript, projects, aliases, context)` aplica alias,
+  reglas deterministas, navegación/Command Deck y consultas; sólo lo desconocido usa
+  `/api/assistant/query`. Puede devolver `VoiceAction | Promise<VoiceAction>`.
 - `useWhisper.ts` (graba y transcribe al soltar vía `/api/stt`),
-  `useSpeech.ts` (Web Speech, interim en vivo), `useMicLevel.ts` (nivel +
+  `useSpeech.ts` (Web Speech, interim y escucha continua de palabra de activación), `useMicLevel.ts` (nivel +
   espectro 16 bandas → `vaultSignals`), `useTts.ts` (respuesta Web Speech),
   `VoiceVisualizer.tsx` (sintetizador canvas del botón PTT).
 
@@ -107,7 +115,8 @@ hook con contrato `onFinal`/`start`/`stop` + rama en VoicePanel.
   (`types.ts`: `{ projects: ProjectCard[] }`) y registrarlo. El core no se
   edita.
 - `CommandDeckPanel.tsx` + `DeckViews.tsx` — deck con vistas (metrics,
-  trend, inbox, plan, schedule, feed); vista nueva = export en DeckViews +
+  trend, inbox, plan, schedule, feed) y escucha el evento de navegación por voz;
+  vista nueva = export en DeckViews +
   tipo `DeckView`.
 - `SchedulePanel.tsx` / `WirePanel.tsx` — solo exportan `ScheduleBody` /
   `WireBody` (consumidos por DeckViews; no tienen wrapper propio).
@@ -137,7 +146,8 @@ hook con contrato `onFinal`/`start`/`stop` + rama en VoicePanel.
 | Cambio | Archivos |
 | --- | --- |
 | Nuevo comando de voz | `voice/commands.ts` (+ `VoicePanel.tsx` solo si exige un tipo de `VoiceAction` nuevo) |
-| Reemplazar router por LLM | `voice/commands.ts` (misma firma, puede ser async) |
+| Reemplazar modelo local | `lib/adapters/llm-ollama.ts` + configuración; no tocar dominio/UI |
+| Cambiar recuperación semántica | `lib/assistant-knowledge.ts` + `lib/assistant-rag.ts` |
 | Nuevo panel | `panels/MiPanel.tsx` + `panels/registry.ts` |
 | Nueva vista del deck | `panels/DeckViews.tsx` (+ CSS) |
 | Nueva formación 3D | `vault-core/types.ts` + `ProjectNodes.tsx` + regla en `voice/commands.ts` |

@@ -72,13 +72,27 @@ export async function readProjectSkills(obsidianFolder: string): Promise<Project
     .filter((cells) => cells.length >= 3 && cells[0]);
 
   const tableSkills = rows.map(([name, type, usage]) => ({ name, type, usage }));
-  const bulletSkills = markdown
-    .split("\n")
-    .map((line) => line.match(/^- \[\[([^\]]+)\]\]\s+—\s+(.+)$/))
-    .filter((match): match is RegExpMatchArray => Boolean(match))
-    .map((match) => ({ name: match[1], type: "Skill", usage: match[2] }));
+  let sectionName = "";
+  const bulletSkills = markdown.split("\n").flatMap((line) => {
+    const heading = line.match(/^##\s+(.+)$/);
+    if (heading) sectionName = heading[1];
+    const match = line.match(/^- \[\[([^\]]+)\]\]\s+—\s+(.+)$/);
+    if (!match) return [];
+    const type = /predeterminadas? globales?/i.test(sectionName) ? "Predeterminada global" : sectionName || "Skill";
+    return [{ name: match[1], type, usage: match[2] }];
+  });
 
   return [...bulletSkills, ...tableSkills];
+}
+
+/** Fuentes canónicas autorizadas para recomendaciones; nunca conceden instalación. */
+export async function readSkillBankKnowledge(): Promise<Array<{ label: string; content: string }>> {
+  const dir = path.join(adapterConfig.vaultRoot, "Herramientas", "Banco de Skills");
+  const files = ["Índice.md", "Inventario de skills instaladas.md", "Catálogo evaluado.md"];
+  const contents = await Promise.all(files.map((file) => readIfExists(path.join(dir, file))));
+  return files.flatMap((file, index) =>
+    contents[index] ? [{ content: contents[index]!, label: file.replace(/\.md$/, "") }] : [],
+  );
 }
 
 /**

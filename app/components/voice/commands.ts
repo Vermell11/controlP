@@ -1,7 +1,13 @@
 import type { AssistantResponse } from "@/lib/assistant";
 import {
   compactVoiceText,
+  continueProjectQuery,
+  deckViewCommand,
+  isHealthFormationCommand,
   isHomeNavigation,
+  isGlobalProjectQuery,
+  isSocialQuery,
+  isVoiceArchitectureQuery,
   normalizeVoiceText,
   suggestProjectAlias,
 } from "@/lib/assistant";
@@ -17,7 +23,9 @@ export type VoiceAction =
   | { type: "formation"; formation: NodeFormation; response: AssistantResponse }
   | { type: "navigate"; response: AssistantResponse }
   | { type: "enqueue"; command: string; response: AssistantResponse }
-  | { type: "query"; query: string }
+  | { type: "deck-view"; view: import("@/lib/assistant").DeckViewCommand; response: AssistantResponse }
+  | { type: "respond"; response: AssistantResponse }
+  | { type: "query"; query: string; project?: VoiceProject }
   | { type: "propose-alias"; alias: string; target: string; response: AssistantResponse }
   | { type: "unknown"; response: AssistantResponse };
 
@@ -32,6 +40,7 @@ export function routeCommand(
   transcript: string,
   projects: VoiceProject[],
   aliases: VoiceAlias[] = [],
+  contextProject?: VoiceProject,
 ): VoiceAction {
   const text = applyVoiceAliases(transcript, aliases);
 
@@ -65,7 +74,24 @@ export function routeCommand(
     }
   }
 
-  if (/(ranking|diagnostico|salud)/.test(text)) {
+  if (isSocialQuery(text)) {
+    return {
+      response: message("Estoy operativo. ¿Qué quieres revisar?", "Estoy bien y operativo. ¿Qué quieres revisar?"),
+      type: "respond",
+    };
+  }
+
+  const deckView = deckViewCommand(text);
+  if (deckView) {
+    const labels = { feed: "actividad", inbox: "inbox", metrics: "métricas", plan: "plan", schedule: "agenda", trend: "tendencias" };
+    return {
+      response: message(`Command Deck · ${labels[deckView]}.`, `Mostrando ${labels[deckView]} en Command Deck.`),
+      type: "deck-view",
+      view: deckView,
+    };
+  }
+
+  if (isHealthFormationCommand(text)) {
     return {
       formation: "health",
       response: message("Formación: diagnóstico de salud.", "Mostrando el diagnóstico de salud."),
@@ -102,7 +128,9 @@ export function routeCommand(
   }
 
   if (isKnowledgeQuery(text)) {
-    if (!findVoiceProject(text, projects)) {
+    if (isGlobalProjectQuery(text)) return { query: text, type: "query" };
+    const project = findVoiceProject(text, projects);
+    if (!project && !contextProject) {
       const suggestion = suggestProjectAlias(text, projects);
       if (suggestion) {
         return {
@@ -116,7 +144,12 @@ export function routeCommand(
         };
       }
     }
-    return { query: text, type: "query" };
+    const resolvedProject = project ?? contextProject;
+    return {
+      project: resolvedProject,
+      query: project ? text : continueProjectQuery(text, resolvedProject?.name),
+      type: "query",
+    };
   }
 
   if (/(abre|abrir|muestra|ficha|proyecto|entra|ver)/.test(text)) {
@@ -133,13 +166,7 @@ export function routeCommand(
     }
   }
 
-  return {
-    response: message(
-      'Sin regla para esa frase. Prueba “estado de ControlP”, “skills de ControlP”, “abre un proyecto” o “ranking”.',
-      "No entendí la petición. Puedes preguntar por el estado, siguiente paso o skills de un proyecto.",
-    ),
-    type: "unknown",
-  };
+  return { project: findVoiceProject(text, projects), query: text, type: "query" };
 }
 
 function findVoiceProject(text: string, projects: VoiceProject[]): VoiceProject | undefined {
@@ -161,7 +188,7 @@ function applyVoiceAliases(text: string, aliases: VoiceAlias[]): string {
 }
 
 function isKnowledgeQuery(text: string): boolean {
-  return /(skills?|estado|status|siguiente paso|que sigue|proximo paso|cuales proyectos|lista.*proyectos|roadmap|backlog|resumen)/.test(
+  return isVoiceArchitectureQuery(text) || /(skills?|estado|status|salud|avance|progreso|siguiente paso|que sigue|proximo paso|cuantos proyectos|cuales proyectos|lista.*proyectos|roadmap|backlog|resumen)/.test(
     text,
   );
 }

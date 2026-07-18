@@ -4,7 +4,7 @@ import "./voice.css";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { vaultSignals } from "@/app/components/vault-core/signals";
 import type { PanelProps } from "@/app/components/panels/types";
-import { routeCommand, type VoiceAction, type VoiceAlias } from "./commands";
+import { routeCommand, type VoiceAction, type VoiceAlias, type VoiceProject } from "./commands";
 import type { AssistantResponse } from "@/lib/assistant";
 import { useMicLevel } from "./useMicLevel";
 import { useSpeech } from "./useSpeech";
@@ -50,7 +50,15 @@ export default function VoicePanel({ projects }: PanelProps) {
   const [pendingAlias, setPendingAlias] = useState<{ alias: string; target: string } | null>(null);
   const holdingRef = useRef(false);
   const providerRef = useRef<SttProvider>("webspeech");
+  const lastProjectRef = useRef<VoiceProject | undefined>(undefined);
+  const logRef = useRef<HTMLDivElement>(null);
   const feedbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const wakeCaptureRef = useRef(false);
+  const wakeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const wakeControlRef = useRef<{ pause: () => void; resume: () => void }>({
+    pause: () => undefined,
+    resume: () => undefined,
+  });
   const mic = useMicLevel();
   const tts = useTts();
 
@@ -77,8 +85,12 @@ export default function VoicePanel({ projects }: PanelProps) {
   }, []);
 
   const pushLog = (text: string, kind: "heard" | "action" | "hint") => {
-    setLog((previous) => [...previous.slice(-4), { kind, text }]);
+    setLog((previous) => [...previous, { kind, text }]);
   };
+
+  useEffect(() => {
+    logRef.current?.scrollTo({ behavior: "smooth", top: logRef.current.scrollHeight });
+  }, [log]);
 
   const setTemporaryFeedback = useCallback((state: "success" | "error") => {
     if (feedbackTimerRef.current) clearTimeout(feedbackTimerRef.current);
@@ -89,8 +101,10 @@ export default function VoicePanel({ projects }: PanelProps) {
   const presentResponse = useCallback(
     (response: AssistantResponse, navigate = false) => {
       pushLog(response.displayText, "action");
-      for (const evidence of response.evidence) pushLog(`fuente: ${evidence.label}`, "hint");
+      for (const evidence of response.evidence) pushLog(`${evidence.kind}: ${evidence.label}`, "hint");
+      wakeControlRef.current.pause();
       tts.speak(response.speechText, () => {
+        wakeControlRef.current.resume();
         if (navigate && response.navigation) window.location.assign(response.navigation.href);
         else setTemporaryFeedback("success");
       });
@@ -101,6 +115,7 @@ export default function VoicePanel({ projects }: PanelProps) {
   useEffect(
     () => () => {
       if (feedbackTimerRef.current) clearTimeout(feedbackTimerRef.current);
+      if (wakeTimerRef.current) clearTimeout(wakeTimerRef.current);
     },
     [],
   );
@@ -112,6 +127,19 @@ export default function VoicePanel({ projects }: PanelProps) {
       case "formation":
         vaultSignals.formation = action.formation;
         vaultSignals.healthScroll = 0;
+        presentResponse(action.response);
+        break;
+      case "deck-view":
+        if (window.dispatchEvent(new CustomEvent("controlp:deck-view", { cancelable: true, detail: action.view }))) {
+          presentResponse({
+            ...action.response,
+            navigation: { href: `/?deck=${action.view}`, label: action.response.displayText },
+          }, true);
+        } else {
+          presentResponse(action.response);
+        }
+        break;
+      case "respond":
         presentResponse(action.response);
         break;
       case "navigate":
@@ -133,6 +161,7 @@ export default function VoicePanel({ projects }: PanelProps) {
         break;
       case "query":
         try {
+          if (action.project) lastProjectRef.current = action.project;
           const response = await fetch("/api/assistant/query", {
             body: JSON.stringify({ query: action.query }),
             headers: { "Content-Type": "application/json" },
@@ -158,15 +187,35 @@ export default function VoicePanel({ projects }: PanelProps) {
 
   const handleTranscript = useCallback(
     async (transcript: string) => {
+      if (wakeCaptureRef.current) {
+        wakeCaptureRef.current = false;
+        if (wakeTimerRef.current) clearTimeout(wakeTimerRef.current);
+        setHolding(false);
+        mic.stop();
+      }
       pushLog(`«${transcript}»`, "heard");
       // await tolera router síncrono (reglas, hoy) o asíncrono (LLM, Sprint
       // 4): reemplazar el router no requiere tocar este panel.
-      void execute(await routeCommand(transcript, projects, aliases));
+      void execute(await routeCommand(transcript, projects, aliases, lastProjectRef.current));
     },
-    [aliases, execute, projects],
+    [aliases, execute, mic, projects],
   );
 
-  const speech = useSpeech(handleTranscript);
+  const speech = useSpeech(handleTranscript, () => {
+    wakeCaptureRef.current = true;
+    setHolding(true);
+    void mic.start();
+    pushLog("palabra de activación detectada · te escucho", "hint");
+    if (wakeTimerRef.current) clearTimeout(wakeTimerRef.current);
+    wakeTimerRef.current = setTimeout(() => {
+      wakeCaptureRef.current = false;
+      setHolding(false);
+      mic.stop();
+    }, 8_000);
+  });
+  useEffect(() => {
+    wakeControlRef.current = { pause: speech.pauseWake, resume: speech.resumeWake };
+  }, [speech.pauseWake, speech.resumeWake]);
   const whisper = useWhisper(handleTranscript, (message) => {
     pushLog(`${message} — usando Web Speech esta vez`, "hint");
   });
@@ -196,7 +245,7 @@ export default function VoicePanel({ projects }: PanelProps) {
       setPendingAlias(null);
       presentResponse({
         displayText: `Alias guardado: “${saved.alias}” → “${saved.target}”.`,
-        evidence: [{ label: "registro auditable de alias", source: "registry" }],
+        evidence: [{ kind: "canonical", label: "registro auditable de alias", source: "registry" }],
         speechText: `Alias guardado. ${saved.alias} ahora significa ${saved.target}.`,
       });
     } catch {
@@ -303,7 +352,7 @@ export default function VoicePanel({ projects }: PanelProps) {
       </button>
       <div aria-live="polite" className="voiceStatus" role="status">
         <b>{statusText}</b>
-        <small>mantén presionado el sintetizador — o la tecla V</small>
+        <small>di “oye baúl” — o mantén presionado el sintetizador / tecla V</small>
       </div>
 
       {speech.interim && <p className="voiceInterim">{speech.interim}…</p>}
@@ -317,7 +366,7 @@ export default function VoicePanel({ projects }: PanelProps) {
       )}
 
       {log.length > 0 && (
-        <div className="voiceLog">
+        <div className="voiceLog" ref={logRef}>
           {log.map((entry, index) => (
             <p className={`voice-${entry.kind}`} key={`${entry.text}-${index}`}>
               {entry.text}

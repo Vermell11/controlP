@@ -84,6 +84,12 @@
   display: grid;
   gap: 6px;
   margin-bottom: 28px;
+  max-height: calc(100dvh - 390px);
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 8px;
+  scrollbar-color: var(--line) transparent;
+  scrollbar-width: thin;
 }
 
 .voiceLog p {

@@ -49,6 +49,37 @@ export async function readGraph(repoPath: string | null): Promise<GraphReading> 
   }
 }
 
+/** Contexto derivado segmentado: permite recuperar la comunidad relevante sin truncar el reporte. */
+export async function readGraphContext(repoPath: string | null): Promise<Array<{ content: string; label: string }>> {
+  if (!repoPath) return [];
+  const documents = await Promise.all([
+    readTechnicalDocument(path.join(repoPath, "graphify-out", "GRAPH_REPORT.md"), "Graph Report"),
+    readTechnicalDocument(path.join(repoPath, "CONTEXT_MAP.md"), "Context Map"),
+  ]);
+  return documents.flat();
+}
+
+async function readTechnicalDocument(
+  file: string,
+  documentLabel: string,
+): Promise<Array<{ content: string; label: string }>> {
+  try {
+    const markdown = await fs.readFile(file, "utf8");
+    return markdown
+      .split(/\n(?=#{2,3}\s)/)
+      .map((section) => {
+        const [heading, ...body] = section.trim().split("\n");
+        return {
+          content: body.join("\n").trim().slice(0, 4_000),
+          label: `${documentLabel} · ${heading.replace(/^#+\s*/, "") || "Resumen"}`,
+        };
+      })
+      .filter(({ content }) => content.length > 0);
+  } catch {
+    return [];
+  }
+}
+
 export function emptyGraph(): ProjectGraph {
   return { edges: null, nodes: null, present: false, updated: null };
 }

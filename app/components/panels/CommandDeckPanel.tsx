@@ -62,6 +62,24 @@ export default function CommandDeckPanel({ projects }: PanelProps) {
     void refresh();
   }, [refresh]);
 
+  useEffect(() => {
+    const requested = new URLSearchParams(window.location.search).get("deck");
+    if (requested && Object.hasOwn(VIEW_TITLE, requested)) {
+      // Estado derivado de la URL tras hidratación.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setView(requested as DeckView);
+    }
+    const showVoiceView = (event: Event) => {
+      const next = (event as CustomEvent<DeckView>).detail;
+      if (!Object.hasOwn(VIEW_TITLE, next)) return;
+      event.preventDefault();
+      setQueueFeedback(null);
+      setView(next);
+    };
+    window.addEventListener("controlp:deck-view", showVoiceView);
+    return () => window.removeEventListener("controlp:deck-view", showVoiceView);
+  }, []);
+
   const enqueue = async (command: string) => {
     setQueueFeedback(`${command} → encolando…`);
     try {

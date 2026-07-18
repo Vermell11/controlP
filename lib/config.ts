@@ -9,4 +9,6 @@ export const adapterConfig = {
   projectRoots: [
     "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code",
   ],
+  ollamaUrl: process.env.OLLAMA_URL ?? "http://127.0.0.1:11434",
+  ollamaModel: process.env.OLLAMA_MODEL ?? "qwen2.5:7b",
 };

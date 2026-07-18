@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { extractWakeCommand } from "@/lib/assistant";
 
 /** Tipos mínimos de Web Speech API (no vienen en lib.dom). */
 interface SpeechRecognitionResultLike {
@@ -37,13 +38,19 @@ function getRecognition(): RecognitionConstructor | null {
  * Transcripción en vivo (Web Speech API, es-CO) para push-to-talk.
  * `interim` muestra lo que va oyendo; `onFinal` entrega cada frase terminada.
  */
-export function useSpeech(onFinal: (transcript: string) => void) {
+export function useSpeech(onFinal: (transcript: string) => void, onWake: () => void) {
   const [interim, setInterim] = useState("");
   // false en servidor Y en el primer render del cliente (hidratación
   // idéntica); la detección real ocurre tras montar.
   const [supported, setSupported] = useState(false);
   const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
   const onFinalRef = useRef(onFinal);
+  const onWakeRef = useRef(onWake);
+  const modeRef = useRef<"wake" | "armed" | "manual">("wake");
+  const wakeEnabledRef = useRef(true);
+  const restartTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const armedTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const startRecognitionRef = useRef<() => void>(() => undefined);
 
   useEffect(() => {
     // Detección de API de navegador post-hidratación (patrón deliberado:
@@ -54,9 +61,11 @@ export function useSpeech(onFinal: (transcript: string) => void) {
 
   useEffect(() => {
     onFinalRef.current = onFinal;
-  }, [onFinal]);
+    onWakeRef.current = onWake;
+  }, [onFinal, onWake]);
 
-  const start = useCallback(() => {
+  const startRecognition = useCallback(() => {
+    if (recognitionRef.current) return;
     const Recognition = getRecognition();
     if (!Recognition) return;
     const recognition = new Recognition();
@@ -69,24 +78,97 @@ export function useSpeech(onFinal: (transcript: string) => void) {
         const result = event.results[i];
         if (result.isFinal) {
           const finalText = result[0].transcript.trim();
-          if (finalText) onFinalRef.current(finalText);
-        } else {
+          if (!finalText) continue;
+          if (modeRef.current === "manual") {
+            onFinalRef.current(finalText);
+            continue;
+          }
+          if (modeRef.current === "armed") {
+            if (armedTimerRef.current) clearTimeout(armedTimerRef.current);
+            modeRef.current = "wake";
+            onFinalRef.current(finalText);
+            continue;
+          }
+          const command = extractWakeCommand(finalText);
+          if (command === undefined) continue;
+          onWakeRef.current();
+          if (command) onFinalRef.current(command);
+          else {
+            modeRef.current = "armed";
+            armedTimerRef.current = setTimeout(() => {
+              modeRef.current = "wake";
+              setInterim("");
+            }, 8_000);
+          }
+        } else if (modeRef.current !== "wake") {
           interimText += result[0].transcript;
         }
       }
       setInterim(interimText.trim());
     };
-    recognition.onerror = () => setInterim("");
-    recognition.onend = () => setInterim("");
+    recognition.onerror = ({ error }) => {
+      if (error === "not-allowed" || error === "service-not-allowed") wakeEnabledRef.current = false;
+      setInterim("");
+    };
+    recognition.onend = () => {
+      recognitionRef.current = null;
+      setInterim("");
+      if (wakeEnabledRef.current && modeRef.current !== "manual") {
+        restartTimerRef.current = setTimeout(() => startRecognitionRef.current(), 300);
+      }
+    };
     recognitionRef.current = recognition;
-    recognition.start();
+    try {
+      recognition.start();
+    } catch {
+      recognitionRef.current = null;
+    }
+  }, []);
+  useEffect(() => {
+    startRecognitionRef.current = startRecognition;
+    wakeEnabledRef.current = true;
+    startRecognition();
+    const resumeWake = () => {
+      if (modeRef.current === "manual") return;
+      wakeEnabledRef.current = true;
+      startRecognitionRef.current();
+    };
+    window.addEventListener("pointerdown", resumeWake);
+    window.addEventListener("focus", resumeWake);
+    return () => {
+      window.removeEventListener("pointerdown", resumeWake);
+      window.removeEventListener("focus", resumeWake);
+      wakeEnabledRef.current = false;
+      if (restartTimerRef.current) clearTimeout(restartTimerRef.current);
+      if (armedTimerRef.current) clearTimeout(armedTimerRef.current);
+      recognitionRef.current?.stop();
+      recognitionRef.current = null;
+    };
+  }, [startRecognition]);
+
+  const start = useCallback(() => {
+    modeRef.current = "manual";
+    startRecognitionRef.current();
   }, []);
 
   const stop = useCallback(() => {
+    modeRef.current = "wake";
     recognitionRef.current?.stop();
-    recognitionRef.current = null;
     setInterim("");
   }, []);
 
-  return { interim, start, stop, supported };
+  const pauseWake = useCallback(() => {
+    if (modeRef.current === "manual") return;
+    wakeEnabledRef.current = false;
+    recognitionRef.current?.stop();
+  }, []);
+
+  const resumeWake = useCallback(() => {
+    modeRef.current = "wake";
+    wakeEnabledRef.current = true;
+    if (recognitionRef.current) recognitionRef.current.stop();
+    else startRecognitionRef.current();
+  }, []);
+
+  return { interim, pauseWake, resumeWake, start, stop, supported };
 }
