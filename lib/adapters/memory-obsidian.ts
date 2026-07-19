@@ -1,8 +1,8 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import { adapterConfig } from "../config";
-import { validateMemory, type DataIssue, type ProjectMemory } from "../schema";
-import type { ProjectSkill } from "../assistant";
+import { adapterConfig } from "../config.ts";
+import { validateMemory, type DataIssue, type ProjectMemory } from "../schema.ts";
+import type { ProjectSkill } from "../assistant.ts";
 
 /**
  * Adaptador del rol MEMORIA sobre Obsidian (reemplazable).
@@ -126,6 +126,22 @@ export async function appendLogEntry(
       level: "broken",
       source: "memory",
     };
+  }
+}
+
+/** Traza reintentable del runner: el id canónico impide duplicar la misma acción. */
+export async function appendLogEntryOnce(
+  obsidianFolder: string,
+  line: string,
+  intentId: string,
+): Promise<DataIssue | null> {
+  const file = path.join(adapterConfig.vaultRoot, "Proyectos", obsidianFolder, "Bitácora.md");
+  try {
+    const marker = `[intent:${intentId}]`;
+    if ((await readIfExists(file))?.includes(marker)) return null;
+    return appendLogEntry(obsidianFolder, `${line} ${marker}`);
+  } catch (error) {
+    return { detail: (error as Error).message.split("\n")[0], field: "Bitácora.md", level: "broken", source: "memory" };
   }
 }
 

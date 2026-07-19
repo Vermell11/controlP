@@ -10,7 +10,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_page",
-      "community": 0,
+      "community": 4,
       "norm_label": "page.tsx"
     },
     {
@@ -20,7 +20,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "core_page_home",
-      "community": 0,
+      "community": 4,
       "norm_label": "home()"
     },
     {
@@ -87,7 +87,7 @@
       "label": "trustedLocalOrigin()",
       "file_type": "code",
       "source_file": "app/api/intents/route.ts",
-      "source_location": "L4",
+      "source_location": "L5",
       "_origin": "ast",
       "id": "intents_route_trustedlocalorigin",
       "community": 11,
@@ -97,7 +97,7 @@
       "label": "GET()",
       "file_type": "code",
       "source_file": "app/api/intents/route.ts",
-      "source_location": "L18",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "intents_route_get",
       "community": 11,
@@ -107,7 +107,7 @@
       "label": "POST()",
       "file_type": "code",
       "source_file": "app/api/intents/route.ts",
-      "source_location": "L29",
+      "source_location": "L30",
       "_origin": "ast",
       "id": "intents_route_post",
       "community": 11,
@@ -117,7 +117,7 @@
       "label": "PATCH()",
       "file_type": "code",
       "source_file": "app/api/intents/route.ts",
-      "source_location": "L56",
+      "source_location": "L57",
       "_origin": "ast",
       "id": "intents_route_patch",
       "community": 11,
@@ -130,7 +130,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "metrics_route",
-      "community": 3,
+      "community": 0,
       "norm_label": "route.ts"
     },
     {
@@ -140,7 +140,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "metrics_route_get",
-      "community": 3,
+      "community": 0,
       "norm_label": "get()"
     },
     {
@@ -150,7 +150,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "projects_route",
-      "community": 0,
+      "community": 20,
       "norm_label": "route.ts"
     },
     {
@@ -160,7 +160,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "projects_route_get",
-      "community": 0,
+      "community": 20,
       "norm_label": "get()"
     },
     {
@@ -170,7 +170,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "schedule_route",
-      "community": 3,
+      "community": 11,
       "norm_label": "route.ts"
     },
     {
@@ -180,7 +180,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "schedule_route_get",
-      "community": 3,
+      "community": 11,
       "norm_label": "get()"
     },
     {
@@ -190,7 +190,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "schedule_route_post",
-      "community": 3,
+      "community": 11,
       "norm_label": "post()"
     },
     {
@@ -320,7 +320,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_clock",
-      "community": 0,
+      "community": 4,
       "norm_label": "clock.tsx"
     },
     {
@@ -330,7 +330,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "core_clock_clock",
-      "community": 0,
+      "community": 4,
       "norm_label": "clock()"
     },
     {
@@ -590,7 +590,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "panels_vitalspanel",
-      "community": 17,
+      "community": 4,
       "norm_label": "vitalspanel.tsx"
     },
     {
@@ -600,7 +600,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "panels_vitalspanel_fillstyle",
-      "community": 17,
+      "community": 4,
       "norm_label": "fillstyle()"
     },
     {
@@ -610,7 +610,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "panels_vitalspanel_vital",
-      "community": 17,
+      "community": 4,
       "norm_label": "vital()"
     },
     {
@@ -620,7 +620,7 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "panels_vitalspanel_vitalspanel",
-      "community": 17,
+      "community": 4,
       "norm_label": "vitalspanel()"
     },
     {
@@ -680,7 +680,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "panels_registry_leftpanels",
-      "community": 0,
+      "community": 4,
       "norm_label": "leftpanels"
     },
     {
@@ -690,7 +690,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "panels_registry_rightpanels",
-      "community": 0,
+      "community": 4,
       "norm_label": "rightpanels"
     },
     {
@@ -720,7 +720,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "records_editabletext",
-      "community": 3,
+      "community": 11,
       "norm_label": "editabletext.tsx"
     },
     {
@@ -730,7 +730,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "records_editabletext_editabletext",
-      "community": 3,
+      "community": 11,
       "norm_label": "editabletext()"
     },
     {
@@ -1100,7 +1100,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "vault_core_types_nodeformation",
-      "community": 17,
+      "community": 4,
       "norm_label": "nodeformation"
     },
     {
@@ -1510,58 +1510,58 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "slug_actions",
-      "community": 3,
+      "community": 11,
       "norm_label": "actions.ts"
     },
     {
       "label": "EditableField",
       "file_type": "code",
       "source_file": "app/p/[slug]/actions.ts",
-      "source_location": "L12",
+      "source_location": "L7",
       "_origin": "ast",
       "id": "slug_actions_editablefield",
-      "community": 3,
+      "community": 11,
       "norm_label": "editablefield"
-    },
-    {
-      "label": "BULLET_BY_FIELD",
-      "file_type": "code",
-      "source_file": "app/p/[slug]/actions.ts",
-      "source_location": "L14",
-      "_origin": "ast",
-      "id": "slug_actions_bullet_by_field",
-      "community": 3,
-      "norm_label": "bullet_by_field"
     },
     {
       "label": "UpdateResult",
       "file_type": "code",
       "source_file": "app/p/[slug]/actions.ts",
-      "source_location": "L20",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "slug_actions_updateresult",
-      "community": 3,
+      "community": 11,
       "norm_label": "updateresult"
     },
     {
       "label": "VALID_FIELDS",
       "file_type": "code",
       "source_file": "app/p/[slug]/actions.ts",
-      "source_location": "L30",
+      "source_location": "L20",
       "_origin": "ast",
       "id": "slug_actions_valid_fields",
-      "community": 3,
+      "community": 11,
       "norm_label": "valid_fields"
     },
     {
-      "label": "updateProjectField()",
+      "label": "proposeProjectField()",
       "file_type": "code",
       "source_file": "app/p/[slug]/actions.ts",
-      "source_location": "L32",
+      "source_location": "L22",
       "_origin": "ast",
-      "id": "slug_actions_updateprojectfield",
-      "community": 3,
-      "norm_label": "updateprojectfield()"
+      "id": "slug_actions_proposeprojectfield",
+      "community": 11,
+      "norm_label": "proposeprojectfield()"
+    },
+    {
+      "label": "executeProjectField()",
+      "file_type": "code",
+      "source_file": "app/p/[slug]/actions.ts",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "slug_actions_executeprojectfield",
+      "community": 11,
+      "norm_label": "executeprojectfield()"
     },
     {
       "label": "page.tsx",
@@ -1780,7 +1780,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "adapters_intent_store_sqlite",
-      "community": 11,
+      "community": 3,
       "norm_label": "intent-store-sqlite.ts"
     },
     {
@@ -1790,7 +1790,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "adapters_intent_store_sqlite_files",
-      "community": 11,
+      "community": 3,
       "norm_label": "files()"
     },
     {
@@ -1800,7 +1800,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "adapters_intent_store_sqlite_open",
-      "community": 11,
+      "community": 3,
       "norm_label": "open()"
     },
     {
@@ -1810,7 +1810,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "adapters_intent_store_sqlite_valid",
-      "community": 11,
+      "community": 3,
       "norm_label": "valid()"
     },
     {
@@ -1820,7 +1820,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "adapters_intent_store_sqlite_write",
-      "community": 11,
+      "community": 3,
       "norm_label": "write()"
     },
     {
@@ -1830,7 +1830,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "adapters_intent_store_sqlite_migratejsonl",
-      "community": 11,
+      "community": 3,
       "norm_label": "migratejsonl()"
     },
     {
@@ -1840,7 +1840,7 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "adapters_intent_store_sqlite_parse",
-      "community": 11,
+      "community": 3,
       "norm_label": "parse()"
     },
     {
@@ -1860,7 +1860,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "adapters_llm_ollama",
-      "community": 3,
+      "community": 0,
       "norm_label": "llm-ollama.ts"
     },
     {
@@ -1870,7 +1870,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "adapters_llm_ollama_askollama",
-      "community": 3,
+      "community": 0,
       "norm_label": "askollama()"
     },
     {
@@ -1880,7 +1880,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "adapters_memory_obsidian",
-      "community": 0,
+      "community": 11,
       "norm_label": "memory-obsidian.ts"
     },
     {
@@ -1900,7 +1900,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_readmemory",
-      "community": 0,
+      "community": 11,
       "norm_label": "readmemory()"
     },
     {
@@ -1910,7 +1910,7 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_readprojectskills",
-      "community": 0,
+      "community": 11,
       "norm_label": "readprojectskills()"
     },
     {
@@ -1930,147 +1930,157 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_appendlogentry",
-      "community": 3,
+      "community": 11,
       "norm_label": "appendlogentry()"
+    },
+    {
+      "label": "appendLogEntryOnce()",
+      "file_type": "code",
+      "source_file": "lib/adapters/memory-obsidian.ts",
+      "source_location": "L133",
+      "_origin": "ast",
+      "id": "adapters_memory_obsidian_appendlogentryonce",
+      "community": 11,
+      "norm_label": "appendlogentryonce()"
     },
     {
       "label": "EditableBullet",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L133",
+      "source_location": "L149",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_editablebullet",
-      "community": 3,
+      "community": 11,
       "norm_label": "editablebullet"
     },
     {
       "label": "updateStateBullet()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L140",
+      "source_location": "L156",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_updatestatebullet",
-      "community": 3,
+      "community": 11,
       "norm_label": "updatestatebullet()"
     },
     {
       "label": "updateNextStep()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L157",
+      "source_location": "L173",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_updatenextstep",
-      "community": 3,
+      "community": 11,
       "norm_label": "updatenextstep()"
     },
     {
       "label": "editStateFile()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L169",
+      "source_location": "L185",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_editstatefile",
-      "community": 3,
+      "community": 11,
       "norm_label": "editstatefile()"
     },
     {
       "label": "readIfExists()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L193",
+      "source_location": "L209",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_readifexists",
-      "community": 0,
+      "community": 11,
       "norm_label": "readifexists()"
     },
     {
       "label": "listSessions()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L201",
+      "source_location": "L217",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_listsessions",
-      "community": 0,
+      "community": 11,
       "norm_label": "listsessions()"
     },
     {
       "label": "readSessionStats()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L210",
+      "source_location": "L226",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_readsessionstats",
-      "community": 0,
+      "community": 11,
       "norm_label": "readsessionstats()"
     },
     {
       "label": "extractMinutes()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L221",
+      "source_location": "L237",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_extractminutes",
-      "community": 0,
+      "community": 11,
       "norm_label": "extractminutes()"
     },
     {
       "label": "extractBullet()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L228",
+      "source_location": "L244",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_extractbullet",
-      "community": 0,
+      "community": 11,
       "norm_label": "extractbullet()"
     },
     {
       "label": "section()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L234",
+      "source_location": "L250",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_section",
-      "community": 0,
+      "community": 11,
       "norm_label": "section()"
     },
     {
       "label": "firstParagraph()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L242",
+      "source_location": "L258",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_firstparagraph",
-      "community": 0,
+      "community": 11,
       "norm_label": "firstparagraph()"
     },
     {
       "label": "normalizeMarkdown()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L251",
+      "source_location": "L267",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_normalizemarkdown",
-      "community": 0,
+      "community": 11,
       "norm_label": "normalizemarkdown()"
     },
     {
       "label": "inferStack()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L257",
+      "source_location": "L273",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_inferstack",
-      "community": 0,
+      "community": 11,
       "norm_label": "inferstack()"
     },
     {
       "label": "cleanOrNull()",
       "file_type": "code",
       "source_file": "lib/adapters/memory-obsidian.ts",
-      "source_location": "L264",
+      "source_location": "L280",
       "_origin": "ast",
       "id": "adapters_memory_obsidian_cleanornull",
-      "community": 0,
+      "community": 11,
       "norm_label": "cleanornull()"
     },
     {
@@ -2290,7 +2300,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "lib_assistant_projectskill",
-      "community": 0,
+      "community": 11,
       "norm_label": "projectskill"
     },
     {
@@ -2500,7 +2510,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_config",
-      "community": 3,
+      "community": 0,
       "norm_label": "config.ts"
     },
     {
@@ -2510,7 +2520,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "lib_config_adapterconfig",
-      "community": 3,
+      "community": 0,
       "norm_label": "adapterconfig"
     },
     {
@@ -2530,7 +2540,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "lib_controlp_getprojects",
-      "community": 0,
+      "community": 20,
       "norm_label": "getprojects()"
     },
     {
@@ -2562,6 +2572,66 @@
       "id": "lib_controlp_buildalerts",
       "community": 0,
       "norm_label": "buildalerts()"
+    },
+    {
+      "label": "intent-runner.ts",
+      "file_type": "code",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "lib_intent_runner",
+      "community": 11,
+      "norm_label": "intent-runner.ts"
+    },
+    {
+      "label": "Handler",
+      "file_type": "code",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "lib_intent_runner_handler",
+      "community": 11,
+      "norm_label": "handler"
+    },
+    {
+      "label": "project()",
+      "file_type": "code",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "lib_intent_runner_project",
+      "community": 0,
+      "norm_label": "project()"
+    },
+    {
+      "label": "handlers",
+      "file_type": "code",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "lib_intent_runner_handlers",
+      "community": 11,
+      "norm_label": "handlers"
+    },
+    {
+      "label": "isRunnableIntent()",
+      "file_type": "code",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "lib_intent_runner_isrunnableintent",
+      "community": 11,
+      "norm_label": "isrunnableintent()"
+    },
+    {
+      "label": "runIntent()",
+      "file_type": "code",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L48",
+      "_origin": "ast",
+      "id": "lib_intent_runner_runintent",
+      "community": 11,
+      "norm_label": "runintent()"
     },
     {
       "label": "intents.ts",
@@ -2620,14 +2690,14 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "lib_intents_intent",
-      "community": 11,
+      "community": 3,
       "norm_label": "intent"
     },
     {
       "label": "IntentDefinition",
       "file_type": "code",
       "source_file": "lib/intents.ts",
-      "source_location": "L31",
+      "source_location": "L35",
       "_origin": "ast",
       "id": "lib_intents_intentdefinition",
       "community": 11,
@@ -2637,7 +2707,7 @@
       "label": "INTENT_CATALOG",
       "file_type": "code",
       "source_file": "lib/intents.ts",
-      "source_location": "L37",
+      "source_location": "L41",
       "_origin": "ast",
       "id": "lib_intents_intent_catalog",
       "community": 11,
@@ -2647,7 +2717,7 @@
       "label": "QueueReading",
       "file_type": "code",
       "source_file": "lib/intents.ts",
-      "source_location": "L62",
+      "source_location": "L66",
       "_origin": "ast",
       "id": "lib_intents_queuereading",
       "community": 11,
@@ -2657,17 +2727,27 @@
       "label": "digestPreview()",
       "file_type": "code",
       "source_file": "lib/intents.ts",
-      "source_location": "L67",
+      "source_location": "L71",
       "_origin": "ast",
       "id": "lib_intents_digestpreview",
       "community": 11,
       "norm_label": "digestpreview()"
     },
     {
+      "label": "propose()",
+      "file_type": "code",
+      "source_file": "lib/intents.ts",
+      "source_location": "L75",
+      "_origin": "ast",
+      "id": "lib_intents_propose",
+      "community": 11,
+      "norm_label": "propose()"
+    },
+    {
       "label": "listIntentCommands()",
       "file_type": "code",
       "source_file": "lib/intents.ts",
-      "source_location": "L71",
+      "source_location": "L98",
       "_origin": "ast",
       "id": "lib_intents_listintentcommands",
       "community": 11,
@@ -2677,7 +2757,7 @@
       "label": "readIntentQueue()",
       "file_type": "code",
       "source_file": "lib/intents.ts",
-      "source_location": "L75",
+      "source_location": "L102",
       "_origin": "ast",
       "id": "lib_intents_readintentqueue",
       "community": 11,
@@ -2687,17 +2767,37 @@
       "label": "proposeIntent()",
       "file_type": "code",
       "source_file": "lib/intents.ts",
-      "source_location": "L79",
+      "source_location": "L106",
       "_origin": "ast",
       "id": "lib_intents_proposeintent",
       "community": 11,
       "norm_label": "proposeintent()"
     },
     {
+      "label": "proposeScheduleIntent()",
+      "file_type": "code",
+      "source_file": "lib/intents.ts",
+      "source_location": "L123",
+      "_origin": "ast",
+      "id": "lib_intents_proposescheduleintent",
+      "community": 11,
+      "norm_label": "proposescheduleintent()"
+    },
+    {
+      "label": "proposeProjectFieldIntent()",
+      "file_type": "code",
+      "source_file": "lib/intents.ts",
+      "source_location": "L132",
+      "_origin": "ast",
+      "id": "lib_intents_proposeprojectfieldintent",
+      "community": 11,
+      "norm_label": "proposeprojectfieldintent()"
+    },
+    {
       "label": "confirmIntent()",
       "file_type": "code",
       "source_file": "lib/intents.ts",
-      "source_location": "L115",
+      "source_location": "L140",
       "_origin": "ast",
       "id": "lib_intents_confirmintent",
       "community": 11,
@@ -2707,7 +2807,7 @@
       "label": "cancelIntent()",
       "file_type": "code",
       "source_file": "lib/intents.ts",
-      "source_location": "L119",
+      "source_location": "L144",
       "_origin": "ast",
       "id": "lib_intents_cancelintent",
       "community": 11,
@@ -2720,7 +2820,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ports_intent_store",
-      "community": 11,
+      "community": 3,
       "norm_label": "intent-store.ts"
     },
     {
@@ -2730,7 +2830,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "ports_intent_store_intentstorereading",
-      "community": 11,
+      "community": 3,
       "norm_label": "intentstorereading"
     },
     {
@@ -2740,7 +2840,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "ports_intent_store_intentstore",
-      "community": 11,
+      "community": 3,
       "norm_label": "intentstore"
     },
     {
@@ -2750,7 +2850,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_registry",
-      "community": 3,
+      "community": 0,
       "norm_label": "registry.ts"
     },
     {
@@ -2760,18 +2860,18 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "lib_registry_registryentry",
-      "community": 3,
+      "community": 0,
       "norm_label": "registryentry"
     },
     {
-      "label": "REGISTRY_FILE",
+      "label": "registryFile()",
       "file_type": "code",
       "source_file": "lib/registry.ts",
       "source_location": "L22",
       "_origin": "ast",
-      "id": "lib_registry_registry_file",
-      "community": 3,
-      "norm_label": "registry_file"
+      "id": "lib_registry_registryfile",
+      "community": 0,
+      "norm_label": "registryfile()"
     },
     {
       "label": "slugify()",
@@ -2780,7 +2880,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "lib_registry_slugify",
-      "community": 3,
+      "community": 0,
       "norm_label": "slugify()"
     },
     {
@@ -2790,7 +2890,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "lib_registry_loadregistry",
-      "community": 3,
+      "community": 0,
       "norm_label": "loadregistry()"
     },
     {
@@ -2800,7 +2900,7 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "lib_registry_dedupe",
-      "community": 3,
+      "community": 0,
       "norm_label": "dedupe()"
     },
     {
@@ -2810,7 +2910,7 @@
       "source_location": "L91",
       "_origin": "ast",
       "id": "lib_registry_isvalidentry",
-      "community": 3,
+      "community": 0,
       "norm_label": "isvalidentry()"
     },
     {
@@ -2820,7 +2920,7 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "lib_registry_discoverfromvault",
-      "community": 3,
+      "community": 0,
       "norm_label": "discoverfromvault()"
     },
     {
@@ -2830,7 +2930,7 @@
       "source_location": "L124",
       "_origin": "ast",
       "id": "lib_registry_resolverepopath",
-      "community": 3,
+      "community": 0,
       "norm_label": "resolverepopath()"
     },
     {
@@ -2840,7 +2940,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_schedule",
-      "community": 3,
+      "community": 11,
       "norm_label": "schedule.ts"
     },
     {
@@ -2850,7 +2950,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "lib_schedule_dayplan",
-      "community": 3,
+      "community": 11,
       "norm_label": "dayplan"
     },
     {
@@ -2860,7 +2960,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "lib_schedule_today",
-      "community": 3,
+      "community": 11,
       "norm_label": "today()"
     },
     {
@@ -2870,7 +2970,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "lib_schedule_planfile",
-      "community": 3,
+      "community": 11,
       "norm_label": "planfile()"
     },
     {
@@ -2880,7 +2980,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "lib_schedule_readdayplan",
-      "community": 3,
+      "community": 11,
       "norm_label": "readdayplan()"
     },
     {
@@ -2890,7 +2990,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "lib_schedule_setdayitem",
-      "community": 3,
+      "community": 11,
       "norm_label": "setdayitem()"
     },
     {
@@ -2960,7 +3060,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "lib_schema_validatememory",
-      "community": 0,
+      "community": 11,
       "norm_label": "validatememory()"
     },
     {
@@ -4006,7 +4106,7 @@
       "label": "app/api/ \u2014 frontera HTTP",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L53",
+      "source_location": "L54",
       "_origin": "ast",
       "id": "context_map_app_api_frontera_http",
       "community": 6,
@@ -4016,7 +4116,7 @@
       "label": "app/components/vault-core/ \u2014 escena 3D (CORE, no tocar salvo bugfix)",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L73",
+      "source_location": "L74",
       "_origin": "ast",
       "id": "context_map_app_components_vault_core_escena_3d_core_no_tocar_salvo_bugfix",
       "community": 6,
@@ -4026,7 +4126,7 @@
       "label": "app/components/voice/ \u2014 captura y router de voz",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L93",
+      "source_location": "L94",
       "_origin": "ast",
       "id": "context_map_app_components_voice_captura_y_router_de_voz",
       "community": 6,
@@ -4036,7 +4136,7 @@
       "label": "app/components/panels/ \u2014 paneles del dashboard",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L117",
+      "source_location": "L118",
       "_origin": "ast",
       "id": "context_map_app_components_panels_paneles_del_dashboard",
       "community": 6,
@@ -4046,7 +4146,7 @@
       "label": "app/ \u2014 rutas",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L136",
+      "source_location": "L137",
       "_origin": "ast",
       "id": "context_map_app_rutas",
       "community": 6,
@@ -4056,7 +4156,7 @@
       "label": "stt/ \u2014 sidecar Whisper (Python, fuera de Next)",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L147",
+      "source_location": "L148",
       "_origin": "ast",
       "id": "context_map_stt_sidecar_whisper_python_fuera_de_next",
       "community": 6,
@@ -4066,7 +4166,7 @@
       "label": "Para modificar X toca solo Y",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L154",
+      "source_location": "L155",
       "_origin": "ast",
       "id": "context_map_para_modificar_x_toca_solo_y",
       "community": 6,
@@ -5577,6 +5677,39 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/api/intents/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "intents_route",
+      "target": "lib_intent_runner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/intents/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "intents_route",
+      "target": "lib_intent_runner_isrunnableintent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/intents/route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "intents_route",
+      "target": "lib_intent_runner_runintent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/intents/route.ts",
       "source_location": "L2",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -5681,6 +5814,28 @@
       "weight": 1.0,
       "source": "intents_route_post",
       "target": "lib_intents_readintentqueue"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/api/intents/route.ts",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "intents_route_patch",
+      "target": "lib_intent_runner_isrunnableintent"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/api/intents/route.ts",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "intents_route_patch",
+      "target": "lib_intent_runner_runintent"
     },
     {
       "relation": "calls",
@@ -5839,6 +5994,28 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/api/schedule/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "schedule_route",
+      "target": "lib_intents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/schedule/route.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "schedule_route",
+      "target": "lib_intents_proposescheduleintent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/api/schedule/route.ts",
       "source_location": "L3",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -5930,6 +6107,17 @@
       "weight": 1.0,
       "source": "schedule_route_post",
       "target": "adapters_memory_obsidian_appendlogentry"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/api/schedule/route.ts",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "schedule_route_post",
+      "target": "lib_intents_proposescheduleintent"
     },
     {
       "relation": "calls",
@@ -7086,9 +7274,20 @@
       "source_file": "app/components/records/EditableText.tsx",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "records_editabletext",
-      "target": "slug_actions_updateprojectfield"
+      "target": "slug_actions_executeprojectfield",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/components/records/EditableText.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "records_editabletext",
+      "target": "slug_actions_proposeprojectfield",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -9015,6 +9214,61 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/p/[slug]/actions.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "slug_actions",
+      "target": "lib_intent_runner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/p/[slug]/actions.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "slug_actions",
+      "target": "lib_intent_runner_runintent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/p/[slug]/actions.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "slug_actions",
+      "target": "lib_intents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/p/[slug]/actions.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "slug_actions",
+      "target": "lib_intents_confirmintent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/p/[slug]/actions.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "slug_actions",
+      "target": "lib_intents_proposeprojectfieldintent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/p/[slug]/actions.ts",
       "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -9036,16 +9290,6 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/p/[slug]/actions.ts",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "slug_actions",
-      "target": "slug_actions_bullet_by_field"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/p/[slug]/actions.ts",
       "source_location": "L12",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -9056,11 +9300,21 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/p/[slug]/actions.ts",
-      "source_location": "L32",
+      "source_location": "L41",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "slug_actions",
-      "target": "slug_actions_updateprojectfield"
+      "target": "slug_actions_executeprojectfield",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/p/[slug]/actions.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "slug_actions",
+      "target": "slug_actions_proposeprojectfield",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -9088,10 +9342,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/p/[slug]/actions.ts",
-      "source_location": "L62",
+      "source_location": "L37",
       "weight": 1.0,
-      "source": "slug_actions_updateprojectfield",
-      "target": "adapters_memory_obsidian_appendlogentry"
+      "source": "slug_actions_proposeprojectfield",
+      "target": "lib_intents_proposeprojectfieldintent"
     },
     {
       "relation": "calls",
@@ -9099,10 +9353,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/p/[slug]/actions.ts",
-      "source_location": "L54",
+      "source_location": "L44",
       "weight": 1.0,
-      "source": "slug_actions_updateprojectfield",
-      "target": "adapters_memory_obsidian_updatenextstep"
+      "source": "slug_actions_executeprojectfield",
+      "target": "lib_intent_runner_runintent"
     },
     {
       "relation": "calls",
@@ -9110,21 +9364,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/p/[slug]/actions.ts",
-      "source_location": "L55",
+      "source_location": "L43",
       "weight": 1.0,
-      "source": "slug_actions_updateprojectfield",
-      "target": "adapters_memory_obsidian_updatestatebullet"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/p/[slug]/actions.ts",
-      "source_location": "L47",
-      "weight": 1.0,
-      "source": "slug_actions_updateprojectfield",
-      "target": "lib_registry_loadregistry"
+      "source": "slug_actions_executeprojectfield",
+      "target": "lib_intents_confirmintent"
     },
     {
       "relation": "imports_from",
@@ -9786,6 +10029,17 @@
       "target": "ports_intent_store_intentstorereading"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "lib_intent_runner",
+      "target": "adapters_intent_store_sqlite",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -9839,6 +10093,17 @@
       "confidence_score": 1.0,
       "source": "adapters_intent_store_sqlite_migratejsonl",
       "target": "adapters_intent_store_sqlite_parse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "lib_intent_runner",
+      "target": "adapters_intent_store_sqlite_sqliteintentstore",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -9914,6 +10179,16 @@
       "confidence_score": 1.0,
       "source": "adapters_memory_obsidian",
       "target": "adapters_memory_obsidian_appendlogentry"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/adapters/memory-obsidian.ts",
+      "source_location": "L133",
+      "weight": 1.0,
+      "source": "adapters_memory_obsidian",
+      "target": "adapters_memory_obsidian_appendlogentryonce",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10206,6 +10481,17 @@
       "target": "adapters_memory_obsidian"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "lib_intent_runner",
+      "target": "adapters_memory_obsidian",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "references",
       "context": "field",
       "confidence": "EXTRACTED",
@@ -10408,11 +10694,66 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "lib/adapters/memory-obsidian.ts",
+      "source_location": "L142",
+      "weight": 1.0,
+      "source": "adapters_memory_obsidian_appendlogentryonce",
+      "target": "adapters_memory_obsidian_appendlogentry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/adapters/memory-obsidian.ts",
+      "source_location": "L141",
+      "weight": 1.0,
+      "source": "adapters_memory_obsidian_appendlogentryonce",
+      "target": "adapters_memory_obsidian_readifexists",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "lib_intent_runner",
+      "target": "adapters_memory_obsidian_appendlogentryonce",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "lib_intent_runner",
+      "target": "adapters_memory_obsidian_editablebullet",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/adapters/memory-obsidian.ts",
       "source_location": "L107",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "adapters_memory_obsidian_updatestatebullet",
       "target": "adapters_memory_obsidian_editstatefile"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "lib_intent_runner",
+      "target": "adapters_memory_obsidian_updatestatebullet",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -10424,6 +10765,17 @@
       "confidence_score": 1.0,
       "source": "adapters_memory_obsidian_updatenextstep",
       "target": "adapters_memory_obsidian_editstatefile"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "lib_intent_runner",
+      "target": "adapters_memory_obsidian_updatenextstep",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -11518,6 +11870,144 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "lib_intent_runner",
+      "target": "lib_intent_runner_handler",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "lib_intent_runner",
+      "target": "lib_intent_runner_handlers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "lib_intent_runner",
+      "target": "lib_intent_runner_isrunnableintent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "lib_intent_runner",
+      "target": "lib_intent_runner_project",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "lib_intent_runner",
+      "target": "lib_intent_runner_runintent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "lib_intent_runner",
+      "target": "lib_intents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "lib_intent_runner",
+      "target": "lib_intents_intent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "lib_intent_runner",
+      "target": "lib_registry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "lib_intent_runner",
+      "target": "lib_registry_loadregistry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "lib_intent_runner",
+      "target": "lib_schedule",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "lib_intent_runner",
+      "target": "lib_schedule_setdayitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "lib_intent_runner_runintent",
+      "target": "lib_intent_runner_handler"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intent-runner.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "lib_intent_runner_project",
+      "target": "lib_registry_loadregistry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "lib/intents.ts",
       "source_location": "L212",
       "weight": 1.0,
@@ -11629,11 +12119,41 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/intents.ts",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "lib_intents",
+      "target": "lib_intents_propose",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intents.ts",
       "source_location": "L150",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "lib_intents",
       "target": "lib_intents_proposeintent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intents.ts",
+      "source_location": "L132",
+      "weight": 1.0,
+      "source": "lib_intents",
+      "target": "lib_intents_proposeprojectfieldintent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intents.ts",
+      "source_location": "L123",
+      "weight": 1.0,
+      "source": "lib_intents",
+      "target": "lib_intents_proposescheduleintent",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -11693,11 +12213,55 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "lib/intents.ts",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "lib_intents_propose",
+      "target": "lib_intents_digestpreview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intents.ts",
       "source_location": "L110",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "lib_intents_proposeintent",
       "target": "lib_intents_digestpreview"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intents.ts",
+      "source_location": "L120",
+      "weight": 1.0,
+      "source": "lib_intents_proposeintent",
+      "target": "lib_intents_propose",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intents.ts",
+      "source_location": "L133",
+      "weight": 1.0,
+      "source": "lib_intents_proposeprojectfieldintent",
+      "target": "lib_intents_propose",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/intents.ts",
+      "source_location": "L125",
+      "weight": 1.0,
+      "source": "lib_intents_proposescheduleintent",
+      "target": "lib_intents_propose",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -11763,21 +12327,21 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/registry.ts",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "lib_registry",
-      "target": "lib_registry_registry_file"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "lib/registry.ts",
       "source_location": "L11",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "lib_registry",
       "target": "lib_registry_registryentry"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/registry.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "lib_registry",
+      "target": "lib_registry_registryfile",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -11820,6 +12384,17 @@
       "confidence_score": 1.0,
       "source": "lib_registry",
       "target": "lib_schema_dataissue"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/registry.ts",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "lib_registry_loadregistry",
+      "target": "lib_registry_registryfile",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -13679,5 +14254,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "c776a1952771c4e57daaa73cf5e5104e2fec3aef"
+  "built_at_commit": "269acf02328b1185f8a1368db0a05138068e1419"
 }

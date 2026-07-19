@@ -1,16 +1,16 @@
 # Graph Report - ControlP  (2026-07-18)
 
 ## Corpus Check
-- 77 files · ~25,673 words
+- 78 files · ~26,688 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 474 nodes · 826 edges · 39 communities (21 shown, 18 thin omitted)
-- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 8 edges (avg confidence: 0.8)
+- 484 nodes · 870 edges · 39 communities (21 shown, 18 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 9 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c776a195`
+- Built from commit: `269acf02`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -55,8 +55,8 @@
 ## God Nodes (most connected - your core abstractions)
 1. `normalizeVoiceText()` - 18 edges
 2. `compilerOptions` - 18 edges
-3. `routeCommand()` - 15 edges
-4. `loadRegistry()` - 14 edges
+3. `loadRegistry()` - 16 edges
+4. `routeCommand()` - 15 edges
 5. `readMemory()` - 13 edges
 6. `getProjects()` - 13 edges
 7. `PanelProps` - 12 edges
@@ -65,12 +65,12 @@
 10. `vaultSignals` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `Home()` --calls--> `getProjects()`  [EXTRACTED]
+  app/(core)/page.tsx → lib/controlp.ts
 - `GET()` --calls--> `getProjects()`  [INFERRED]
   app/api/projects/route.ts → lib/controlp.ts
 - `Notion Ledger — Session Close Connector` --conceptually_related_to--> `Adapter Pattern — Replace Tool Without Touching Domain/UI`  [INFERRED]
   PROJECT_CONTEXT.md → CONTEXT_MAP.md
-- `Home()` --calls--> `getProjects()`  [EXTRACTED]
-  app/(core)/page.tsx → lib/controlp.ts
 - `GET()` --calls--> `readVoiceAliases()`  [EXTRACTED]
   app/api/assistant/aliases/route.ts → lib/voice-aliases.ts
 - `POST()` --calls--> `compactVoiceText()`  [EXTRACTED]
@@ -82,8 +82,8 @@
 ## Communities (39 total, 18 thin omitted)
 
 ### Community 0 - "Vault Core Visual Layer"
-Cohesion: 0.08
-Nodes (42): emptyEvidence(), EvidenceReading, execFileAsync, exists(), git(), readCommitActivity(), readEvidence(), emptyGraph() (+34 more)
+Cohesion: 0.09
+Nodes (35): emptyEvidence(), EvidenceReading, execFileAsync, exists(), git(), readCommitActivity(), readEvidence(), emptyGraph() (+27 more)
 
 ### Community 1 - "TypeScript Config"
 Cohesion: 0.09
@@ -94,12 +94,12 @@ Cohesion: 0.06
 Nodes (31): dependencies, next, react, react-dom, @react-three/drei, @react-three/fiber, three, @types/three (+23 more)
 
 ### Community 3 - "Memory Adapter & Editable Records"
-Cohesion: 0.10
-Nodes (29): askOllama(), appendLogEntry(), EditableBullet, editStateFile(), updateNextStep(), updateStateBullet(), adapterConfig, dedupe() (+21 more)
+Cohesion: 0.35
+Nodes (9): files(), migrateJsonl(), open(), parse(), valid(), write(), Intent, IntentStore (+1 more)
 
 ### Community 4 - "Package & Dependencies"
-Cohesion: 0.09
-Nodes (25): ProjectCard, formatDate(), obsidianUrl(), tone(), IntentProposal, QUEUE_COMMANDS, VIEW_COMMANDS, VIEW_TITLE (+17 more)
+Cohesion: 0.07
+Nodes (32): Clock(), Home(), ProjectCard, formatDate(), obsidianUrl(), tone(), IntentProposal, QUEUE_COMMANDS (+24 more)
 
 ### Community 5 - "Metrics & Schedule API"
 Cohesion: 0.08
@@ -126,8 +126,8 @@ Cohesion: 0.14
 Nodes (17): app/api/intents/route.ts — Intent Queue Endpoint, app/api/stt/route.ts — STT Proxy Endpoint, lib/intents.ts — Intent Queue JSONL, PTT Voice Capture Flow, runtime/intents.jsonl — Append-only Intent Log, stt/server.py — FastAPI Whisper Sidecar, vault-core/ProjectNodes.tsx — Project Orbs 3D, vault-core/ParticleCore.tsx — Equalizer Sphere Shader (+9 more)
 
 ### Community 11 - "Intents, STT & LLM Extension Points"
-Cohesion: 0.11
-Nodes (28): files(), migrateJsonl(), open(), parse(), sqliteIntentStore, valid(), write(), GET() (+20 more)
+Cohesion: 0.06
+Nodes (58): sqliteIntentStore, appendLogEntry(), appendLogEntryOnce(), cleanOrNull(), EditableBullet, editStateFile(), extractBullet(), firstParagraph() (+50 more)
 
 ### Community 16 - "3D Geometry Layer"
 Cohesion: 0.40
@@ -135,15 +135,15 @@ Nodes (3): Sidecar STT local de ControlP — faster-whisper (V1.4.2).  Transcrip
 
 ### Community 17 - "App Layout"
 Cohesion: 0.06
-Nodes (42): CenterStage(), VaultCore, useReducedMotion(), fillStyle(), Vital(), createLinkSegments(), createParticleField(), createRandom() (+34 more)
+Nodes (39): CenterStage(), VaultCore, useReducedMotion(), createLinkSegments(), createParticleField(), createRandom(), ParticleField, GOLD (+31 more)
 
 ### Community 19 - "Architecture Rules"
 Cohesion: 0.67
 Nodes (3): Canonical Data Schema Ownership, Local-First Web-Ready Boundary, Role Adapter Pattern
 
 ### Community 20 - "Community 20"
-Cohesion: 0.13
-Nodes (26): readSkillBankKnowledge(), GET(), POST(), buildKnowledgeCorpus(), buildSemanticPrompt(), buildSemanticRepairPrompt(), compact(), expandTerms() (+18 more)
+Cohesion: 0.12
+Nodes (28): readSkillBankKnowledge(), GET(), POST(), buildKnowledgeCorpus(), buildSemanticPrompt(), buildSemanticRepairPrompt(), compact(), expandTerms() (+20 more)
 
 ### Community 21 - "STT Sidecar Dependencies"
 Cohesion: 0.67
@@ -154,23 +154,23 @@ Cohesion: 0.33
 Nodes (5): assistantUrl, controlp, healthyNotion, ragUrl, root
 
 ## Knowledge Gaps
-- **146 isolated node(s):** `globalStt`, `VaultCore`, `VIEW_COMMANDS`, `QUEUE_COMMANDS`, `IntentProposal` (+141 more)
+- **145 isolated node(s):** `globalStt`, `VaultCore`, `VIEW_COMMANDS`, `QUEUE_COMMANDS`, `IntentProposal` (+140 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **18 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
+- **Why does `loadRegistry()` connect `Vault Core Visual Layer` to `Intents, STT & LLM Extension Points`, `Community 20`?**
+  _High betweenness centrality (0.030) - this node is a cross-community bridge._
 - **Why does `PanelProps` connect `Package & Dependencies` to `App Layout`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
-- **Why does `loadRegistry()` connect `Memory Adapter & Editable Records` to `Vault Core Visual Layer`, `Community 20`?**
+- **Why does `getProjects()` connect `Community 20` to `Vault Core Visual Layer`, `Package & Dependencies`?**
   _High betweenness centrality (0.014) - this node is a cross-community bridge._
-- **Why does `ProjectCard` connect `Package & Dependencies` to `Vault Core Visual Layer`, `ControlP Orchestrator`, `Community 20`?**
-  _High betweenness centrality (0.013) - this node is a cross-community bridge._
 - **What connects `globalStt`, `VaultCore`, `VIEW_COMMANDS` to the rest of the system?**
-  _150 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _149 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Vault Core Visual Layer` be split into smaller, more focused modules?**
-  _Cohesion score 0.0792156862745098 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09413067552602436 - nodes in this community are weakly interconnected._
 - **Should `TypeScript Config` be split into smaller, more focused modules?**
   _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
 - **Should `Core Dashboard & Panel Registry` be split into smaller, more focused modules?**

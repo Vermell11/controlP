@@ -1,25 +1,15 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import {
-  appendLogEntry,
-  updateNextStep,
-  updateStateBullet,
-  type EditableBullet,
-} from "@/lib/adapters/memory-obsidian";
-import { loadRegistry } from "@/lib/registry";
+import { confirmIntent, proposeProjectFieldIntent } from "@/lib/intents";
+import { runIntent } from "@/lib/intent-runner";
 
 export type EditableField = "reto" | "validacion" | "estado" | "siguiente";
-
-const BULLET_BY_FIELD: Partial<Record<EditableField, EditableBullet>> = {
-  estado: "Estado",
-  reto: "Reto",
-  validacion: "Validación",
-};
 
 export interface UpdateResult {
   ok: boolean;
   error?: string;
+  proposal?: { id: string; preview: string; previewHash: string };
 }
 
 /**
@@ -29,7 +19,7 @@ export interface UpdateResult {
  */
 const VALID_FIELDS: ReadonlyArray<EditableField> = ["reto", "validacion", "estado", "siguiente"];
 
-export async function updateProjectField(
+export async function proposeProjectField(
   slug: string,
   field: EditableField,
   value: string,
@@ -44,24 +34,16 @@ export async function updateProjectField(
     return { error: "El texto debe tener entre 3 y 600 caracteres.", ok: false };
   }
 
-  const { entries } = await loadRegistry();
-  const entry = entries.find((candidate) => candidate.slug === slug);
-  if (!entry) return { error: "Proyecto desconocido.", ok: false };
+  const intent = await proposeProjectFieldIntent(slug, field, cleaned);
+  return { ok: true, proposal: { id: intent.id, preview: intent.preview, previewHash: intent.previewHash } };
+}
 
-  const folder = entry.sources.obsidianFolder;
-  const issue =
-    field === "siguiente"
-      ? await updateNextStep(folder, cleaned)
-      : await updateStateBullet(folder, BULLET_BY_FIELD[field] as EditableBullet, cleaned);
-
-  if (issue) {
-    return { error: `No se pudo escribir en la memoria: ${issue.detail ?? issue.field}`, ok: false };
-  }
-
-  const stamp = new Date().toISOString().slice(0, 16).replace("T", " ");
-  await appendLogEntry(folder, `${stamp} — campo "${field}" editado desde ControlP`);
-
-  revalidatePath(`/p/${slug}`);
-  revalidatePath("/");
-  return { ok: true };
+export async function executeProjectField(slug: string, id: string, previewHash: string): Promise<UpdateResult> {
+  try {
+    await confirmIntent(id, previewHash);
+    const intent = await runIntent(id);
+    if (intent.status !== "done") return { error: intent.error ?? "La ejecución falló.", ok: false };
+    revalidatePath(`/p/${slug}`); revalidatePath("/");
+    return { ok: true };
+  } catch (error) { return { error: (error as Error).message, ok: false }; }
 }

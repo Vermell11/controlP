@@ -25,7 +25,7 @@
      ┌───────────┼──────────────┐
  formation    navigate       enqueue
      │            │              │
- vaultSignals  /p/[slug]    /api/intents ──► runtime/intents.jsonl ──► /queue
+ vaultSignals  /p/[slug]    /api/intents ──► SQLite ──► runner/handlers ──► /queue
  (escena 3D)
 
  UI (paneles) ◄─ registry (panels/registry.ts) ◄─ nuevos paneles se registran

@@ -21,6 +21,7 @@ export function ScheduleBody({ projects }: PanelProps) {
   const [saving, setSaving] = useState(false);
   const [justSaved, setJustSaved] = useState<string | null>(null);
   const [saveError, setSaveError] = useState<string | null>(null);
+  const [proposal, setProposal] = useState<{ id: string; preview: string; previewHash: string } | null>(null);
 
   useEffect(() => {
     void (async () => {
@@ -34,7 +35,7 @@ export function ScheduleBody({ projects }: PanelProps) {
     })();
   }, []);
 
-  const confirm = async (slug: string, challenge: string) => {
+  const prepare = async (slug: string, challenge: string) => {
     setSaving(true);
     setSaveError(null);
     const next = !done[slug];
@@ -45,11 +46,8 @@ export function ScheduleBody({ projects }: PanelProps) {
         method: "POST",
       });
       if (response.ok) {
-        // El servidor solo responde ok si la Bitácora ya tiene la traza.
-        setDone((previous) => ({ ...previous, [slug]: next }));
-        setJustSaved(slug);
-        setTimeout(() => setJustSaved(null), 2500);
-        setConfirming(null);
+        const data = (await response.json()) as { intent: { id: string; preview: string; previewHash: string } };
+        setProposal(data.intent);
       } else {
         const data = (await response.json().catch(() => null)) as { error?: string } | null;
         setSaveError(data?.error ?? `No se pudo registrar (HTTP ${response.status}).`);
@@ -59,6 +57,21 @@ export function ScheduleBody({ projects }: PanelProps) {
     } finally {
       setSaving(false);
     }
+  };
+
+  const confirm = async (slug: string) => {
+    if (!proposal) return;
+    setSaving(true);
+    try {
+      const response = await fetch("/api/intents", { method: "PATCH", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ decision: "confirm", id: proposal.id, previewHash: proposal.previewHash }) });
+      const data = (await response.json().catch(() => null)) as { intent?: { status: string; error?: string }; error?: string } | null;
+      if (!response.ok || data?.intent?.status !== "done") throw new Error(data?.intent?.error ?? data?.error ?? "ejecución fallida");
+      setDone((previous) => ({ ...previous, [slug]: !previous[slug] }));
+      setJustSaved(slug); setTimeout(() => setJustSaved(null), 2500);
+      setConfirming(null); setProposal(null);
+    } catch (error) { setSaveError((error as Error).message); }
+    finally { setSaving(false); }
   };
 
   const previewLine = (item: { name: string; challenge: string; slug: string }) => {
@@ -79,6 +92,7 @@ export function ScheduleBody({ projects }: PanelProps) {
                 className={`${isDone ? "done" : index === 0 ? "now" : ""}`}
                 onClick={() => {
                   setSaveError(null);
+                  setProposal(null);
                   setConfirming(isOpen ? null : item.slug);
                 }}
                 role="button"
@@ -86,6 +100,7 @@ export function ScheduleBody({ projects }: PanelProps) {
                 onKeyDown={(event) => {
                   if (event.key === "Enter") {
                     setSaveError(null);
+                    setProposal(null);
                     setConfirming(isOpen ? null : item.slug);
                   }
                 }}
@@ -104,17 +119,17 @@ export function ScheduleBody({ projects }: PanelProps) {
                       ? `Reabrir el avance de ${item.name}. Se anotará en su Bitácora.md:`
                       : `Marcar avance de ${item.name}. Se anotará en su Bitácora.md:`}
                   </small>
-                  <code>{previewLine(item)}</code>
+                  <code>{proposal?.preview ?? previewLine(item)}</code>
                   {saveError && <p className="scheduleError">{saveError}</p>}
                   <div className="scheduleConfirmActions">
                     <button
                       disabled={saving}
-                      onClick={() => void confirm(item.slug, item.challenge)}
+                      onClick={() => proposal ? void confirm(item.slug) : void prepare(item.slug, item.challenge)}
                       type="button"
                     >
-                      {saving ? "Escribiendo…" : "Confirmar"}
+                      {saving ? "Procesando…" : proposal ? "Confirmar hash y ejecutar" : "Preparar propuesta"}
                     </button>
-                    <button disabled={saving} onClick={() => setConfirming(null)} type="button">
+                    <button disabled={saving} onClick={() => { setConfirming(null); setProposal(null); }} type="button">
                       Cancelar
                     </button>
                   </div>

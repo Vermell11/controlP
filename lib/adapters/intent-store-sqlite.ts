@@ -132,4 +132,44 @@ export const sqliteIntentStore: IntentStore = {
     } catch (error) { db.exec("ROLLBACK"); throw error; }
     finally { db.close(); }
   },
+
+  claim(id, leaseMs) {
+    const db = open();
+    try {
+      db.exec("BEGIN IMMEDIATE");
+      const row = db.prepare("SELECT payload FROM intents WHERE id=?").get(id);
+      if (!row) throw new Error("intent not found");
+      const intent = parse(row);
+      const now = new Date();
+      if (intent.status !== "queued" && !(intent.status === "running" &&
+        intent.leaseUntil && Date.parse(intent.leaseUntil) <= now.getTime())) {
+        db.exec("COMMIT");
+        return null;
+      }
+      const next: Intent = { ...intent, leaseUntil: new Date(now.getTime() + leaseMs).toISOString(),
+        status: "running", updatedAt: now.toISOString() };
+      write(db, next);
+      db.exec("COMMIT");
+      return next;
+    } catch (error) { db.exec("ROLLBACK"); throw error; }
+    finally { db.close(); }
+  },
+
+  finish(id, status, detail) {
+    const db = open();
+    try {
+      db.exec("BEGIN IMMEDIATE");
+      const row = db.prepare("SELECT payload FROM intents WHERE id=?").get(id);
+      if (!row) throw new Error("intent not found");
+      const intent = parse(row);
+      if (intent.status === status) { db.exec("COMMIT"); return intent; }
+      if (intent.status !== "running") throw new Error("intent is not running");
+      const next: Intent = { ...intent, leaseUntil: undefined, status,
+        updatedAt: new Date().toISOString(), ...(status === "done" ? { result: detail } : { error: detail }) };
+      write(db, next);
+      db.exec("COMMIT");
+      return next;
+    } catch (error) { db.exec("ROLLBACK"); throw error; }
+    finally { db.close(); }
+  },
 };

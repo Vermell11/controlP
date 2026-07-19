@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { updateProjectField, type EditableField } from "@/app/p/[slug]/actions";
+import { executeProjectField, proposeProjectField, type EditableField } from "@/app/p/[slug]/actions";
 
 /**
  * Texto editable de la ficha: lápiz → textarea → Guardar (confirmación
@@ -20,6 +20,7 @@ export default function EditableText({
   const [value, setValue] = useState(initial);
   const [error, setError] = useState<string | null>(null);
   const [pending, startTransition] = useTransition();
+  const [proposal, setProposal] = useState<{ id: string; preview: string; previewHash: string } | null>(null);
 
   if (!editing) {
     return (
@@ -50,24 +51,27 @@ export default function EditableText({
         value={value}
       />
       {error && <p className="editError">{error}</p>}
+      {proposal && <code>{proposal.preview}</code>}
       <div className="editActions">
         <button
           disabled={pending}
           onClick={() => {
             startTransition(async () => {
-              const result = await updateProjectField(slug, field, value);
-              if (result.ok) {
-                setEditing(false);
-              } else {
+              const result = proposal
+                ? await executeProjectField(slug, proposal.id, proposal.previewHash)
+                : await proposeProjectField(slug, field, value);
+              if (result.proposal) setProposal(result.proposal);
+              else if (result.ok) { setEditing(false); setProposal(null); }
+              else {
                 setError(result.error ?? "Error desconocido.");
               }
             });
           }}
           type="button"
         >
-          {pending ? "Guardando…" : "Guardar en memoria"}
+          {pending ? "Procesando…" : proposal ? "Confirmar hash y ejecutar" : "Preparar propuesta"}
         </button>
-        <button disabled={pending} onClick={() => setEditing(false)} type="button">
+        <button disabled={pending} onClick={() => { setEditing(false); setProposal(null); }} type="button">
           Cancelar
         </button>
       </div>

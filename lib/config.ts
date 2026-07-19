@@ -4,8 +4,10 @@
  * ni a la UI (preparación para despliegue web futuro).
  */
 export const adapterConfig = {
-  vaultRoot:
-    "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/Brain/Cerebro",
+  get vaultRoot() {
+    return process.env.CONTROLP_VAULT_ROOT ??
+      "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code/Brain/Cerebro";
+  },
   projectRoots: [
     "/Users/andresortegacorpus/Library/Mobile Documents/com~apple~CloudDocs/code",
   ],

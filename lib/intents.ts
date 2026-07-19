@@ -24,8 +24,12 @@ export interface Intent {
   previewHash: string;
   risk: IntentRisk;
   idempotencyKey?: string;
+  input?: Record<string, boolean | string>;
   confirmedAt?: string;
   cancelledAt?: string;
+  leaseUntil?: string;
+  result?: string;
+  error?: string;
 }
 
 interface IntentDefinition {
@@ -64,8 +68,31 @@ export interface QueueReading {
   corrupted: number;
 }
 
-function digestPreview(intent: Pick<Intent, "action" | "actor" | "command" | "expiresAt" | "preview" | "risk" | "source">) {
+function digestPreview(intent: Pick<Intent, "action" | "actor" | "command" | "expiresAt" | "input" | "preview" | "risk" | "source">) {
   return createHash("sha256").update(JSON.stringify(intent)).digest("hex");
+}
+
+async function propose(definition: IntentDefinition, command: string, source: IntentSource,
+  input?: Intent["input"], idempotencyKey?: string): Promise<Intent> {
+  const at = new Date().toISOString();
+  const intent: Intent = {
+    action: definition.action,
+    actor: { id: "owner", kind: "local-user" },
+    at,
+    command,
+    expiresAt: new Date(Date.now() + PROPOSAL_TTL_MS).toISOString(),
+    id: randomUUID(),
+    idempotencyKey,
+    input,
+    preview: definition.preview,
+    previewHash: "",
+    risk: definition.risk,
+    source,
+    status: "proposed",
+    updatedAt: at,
+  };
+  intent.previewHash = digestPreview(intent);
+  return sqliteIntentStore.propose(intent);
 }
 
 export function listIntentCommands(): string[] {
@@ -90,26 +117,24 @@ export async function proposeIntent(
     : undefined);
   if (!definition) throw new Error("intent command not allowed");
 
-  {
-    const at = new Date().toISOString();
-    const intent: Intent = {
-      action: definition.action,
-      actor: { id: "owner", kind: "local-user" },
-      at,
-      command,
-      expiresAt: new Date(Date.now() + PROPOSAL_TTL_MS).toISOString(),
-      id: randomUUID(),
-      idempotencyKey,
-      preview: definition.preview,
-      previewHash: "",
-      risk: definition.risk,
-      source,
-      status: "proposed",
-      updatedAt: at,
-    };
-    intent.previewHash = digestPreview(intent);
-    return sqliteIntentStore.propose(intent);
-  }
+  return propose(definition, command, source, undefined, idempotencyKey);
+}
+
+export function proposeScheduleIntent(slug: string, name: string, note: string, done: boolean) {
+  const action = done ? "confirmar" : "reabrir";
+  return propose({
+    action: "schedule.item.set",
+    preview: `Registrar en ${name}: ${action} avance del día. Bitácora: ${note}`,
+    risk: "medium",
+  }, `Schedule · ${name}`, "deck", { done, note, slug });
+}
+
+export function proposeProjectFieldIntent(slug: string, field: string, value: string) {
+  return propose({
+    action: "project.field.update",
+    preview: `Actualizar ${field} de ${slug} con: ${value}`,
+    risk: "medium",
+  }, `Ficha · ${slug} · ${field}`, "deck", { field, slug, value });
 }
 
 export async function confirmIntent(id: string, previewHash: string): Promise<Intent> {

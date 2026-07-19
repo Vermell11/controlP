@@ -31,8 +31,9 @@ Propósito: esquema canónico y orquestación de fuentes. Nunca importa React.
   `config/projects.json`). Prohibido meterlas en esquema o UI.
 - `lib/intents.ts` — dominio/catálogo de intents, actor local, preview sellado y
   expiración. `lib/ports/intent-store.ts` define el puerto; el adaptador
-  `intent-store-sqlite.ts` aporta transacciones, unicidad, eventos y migración única
-  desde `runtime/intents.jsonl`. `proposed` sólo pasa a `queued` con el hash exacto.
+  `intent-store-sqlite.ts` aporta transacciones, unicidad, eventos, leases y migración
+  única desde `runtime/intents.jsonl`. `proposed` sólo pasa a `queued` con el hash
+  exacto; `lib/intent-runner.ts` ejecuta exclusivamente handlers registrados.
 - `lib/assistant.ts` — contrato de respuesta visible/hablada/evidenciada,
   consultas estructuradas, contexto conversacional corto y resolución de nombres.
 - `lib/assistant-knowledge.ts` — clasifica y recorta evidencia read-only autorizada.
@@ -55,9 +56,9 @@ es JSON puro (futuro formato de API web); acceso a datos solo server-side.
 - `projects/route.ts` — GET instantánea canónica (frontera web-ready; sin
   consumidor interno, es contrato).
 - `intents/route.ts` — GET ledger; POST localhost propone una acción; PATCH confirma
-  o cancela usando `id + previewHash`. Ninguna ruta ejecuta todavía una mutación.
-- `schedule/route.ts` — GET plan / POST confirmar avance (escribe traza en
-  Bitácora vía adaptador ANTES de responder ok; el cliente ya confirmó).
+  o cancela usando `id + previewHash` y despacha handlers autorizados.
+- `schedule/route.ts` — GET plan / POST propone el avance; la escritura sólo ocurre
+  después de confirmar el hash mediante `/api/intents`.
 - `metrics/route.ts` — commits por día (14d) por proyecto, para Trend Scan.
 - `stt/route.ts` — proxy POST audio → sidecar (`STT_URL`, default
   `127.0.0.1:8787/transcribe`). El navegador solo habla con ControlP.
@@ -138,8 +139,8 @@ eventos y puertos; productos y proveedores sólo implementan adaptadores. Router
 - `(core)/page.tsx` — dashboard (CORE): itera el registry y monta
   CenterStage. No se toca para agregar features.
 - `components/CenterStage.tsx`, `components/core/Clock.tsx` — core visual.
-- `p/[slug]/` — ficha de proyecto (page + `actions.ts` server actions con
-  confirmación → adaptador memoria) + `components/records/`; reutiliza
+- `p/[slug]/` — ficha de proyecto (page + `actions.ts` propuesta/confirmación →
+  runner → adaptador memoria) + `components/records/`; reutiliza
   `VoicePanel` para mantener PTT y navegación de regreso.
 - `queue/` — vista de la cola de intents.
 - `layout.tsx`, `globals.css`, `core.css`.

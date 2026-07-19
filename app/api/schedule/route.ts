@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
-import { appendLogEntry } from "@/lib/adapters/memory-obsidian";
+import { proposeScheduleIntent } from "@/lib/intents";
 import { loadRegistry } from "@/lib/registry";
-import { readDayPlan, setDayItem } from "@/lib/schedule";
+import { readDayPlan } from "@/lib/schedule";
 
 /**
  * Plan del día: estado en servidor + traza permanente en la Bitácora del
- * proyecto (memoria/Obsidian) vía adaptador. El cliente confirma antes de
- * llamar aquí (regla de confirmación explícita del contrato).
+ * proyecto. POST sólo propone; la ejecución ocurre por /api/intents tras
+ * confirmar el hash exacto de la vista previa.
  */
 export async function GET() {
   const plan = await readDayPlan();
@@ -34,23 +34,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "proyecto desconocido" }, { status: 404 });
   }
 
-  // Transacción simple: primero la traza permanente en la memoria (Obsidian);
-  // solo si esa escritura funciona se confirma el estado del día. Así la UI
-  // nunca dice "registrado" sin que la Bitácora lo tenga.
-  const stamp = new Date().toISOString().slice(0, 16).replace("T", " ");
-  const action = done ? "avance del día confirmado" : "avance del día reabierto";
-  const trace = await appendLogEntry(
-    entry.sources.obsidianFolder,
-    `${stamp} — ${action} desde ControlP${note ? `: ${note}` : ""}`,
-  );
-
-  if (trace) {
-    return NextResponse.json(
-      { error: `No se pudo escribir la Bitácora: ${trace.detail ?? trace.field}` },
-      { status: 502 },
-    );
-  }
-
-  const plan = await setDayItem(slug, done);
-  return NextResponse.json({ plan, trace: "ok" });
+  const intent = await proposeScheduleIntent(slug, entry.displayName, note, done);
+  return NextResponse.json({ intent });
 }

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { cancelIntent, confirmIntent, proposeIntent, readIntentQueue } from "@/lib/intents";
+import { isRunnableIntent, runIntent } from "@/lib/intent-runner";
 
 function trustedLocalOrigin(request: Request) {
   const origin = request.headers.get("origin");
@@ -69,9 +70,10 @@ export async function PATCH(request: Request) {
   }
 
   try {
-    const intent = body?.decision === "confirm"
+    let intent = body?.decision === "confirm"
       ? await confirmIntent(id, previewHash)
       : await cancelIntent(id, previewHash);
+    if (body?.decision === "confirm" && isRunnableIntent(intent.action)) intent = await runIntent(intent.id);
     return NextResponse.json({ intent });
   } catch (error) {
     return NextResponse.json({ error: (error as Error).message }, { status: 409 });

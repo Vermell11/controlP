@@ -1,7 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import { adapterConfig } from "./config";
-import type { DataIssue } from "./schema";
+import { adapterConfig } from "./config.ts";
+import type { DataIssue } from "./schema.ts";
 
 /**
  * Registro explícito de proyectos: identidad estable (id/slug) + fuentes por
@@ -19,7 +19,7 @@ export interface RegistryEntry {
   };
 }
 
-const REGISTRY_FILE = path.join(process.cwd(), "config", "projects.json");
+const registryFile = () => path.join(process.cwd(), "config", "projects.json");
 
 export function slugify(name: string): string {
   return name
@@ -34,7 +34,7 @@ export async function loadRegistry(): Promise<{ entries: RegistryEntry[]; issues
   const issues: DataIssue[] = [];
 
   try {
-    const raw = await fs.readFile(REGISTRY_FILE, "utf8");
+    const raw = await fs.readFile(registryFile(), "utf8");
     try {
       const parsed = JSON.parse(raw) as { projects?: RegistryEntry[] };
       const valid = (parsed.projects ?? []).filter(isValidEntry);
