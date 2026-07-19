@@ -29,9 +29,10 @@ Propósito: esquema canónico y orquestación de fuentes. Nunca importa React.
   grafo). Reemplazar herramienta = escribir un adaptador, jamás tocar dominio/UI.
 - `lib/config.ts` — ÚNICO lugar con rutas absolutas de máquina (+
   `config/projects.json`). Prohibido meterlas en esquema o UI.
-- `lib/intents.ts` — ledger JSONL append-only (`runtime/intents.jsonl`) con
-  snapshots por id, catálogo de acciones, actor local, preview sellado, expiración,
-  idempotencia y lock de exclusión. `proposed` sólo pasa a `queued` con el hash exacto.
+- `lib/intents.ts` — dominio/catálogo de intents, actor local, preview sellado y
+  expiración. `lib/ports/intent-store.ts` define el puerto; el adaptador
+  `intent-store-sqlite.ts` aporta transacciones, unicidad, eventos y migración única
+  desde `runtime/intents.jsonl`. `proposed` sólo pasa a `queued` con el hash exacto.
 - `lib/assistant.ts` — contrato de respuesta visible/hablada/evidenciada,
   consultas estructuradas, contexto conversacional corto y resolución de nombres.
 - `lib/assistant-knowledge.ts` — clasifica y recorta evidencia read-only autorizada.

@@ -51,6 +51,8 @@ test("idempotency and locking prevent duplicate concurrent proposals", async () 
 
 test("voice notes become proposals and corrupt lines remain isolated", async () => {
   await withIntentModule(async ({ cancelIntent, proposeIntent, readIntentQueue }) => {
+    await mkdir("runtime", { recursive: true });
+    await writeFile("runtime/intents.jsonl", "not-json\n", "utf8");
     const proposal = await proposeIntent("anota revisar el contrato", "voice");
     assert.equal(proposal.action, "inbox.capture.propose");
     assert.match(proposal.preview, /No escribir/);
@@ -58,8 +60,6 @@ test("voice notes become proposals and corrupt lines remain isolated", async () 
     const cancelled = await cancelIntent(proposal.id, proposal.previewHash);
     assert.equal(cancelled.status, "cancelled");
 
-    await mkdir("runtime", { recursive: true });
-    await writeFile("runtime/intents.jsonl", "not-json\n", { encoding: "utf8", flag: "a" });
     const reading = await readIntentQueue();
     assert.equal(reading.corrupted, 1);
     assert.equal(reading.items.length, 1);

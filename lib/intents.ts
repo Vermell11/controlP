@@ -1,6 +1,5 @@
 import { createHash, randomUUID } from "node:crypto";
-import { promises as fs } from "node:fs";
-import path from "node:path";
+import { sqliteIntentStore } from "./adapters/intent-store-sqlite.ts";
 
 export type IntentSource = "deck" | "voice";
 export type IntentStatus = "proposed" | "queued" | "running" | "done" | "failed" | "cancelled";
@@ -58,8 +57,6 @@ const INTENT_CATALOG: Readonly<Record<string, IntentDefinition>> = {
   },
 };
 
-const QUEUE_FILE = path.join(process.cwd(), "runtime", "intents.jsonl");
-const LOCK_DIR = path.join(process.cwd(), "runtime", ".intents.lock");
 const PROPOSAL_TTL_MS = 10 * 60 * 1000;
 
 export interface QueueReading {
@@ -71,80 +68,12 @@ function digestPreview(intent: Pick<Intent, "action" | "actor" | "command" | "ex
   return createHash("sha256").update(JSON.stringify(intent)).digest("hex");
 }
 
-function isIntent(value: unknown): value is Intent {
-  if (!value || typeof value !== "object") return false;
-  const item = value as Partial<Intent>;
-  return Boolean(
-    typeof item.id === "string" &&
-      typeof item.command === "string" &&
-      typeof item.action === "string" &&
-      typeof item.at === "string" &&
-      typeof item.updatedAt === "string" &&
-      typeof item.expiresAt === "string" &&
-      typeof item.preview === "string" &&
-      typeof item.previewHash === "string" &&
-      (item.source === "deck" || item.source === "voice") &&
-      ["proposed", "queued", "running", "done", "failed", "cancelled"].includes(item.status ?? "") &&
-      item.actor?.kind === "local-user" &&
-      item.actor.id === "owner",
-  );
-}
-
-async function readUnlocked(): Promise<QueueReading> {
-  let raw: string;
-  try {
-    raw = await fs.readFile(QUEUE_FILE, "utf8");
-  } catch (error) {
-    if ((error as NodeJS.ErrnoException).code === "ENOENT") return { corrupted: 0, items: [] };
-    throw error;
-  }
-
-  const latest = new Map<string, Intent>();
-  let corrupted = 0;
-  for (const line of raw.split("\n")) {
-    if (!line.trim()) continue;
-    try {
-      const parsed: unknown = JSON.parse(line);
-      if (!isIntent(parsed)) {
-        corrupted += 1;
-        continue;
-      }
-      latest.set(parsed.id, parsed);
-    } catch {
-      corrupted += 1;
-    }
-  }
-  return { corrupted, items: [...latest.values()].sort((a, b) => a.at.localeCompare(b.at)) };
-}
-
-async function withQueueLock<T>(operation: () => Promise<T>): Promise<T> {
-  await fs.mkdir(path.dirname(QUEUE_FILE), { recursive: true });
-  for (let attempt = 0; attempt < 50; attempt += 1) {
-    try {
-      await fs.mkdir(LOCK_DIR);
-      try {
-        return await operation();
-      } finally {
-        await fs.rm(LOCK_DIR, { recursive: true, force: true });
-      }
-    } catch (error) {
-      if ((error as NodeJS.ErrnoException).code !== "EEXIST") throw error;
-      await new Promise((resolve) => setTimeout(resolve, 10));
-    }
-  }
-  throw new Error("intent queue lock timeout");
-}
-
-async function appendSnapshot(intent: Intent) {
-  await fs.appendFile(QUEUE_FILE, `${JSON.stringify(intent)}\n`, "utf8");
-}
-
 export function listIntentCommands(): string[] {
   return Object.keys(INTENT_CATALOG);
 }
 
 export async function readIntentQueue(): Promise<QueueReading> {
-  return readUnlocked();
+  return sqliteIntentStore.read();
 }
 
 export async function proposeIntent(
@@ -161,15 +90,7 @@ export async function proposeIntent(
     : undefined);
   if (!definition) throw new Error("intent command not allowed");
 
-  return withQueueLock(async () => {
-    const current = await readUnlocked();
-    if (idempotencyKey) {
-      const existing = current.items.find(
-        (item) => item.actor.id === "owner" && item.idempotencyKey === idempotencyKey,
-      );
-      if (existing) return existing;
-    }
-
+  {
     const at = new Date().toISOString();
     const intent: Intent = {
       action: definition.action,
@@ -187,40 +108,14 @@ export async function proposeIntent(
       updatedAt: at,
     };
     intent.previewHash = digestPreview(intent);
-    await appendSnapshot(intent);
-    return intent;
-  });
+    return sqliteIntentStore.propose(intent);
+  }
 }
 
 export async function confirmIntent(id: string, previewHash: string): Promise<Intent> {
-  return withQueueLock(async () => {
-    const { items } = await readUnlocked();
-    const intent = items.find((item) => item.id === id);
-    if (!intent) throw new Error("intent not found");
-    if (intent.previewHash !== previewHash) throw new Error("preview mismatch");
-    if (intent.status === "queued") return intent;
-    if (intent.status !== "proposed") throw new Error("intent is not confirmable");
-    if (Date.parse(intent.expiresAt) <= Date.now()) throw new Error("intent proposal expired");
-
-    const now = new Date().toISOString();
-    const confirmed = { ...intent, confirmedAt: now, status: "queued" as const, updatedAt: now };
-    await appendSnapshot(confirmed);
-    return confirmed;
-  });
+  return sqliteIntentStore.decide(id, previewHash, "confirm");
 }
 
 export async function cancelIntent(id: string, previewHash: string): Promise<Intent> {
-  return withQueueLock(async () => {
-    const { items } = await readUnlocked();
-    const intent = items.find((item) => item.id === id);
-    if (!intent) throw new Error("intent not found");
-    if (intent.previewHash !== previewHash) throw new Error("preview mismatch");
-    if (intent.status === "cancelled") return intent;
-    if (intent.status !== "proposed") throw new Error("intent is not cancellable");
-
-    const now = new Date().toISOString();
-    const cancelled = { ...intent, cancelledAt: now, status: "cancelled" as const, updatedAt: now };
-    await appendSnapshot(cancelled);
-    return cancelled;
-  });
+  return sqliteIntentStore.decide(id, previewHash, "cancel");
 }
