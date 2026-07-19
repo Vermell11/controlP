@@ -3876,7 +3876,7 @@
       "label": "Closing Barrier",
       "file_type": "document",
       "source_file": "AGENTS.md",
-      "source_location": "L40",
+      "source_location": "L52",
       "_origin": "ast",
       "id": "agents_closing_barrier",
       "community": 8,
@@ -3986,7 +3986,7 @@
       "label": "app/ \u2014 rutas",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L131",
+      "source_location": "L135",
       "_origin": "ast",
       "id": "context_map_app_rutas",
       "community": 6,
@@ -3996,7 +3996,7 @@
       "label": "stt/ \u2014 sidecar Whisper (Python, fuera de Next)",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L142",
+      "source_location": "L146",
       "_origin": "ast",
       "id": "context_map_stt_sidecar_whisper_python_fuera_de_next",
       "community": 6,
@@ -4006,7 +4006,7 @@
       "label": "Para modificar X toca solo Y",
       "file_type": "document",
       "source_file": "CONTEXT_MAP.md",
-      "source_location": "L149",
+      "source_location": "L153",
       "_origin": "ast",
       "id": "context_map_para_modificar_x_toca_solo_y",
       "community": 6,
@@ -5488,9 +5488,9 @@
       "source_file": "app/api/intents/route.ts",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "intents_route",
-      "target": "intents_route_patch",
-      "confidence_score": 1.0
+      "target": "intents_route_patch"
     },
     {
       "relation": "contains",
@@ -5508,9 +5508,9 @@
       "source_file": "app/api/intents/route.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "intents_route",
-      "target": "intents_route_trustedlocalorigin",
-      "confidence_score": 1.0
+      "target": "intents_route_trustedlocalorigin"
     },
     {
       "relation": "imports_from",
@@ -5530,9 +5530,9 @@
       "source_file": "app/api/intents/route.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "intents_route",
-      "target": "lib_intents_cancelintent",
-      "confidence_score": 1.0
+      "target": "lib_intents_cancelintent"
     },
     {
       "relation": "imports",
@@ -5541,9 +5541,9 @@
       "source_file": "app/api/intents/route.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "intents_route",
-      "target": "lib_intents_confirmintent",
-      "confidence_score": 1.0
+      "target": "lib_intents_confirmintent"
     },
     {
       "relation": "imports",
@@ -5552,9 +5552,9 @@
       "source_file": "app/api/intents/route.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "intents_route",
-      "target": "lib_intents_proposeintent",
-      "confidence_score": 1.0
+      "target": "lib_intents_proposeintent"
     },
     {
       "relation": "imports",
@@ -5574,9 +5574,9 @@
       "source_file": "app/api/intents/route.ts",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "intents_route_patch",
-      "target": "intents_route_trustedlocalorigin",
-      "confidence_score": 1.0
+      "target": "intents_route_trustedlocalorigin"
     },
     {
       "relation": "calls",
@@ -5585,9 +5585,9 @@
       "source_file": "app/api/intents/route.ts",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "intents_route_post",
-      "target": "intents_route_trustedlocalorigin",
-      "confidence_score": 1.0
+      "target": "intents_route_trustedlocalorigin"
     },
     {
       "relation": "calls",
@@ -6086,9 +6086,9 @@
       "source_file": "app/components/panels/CommandDeckPanel.tsx",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "panels_commanddeckpanel",
-      "target": "panels_commanddeckpanel_intentproposal",
-      "confidence_score": 1.0
+      "target": "panels_commanddeckpanel_intentproposal"
     },
     {
       "relation": "contains",
@@ -8192,9 +8192,9 @@
       "source_file": "app/components/voice/VoicePanel.tsx",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "voice_voicepanel",
-      "target": "voice_voicepanel_intentproposal",
-      "confidence_score": 1.0
+      "target": "voice_voicepanel_intentproposal"
     },
     {
       "relation": "contains",
@@ -11270,9 +11270,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L138",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents",
-      "target": "lib_intents_appendsnapshot",
-      "confidence_score": 1.0
+      "target": "lib_intents_appendsnapshot"
     },
     {
       "relation": "contains",
@@ -11280,9 +11280,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L212",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents",
-      "target": "lib_intents_cancelintent",
-      "confidence_score": 1.0
+      "target": "lib_intents_cancelintent"
     },
     {
       "relation": "contains",
@@ -11290,9 +11290,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L195",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents",
-      "target": "lib_intents_confirmintent",
-      "confidence_score": 1.0
+      "target": "lib_intents_confirmintent"
     },
     {
       "relation": "contains",
@@ -11300,9 +11300,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L70",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents",
-      "target": "lib_intents_digestpreview",
-      "confidence_score": 1.0
+      "target": "lib_intents_digestpreview"
     },
     {
       "relation": "contains",
@@ -11320,9 +11320,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents",
-      "target": "lib_intents_intent_catalog",
-      "confidence_score": 1.0
+      "target": "lib_intents_intent_catalog"
     },
     {
       "relation": "contains",
@@ -11330,9 +11330,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents",
-      "target": "lib_intents_intentactor",
-      "confidence_score": 1.0
+      "target": "lib_intents_intentactor"
     },
     {
       "relation": "contains",
@@ -11340,9 +11340,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents",
-      "target": "lib_intents_intentdefinition",
-      "confidence_score": 1.0
+      "target": "lib_intents_intentdefinition"
     },
     {
       "relation": "contains",
@@ -11350,9 +11350,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents",
-      "target": "lib_intents_intentrisk",
-      "confidence_score": 1.0
+      "target": "lib_intents_intentrisk"
     },
     {
       "relation": "contains",
@@ -11380,9 +11380,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L74",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents",
-      "target": "lib_intents_isintent",
-      "confidence_score": 1.0
+      "target": "lib_intents_isintent"
     },
     {
       "relation": "contains",
@@ -11390,9 +11390,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L142",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents",
-      "target": "lib_intents_listintentcommands",
-      "confidence_score": 1.0
+      "target": "lib_intents_listintentcommands"
     },
     {
       "relation": "contains",
@@ -11400,9 +11400,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents",
-      "target": "lib_intents_lock_dir",
-      "confidence_score": 1.0
+      "target": "lib_intents_lock_dir"
     },
     {
       "relation": "contains",
@@ -11410,9 +11410,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L150",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents",
-      "target": "lib_intents_proposeintent",
-      "confidence_score": 1.0
+      "target": "lib_intents_proposeintent"
     },
     {
       "relation": "contains",
@@ -11450,9 +11450,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L93",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents",
-      "target": "lib_intents_readunlocked",
-      "confidence_score": 1.0
+      "target": "lib_intents_readunlocked"
     },
     {
       "relation": "contains",
@@ -11460,9 +11460,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L120",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents",
-      "target": "lib_intents_withqueuelock",
-      "confidence_score": 1.0
+      "target": "lib_intents_withqueuelock"
     },
     {
       "relation": "calls",
@@ -11471,9 +11471,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L108",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents_readunlocked",
-      "target": "lib_intents_isintent",
-      "confidence_score": 1.0
+      "target": "lib_intents_isintent"
     },
     {
       "relation": "calls",
@@ -11482,9 +11482,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L147",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents_readintentqueue",
-      "target": "lib_intents_readunlocked",
-      "confidence_score": 1.0
+      "target": "lib_intents_readunlocked"
     },
     {
       "relation": "calls",
@@ -11493,9 +11493,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L213",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents_cancelintent",
-      "target": "lib_intents_withqueuelock",
-      "confidence_score": 1.0
+      "target": "lib_intents_withqueuelock"
     },
     {
       "relation": "calls",
@@ -11504,9 +11504,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L196",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents_confirmintent",
-      "target": "lib_intents_withqueuelock",
-      "confidence_score": 1.0
+      "target": "lib_intents_withqueuelock"
     },
     {
       "relation": "calls",
@@ -11515,9 +11515,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L164",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents_proposeintent",
-      "target": "lib_intents_withqueuelock",
-      "confidence_score": 1.0
+      "target": "lib_intents_withqueuelock"
     },
     {
       "relation": "contains",
@@ -12483,9 +12483,9 @@
       "source_file": "tests/intents.test.mjs",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_intents_test",
-      "target": "tests_intents_test_withintentmodule",
-      "confidence_score": 1.0
+      "target": "tests_intents_test_withintentmodule"
     },
     {
       "relation": "contains",
@@ -13469,5 +13469,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d50621e8c7f50ce207840b2732ce9445cf29857b"
+  "built_at_commit": "5ff8e3bbb03a04af913f35c2397208acef66632b"
 }

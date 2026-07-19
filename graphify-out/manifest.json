@@ -90,9 +90,9 @@
     "semantic_hash": "07ebcb4b0f2a913068d79f45d8cc4d0a"
   },
   "AGENTS.md": {
-    "mtime": 1783895066.1812534,
-    "ast_hash": "964cd7ba8fc0cc0572b9cb635d1a86cb",
-    "semantic_hash": "964cd7ba8fc0cc0572b9cb635d1a86cb"
+    "mtime": 1784422668.2486293,
+    "ast_hash": "3f8a3a45b557e2c4c71cfc12d6f204ea",
+    "semantic_hash": ""
   },
   "CLAUDE.md": {
     "mtime": 1783808032.8900058,
@@ -100,8 +100,8 @@
     "semantic_hash": "9b2fe3d975790259456f4d9b060d481d"
   },
   "PROJECT_CONTEXT.md": {
-    "mtime": 1784419194.703513,
-    "ast_hash": "c910aec98af4d15ad898dba538ad59a0",
+    "mtime": 1784422675.7561235,
+    "ast_hash": "e22678d8868647782712059c6a2a6dfb",
     "semantic_hash": ""
   },
   "README.md": {
@@ -310,8 +310,8 @@
     "semantic_hash": "14be21b8098d66d9213682c80a031933"
   },
   "CONTEXT_MAP.md": {
-    "mtime": 1784419194.8172386,
-    "ast_hash": "ba3da7cdd946f9e01fd4132be5bd0f97",
+    "mtime": 1784422675.9420044,
+    "ast_hash": "a554391e665f3114b65a92904a0eb98b",
     "semantic_hash": ""
   },
   "docs/manual.md": {
