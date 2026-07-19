@@ -1,16 +1,16 @@
 # Graph Report - ControlP  (2026-07-18)
 
 ## Corpus Check
-- 75 files · ~25,455 words
+- 77 files · ~25,617 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 468 nodes · 812 edges · 40 communities (22 shown, 18 thin omitted)
+- 474 nodes · 826 edges · 39 communities (21 shown, 18 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 8 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5ff8e3bb`
+- Built from commit: `80180185`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -37,7 +37,6 @@
 - [[_COMMUNITY_Community 20|Community 20]]
 - [[_COMMUNITY_STT Sidecar Dependencies|STT Sidecar Dependencies]]
 - [[_COMMUNITY_Community 22|Community 22]]
-- [[_COMMUNITY_Community 24|Community 24]]
 - [[_COMMUNITY_ESLint Config|ESLint Config]]
 - [[_COMMUNITY_Next.js Config|Next.js Config]]
 - [[_COMMUNITY_Env Declarations|Env Declarations]]
@@ -55,7 +54,7 @@
 
 ## God Nodes (most connected - your core abstractions)
 1. `normalizeVoiceText()` - 18 edges
-2. `compilerOptions` - 17 edges
+2. `compilerOptions` - 18 edges
 3. `routeCommand()` - 15 edges
 4. `loadRegistry()` - 14 edges
 5. `readMemory()` - 13 edges
@@ -66,8 +65,6 @@
 10. `vaultSignals` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `GET()` --calls--> `loadRegistry()`  [EXTRACTED]
-  app/api/metrics/route.ts → lib/registry.ts
 - `GET()` --calls--> `getProjects()`  [INFERRED]
   app/api/projects/route.ts → lib/controlp.ts
 - `Notion Ledger — Session Close Connector` --conceptually_related_to--> `Adapter Pattern — Replace Tool Without Touching Domain/UI`  [INFERRED]
@@ -76,31 +73,33 @@
   app/(core)/page.tsx → lib/controlp.ts
 - `GET()` --calls--> `readVoiceAliases()`  [EXTRACTED]
   app/api/assistant/aliases/route.ts → lib/voice-aliases.ts
+- `POST()` --calls--> `compactVoiceText()`  [EXTRACTED]
+  app/api/assistant/aliases/route.ts → lib/assistant.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (40 total, 18 thin omitted)
+## Communities (39 total, 18 thin omitted)
 
 ### Community 0 - "Vault Core Visual Layer"
-Cohesion: 0.09
-Nodes (40): emptyEvidence(), EvidenceReading, execFileAsync, exists(), git(), readCommitActivity(), readEvidence(), emptyGraph() (+32 more)
+Cohesion: 0.08
+Nodes (42): emptyEvidence(), EvidenceReading, execFileAsync, exists(), git(), readCommitActivity(), readEvidence(), emptyGraph() (+34 more)
 
 ### Community 1 - "TypeScript Config"
-Cohesion: 0.10
-Nodes (20): compilerOptions, allowJs, baseUrl, esModuleInterop, incremental, isolatedModules, jsx, lib (+12 more)
+Cohesion: 0.09
+Nodes (21): compilerOptions, allowImportingTsExtensions, allowJs, baseUrl, esModuleInterop, incremental, isolatedModules, jsx (+13 more)
 
 ### Community 2 - "Core Dashboard & Panel Registry"
 Cohesion: 0.06
 Nodes (31): dependencies, next, react, react-dom, @react-three/drei, @react-three/fiber, three, @types/three (+23 more)
 
 ### Community 3 - "Memory Adapter & Editable Records"
-Cohesion: 0.14
-Nodes (23): appendLogEntry(), EditableBullet, editStateFile(), updateNextStep(), updateStateBullet(), dedupe(), discoverFromVault(), isValidEntry() (+15 more)
+Cohesion: 0.10
+Nodes (29): askOllama(), appendLogEntry(), EditableBullet, editStateFile(), updateNextStep(), updateStateBullet(), adapterConfig, dedupe() (+21 more)
 
 ### Community 4 - "Package & Dependencies"
-Cohesion: 0.07
-Nodes (32): Clock(), ProjectCard, formatDate(), obsidianUrl(), tone(), IntentProposal, QUEUE_COMMANDS, VIEW_COMMANDS (+24 more)
+Cohesion: 0.09
+Nodes (25): ProjectCard, formatDate(), obsidianUrl(), tone(), IntentProposal, QUEUE_COMMANDS, VIEW_COMMANDS, VIEW_TITLE (+17 more)
 
 ### Community 5 - "Metrics & Schedule API"
 Cohesion: 0.08
@@ -119,8 +118,8 @@ Cohesion: 0.40
 Nodes (4): Closing Barrier, ControlP Agent Contract, Rules, Startup
 
 ### Community 9 - "ControlP Orchestrator"
-Cohesion: 0.15
-Nodes (28): AssistantEvidence, AssistantResponse, compactVoiceText(), continueProjectQuery(), deckViewCommand, extractWakeCommand(), isDeckCloseCommand(), isGlobalProjectQuery() (+20 more)
+Cohesion: 0.13
+Nodes (31): answerKnowledgeQuery(), AssistantEvidence, AssistantResponse, compactVoiceText(), continueProjectQuery(), deckViewCommand, extractWakeCommand(), findProject() (+23 more)
 
 ### Community 10 - "Dev Dependencies"
 Cohesion: 0.14
@@ -128,7 +127,7 @@ Nodes (17): app/api/intents/route.ts — Intent Queue Endpoint, app/api/stt/rout
 
 ### Community 11 - "Intents, STT & LLM Extension Points"
 Cohesion: 0.11
-Nodes (23): GET(), PATCH(), POST(), trustedLocalOrigin(), cancelIntent(), confirmIntent(), Intent, INTENT_CATALOG (+15 more)
+Nodes (28): files(), migrateJsonl(), open(), parse(), sqliteIntentStore, valid(), write(), GET() (+20 more)
 
 ### Community 16 - "3D Geometry Layer"
 Cohesion: 0.40
@@ -136,15 +135,15 @@ Nodes (3): Sidecar STT local de ControlP — faster-whisper (V1.4.2).  Transcrip
 
 ### Community 17 - "App Layout"
 Cohesion: 0.06
-Nodes (40): CenterStage(), VaultCore, useReducedMotion(), createLinkSegments(), createParticleField(), createRandom(), ParticleField, GOLD (+32 more)
+Nodes (42): CenterStage(), VaultCore, useReducedMotion(), fillStyle(), Vital(), createLinkSegments(), createParticleField(), createRandom() (+34 more)
 
 ### Community 19 - "Architecture Rules"
 Cohesion: 0.67
 Nodes (3): Canonical Data Schema Ownership, Local-First Web-Ready Boundary, Role Adapter Pattern
 
 ### Community 20 - "Community 20"
-Cohesion: 0.20
-Nodes (14): askOllama(), buildSemanticPrompt(), buildSemanticRepairPrompt(), compact(), expandTerms(), KnowledgeChunk, requireSkillConfirmation(), retrieveKnowledge() (+6 more)
+Cohesion: 0.13
+Nodes (26): readSkillBankKnowledge(), GET(), POST(), buildKnowledgeCorpus(), buildSemanticPrompt(), buildSemanticRepairPrompt(), compact(), expandTerms() (+18 more)
 
 ### Community 21 - "STT Sidecar Dependencies"
 Cohesion: 0.67
@@ -154,12 +153,8 @@ Nodes (3): FastAPI, python-multipart, Uvicorn
 Cohesion: 0.33
 Nodes (5): assistantUrl, controlp, healthyNotion, ragUrl, root
 
-### Community 24 - "Community 24"
-Cohesion: 0.18
-Nodes (18): GET(), POST(), Home(), answerKnowledgeQuery(), findProject(), response(), semanticUnavailable(), getProjects() (+10 more)
-
 ## Knowledge Gaps
-- **148 isolated node(s):** `globalStt`, `VaultCore`, `VIEW_COMMANDS`, `QUEUE_COMMANDS`, `IntentProposal` (+143 more)
+- **146 isolated node(s):** `globalStt`, `VaultCore`, `VIEW_COMMANDS`, `QUEUE_COMMANDS`, `IntentProposal` (+141 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **18 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -167,16 +162,16 @@ Nodes (18): GET(), POST(), Home(), answerKnowledgeQuery(), findProject(), respon
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `PanelProps` connect `Package & Dependencies` to `App Layout`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
-- **Why does `loadRegistry()` connect `Memory Adapter & Editable Records` to `Vault Core Visual Layer`, `Community 24`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+- **Why does `loadRegistry()` connect `Memory Adapter & Editable Records` to `Vault Core Visual Layer`, `Community 20`?**
   _High betweenness centrality (0.014) - this node is a cross-community bridge._
-- **Why does `ProjectCard` connect `Package & Dependencies` to `Vault Core Visual Layer`, `ControlP Orchestrator`?**
+- **Why does `ProjectCard` connect `Package & Dependencies` to `Vault Core Visual Layer`, `ControlP Orchestrator`, `Community 20`?**
   _High betweenness centrality (0.013) - this node is a cross-community bridge._
 - **What connects `globalStt`, `VaultCore`, `VIEW_COMMANDS` to the rest of the system?**
-  _152 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _150 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Vault Core Visual Layer` be split into smaller, more focused modules?**
-  _Cohesion score 0.08776595744680851 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0792156862745098 - nodes in this community are weakly interconnected._
 - **Should `TypeScript Config` be split into smaller, more focused modules?**
-  _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
 - **Should `Core Dashboard & Panel Registry` be split into smaller, more focused modules?**
   _Cohesion score 0.0625 - nodes in this community are weakly interconnected._
