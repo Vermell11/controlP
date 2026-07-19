@@ -3936,7 +3936,7 @@
       "label": "Closing Barrier",
       "file_type": "document",
       "source_file": "AGENTS.md",
-      "source_location": "L52",
+      "source_location": "L57",
       "_origin": "ast",
       "id": "agents_closing_barrier",
       "community": 8,
@@ -9666,9 +9666,9 @@
       "source_file": "lib/adapters/intent-store-sqlite.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_intent_store_sqlite",
-      "target": "adapters_intent_store_sqlite_files",
-      "confidence_score": 1.0
+      "target": "adapters_intent_store_sqlite_files"
     },
     {
       "relation": "contains",
@@ -9676,9 +9676,9 @@
       "source_file": "lib/adapters/intent-store-sqlite.ts",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_intent_store_sqlite",
-      "target": "adapters_intent_store_sqlite_migratejsonl",
-      "confidence_score": 1.0
+      "target": "adapters_intent_store_sqlite_migratejsonl"
     },
     {
       "relation": "contains",
@@ -9686,9 +9686,9 @@
       "source_file": "lib/adapters/intent-store-sqlite.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_intent_store_sqlite",
-      "target": "adapters_intent_store_sqlite_open",
-      "confidence_score": 1.0
+      "target": "adapters_intent_store_sqlite_open"
     },
     {
       "relation": "contains",
@@ -9696,9 +9696,9 @@
       "source_file": "lib/adapters/intent-store-sqlite.ts",
       "source_location": "L84",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_intent_store_sqlite",
-      "target": "adapters_intent_store_sqlite_parse",
-      "confidence_score": 1.0
+      "target": "adapters_intent_store_sqlite_parse"
     },
     {
       "relation": "contains",
@@ -9706,9 +9706,9 @@
       "source_file": "lib/adapters/intent-store-sqlite.ts",
       "source_location": "L88",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_intent_store_sqlite",
-      "target": "adapters_intent_store_sqlite_sqliteintentstore",
-      "confidence_score": 1.0
+      "target": "adapters_intent_store_sqlite_sqliteintentstore"
     },
     {
       "relation": "contains",
@@ -9716,9 +9716,9 @@
       "source_file": "lib/adapters/intent-store-sqlite.ts",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_intent_store_sqlite",
-      "target": "adapters_intent_store_sqlite_valid",
-      "confidence_score": 1.0
+      "target": "adapters_intent_store_sqlite_valid"
     },
     {
       "relation": "contains",
@@ -9726,9 +9726,9 @@
       "source_file": "lib/adapters/intent-store-sqlite.ts",
       "source_location": "L49",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_intent_store_sqlite",
-      "target": "adapters_intent_store_sqlite_write",
-      "confidence_score": 1.0
+      "target": "adapters_intent_store_sqlite_write"
     },
     {
       "relation": "imports_from",
@@ -9737,9 +9737,9 @@
       "source_file": "lib/adapters/intent-store-sqlite.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_intent_store_sqlite",
-      "target": "lib_intents",
-      "confidence_score": 1.0
+      "target": "lib_intents"
     },
     {
       "relation": "imports",
@@ -9748,9 +9748,9 @@
       "source_file": "lib/adapters/intent-store-sqlite.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_intent_store_sqlite",
-      "target": "lib_intents_intent",
-      "confidence_score": 1.0
+      "target": "lib_intents_intent"
     },
     {
       "relation": "imports_from",
@@ -9759,9 +9759,9 @@
       "source_file": "lib/adapters/intent-store-sqlite.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_intent_store_sqlite",
-      "target": "ports_intent_store",
-      "confidence_score": 1.0
+      "target": "ports_intent_store"
     },
     {
       "relation": "imports",
@@ -9770,9 +9770,9 @@
       "source_file": "lib/adapters/intent-store-sqlite.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_intent_store_sqlite",
-      "target": "ports_intent_store_intentstore",
-      "confidence_score": 1.0
+      "target": "ports_intent_store_intentstore"
     },
     {
       "relation": "imports",
@@ -9781,9 +9781,9 @@
       "source_file": "lib/adapters/intent-store-sqlite.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_intent_store_sqlite",
-      "target": "ports_intent_store_intentstorereading",
-      "confidence_score": 1.0
+      "target": "ports_intent_store_intentstorereading"
     },
     {
       "relation": "calls",
@@ -9792,9 +9792,9 @@
       "source_file": "lib/adapters/intent-store-sqlite.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_intent_store_sqlite_open",
-      "target": "adapters_intent_store_sqlite_files",
-      "confidence_score": 1.0
+      "target": "adapters_intent_store_sqlite_files"
     },
     {
       "relation": "calls",
@@ -9803,9 +9803,9 @@
       "source_file": "lib/adapters/intent-store-sqlite.ts",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_intent_store_sqlite_open",
-      "target": "adapters_intent_store_sqlite_migratejsonl",
-      "confidence_score": 1.0
+      "target": "adapters_intent_store_sqlite_migratejsonl"
     },
     {
       "relation": "calls",
@@ -9814,9 +9814,9 @@
       "source_file": "lib/adapters/intent-store-sqlite.ts",
       "source_location": "L68",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_intent_store_sqlite_migratejsonl",
-      "target": "adapters_intent_store_sqlite_valid",
-      "confidence_score": 1.0
+      "target": "adapters_intent_store_sqlite_valid"
     },
     {
       "relation": "calls",
@@ -9825,9 +9825,9 @@
       "source_file": "lib/adapters/intent-store-sqlite.ts",
       "source_location": "L74",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_intent_store_sqlite_migratejsonl",
-      "target": "adapters_intent_store_sqlite_write",
-      "confidence_score": 1.0
+      "target": "adapters_intent_store_sqlite_write"
     },
     {
       "relation": "calls",
@@ -9836,9 +9836,9 @@
       "source_file": "lib/adapters/intent-store-sqlite.ts",
       "source_location": "L67",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "adapters_intent_store_sqlite_migratejsonl",
-      "target": "adapters_intent_store_sqlite_parse",
-      "confidence_score": 1.0
+      "target": "adapters_intent_store_sqlite_parse"
     },
     {
       "relation": "imports",
@@ -9847,9 +9847,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents",
-      "target": "adapters_intent_store_sqlite_sqliteintentstore",
-      "confidence_score": 1.0
+      "target": "adapters_intent_store_sqlite_sqliteintentstore"
     },
     {
       "relation": "contains",
@@ -11662,9 +11662,9 @@
       "source_file": "lib/ports/intent-store.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ports_intent_store",
-      "target": "lib_intents",
-      "confidence_score": 1.0
+      "target": "lib_intents"
     },
     {
       "relation": "imports",
@@ -11673,9 +11673,9 @@
       "source_file": "lib/ports/intent-store.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ports_intent_store",
-      "target": "lib_intents_intent",
-      "confidence_score": 1.0
+      "target": "lib_intents_intent"
     },
     {
       "relation": "references",
@@ -11684,9 +11684,9 @@
       "source_file": "lib/ports/intent-store.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ports_intent_store_intentstorereading",
-      "target": "lib_intents_intent",
-      "confidence_score": 1.0
+      "target": "lib_intents_intent"
     },
     {
       "relation": "calls",
@@ -11695,9 +11695,9 @@
       "source_file": "lib/intents.ts",
       "source_location": "L110",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_intents_proposeintent",
-      "target": "lib_intents_digestpreview",
-      "confidence_score": 1.0
+      "target": "lib_intents_digestpreview"
     },
     {
       "relation": "contains",
@@ -11705,9 +11705,9 @@
       "source_file": "lib/ports/intent-store.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ports_intent_store",
-      "target": "ports_intent_store_intentstore",
-      "confidence_score": 1.0
+      "target": "ports_intent_store_intentstore"
     },
     {
       "relation": "contains",
@@ -11715,9 +11715,9 @@
       "source_file": "lib/ports/intent-store.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ports_intent_store",
-      "target": "ports_intent_store_intentstorereading",
-      "confidence_score": 1.0
+      "target": "ports_intent_store_intentstorereading"
     },
     {
       "relation": "contains",
@@ -12723,9 +12723,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_allowimportingtsextensions",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_allowimportingtsextensions"
     },
     {
       "relation": "contains",
@@ -13679,5 +13679,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "80180185a59d093f47d54bd914956c8c1215ffee"
+  "built_at_commit": "c776a1952771c4e57daaa73cf5e5104e2fec3aef"
 }
