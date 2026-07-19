@@ -118,7 +118,11 @@ hook con contrato `onFinal`/`start`/`stop` + rama en VoicePanel.
 - `registry.ts` — PUNTO DE EXTENSIÓN: `leftPanels`/`rightPanels`
   `{id, Component}`. Agregar panel = crear componente con `PanelProps`
   (`types.ts`: `{ projects: ProjectCard[] }`) y registrarlo. El core no se
-  edita.
+edita.
+
+Ley del Núcleo Canónico: `lib/` contiene dominio, contratos, identidad, políticas,
+eventos y puertos; productos y proveedores sólo implementan adaptadores. Router nuevo
+= contrato versionado + procedencia + exportación/reconciliación + prueba de retiro.
 - `CommandDeckPanel.tsx` + `DeckViews.tsx` — deck con vistas (metrics,
   trend, inbox, plan, schedule, feed) y escucha eventos de abrir/cerrar por voz;
   vista nueva = export en DeckViews +

@@ -24,6 +24,18 @@ ControlP follows the canonical traceability contract:
   implements memory, Notion implements the ledger. Only Git is permanent
   infrastructure. Swapping a tool = writing one adapter, never touching the
   domain or the UI.
+- The **ControlP Canonical Kernel** is the system center: domain entities,
+  canonical schemas, identity/policy contracts, intents, events and role ports.
+  Products, databases, models, agents and channels never become the kernel.
+  Every external capability connects through a versioned port/router and a
+  replaceable adapter. Removing or replacing an adapter must not require domain
+  or UI changes and must not lose canonical data, provenance or audit history.
+- Data sovereignty is non-negotiable: before adopting a provider, define its
+  canonical import/export mapping, stable IDs, provenance, version/migration
+  strategy and a tested removal path. Provider-native state is either canonical
+  through an owned adapter contract or a rebuildable projection; never the only
+  copy of irreplaceable data. No new router is complete without contract tests
+  and a round-trip or reconciliation test.
 - Local-first with a web-ready boundary: all data access is server-side through
   adapters; the canonical schema is pure JSON (future API wire format); machine
   paths live only in `lib/config.ts` and `config/projects.json`, never in the

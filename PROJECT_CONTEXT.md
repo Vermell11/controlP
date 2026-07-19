@@ -6,6 +6,8 @@ Current state: V1.5.2.1 delivered; V1.5.3 in progress. The semantic/RAG boundary
 
 Navigation for new sessions: `CONTEXT_MAP.md` (repo root) maps every module — purpose, files, extension points, invariants, and a "to change X touch only Y" table; it is kept current at every session close. Architecture recipes live in Obsidian (`Proyectos/ControlP/Arquitectura/Routers y extensión`); a brief schematic manual with the Obsidian/Notion migration plan is in `docs/manual.md` (deliberately not in `public/`).
 
+Architecture law: the ControlP Canonical Kernel owns domain data, identity, policies, events and versioned ports. Every database, agent, model, channel or external tool is a replaceable adapter with import/export, reconciliation and removal tests; no irreplaceable data may live only in a provider-native format.
+
 Quality gates: `npm run check`, `npm test`, Gitleaks, online `npm audit` and a production Webpack build; registry enforces id/slug uniqueness. A root PostCSS override keeps Next on the audited PostCSS 8.5.17 release until its nested pin is updated upstream. Turbopack hangs in the iCloud folder, while Webpack completes — known environmental debt; move the repo out of iCloud. Mic requires localhost/https.
 Reto actual: V1.5.3 — add authorized actions behind the mandatory `propuesta → vista previa → confirmación → ejecución → traza` pipeline, enforced by runners/adapters rather than prompts. Harden `/api/intents` before real execution. Roadmap in `Proyectos/ControlP/Roadmap`; data architecture in `Proyectos/ControlP/Arquitectura/Datos`.
 
