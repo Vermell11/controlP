@@ -9,13 +9,15 @@ const VISIBLE_INTENTS = 100;
 const STATUS_LABEL: Record<string, string> = {
   done: "done",
   failed: "failed",
+  proposed: "proposed",
+  cancelled: "cancelled",
   queued: "queued",
   running: "running",
 };
 
 /**
  * Vista de la cola de intents (módulo fuera del core).
- * Hoy todo entra como "queued"; el runner (Sprint 3/4) moverá estados.
+ * Las propuestas sólo llegan a "queued" tras confirmar el hash de su preview.
  */
 export default async function QueuePage() {
   const { items, corrupted } = await readIntentQueue();
@@ -64,7 +66,7 @@ export default async function QueuePage() {
                       month: "short",
                     }).format(new Date(intent.at))}
                   </time>
-                  <span className="queueCommand">{intent.command}</span>
+                  <span className="queueCommand" title={intent.preview}>{intent.command}</span>
                   <span className="queueSource">{intent.source}</span>
                   <b className={`queueStatus ${intent.status}`}>
                     {STATUS_LABEL[intent.status] ?? intent.status}

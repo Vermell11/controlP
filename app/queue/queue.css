@@ -93,6 +93,14 @@
   color: var(--amber);
 }
 
+.queueStatus.proposed {
+  color: var(--blue);
+}
+
+.queueStatus.cancelled {
+  color: var(--dim);
+}
+
 .queueStatus.running {
   color: var(--blue);
 }

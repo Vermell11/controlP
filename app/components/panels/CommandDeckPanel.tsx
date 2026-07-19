@@ -25,6 +25,14 @@ const VIEW_COMMANDS: { command: string; view: DeckView }[] = [
 /** Comandos-intent: encolan para el runner (Sprint 3/4). */
 const QUEUE_COMMANDS = ["WK Review", "AM Report", "GH Trending", "Vault Clean"];
 
+interface IntentProposal {
+  id: string;
+  command: string;
+  preview: string;
+  previewHash: string;
+  risk: "low" | "medium" | "high";
+}
+
 const VIEW_TITLE: Record<DeckView, string> = {
   inbox: "Inbox Brief",
   metrics: "Metrics Pull",
@@ -44,12 +52,13 @@ export default function CommandDeckPanel({ projects }: PanelProps) {
   const [queued, setQueued] = useState<number | null>(null);
   const [view, setView] = useState<DeckView | null>(null);
   const [queueFeedback, setQueueFeedback] = useState<string | null>(null);
+  const [proposal, setProposal] = useState<IntentProposal | null>(null);
 
   const refresh = useCallback(async () => {
     try {
       const response = await fetch("/api/intents");
-      const data = (await response.json()) as { count: number };
-      setQueued(data.count);
+      const data = (await response.json()) as { queued: number };
+      setQueued(data.queued);
     } catch {
       setQueued(null);
     }
@@ -91,15 +100,39 @@ export default function CommandDeckPanel({ projects }: PanelProps) {
   const enqueue = async (command: string) => {
     setQueueFeedback(`${command} → encolando…`);
     try {
-      await fetch("/api/intents", {
-        body: JSON.stringify({ command }),
+      const response = await fetch("/api/intents", {
+        body: JSON.stringify({ command, idempotencyKey: crypto.randomUUID() }),
         headers: { "Content-Type": "application/json" },
         method: "POST",
       });
+      if (!response.ok) throw new Error("proposal rejected");
+      const data = (await response.json()) as { proposal: IntentProposal };
+      setProposal(data.proposal);
       await refresh();
-      setQueueFeedback(`${command} → en cola para el runner (Sprint 3)`);
+      setQueueFeedback(`${command} → propuesta pendiente de confirmación`);
     } catch {
       setQueueFeedback(`${command} → error al encolar`);
+    }
+  };
+
+  const decide = async (decision: "confirm" | "cancel") => {
+    if (!proposal) return;
+    try {
+      const response = await fetch("/api/intents", {
+        body: JSON.stringify({ decision, id: proposal.id, previewHash: proposal.previewHash }),
+        headers: { "Content-Type": "application/json" },
+        method: "PATCH",
+      });
+      if (!response.ok) throw new Error("decision rejected");
+      setQueueFeedback(
+        decision === "confirm"
+          ? `${proposal.command} → confirmado y en cola`
+          : `${proposal.command} → propuesta cancelada`,
+      );
+      setProposal(null);
+      await refresh();
+    } catch {
+      setQueueFeedback(`${proposal.command} → la decisión no pudo aplicarse`);
     }
   };
 
@@ -139,6 +172,15 @@ export default function CommandDeckPanel({ projects }: PanelProps) {
           {" · "}
           <a href="/queue">ver cola</a>
         </p>
+      )}
+
+      {proposal && (
+        <div className="voiceConfirm" role="group" aria-label="Confirmar intent del Command Deck">
+          <p><b>{proposal.command}</b> · riesgo {proposal.risk}</p>
+          <code>{proposal.preview}</code>
+          <button onClick={() => void decide("confirm")} type="button">Confirmar</button>
+          <button onClick={() => void decide("cancel")} type="button">Cancelar</button>
+        </div>
       )}
 
       {view && (

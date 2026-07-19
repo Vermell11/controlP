@@ -72,7 +72,10 @@ export function routeCommand(
       const command = transcript.trim().slice(0, 80);
       return {
         command,
-        response: message(`Encolado: “${command}”.`, `He encolado: ${command}.`),
+        response: message(
+          `Propuesta preparada: “${command}”. Revisa y confirma la vista previa.`,
+          `Preparé la propuesta ${command}. Confirma la vista previa para encolarla.`,
+        ),
         type: "enqueue",
       };
     }

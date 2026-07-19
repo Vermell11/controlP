@@ -29,8 +29,9 @@ Propósito: esquema canónico y orquestación de fuentes. Nunca importa React.
   grafo). Reemplazar herramienta = escribir un adaptador, jamás tocar dominio/UI.
 - `lib/config.ts` — ÚNICO lugar con rutas absolutas de máquina (+
   `config/projects.json`). Prohibido meterlas en esquema o UI.
-- `lib/intents.ts` — cola JSONL append-only (`runtime/intents.jsonl`),
-  lectura tolerante por línea. Punto de extensión oficial.
+- `lib/intents.ts` — ledger JSONL append-only (`runtime/intents.jsonl`) con
+  snapshots por id, catálogo de acciones, actor local, preview sellado, expiración,
+  idempotencia y lock de exclusión. `proposed` sólo pasa a `queued` con el hash exacto.
 - `lib/assistant.ts` — contrato de respuesta visible/hablada/evidenciada,
   consultas estructuradas, contexto conversacional corto y resolución de nombres.
 - `lib/assistant-knowledge.ts` — clasifica y recorta evidencia read-only autorizada.
@@ -52,7 +53,8 @@ es JSON puro (futuro formato de API web); acceso a datos solo server-side.
 
 - `projects/route.ts` — GET instantánea canónica (frontera web-ready; sin
   consumidor interno, es contrato).
-- `intents/route.ts` — GET cola / POST encolar `{command, source}`.
+- `intents/route.ts` — GET ledger; POST localhost propone una acción; PATCH confirma
+  o cancela usando `id + previewHash`. Ninguna ruta ejecuta todavía una mutación.
 - `schedule/route.ts` — GET plan / POST confirmar avance (escribe traza en
   Bitácora vía adaptador ANTES de responder ok; el cliente ya confirmó).
 - `metrics/route.ts` — commits por día (14d) por proyecto, para Trend Scan.
@@ -160,3 +162,4 @@ hook con contrato `onFinal`/`start`/`stop` + rama en VoicePanel.
 | Rutas de máquina | `lib/config.ts` / `config/projects.json` únicamente |
 | Campo nuevo del esquema | `lib/schema.ts` + adaptador que lo llena + `SCHEMA_VERSION` si rompe |
 | Endpoint nuevo | carpeta en `app/api/` + lógica en `lib/` |
+| Nueva acción autorizada | catálogo/runner en `lib/intents.ts` + adaptador acotado; nunca ejecutar desde UI/modelo |

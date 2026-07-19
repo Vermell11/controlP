@@ -15,6 +15,7 @@ import type { CoreState } from "@/app/components/vault-core/types";
 
 type SttProvider = "whisper" | "webspeech";
 type SttServiceStatus = "unknown" | "stopped" | "starting" | "running" | "error";
+type IntentProposal = { id: string; command: string; preview: string; previewHash: string; risk: string };
 
 const PROVIDER_KEY = "controlp.stt.provider";
 
@@ -50,6 +51,7 @@ export default function VoicePanel({ projects }: PanelProps) {
   const [feedback, setFeedback] = useState<CoreState>("idle");
   const [aliases, setAliases] = useState<VoiceAlias[]>([]);
   const [pendingAlias, setPendingAlias] = useState<{ alias: string; target: string } | null>(null);
+  const [pendingIntent, setPendingIntent] = useState<IntentProposal | null>(null);
   const holdingRef = useRef(false);
   const providerRef = useRef<SttProvider>("webspeech");
   const lastProjectRef = useRef<VoiceProject | undefined>(undefined);
@@ -174,11 +176,17 @@ export default function VoicePanel({ projects }: PanelProps) {
       case "enqueue":
         try {
           const response = await fetch("/api/intents", {
-            body: JSON.stringify({ command: action.command, source: "voice" }),
+            body: JSON.stringify({
+              command: action.command,
+              idempotencyKey: crypto.randomUUID(),
+              source: "voice",
+            }),
             headers: { "Content-Type": "application/json" },
             method: "POST",
           });
           if (!response.ok) throw new Error(`intent queue responded ${response.status}`);
+          const data = (await response.json()) as { proposal: IntentProposal };
+          setPendingIntent(data.proposal);
           presentResponse(action.response);
         } catch {
           pushLog("error al encolar el comando", "hint");
@@ -210,6 +218,28 @@ export default function VoicePanel({ projects }: PanelProps) {
         setTemporaryFeedback("error");
     }
   }, [presentResponse, pushLog, selectProvider, setTemporaryFeedback, tts]);
+
+  const decideIntent = async (decision: "confirm" | "cancel") => {
+    if (!pendingIntent) return;
+    try {
+      const response = await fetch("/api/intents", {
+        body: JSON.stringify({
+          decision,
+          id: pendingIntent.id,
+          previewHash: pendingIntent.previewHash,
+        }),
+        headers: { "Content-Type": "application/json" },
+        method: "PATCH",
+      });
+      if (!response.ok) throw new Error("intent decision rejected");
+      pushLog(decision === "confirm" ? "intent confirmado y en cola" : "propuesta cancelada", "action");
+      setPendingIntent(null);
+      setTemporaryFeedback("success");
+    } catch {
+      pushLog("no pude aplicar la decisión sobre el intent", "hint");
+      setTemporaryFeedback("error");
+    }
+  };
 
   const handleTranscript = useCallback(
     async (transcript: string) => {
@@ -456,6 +486,15 @@ export default function VoicePanel({ projects }: PanelProps) {
           <p>“{pendingAlias.alias}” → “{pendingAlias.target}”</p>
           <button onClick={() => void confirmAlias()} type="button">Confirmar</button>
           <button onClick={() => setPendingAlias(null)} type="button">Cancelar</button>
+        </div>
+      )}
+
+      {pendingIntent && (
+        <div className="voiceConfirm" role="group" aria-label="Confirmar intent de voz">
+          <p><b>{pendingIntent.command}</b> · riesgo {pendingIntent.risk}</p>
+          <code>{pendingIntent.preview}</code>
+          <button onClick={() => void decideIntent("confirm")} type="button">Confirmar</button>
+          <button onClick={() => void decideIntent("cancel")} type="button">Cancelar</button>
         </div>
       )}
 
